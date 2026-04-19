@@ -1,4 +1,4 @@
-# Awesome-UMI [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+# Awesome-UMI [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 ## 🏠 About
 
