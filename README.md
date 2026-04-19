@@ -1,8 +1,8 @@
-# Awesome-UMI [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+# Awesome-UMI <!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) --> [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-## 🏠 About
+## About
 
-A curated list for the ecosystem around **Universal Manipulation Interface (UMI)**.
+**Awesome-UMI**: A curated list for the ecosystem around **Universal Manipulation Interface (UMI)**.
 
 This repository focuses on:
 - **UMI Core**: foundational papers, official resources, and direct ecosystem-defining follow-ups
@@ -13,14 +13,42 @@ This repository focuses on:
 
 This list is intentionally **UMI-first**, not a generic robot-manipulation survey.
 
-## 🔥 News
+<p align="center">
+  <img src="assets/umi-thumbnail.png" alt="Universal Manipulation Interface paper thumbnail" width="900">
+  <br>
+  <sub><span style="color: #777;">Source: original UMI project page, <a href="https://umi-gripper.github.io/">umi-gripper.github.io</a>.</span></sub>
+</p>
+
+<p align="center">
+  <img src="assets/umi-hardware.jpg" alt="Universal Manipulation Interface hardware design" width="900">
+  <br>
+  <sub><span style="color: #777;">Source: original UMI project page, <a href="https://umi-gripper.github.io/">umi-gripper.github.io</a>.</span></sub>
+</p>
+
+## Must Read
+
+Start here if you want the shortest path through the UMI ecosystem.
+
+| Goal | Start with |
+| :-- | :-- |
+| Understand UMI | [UMI paper](https://arxiv.org/abs/2402.10329), [project](https://umi-gripper.github.io/), [code](https://github.com/real-stanford/universal_manipulation_interface) |
+| Find UMI datasets | [UMI Data Community Site](https://umi-data.github.io/) |
+| Build on UMI hardware/data collection | [Universal Manipulation Interface Codebase](https://github.com/real-stanford/universal_manipulation_interface), [UMI-FT](https://github.com/real-stanford/UMI-FT), [exUMI](https://silicx.github.io/exUMI/) |
+| Explore dexterous UMI-style extensions | [DexUMI](https://arxiv.org/abs/2505.21864), [DexWild](https://dexwild.github.io/), [DexCap](https://arxiv.org/abs/2403.07788) |
+| Train UMI-relevant policies | [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/), [ACT / ALOHA](https://tonyzhaozh.github.io/aloha/), [OpenVLA](https://openvla.github.io/) |
+| Compare modalities and formats | [UMI Taxonomy](#umi-taxonomy), [UMI Data Community Site](https://umi-data.github.io/) |
+
+## News
 
 - [2026-04-19] Rebuilt the repository into a single-file `README.md` structure for Awesome-UMI.
 - [2026-04-19] Added `AGENTS.md` to define curation scope, metadata rules, and Conventional Commits.
 
-## Table of Contents
+## Contents
 
 - [Awesome-UMI](#awesome-umi)
+  - [About](#about)
+  - [Must Read](#must-read)
+  - [News](#news)
   - [UMI Core](#umi-core)
     - [Foundational Paper](#foundational-paper)
     - [Official Resources](#official-resources)
@@ -47,8 +75,11 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
     - [Data Formats / Storage](#data-formats--storage)
     - [Evaluation / Surveys / Notes](#evaluation--surveys--notes)
   - [Citation](#citation)
+  - [Acknowledgement](#acknowledgement)
 
 ## UMI Core
+
+Foundational UMI resources: the original paper, official project/code/data links, and direct ecosystem entry points.
 
 ### Foundational Paper
 
@@ -66,12 +97,16 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 
 ## UMI Method
 
+Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment transfer, dexterous manipulation, and multimodal deployment.
+
 ### Human Demonstration Interfaces
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2025-10-02 | Active Perception, VR, Robot-Free | Shanghai University | [ActiveUMI: Robotic Manipulation with Active Perception from Robot-Free Human Demonstrations](https://arxiv.org/abs/2510.01607) | arXiv | [project](https://activeumi.github.io/) |
 | 2025-09-18 | Tactile, Robot Teaching, Single-Arm | SJTU | [exUMI: Extensible Robot Teaching System with Action-aware Task-agnostic Tactile Representation](https://silicx.github.io/exUMI/) | CoRL 2025 | [project](https://silicx.github.io/exUMI/) / [github](https://github.com/silicx/exUMI) |
+| 2024-10-31 | Egocentric, Imitation, Human-First | - | [EgoMimic: Scaling Imitation Learning via Egocentric Video](https://arxiv.org/abs/2410.24221) | arXiv | [project](https://egomimic.github.io/) / [github](https://github.com/SimarKareer/EgoMimic) |
+| 2024-07-02 | Teleoperation, Immersive, Active Visual Feedback | - | [Open-TeleVision: Teleoperation with Immersive Active Visual Feedback](https://arxiv.org/abs/2407.01512) | CoRL 2024 | [github](https://github.com/OpenTeleVision/TeleVision) |
 | 2024-03-12 | Teleoperation, VR, Bimanual | NYU | [OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation](https://arxiv.org/abs/2403.07870) | arXiv | [github](https://github.com/aadhithya14/Open-Teach) |
 | 2024-02-15 | Handheld Interface, Bimanual, Portable | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) / [github](https://github.com/real-stanford/universal_manipulation_interface) |
 
@@ -104,6 +139,8 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 
 ## UMI Dataset
 
+Dataset families for UMI-native collection and strong adjacent manipulation settings that help train or evaluate UMI-style systems.
+
 ### Official / Core Datasets
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
@@ -120,8 +157,8 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 | 2025-09-23 | Multi-View, Segmentation, Placement | NYU Abu Dhabi | [MV-UMI](https://mv-umi.github.io) | Dataset | [project](https://mv-umi.github.io) |
 | 2025-09-18 | exUMI, Single-Arm, Tactile | SJTU | [exUMI](https://silicx.github.io/exUMI/) | Dataset | [project](https://silicx.github.io/exUMI/) |
 | 2025-07-20 | In-the-Wild, Tactile, Proprio | Columbia | [Touch in the Wild](https://binghao-huang.github.io/touch_in_the_wild/) | Dataset | [project](https://binghao-huang.github.io/touch_in_the_wild/) |
-| 2025-05-12 | DexHand, In-the-Wild, Human-to-Robot | CMU | [DexWild](https://dexwild.github.io/) | Dataset | [project](https://dexwild.github.io/) |
 | 2025-05-28 | DexHand, Force/Torque, Inspire/XHand | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
+| 2025-05-12 | DexHand, In-the-Wild, Human-to-Robot | CMU | [DexWild](https://dexwild.github.io/) | Dataset | [project](https://dexwild.github.io/) |
 | 2025-04-08 | Vision, Tactile, Precision Tasks | Tsinghua | [ViTaMIn](https://chuanyune.github.io/ViTaMIn_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn_page/) |
 | 2024-11-06 | Sim2Real, HDF5, Manipulation | UT Austin | [LEGATO](https://ut-hcrl.github.io/LEGATO/) | Dataset | [project](https://ut-hcrl.github.io/LEGATO/) |
 | 2024-10-24 | Scaling Laws, Zarr, MP4 | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset | [project](https://data-scaling-laws.github.io/) |
@@ -133,8 +170,10 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2024-03-19 | In-the-Wild, Large-Scale, Multi-Robot | Stanford | [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945) | arXiv | [project](https://droid-dataset.github.io/) |
+| 2023-10-26 | Scalable Data Generation, Simulation, Demonstrations | NVIDIA | [MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596) | CoRL 2023 | [project](https://mimicgen.github.io/) / [github](https://github.com/NVlabs/mimicgen_environments) |
 | 2023-10-13 | Cross-Embodiment, RT-X, Multi-Dataset | Stanford | [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864) | arXiv | [project](https://robotics-transformer-x.github.io/) / [github](https://github.com/google-deepmind/open_x_embodiment) |
 | 2023-08-24 | Large-Scale, Real-Robot, Multi-Task | Berkeley | [BridgeData V2: A Dataset for Robot Learning at Scale](https://arxiv.org/abs/2308.12952) | CoRL 2023 | [project](https://rail-berkeley.github.io/bridgedata/) / [github](https://github.com/rail-berkeley/bridge_data_v2) |
+| 2023-07-03 | One-Shot, Diverse Skills, Real-Robot | Tsinghua | [RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot](https://arxiv.org/abs/2307.00595) | ICRA 2024 | [project](https://rh20t.github.io/) / [github](https://github.com/rh20t/rh20t_api) |
 
 ### Dexterous / Hand-centric Datasets
 
@@ -162,16 +201,21 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 
 ## UMI Policy
 
+Policies and support models that are trained on UMI-like data, evaluated in adjacent settings, or commonly used as UMI-relevant baselines.
+
 ### Imitation Learning
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-10-31 | Egocentric, Imitation, Human Video | - | [EgoMimic: Scaling Imitation Learning via Egocentric Video](https://arxiv.org/abs/2410.24221) | arXiv | [project](https://egomimic.github.io/) / [github](https://github.com/SimarKareer/EgoMimic) |
 | 2024-05-20 | Generalist Policy, Open-Source, Cross-Embodiment | Berkeley | [Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213) | arXiv | [project](https://octo-models.github.io/) |
 | 2024-02-15 | Relative Actions, Latency Matching, Imitation | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [github](https://github.com/real-stanford/universal_manipulation_interface) |
 | 2024-01-04 | Mobile ALOHA, Whole-Body, Bimanual | Stanford | [Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117) | arXiv | [project](https://mobile-aloha.github.io) |
 | 2023-10-13 | RT-X, Cross-Embodiment, Multi-Dataset | Stanford | [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864) | arXiv | [project](https://robotics-transformer-x.github.io/) / [github](https://github.com/google-deepmind/open_x_embodiment) |
 | 2023-09-18 | One-Shot BC, Action Chunking | CMU | [One ACT Play: Single Demonstration Behavior Cloning with Action Chunking Transformers](https://arxiv.org/abs/2309.10175) | arXiv | [paper](https://arxiv.org/abs/2309.10175) |
+| 2023-09-05 | Semantic Augmentation, Action Chunking, IL | - | [RoboAgent: Towards Sample Efficient Robot Manipulation with Semantic Augmentations and Action Chunking](https://arxiv.org/abs/2309.01918) | ICRA 2024 | [project](https://robot-tv.github.io/) / [github](https://github.com/robopen/roboagent/) |
 | 2023-04-23 | ACT, Bimanual, Low-Cost Hardware | Stanford | [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705) | arXiv | [project](https://tonyzhaozh.github.io/aloha/) |
+| 2021-08-06 | Offline IL, Manipulation Benchmark, robomimic | Stanford | [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298) | CoRL 2021 | [project](https://robomimic.github.io/) / [github](https://github.com/ARISE-Initiative/robomimic) |
 
 ### Diffusion / ACT-style Policies
 
@@ -190,6 +234,8 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 | 2022-12-13 | RT-1, Robotics Transformer, Real-World Control | Google | [RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817) | RSS 2023 | [project](https://robotics-transformer1.github.io/) |
 
 ## UMI Taxonomy
+
+Structured references for embodiments, observation modalities, action spaces, storage formats, and evaluation dimensions in the UMI ecosystem.
 
 ### Embodiments
 
@@ -214,8 +260,8 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2025-05-28 | DexHand, Human-Hand Interface | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
 | 2025-09-23 | 6-DoF EE, Parallel Gripper | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
+| 2025-05-28 | DexHand, Human-Hand Interface | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
 | 2024-02-15 | Relative Trajectory, 6-DoF, Hardware-Agnostic | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
 
 ### Data Formats / Storage
@@ -224,8 +270,8 @@ This list is intentionally **UMI-first**, not a generic robot-manipulation surve
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2025-10-09 | LeRobot, Large-Scale Household | Shanghai AI Lab | [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K) | Dataset | [github](https://github.com/MrKeee/FastUMI-100K) |
 | 2025-09-23 | HDF5, Force/Torque | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
-| 2024-10-24 | Zarr, MP4, Scaling | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset | [project](https://data-scaling-laws.github.io/) |
 | 2024-11-06 | HDF5, Sim2Real | UT Austin | [LEGATO](https://ut-hcrl.github.io/LEGATO/) | Dataset | [project](https://ut-hcrl.github.io/LEGATO/) |
+| 2024-10-24 | Zarr, MP4, Scaling | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset | [project](https://data-scaling-laws.github.io/) |
 | 2024-02-15 | Zarr, MP4, Replay Buffer | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [data](https://umi-data.github.io/) |
 
 ### Evaluation / Surveys / Notes
