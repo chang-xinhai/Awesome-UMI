@@ -1,252 +1,268 @@
-
-# Awesome-LLM-3D [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)  <a href="" target='_blank'><img src="https://visitor-badge.laobi.icu/badge?page_id=activevisionlab.llm3d&left_color=gray&right_color=blue"> </a> [![arXiv](https://img.shields.io/badge/arXiv-2405.10255v2-b31b1b.svg)](https://arxiv.org/abs/2405.10255v2)
-
-<div align="center">
-    <img src="assets/Figure1_v8_25.6.9.png" width="100%">
-</div>
-
-
+# Awesome-UMI [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com) [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 ## 🏠 About
-Here is a curated list of papers about 3D-Related Tasks empowered by Large Language Models (LLMs). 
-It contains various tasks including 3D understanding, reasoning, generation, and embodied agents. Also, we include other Foundation Models (CLIP, SAM) for the whole picture of this area.
 
-This is an active repository, you can watch for following the latest advances. If you find it useful, please kindly star ⭐ this repo and [cite](#citation) the paper.
+A curated list for the ecosystem around **Universal Manipulation Interface (UMI)**.
+
+This repository focuses on:
+- **UMI Core**: foundational papers, official resources, and direct ecosystem-defining follow-ups
+- **UMI Method**: strong adjacent methods for robot-free teaching, teleoperation, dexterous manipulation, multimodal sensing, and cross-embodiment transfer
+- **UMI Dataset**: official UMI datasets and UMI-native dataset families
+- **UMI Policy**: policies trained on UMI-like data or commonly used as relevant baselines/support models
+- **UMI Taxonomy**: embodiments, modalities, data formats, deployment-facing notes, and survey-style resources
+
+This list is intentionally **UMI-first**, not a generic robot-manipulation survey.
 
 ## 🔥 News
-- [2026-03-20] Our benchmark paper **Real-3DQA** is now available at ICLR 2026! Following our survey paper, we now release the benchmark paper on genuine 3D spatial understanding. [Project Page](https://real-3dqa.github.io/)
-- [2025-10-21] 📢 We have released the **second version** of our survey, updated to include literature up to **July 2025**:  
-👉 [*When LLMs Step into the 3D World: A Survey and Meta-Analysis of 3D Tasks via Multi-modal Large Language Models*](https://arxiv.org/pdf/2405.10255v2)
-- [2024-05-16] Check out the first survey paper in the 3D-LLM domain: [When LLMs step into the 3D World: A Survey and Meta-Analysis of 3D Tasks via Multi-modal Large Language Models](https://arxiv.org/pdf/2405.10255) 
-- [2024-01-06] [Runsen Xu](https://runsenxu.com/) added chronological information and [Xianzheng Ma](https://xianzhengma.github.io/) reorganized it in Z-A order for better following the latest advances.
-- [2023-12-16] [Xianzheng Ma](https://xianzhengma.github.io/) and [Yash Bhalgat](https://yashbhalgat.github.io/) curated this list and published the first version;
+
+- [2026-04-19] Rebuilt the repository into a single-file `README.md` structure for Awesome-UMI.
+- [2026-04-19] Added `AGENTS.md` to define curation scope, metadata rules, and Conventional Commits.
 
 ## Table of Contents
 
-- [Awesome-LLM-3D](#awesome-llm-3D)
-  - [3D Unified Understanding and Generation (LLM)](#3d-unified-understanding-and-generation-via-llm)
-  - [3D Understanding (LLM)](#3d-understanding-via-llm)
-  - [3D Understanding (other Foundation Models)](#3d-understanding-via-other-foundation-models)
-  - [3D Reasoning](#3d-reasoning)
-  - [3D Generation](#3d-generation)
-  - [3D Embodied Agent](#3d-embodied-agent)
-  - [3D Benchmarks](#3d-benchmarks)
-  - [Contributing](#contributing)
+- [Awesome-UMI](#awesome-umi)
+  - [UMI Core](#umi-core)
+    - [Foundational Paper](#foundational-paper)
+    - [Official Resources](#official-resources)
+  - [UMI Method](#umi-method)
+    - [Human Demonstration Interfaces](#human-demonstration-interfaces)
+    - [Dexterous Hand / DexHand](#dexterous-hand--dexhand)
+    - [Multimodal / Force / Tactile](#multimodal--force--tactile)
+    - [In-the-Wild / Mobile / Whole-Body](#in-the-wild--mobile--whole-body)
+  - [UMI Dataset](#umi-dataset)
+    - [Official / Core Datasets](#official--core-datasets)
+    - [UMI-native Dataset Families](#umi-native-dataset-families)
+    - [Cross-Embodiment / Large-Scale Adjacent Datasets](#cross-embodiment--large-scale-adjacent-datasets)
+    - [Dexterous / Hand-centric Datasets](#dexterous--hand-centric-datasets)
+    - [Multimodal / Force-aware Datasets](#multimodal--force-aware-datasets)
+    - [Mobile / Whole-Body Datasets](#mobile--whole-body-datasets)
+  - [UMI Policy](#umi-policy)
+    - [Imitation Learning](#imitation-learning)
+    - [Diffusion / ACT-style Policies](#diffusion--act-style-policies)
+    - [VLA](#vla)
+  - [UMI Taxonomy](#umi-taxonomy)
+    - [Embodiments](#embodiments)
+    - [Observation Modalities](#observation-modalities)
+    - [Action Spaces](#action-spaces)
+    - [Data Formats / Storage](#data-formats--storage)
+    - [Evaluation / Surveys / Notes](#evaluation--surveys--notes)
+  - [Citation](#citation)
 
+## UMI Core
 
-## 3D Unified Understanding and Generation via LLM
+### Foundational Paper
 
-|  Date |       Keywords       |    Institute (first)   | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------:
-| 2025-11-07 | Omni-View | PKU | [Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](https://arxiv.org/abs/2511.07222) | ICLR 2026 | [github](https://github.com/AIDC-AI/Omni-View) |
-| 2025-08-16 | UniUGG | FDU | [UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](https://arxiv.org/abs/2508.11952) | ICLR 2026 | [github](https://github.com/fudan-zvg/UniUGG) |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-02-15 | UMI, Robot-Free Teaching, Bimanual, Zero-Shot | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) / [github](https://github.com/real-stanford/universal_manipulation_interface) / [data](https://umi-data.github.io/) |
 
-## 3D Understanding via LLM
+### Official Resources
 
-|  Date |       Keywords       |    Institute (first)   | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------:
-| 2026-03-07 | 3D-RFT | BIGAI | [3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](https://arxiv.org/abs/2603.04976) | Arxiv | [github](https://github.com/3D-RFT/3D-RFT) |
-| 2025-12-05 | Fast Scenescript | Qualcomm / UvA | [Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](https://arxiv.org/abs/2512.05597) | CVPR '26 | - |
-| 2025-11-27 | G<sup>2</sup>VLM | Shanghai AI Lab | [G<sup>2</sup>VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](https://arxiv.org/pdf/2511.21688) | Arxiv | [github](https://github.com/InternRobotics/G2VLM) |
-| 2025-11-07 | Omni-View | PKU | [Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](https://arxiv.org/abs/2511.07222) | ICLR 2026 | [github](https://github.com/AIDC-AI/Omni-View) |
-| 2025-08-16 | UniUGG | FDU | [UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](https://arxiv.org/abs/2508.11952) | ICLR 2026 | [github](https://github.com/fudan-zvg/UniUGG) |
-| 2025-07-31 | 3D-R1 | PKU | [3D-R1: Enhancing Reasoning in 3D VLMs for Unified Scene Understanding](https://arxiv.org/abs/2507.23478) | Arxiv | [project](https://aigeeksgroup.github.io/3D-R1/) |
-| 2025-06-11 | LEO-VL | BIGAI | [LEO-VL: Efficient Scene Representation for Scalable 3D Vision-Language Learning](https://arxiv.org/abs/2506.09935) | Arxiv | [project](https://leo-vl.github.io/) |
-| 2025-06-09 | SpatialLM | Manycore Tech / HKUST | [SpatialLM: Training Large Language Models for Structured Indoor Modeling](https://arxiv.org/pdf/2506.07491) | NeurIPS '25 | [project](https://manycore-research.github.io/SpatialLM/) |
-| 2025-06-02 | 3DRS | HKU | [MLLMs Need 3D-Aware Representation Supervision for Scene Understanding](https://arxiv.org/html/2506.01946v1) | Arxiv | [project](https://visual-ai.github.io/3drs/) |
-| 2025-05-30 | VG LLM | CUHK | [Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](https://arxiv.org/abs/2505.24625) | Arxiv | [project](https://lavi-lab.github.io/VG-LLM/) |
-| 2025-05-29 | Spatial-MLLM | THU | [Spatial-MLLM: Boosting MLLM Capabilities in Visual-based Spatial Intelligence](https://arxiv.org/pdf/2505.23747) | Arxiv | [project](https://diankun-wu.github.io/Spatial-MLLM/) |
-| 2025-05-28 | SeeGround | HKUST(GZ) | [Zero-Shot 3D Visual Grounding from Vision-Language Models](https://arxiv.org/abs/2505.22429) | CVPRW'25 | [project](https://seeground.github.io) |
-| 2025-05-28 | 3DLLM-Mem | UCLA/Google | [3DLLM-Mem: Long-Term Spatial-Temporal Memory for Embodied 3D Large Language Model](https://arxiv.org/abs/2505.22657) | NeurIPS'25 | [project](https://3dllm-mem.github.io/) |
-| 2025-04-24 | 3D-LLaVA | U of Adelaide | [3D-LLaVA: Towards Generalist 3D LMMs with Omni Superpoint Transformer](https://arxiv.org/pdf/2501.01163) | CVPR '25 | [github](https://github.com/djiajunustc/3D-LLaVA) |
-| 2025-04-03 | Ross3D | CASIA| [Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness](https://arxiv.org/pdf/2504.01901) | Arxiv | [project](https://haochen-wang409.github.io/ross3d/) |
-| 2025-03-08 | SplatTalk | GIT| [SplatTalk: 3D VQA with Gaussian Splatting](https://arxiv.org/pdf/2503.06271) | Arxiv | [github]() |
-| 2025-03-01 | Inst3D-LMM | ZJU| [Inst3D-LMM: Instance-Aware 3D Scene Understanding with Multi-modal Instruction Tuning](https://arxiv.org/abs/2503.00513) | CVPR '25 | [github](https://github.com/hanxunyu/Inst3D-LMM) |
-| 2025-02-13 | ENEL | SH AILab | [ENEL: Exploring the Potential of Encoder-free Architectures in 3D LMMs](https://arxiv.org/pdf/2502.09620v1) | Arxiv | [project](https://github.com/Ivan-Tang-3D/ENEL/tree/main?tab=readme-ov-file) |
-| 2025-02-02 | LSceneLLM | SCUT| [LSceneLLM: Enhancing Large 3D Scene Understanding Using Adaptive Visual Preferences](https://arxiv.org/pdf/2412.01292) | CVPR '25 | [project](https://github.com/Hoyyyaard/LSceneLLM) |
-| 2025-01-02 | GPT4Scene | HKU | [GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](https://arxiv.org/pdf/2501.01428) | Arxiv | [project](https://gpt4scene.github.io/) |
-| 2024-12-05 | SeeGround | HKUST(GZ) | [SeeGround: See and Ground for Zero-Shot Open-Vocabulary 3D Visual Grounding](https://arxiv.org/abs/2412.04383) | CVPR '25 | [project](https://seeground.github.io) |
-| 2024-12-03 | Video-3D LLM | CUHK | [Video-3D LLM: Learning Position-Aware Video Representation for 3D Scene Understanding](https://arxiv.org/abs/2412.00493) | CVPR '25 | [project](https://github.com/LaVi-Lab/Video-3D-LLM) |
-| 2024-11-29 | PerLA | Fondazione Bruno Kessler | [PerLA: Perceptive 3D Language Assistant](https://arxiv.org/abs/2411.19774) | CVPR '25 | [project](https://gfmei.github.io/PerLA/) |
-| 2024-10-12 | Situation3D | UIUC | [Situational Awareness Matters in 3D Vision Language Reasoning](https://arxiv.org/abs/2406.07544) | CVPR '24 | [project](https://yunzeman.github.io/situation3d/) |
-| 2024-09-30 | Robin3D | HKU | [Robin3D: Improving 3D Large Language Model via Robust Instruction Tuning](https://arxiv.org/abs/2410.00255) | ICCV '25 | [github](https://github.com/WeitaiKang/Robin3D) |
-| 2024-09-28 | LLaVA-3D | HKU | [LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D-awareness](https://arxiv.org/pdf/2409.18125) | Arxiv | [project](https://zcmax.github.io/projects/LLaVA-3D/) |
-| 2024-09-08 | MSR3D | BIGAI | [Multi-modal Situated Reasoning in 3D Scenes](https://arxiv.org/abs/2409.02389) | NeurIPS '24| [project](https://msr3d.github.io/) |
-| 2024-08-28 | GreenPLM | HUST | [ More Text, Less Point: Towards 3D Data-Efficient Point-Language Understanding]( https://arxiv.org/pdf/2408.15966) | Arxiv| [github](https://github.com/TangYuan96/GreenPLM) |
-| 2024-06-17 | LLaNA | UniBO | [LLaNA: Large Language and NeRF Assistant](https://arxiv.org/pdf/2406.11840)| NeurIPS '24 | [project](https://andreamaduzzi.github.io/llana/) |
-| 2024-06-07  | SpatialPIN           | Oxford                 | [SpatialPIN: Enhancing Spatial Reasoning Capabilities of Vision-Language Models through Prompting and Interacting 3D Priors](https://arxiv.org/abs/2403.13438)                         | NeurIPS '24       | [project](https://dannymcy.github.io/zeroshot_task_hallucination/) |
-| 2024-06-03 | SpatialRGPT | UCSD | [SpatialRGPT: Grounded Spatial Reasoning in Vision Language Models](https://arxiv.org/abs/2406.01584) | NeurIPS '24 | [github](https://github.com/AnjieCheng/SpatialRGPT) |
-| 2024-05-02 | MiniGPT-3D | HUST| [MiniGPT-3D: Efficiently Aligning 3D Point Clouds with Large Language Models using 2D Priors](https://arxiv.org/pdf/2405.01413)| ACM MM '24 | [project](https://tangyuan96.github.io/minigpt_3d_project_page/) |
-| 2024-03-19 | Scenescript | Meta | [SceneScript: Reconstructing Scenes With An Autoregressive Structured Language Model](https://arxiv.org/abs/2403.13064)| ECCV '24 | [project](https://www.projectaria.com/scenescript/) |
-| 2024-02-27 |  ShapeLLM |    XJTU  | [ShapeLLM: Universal 3D Object Understanding for Embodied Interaction](https://arxiv.org/pdf/2402.17766)                                                                                | Arxiv | [project](https://qizekun.github.io/shapellm/) |
-| 2024-01-22  | SpatialVLM           | Google DeepMind        | [SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities](https://arxiv.org/abs/2401.12168)                                                                  | CVPR '24    | [project](https://spatial-vlm.github.io/) |
-| 2023-12-21 |  LiDAR-LLM |    PKU  | [LiDAR-LLM: Exploring the Potential of Large Language Models for 3D LiDAR Understanding](https://arxiv.org/pdf/2312.14074.pdf)                                                                                | Arxiv | [project](https://sites.google.com/view/lidar-llm) |
-| 2023-12-15 |  3DAP |    Shanghai AI Lab  | [3DAxiesPrompts: Unleashing the 3D Spatial Task Capabilities of GPT-4V](https://arxiv.org/pdf/2312.09738.pdf)                                                                                | Arxiv | [project]() |
-| 2023-12-13 |  Chat-Scene |    ZJU | [Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers](https://arxiv.org/pdf/2312.08168.pdf)                                                                                | NeurIPS '24 | [github](https://github.com/ZzZZCHS/Chat-Scene) |
-| 2023-12-5 | GPT4Point | HKU | [GPT4Point: A Unified Framework for Point-Language Understanding and Generation](https://arxiv.org/pdf/2312.02980.pdf) |Arxiv |  [github](https://github.com/Pointcept/GPT4Point) |
-| 2023-11-30 |         LL3DA        |     Fudan University    | [LL3DA: Visual Interactive Instruction Tuning for Omni-3D Understanding, Reasoning, and Planning](https://arxiv.org/pdf/2311.18651.pdf)                                                                                                  |Arxiv|  [github](https://github.com/Open3DA/LL3DA) |
-| 2023-11-26 | ZSVG3D | CUHK(SZ) | [Visual Programming for Zero-shot Open-Vocabulary 3D Visual Grounding](https://arxiv.org/pdf/2311.15383.pdf) | Arxiv | [project](https://curryyuan.github.io/ZSVG3D/) | Arxiv | 
-| 2023-11-18 |          LEO          |      BIGAI      | [An Embodied Generalist Agent in 3D World](https://arxiv.org/pdf/2311.12871.pdf)                                                           |    ICML '24  |  [github](https://github.com/embodied-generalist/embodied-generalist) |
-| 2023-10-14 | JM3D-LLM | Xiamen University | [JM3D & JM3D-LLM: Elevating 3D Representation with Joint Multi-modal Cues](https://arxiv.org/pdf/2310.09503v2.pdf)                                        | ACM MM '23 |  [github](https://github.com/mr-neko/jm3d) |
-| 2023-10-10 |  Uni3D |    BAAI  | [Uni3D: Exploring Unified 3D Representation at Scale](https://arxiv.org/abs/2310.06773)                                                                                | ICLR '24 | [project](https://github.com/baaivision/Uni3D) |
-| 2023-9-27 |  - |    KAUST  | [Zero-Shot 3D Shape Correspondence](https://arxiv.org/abs/2306.03253)                                                                                | Siggraph Asia '23 | - |
-| 2023-9-21|       LLM-Grounder       |      U-Mich      | [LLM-Grounder: Open-Vocabulary 3D Visual Grounding with Large Language Model as an Agent](https://arxiv.org/pdf/2309.12311.pdf)              |     ICRA '24     |  [github](https://github.com/sled-group/chat-with-nerf) |
-| 2023-9-1 |        Point-Bind       |      CUHK     | [Point-Bind & Point-LLM: Aligning Point Cloud with Multi-modality for 3D Understanding, Generation, and Instruction Following](https://arxiv.org/pdf/2309.00615.pdf)             |  Arxiv   |  [github](https://github.com/ZiyuGuo99/Point-Bind_Point-LLM) |
-| 2023-8-31 |         PointLLM         |      CUHK      | [PointLLM: Empowering Large Language Models to Understand Point Clouds](https://arxiv.org/pdf/2308.16911.pdf)                                                                             |   ECCV '24 |  [github](https://github.com/OpenRobotLab/PointLLM) |
-| 2023-8-17|     Chat-3D     |      ZJU     | [Chat-3D: Data-efficiently Tuning Large Language Model for Universal Dialogue of 3D Scenes](https://arxiv.org/pdf/2308.08769v1.pdf)                                                          |  Arxiv      |  [github](https://github.com/Chat-3D/Chat-3D)|
-| 2023-8-8 |         3D-VisTA          |      BIGAI      | [3D-VisTA: Pre-trained Transformer for 3D Vision and Text Alignment](https://Arxiv.org/abs/2308.04352)                                                           |    ICCV '23  | [github]() |
-| 2023-7-24 |     3D-LLM     |      UCLA    | [3D-LLM: Injecting the 3D World into Large Language Models](https://arxiv.org/pdf/2307.12981.pdf)                                                                                                                      |   NeurIPS '23|  [github](https://github.com/UMass-Foundation-Model/3D-LLM) |
-| 2023-3-29 |       ViewRefer       |      CUHK      | [ViewRefer: Grasp the Multi-view Knowledge for 3D Visual Grounding](https://arxiv.org/pdf/2303.16894.pdf)                                                                                               |ICCV '23 |[github](https://github.com/Ivan-Tang-3D/ViewRefer3D) |
-| 2022-9-12 |        -        |      MIT      | [Leveraging Large (Visual) Language Models for Robot 3D Scene Understanding](https://arxiv.org/pdf/2209.05629.pdf)                                                                      |Arxiv|  [github](https://github.com/MIT-SPARK/llm_scene_understanding) |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-02-15 | Official Dataset Index, Data Community | Stanford | [UMI Data Community Site](https://umi-data.github.io/) | Website | [page](https://umi-data.github.io/) |
+| 2024-02-15 | Official Code, Training Stack | Stanford | [Universal Manipulation Interface Codebase](https://github.com/real-stanford/universal_manipulation_interface) | GitHub | [github](https://github.com/real-stanford/universal_manipulation_interface) |
+| 2024-02-15 | Official Project Page | Stanford | [UMI Project Page](https://umi-gripper.github.io/) | Website | [project](https://umi-gripper.github.io/) |
 
+## UMI Method
 
-## 3D Understanding via other Foundation Models
-|  ID |       keywords       |    Institute (first)    | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------: 
-| 2026-03-21 | OV3D-CG | ICT, CAS | [OV3D-CG: Open-vocabulary 3D Instance Segmentation with Contextual Guidance](https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_OV3D-CG_Open-vocabulary_3D_Instance_Segmentation_with_Contextual_Guidance_ICCV_2025_paper.html) | ICCV '2025 | [github](https://github.com/VIPL-VSU/OV3D-CG) |
-| 2025-11-20 | POMA-3D | Imperial | [POMA-3D: The Point Map Way to 3D Scene Understanding](https://arxiv.org/abs/2511.16567) | Arxiv | [project](https://matchlab-imperial.github.io/poma3d/) |
-| 2025-07-26 |  OV-3DDet |    HKUST  | [CoDAv2: Collaborative Novel Object Discovery and Box-Guided Cross-Modal Alignment for Open-Vocabulary 3D Object Detection](https://arxiv.org/abs/2406.00830)                                                                                | TPAMI '25 | [github](https://github.com/yangcaoai/CoDA_NeurIPS2023) |
-| 2025-02-20 |  CrossOver |  Stanford | [CrossOver: 3D Scene Cross-Modal Alignment](https://arxiv.org/abs/2502.15011) | CVPR '25 | [project](https://sayands.github.io/crossover/) |
-| 2025-02-05 |  SAGA |  SJTU | [Segment Any 3D Gaussians](https://arxiv.org/abs/2312.00860) | AAAI '25 | [project](https://jumpat.github.io/SAGA/) |
-| 2024-10-12 |  Lexicon3D |    UIUC  | [Lexicon3D: Probing Visual Foundation Models for Complex 3D Scene Understanding](https://arxiv.org/abs/2409.03757) | NeurIPS '24 | [project](https://yunzeman.github.io/lexicon3d/) |
-| 2024-10-07 |  Diff2Scene |    CMU  | [Open-Vocabulary 3D Semantic Segmentation with Text-to-Image Diffusion Models](https://arxiv.org/pdf/2407.13642) | ECCV'24 | [project](https://diff2scene.github.io/) |
-| 2024-07-19 |  OpenSU3D |  TUM  | [OpenSU3D: Open World 3D Scene Understanding using Foundation Models](https://arxiv.org/abs/2409.03757) | ICRA '25 | [project](https://opensu3d.github.io/) |
-| 2024-04-07 |  Any2Point |    Shanghai AI Lab  | [Any2Point: Empowering Any-modality Large Models for Efficient 3D Understanding](https://arxiv.org/pdf/2404.07989) | ECCV'24 | [github](https://github.com/Ivan-Tang-3D/Any2Point) |
-| 2024-03-16 |  N2F2 |    Oxford-VGG  | [N2F2: Hierarchical Scene Understanding with Nested Neural Feature Fields](https://arxiv.org/pdf/2403.10997.pdf) | Arxiv | - |
-| 2023-12-17 |  SAI3D |    PKU  | [SAI3D: Segment Any Instance in 3D Scenes](https://arxiv.org/pdf/2312.11557.pdf)                                                                                | Arxiv | [project](https://yd-yin.github.io/SAI3D) |
-| 2023-12-17 |  Open3DIS |    VinAI  | [Open3DIS: Open-vocabulary 3D Instance Segmentation with 2D Mask Guidance](https://arxiv.org/pdf/2312.10671.pdf)                                                                                | Arxiv | [project](https://open3dis.github.io/) |
-| 2023-11-6 |  OVIR-3D |    Rutgers University  | [OVIR-3D: Open-Vocabulary 3D Instance Retrieval Without Training on 3D Data](https://arxiv.org/pdf/2311.02873.pdf) | CoRL '23 | [github](https://github.com/shiyoung77/OVIR-3D/) |
-| 2023-10-29|  OpenMask3D |    ETH  | [OpenMask3D: Open-Vocabulary 3D Instance Segmentation](https://openmask3d.github.io/static/pdf/openmask3d.pdf)                                                                                | NeurIPS '23 | [project](https://openmask3d.github.io/) |
-| 2023-10-5 |     Open-Fusion     |      -     | [Open-Fusion: Real-time Open-Vocabulary 3D Mapping and Queryable Scene Representation](https://arxiv.org/pdf/2310.03923.pdf)                                                                            |Arxiv|  [github](https://github.com/UARK-AICV/OpenFusion) |
-| 2023-9-22 |  OV-3DDet |    HKUST  | [CoDA: Collaborative Novel Box Discovery and Cross-modal Alignment for Open-vocabulary 3D Object Detection](https://arxiv.org/pdf/2310.02960.pdf)                                                                                | NeurIPS '23 | [github](https://github.com/yangcaoai/CoDA_NeurIPS2023) |
-| 2023-9-19 | LAMP |      -      | [From Language to 3D Worlds: Adapting Language Model for Point Cloud Perception](https://openreview.net/forum?id=H49g8rRIiF)                                                              |    OpenReview     | - |
-| 2023-9-15 |  OpenNerf |    -    | [OpenNerf: Open Set 3D Neural Scene Segmentation with Pixel-Wise Features and Rendered Novel Views](https://openreview.net/pdf?id=SgjAojPKb3)                                                                                | OpenReview | [github]() |
-| 2023-9-1|  OpenIns3D |    Cambridge  | [OpenIns3D: Snap and Lookup for 3D Open-vocabulary Instance Segmentation](https://arxiv.org/pdf/2309.00616.pdf)                                                                                | Arxiv | [project](https://zheninghuang.github.io/OpenIns3D/) |
-| 2023-6-7 |         Contrastive Lift         |     Oxford-VGG     | [Contrastive Lift: 3D Object Instance Segmentation by Slow-Fast Contrastive Fusion](https://arxiv.org/pdf/2306.04633.pdf)                                                                                        |   NeurIPS '23| [github](https://github.com/yashbhalgat/Contrastive-Lift) |
-| 2023-6-4 |  Multi-CLIP |    ETH  | [Multi-CLIP: Contrastive Vision-Language Pre-training for Question Answering tasks in 3D Scenes](https://arxiv.org/pdf/2306.02329.pdf)                                                                                | Arxiv | - |
-| 2023-5-23 |  3D-OVS |    NTU  | [Weakly Supervised 3D Open-vocabulary Segmentation](https://arxiv.org/pdf/2305.14093.pdf)                                                                                | NeurIPS '23 | [github](https://github.com/Kunhao-Liu/3D-OVS) |
-| 2023-5-21 |  VL-Fields |    University of Edinburgh  | [VL-Fields: Towards Language-Grounded Neural Implicit Spatial Representations](https://arxiv.org/pdf/2305.12427.pdf)                                                                                | ICRA '23 | [project](https://tsagkas.github.io/vl-fields/)  |
-| 2023-5-8 |  CLIP-FO3D |    Tsinghua University  | [CLIP-FO3D: Learning Free Open-world 3D Scene Representations from 2D Dense CLIP](https://arxiv.org/pdf/2303.04748.pdf)                                                                                | ICCVW '23 | - |
-| 2023-4-12 |  3D-VQA |    ETH  | [CLIP-Guided Vision-Language Pre-training for Question Answering in 3D Scenes](https://arxiv.org/pdf/2304.06061.pdf)                                                                                | CVPRW '23 | [github](https://github.com/AlexDelitzas/3D-VQA) |
-| 2023-4-3 |  RegionPLC |    HKU | [RegionPLC: Regional Point-Language Contrastive Learning for Open-World 3D Scene Understanding](https://arxiv.org/pdf/2304.00962.pdf)                                                                                | Arxiv | [project](https://jihanyang.github.io/projects/RegionPLC) |
-| 2023-3-20 |        CG3D        |      JHU      | [CLIP goes 3D: Leveraging Prompt Tuning for Language Grounded 3D Recognition](https://arxiv.org/pdf/2303.11313.pdf)                                                                                                 |Arxiv|  [github](https://github.com/deeptibhegde/CLIP-goes-3D) |
-| 2023-3-16 | LERF |     UC Berkeley     | [LERF: Language Embedded Radiance Fields](https://arxiv.org/pdf/2303.09553.pdf)                                                   | ICCV '23   | [github](https://github.com/kerrj/lerf) |
-| 2023-2-14 |  ConceptFusion |    MIT  | [ConceptFusion: Open-set Multimodal 3D Mapping](https://arxiv.org/pdf/2302.07241.pdf)                                                                                | RSS '23 | [project](https://concept-fusion.github.io/) |
-| 2023-1-12 |         CLIP2Scene         |      HKU      | [CLIP2Scene: Towards Label-efficient 3D Scene Understanding by CLIP](https://arxiv.org/pdf/2301.04926.pdf)                                                                                        |    CVPR '23 | [github](https://github.com/runnanchen/CLIP2Scene) |
-| 2022-12-1 |         UniT3D         |      TUM     | [UniT3D: A Unified Transformer for 3D Dense Captioning and Visual Grounding](https://openaccess.thecvf.com/content/ICCV2023/papers/Chen_UniT3D_A_Unified_Transformer_for_3D_Dense_Captioning_and_Visual_ICCV_2023_paper.pdf)                                                                          |   ICCV '23| [github]() |
-| 2022-11-29 |        PLA        |     HKU    | [PLA: Language-Driven Open-Vocabulary 3D Scene Understanding](https://arxiv.org/pdf/2211.16312.pdf)                                                                 |CVPR '23|  [github](https://github.com/CVMI-Lab/PLA) |
-| 2022-11-28 |       OpenScene       |      ETHz      | [OpenScene: 3D Scene Understanding with Open Vocabularies](https://arxiv.org/pdf/2211.15654.pdf)                                                             |   CVPR '23  | [github](https://github.com/pengsongyou/openscene) |
-| 2022-10-11 |  CLIP-Fields |    NYU  | [CLIP-Fields: Weakly Supervised Semantic Fields for Robotic Memory](https://arxiv.org/pdf/2210.05663.pdf)                                                                                | Arxiv | [project](https://mahis.life/clip-fields/) |
-| 2022-7-23 |  Semantic Abstraction |    Columbia  | [Semantic Abstraction: Open-World 3D Scene Understanding from 2D Vision-Language Models](https://arxiv.org/pdf/2207.11514.pdf)                                                                                | CoRL '22 | [project](https://semantic-abstraction.cs.columbia.edu/) |
-| 2022-4-26 |   ScanNet200 |    TUM  | [Language-Grounded Indoor 3D Semantic Segmentation in the Wild](https://arxiv.org/pdf/2204.07761.pdf)                                                                                | ECCV '22 | [project](https://rozdavid.github.io/scannet200) |
+### Human Demonstration Interfaces
 
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-10-02 | Active Perception, VR, Robot-Free | Shanghai University | [ActiveUMI: Robotic Manipulation with Active Perception from Robot-Free Human Demonstrations](https://arxiv.org/abs/2510.01607) | arXiv | [project](https://activeumi.github.io/) |
+| 2025-09-18 | Tactile, Robot Teaching, Single-Arm | SJTU | [exUMI: Extensible Robot Teaching System with Action-aware Task-agnostic Tactile Representation](https://silicx.github.io/exUMI/) | CoRL 2025 | [project](https://silicx.github.io/exUMI/) / [github](https://github.com/silicx/exUMI) |
+| 2024-03-12 | Teleoperation, VR, Bimanual | NYU | [OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation](https://arxiv.org/abs/2403.07870) | arXiv | [github](https://github.com/aadhithya14/Open-Teach) |
+| 2024-02-15 | Handheld Interface, Bimanual, Portable | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) / [github](https://github.com/real-stanford/universal_manipulation_interface) |
 
+### Dexterous Hand / DexHand
 
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-05-28 | DexHand, Wearable, Cross-Hand | Stanford | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | RSSW 2025 | [data](https://umi-data.github.io/) |
+| 2025-05-12 | DexHand, In-the-Wild, Human-to-Robot | CMU | [DexWild](https://dexwild.github.io/) | RSS 2025 | [project](https://dexwild.github.io/) |
+| 2024-03-12 | DexHand, Mocap, Data Collection | Stanford | [DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation](https://arxiv.org/abs/2403.07788) | arXiv | [github](https://github.com/j96w/DexCap) |
 
-## 3D Reasoning
-|  Date |       keywords       |    Institute (first)    | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------: |
-| 2025-12-15 | RoboTracer | BUAA | [RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2512.13660) | Arxiv | [project](https://zhoues.github.io/RoboTracer/) |
-| 2025-06-11 | SceneCOT | BIGAI | [SceneCOT: Eliciting Chain-of-Thought Reasoning in 3D Scenes](https://scenecot.github.io/) | Arxiv | [project](https://scenecot.github.io/) |
-| 2025-06-04 | RoboRefer | BUAA | [RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2506.04308) | Arxiv | [project](https://zhoues.github.io/RoboRefer/) |
-| 2024-09-08 | MSR3D | BIGAI | [Multi-modal Situated Reasoning in 3D Scenes](https://arxiv.org/abs/2409.02389) | NeurIPS '24| [project](https://msr3d.github.io/) |
-| 2023-5-20|       3D-CLR      |      UCLA     | [3D Concept Learning and Reasoning from Multi-View Images](https://arxiv.org/pdf/2303.11327.pdf)                                                 |   CVPR '23  | [github](https://github.com/evelinehong/3D-CLR-Official) |
-| - |         Transcribe3D         |     TTI, Chicago     | [Transcribe3D: Grounding LLMs Using Transcribed Information for 3D Referential Reasoning with Self-Corrected Finetuning](https://openreview.net/pdf?id=7j3sdUZMTF)                                                                                                  |CoRL '23|  [github]() |
+### Multimodal / Force / Tactile
 
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-01-15 | Force, Compliance, Contact-Rich | Stanford | [In-the-Wild Compliant Manipulation with UMI-FT](https://arxiv.org/abs/2601.09988) | ICRA 2026 | [github](https://github.com/real-stanford/UMI-FT) |
+| 2025-11-08 | Vision+Tactile, Fine Manipulation | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | arXiv | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
+| 2025-09-23 | Force-Guided, Wrist F/T, Contact-Rich | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | ICRA 2026 | [project](https://sites.google.com/view/manipforce/) / [github](https://github.com/gist-ailab/ManipForce) |
+| 2025-04-08 | Robot-Free, Visuo-Tactile, Contact-Rich | Tsinghua | [ViTaMIn: Learning Contact-Rich Tasks Through Robot-Free Visuo-Tactile Manipulation Interface](http://arxiv.org/abs/2504.06156) | arXiv | [project](https://chuanyune.github.io/ViTaMIn_page/) |
 
-## 3D Generation
-|  Date |       keywords       |    Institute    | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------: 
-| 2025-11-07 | Omni-View | PKU | [Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](https://arxiv.org/abs/2511.07222) | ICLR 2026 | [github](https://github.com/AIDC-AI/Omni-View) |
-| 2025-08-16 | UniUGG | FDU | [UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](https://arxiv.org/abs/2508.11952) | ICLR 2026 | [github](https://github.com/fudan-zvg/UniUGG) |
-| 2024-11-14 |         LLaMA-Mesh         |     THU     | [LLaMA-Mesh: Unifying 3D Mesh Generation with Language Models](https://arxiv.org/html/2411.09595v1)                                                                                                  |Arxiv|  [project](https://research.nvidia.com/labs/toronto-ai/LLaMA-Mesh/) |  
-| 2023-11-29 |         ShapeGPT         |     Fudan University     | [ShapeGPT: 3D Shape Generation with A Unified Multi-modal Language Model](https://arxiv.org/pdf/2311.17618.pdf)                                                                                                  |Arxiv|  [github](https://github.com/OpenShapeLab/ShapeGPT) |                                                                                              | Arxiv  |  [github]() |
-| 2023-11-27|         MeshGPT         |     TUM     | [MeshGPT: Generating Triangle Meshes with Decoder-Only Transformers](https://arxiv.org/pdf/2311.15475.pdf)                                                                                                  |Arxiv |  [project](https://nihalsid.github.io/mesh-gpt/) |
-| 2023-10-19 |         3D-GPT        |     ANU   | [3D-GPT: Procedural 3D Modeling with Large Language Models](https://arxiv.org/pdf/2310.12945.pdf)                                                                                                   |Arxiv|  [github](https://dreamllm.github.io/) |
-| 2023-9-21 |         LLMR         |     MIT     | [LLMR: Real-time Prompting of Interactive Worlds using Large Language Models](https://arxiv.org/pdf/2309.12276.pdf)                                                                                                  |Arxiv| - |
-| 2023-9-20 |         DreamLLM         |     MEGVII    | [DreamLLM: Synergistic Multimodal Comprehension and Creation](https://arxiv.org/pdf/2309.11499.pdf) | Arxiv | [github](https://github.com/RunpeiDong/DreamLLM)
-| 2023-4-1 |      ChatAvatar      |       Deemos Tech            | [DreamFace: Progressive Generation of Animatable 3D Faces under Text Guidance](https://dl.acm.org/doi/abs/10.1145/3592094)                                               |  ACM TOG    | [website](https://hyperhuman.deemos.com/) |
+### In-the-Wild / Mobile / Whole-Body
 
-## 3D Embodied Agent
-|  Date |       keywords       |    Institute   | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------: |
-| 2025-12-15 | RoboTracer | BUAA | [RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2512.13660) | Arxiv | [project](https://zhoues.github.io/RoboTracer/) |
-| 2025-06-04 | RoboRefer | BUAA | [RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2506.04308) | Arxiv | [project](https://zhoues.github.io/RoboRefer/) |
-| 2025-05-30 | VeBrain | Shanghai AI Lab | [Visual Embodied Brain: Let Multimodal Large Language Models See, Think, and Control in Spaces](https://arxiv.org/pdf/2506.00123v1) | Arxiv | [project](https://internvl.github.io/blog/2025-05-26-VeBrain/) |
-| 2025-05-28 | 3DLLM-Mem | UCLA | [3DLLM-Mem: Long-Term Spatial-Temporal Memory for Embodied 3D Large Language Model](https://arxiv.org/abs/2505.22657) | Arxiv | [project](https://3dllm-mem.github.io/) |
-| 2024-01-22 |  SpatialVLM |    Deepmind  | [SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities](https://arxiv.org/abs/2401.12168)                                                                                | CVPR '24 | [project](https://spatial-vlm.github.io/) |
-| 2023-12-05 | NaviLLM | CUHK | [Towards Learning a Generalist Model for Embodied Navigation](https://arxiv.org/abs/2312.02010) | CVPR '24 | [project](https://github.com/zd11024/NaviLLM) |
-| 2023-11-27 | Dobb-E | NYU | [On Bringing Robots Home](https://arxiv.org/pdf/2311.16098.pdf)        |    Arxiv  |  [github](https://github.com/notmahi/dobb-e) |
-| 2023-11-26 | STEVE | ZJU | [See and Think: Embodied Agent in Virtual Environment](https://arxiv.org/abs/2311.15209) | Arxiv | [github](https://github.com/rese1f/STEVE) |
-| 2023-11-18 | LEO  |   BIGAI  | [An Embodied Generalist Agent in 3D World](https://arxiv.org/pdf/2311.12871.pdf)   |    ICML '24  |  [github](https://github.com/embodied-generalist/embodied-generalist) |
-| 2023-9-14 |        UniHSI      |      Shanghai AI Lab     | [Unified Human-Scene Interaction via Prompted Chain-of-Contacts](https://arxiv.org/pdf/2309.07918.pdf)                                                                                                 |   Arxiv |  [github](https://github.com/OpenRobotLab/UniHSI) |
-| 2023-7-28 |         RT-2         |     Google-DeepMind     | [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/pdf/2307.15818.pdf)                                                                                                  |Arxiv|  [github](https://robotics-transformer2.github.io/) |
-| 2023-7-12 |         SayPlan        |     QUT Centre for Robotics    | [SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Robot Task Planning](https://arxiv.org/pdf/2307.06135.pdf)                                                                                                  |CoRL '23|  [github](https://sayplan.github.io/) |
-| 2023-7-12 |          VoxPoser          |      Stanford      | [VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models](https://voxposer.github.io/voxposer.pdf)                                                           |    Arxiv  |  [github](https://github.com/huangwl18/VoxPoser) |
-| 2022-12-13|         RT-1         |     Google     | [RT-1: Robotics Transformer for Real-World Control at Scale](https://robotics-transformer1.github.io/assets/rt1.pdf)                                                                                                  |Arxiv|  [github](https://robotics-transformer1.github.io/) |
-| 2022-12-8 |         LLM-Planner         |     The Ohio State University    | [LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models](https://arxiv.org/pdf/2212.04088.pdf)                                                                                                  |ICCV '23|  [github](https://github.com/OSU-NLP-Group/LLM-Planner/) |
-| 2022-10-11 |          CLIP-Fields          |      NYU, Meta      | [CLIP-Fields: Weakly Supervised Semantic Fields for Robotic Memory](https://arxiv.org/pdf/2210.05663.pdf)                                                           |    RSS '23  |  [github](https://github.com/notmahi/clip-fields) |
-| 2022-09-20|       NLMap-SayCan       |     Google     | [Open-vocabulary Queryable Scene Representations for Real World Planning](https://arxiv.org/abs/2209.09874)                                                                    | ICRA '23|  [github](https://nlmap-saycan.github.io/) |
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-02-06 | Humanoid, Whole-Body, Bimanual | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | arXiv / Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
+| 2025-10-02 | In-the-Wild, Active Perception, Bimanual | Shanghai University | [ActiveUMI: Robotic Manipulation with Active Perception from Robot-Free Human Demonstrations](https://arxiv.org/abs/2510.01607) | arXiv | [project](https://activeumi.github.io/) |
+| 2024-07-14 | Mobile Manipulation, Whole-Body, Legged | Stanford | [UMI on Legs: Making Manipulation Policies Mobile with a Manipulation-Centric Whole-body Controller](https://arxiv.org/abs/2407.10353) | CoRL 2024 | [github](https://github.com/real-stanford/umi-on-legs) |
+| 2024-06-27 | Audio-Visual, In-the-Wild, Real-World | Stanford | [ManiWAV: Learning Robot Manipulation from In-the-Wild Audio-Visual Data](https://arxiv.org/abs/2406.19464) | CoRL 2024 | [project](https://real.stanford.edu/maniwav) / [github](https://github.com/real-stanford/maniwav) |
+| 2024-02-15 | In-the-Wild, Hardware-Agnostic, Long-Horizon | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
 
-## 3D Benchmarks
-|  Date |       keywords       |    Institute    | Paper                                                                                                                                                                               | Publication | Others |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------: |
-| 2026-01-22 | Real-3DQA | VGG, Oxford | [Do 3D Large Language Models Really Understand 3D Spatial Relationships?](https://openreview.net/forum?id=3vlMiJwo8b) | ICLR 2026 | [project](https://real-3dqa.github.io/) |
-| 2025-12-15 | RoboTracer | BUAA | [RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2512.13660) | Arxiv | [project](https://zhoues.github.io/RoboTracer/) |
-| :-----: | :------------------: | :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :---------: 
-| 2025-11-28 | ORS3D | HUST | [Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](https://arxiv.org/abs/2511.19430) | AAAI ‘26 | [project](https://h-embodvis.github.io/GRANT/) |
-| 2025-06-04 | RoboRefer | BUAA | [RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](https://arxiv.org/abs/2506.04308) | Arxiv | [project](https://zhoues.github.io/RoboRefer/) |
-| 2025-06-09 | SpaCE-10 | SJTU | [SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence](https://arxiv.org/abs/2506.07966) | Arxiv | [project](https://github.com/VisionXLab/SpaCE-10) |
-| 2025-05-01 | Hypo3D | Imperial | [Hypo3D: Exploring Hypothetical Reasoning in 3D](https://arxiv.org/abs/2502.00954) | ICML'25| [project](https://github.com/MatchLab-Imperial/Hypo3D) |
-| 2025-06-04 | Anywhere3D | BIGAI | [From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](https://arxiv.org/abs/2506.04897) | NeurIPS '25 | [project](https://anywhere-3d.github.io/) |
-| 2025-05-01 | SpatialVQA | JHU | [SpatialLLM: A Compound 3D-Informed Design towards Spatially-Intelligent Large Multimodal Models](https://arxiv.org/abs/2505.00788) | CVPR'25| [project]() |
-| 2025-04-03 | SPAR | Fudan University | [From Flatland to Space: Teaching Vision-Language Models to Perceive and Reason in 3D](https://arxiv.org/abs/2503.22976) | Arxiv| [project](https://fudan-zvg.github.io/spar) |
-| 2025-03-28 | Beacon3D | BIGAI | [Unveiling the Mist over 3D Vision-Language Understanding: Object-centric Evaluation with Chain-of-Analysis](https://arxiv.org/abs/2503.22420) | CVPR '25| [project](https://beacon-3d.github.io) |
-| 2025-03-08 | 3D-CoT | PolyU, EIT | [Integrating Chain-of-Thought for Multimodal Alignment: A Study on 3D Vision-Language Learning](https://arxiv.org/abs/2503.06232) | Arxiv | [dataset](https://huggingface.co/datasets/Battam/3D-CoT) |
-| 2024-09-08 | MSQA / MSNN | BIGAI | [Multi-modal Situated Reasoning in 3D Scenes](https://arxiv.org/abs/2409.02389) | NeurIPS '24| [project](https://msr3d.github.io/) |
-| 2024-08-29 | Space3D-Bench | ETHz | [Space3D-Bench: Spatial 3D Question Answering Benchmark](https://arxiv.org/abs/2408.16662) | Arxiv | [project](https://space3d-bench.github.io/) |
-| 2024-07-24 | City-3DQA | HKUST | [3D Question Answering for City Scene Understanding](https://arxiv.org/pdf/2407.17398) | ACM MM'24 | [project](https://sites.google.com/view/city3dqa/?pli=1) |
-| 2024-06-13 | MMScan | Shanghai AI Lab | [MMScan: A Multi-Modal 3D Scene Dataset with Hierarchical Grounded Language Annotations](https://arxiv.org/pdf/2406.09401) | Arxiv | [github](https://github.com/OpenRobotLab/EmbodiedScan) |
-| 2024-06-10 | 3D-GRAND / 3D-POPE | UMich | [3D-GRAND: A Million-Scale Dataset for 3D-LLMs with Better Grounding and Less Hallucination](https://arxiv.org/pdf/2406.05132.pdf) | Arxiv | [project](https://3d-grand.github.io) |
-| 2024-06-03 | SpatialRGPT-Bench | UCSD | [SpatialRGPT: Grounded Spatial Reasoning in Vision Language Models](https://arxiv.org/abs/2406.01584) | NeurIPS '24 | [github](https://github.com/AnjieCheng/SpatialRGPT) |
-| 2024-05-27 | Reason3D | UC Merced | [Reason3D: Searching and Reasoning 3D Segmentation via Large Language Model](https://arxiv.org/abs/2405.17427) | 3DV'25 | [project](https://reason3d.github.io/) |
-| 2024-1-18 | SceneVerse | BIGAI | [SceneVerse: Scaling 3D Vision-Language Learning for Grounded Scene Understanding](https://arxiv.org/pdf/2401.09340.pdf) | ECCV '24 | [github](https://github.com/scene-verse/sceneverse) |
-| 2023-12-26 | EmbodiedScan | Shanghai AI Lab | [EmbodiedScan: A Holistic Multi-Modal 3D Perception Suite Towards Embodied AI](https://arxiv.org/pdf/2312.16170.pdf) | Arxiv | [github](https://github.com/OpenRobotLab/EmbodiedScan) |
-| 2023-12-17 |         M3DBench        |     Fudan University     | [M3DBench: Let's Instruct Large Models with Multi-modal 3D Prompts](https://arxiv.org/abs/2312.10763)                                                                                                  |Arxiv|  [github](https://github.com/OpenM3D/M3DBench) |
-| 2023-11-29 |         -         |     DeepMind  | [Leveraging VLM-Based Pipelines to Annotate 3D Objects](https://arxiv.org/pdf/2311.17851.pdf)                                                                                                  |ICML '24|  [github](https://github.com/google-deepmind/objaverse_annotations) |
-| 2023-09-14 |CrossCoherence   |     UniBO  | [Looking at words and points with attention: a benchmark for text-to-shape coherence](https://arxiv.org/pdf/2309.07917)                                                                                                  |ICCV '23|  [github](https://github.com/AndreAmaduzzi/CrossCoherence) |
-| 2022-10-14 |     SQA3D     |      BIGAI    | [SQA3D: Situated Question Answering in 3D Scenes](https://arxiv.org/pdf/2210.07474.pdf)                                                                                                        | ICLR '23| [github](https://github.com/SilongYong/SQA3D) |
-| 2022-09-24 |     FE-3DGQA     |      Beihang University    | [Towards Explainable 3D Grounded Visual Question Answering: A New Benchmark and Strong Baseline](https://arxiv.org/pdf/2209.12028)                                                                                                        | TCSVT | [github](https://github.com/zlccccc/3DVL_Codebase) |
-| 2021-12-20|     ScanQA     |      RIKEN AIP    | [ScanQA: 3D Question Answering for Spatial Scene Understanding](https://arxiv.org/pdf/2112.10482.pdf)                                                                                                        | CVPR '23| [github](https://github.com/ATR-DBI/ScanQA) |
-| 2020-12-3 |     Scan2Cap     |      TUM    | [Scan2Cap: Context-aware Dense Captioning in RGB-D Scans](https://arxiv.org/pdf/2012.02206.pdf)                                                                                                        | CVPR '21| [github](https://github.com/daveredrum/Scan2Cap) |
-| 2020-8-23 | ReferIt3D | Stanford | [ReferIt3D: Neural Listeners for Fine-Grained 3D Object Identification in Real-World Scenes](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460409.pdf) | ECCV '20 | [github](https://github.com/referit3d/referit3d) |
-| 2019-12-18 |     ScanRefer     |      TUM   | [ScanRefer: 3D Object Localization in RGB-D Scans using Natural Language](https://arxiv.org/pdf/2112.10482.pdf)                                                                                                        | ECCV '20 | [github](https://daveredrum.github.io/ScanRefer/) |
+## UMI Dataset
 
-## Contributing
+### Official / Core Datasets
 
-Your contributions are always welcome!
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-02-15 | UMI, Bimanual, Zarr, MP4 | Stanford | [UMI Dataset Family](https://umi-data.github.io/) | Dataset | [project](https://umi-gripper.github.io/) / [data](https://umi-data.github.io/) |
 
-I will keep some pull requests open if I'm not sure if they are awesome for 3D LLMs, you could vote for them by adding 👍 to them.
+### UMI-native Dataset Families
 
----
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-02-06 | Humanoid, Bimanual, Whole-Body | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
+| 2025-11-08 | Vision, Tactile, Parallel Gripper | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
+| 2025-10-09 | Large-Scale, Household, LeRobot | Shanghai AI Lab | [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K) | Dataset | [github](https://github.com/MrKeee/FastUMI-100K) |
+| 2025-09-23 | Multi-View, Segmentation, Placement | NYU Abu Dhabi | [MV-UMI](https://mv-umi.github.io) | Dataset | [project](https://mv-umi.github.io) |
+| 2025-09-18 | exUMI, Single-Arm, Tactile | SJTU | [exUMI](https://silicx.github.io/exUMI/) | Dataset | [project](https://silicx.github.io/exUMI/) |
+| 2025-07-20 | In-the-Wild, Tactile, Proprio | Columbia | [Touch in the Wild](https://binghao-huang.github.io/touch_in_the_wild/) | Dataset | [project](https://binghao-huang.github.io/touch_in_the_wild/) |
+| 2025-05-12 | DexHand, In-the-Wild, Human-to-Robot | CMU | [DexWild](https://dexwild.github.io/) | Dataset | [project](https://dexwild.github.io/) |
+| 2025-05-28 | DexHand, Force/Torque, Inspire/XHand | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
+| 2025-04-08 | Vision, Tactile, Precision Tasks | Tsinghua | [ViTaMIn](https://chuanyune.github.io/ViTaMIn_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn_page/) |
+| 2024-11-06 | Sim2Real, HDF5, Manipulation | UT Austin | [LEGATO](https://ut-hcrl.github.io/LEGATO/) | Dataset | [project](https://ut-hcrl.github.io/LEGATO/) |
+| 2024-10-24 | Scaling Laws, Zarr, MP4 | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset | [project](https://data-scaling-laws.github.io/) |
+| 2024-09-29 | Household, HDF5, Fast Collection | Shanghai AI Lab | [Fast-UMI](https://fastumi.com/) | Dataset | [project](https://fastumi.com/) |
+| 2024-06-27 | Audio, In-the-Wild, Manipulation | Stanford | [ManiWAV](https://mani-wav.github.io/) | Dataset | [project](https://mani-wav.github.io/) |
 
-If you have any questions about this opinionated list, please get in touch at xianzheng@robots.ox.ac.uk or Wechat ID: mxz1997112.
+### Cross-Embodiment / Large-Scale Adjacent Datasets
 
-## Star History
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-03-19 | In-the-Wild, Large-Scale, Multi-Robot | Stanford | [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945) | arXiv | [project](https://droid-dataset.github.io/) |
+| 2023-10-13 | Cross-Embodiment, RT-X, Multi-Dataset | Stanford | [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864) | arXiv | [project](https://robotics-transformer-x.github.io/) / [github](https://github.com/google-deepmind/open_x_embodiment) |
+| 2023-08-24 | Large-Scale, Real-Robot, Multi-Task | Berkeley | [BridgeData V2: A Dataset for Robot Learning at Scale](https://arxiv.org/abs/2308.12952) | CoRL 2023 | [project](https://rail-berkeley.github.io/bridgedata/) / [github](https://github.com/rail-berkeley/bridge_data_v2) |
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ActiveVisionLab/Awesome-LLM-3D&type=Date)](https://star-history.com/#ActiveVisionLab/Awesome-LLM-3D&Date)
+### Dexterous / Hand-centric Datasets
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-05-28 | DexHand, Force/Torque, Inspire/XHand | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
+| 2025-05-12 | DexHand, Human/Robot, In-the-Wild | CMU | [DexWild](https://dexwild.github.io/) | Dataset | [project](https://dexwild.github.io/) |
+
+### Multimodal / Force-aware Datasets
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-11-08 | Vision+Tactile, Wiping, Scooping | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
+| 2025-09-23 | Wrist F/T, HDF5, Assembly | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
+| 2025-07-20 | Tactile, Proprio, In-the-Wild | Columbia | [Touch in the Wild](https://binghao-huang.github.io/touch_in_the_wild/) | Dataset | [project](https://binghao-huang.github.io/touch_in_the_wild/) |
+| 2025-04-08 | Vision+Tactile, Fine Manipulation | Tsinghua | [ViTaMIn](https://chuanyune.github.io/ViTaMIn_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn_page/) |
+| 2024-06-27 | Audio, Real-World, Manipulation | Stanford | [ManiWAV](https://mani-wav.github.io/) | Dataset | [project](https://mani-wav.github.io/) |
+
+### Mobile / Whole-Body Datasets
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-02-06 | Humanoid, Pelvis, Feet, Bimanual | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
+| 2024-07-14 | Legged, Mobile, Zarr | Stanford | [UMI on Legs](https://umi-on-legs.github.io/) | Dataset | [project](https://umi-on-legs.github.io/) |
+
+## UMI Policy
+
+### Imitation Learning
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-05-20 | Generalist Policy, Open-Source, Cross-Embodiment | Berkeley | [Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213) | arXiv | [project](https://octo-models.github.io/) |
+| 2024-02-15 | Relative Actions, Latency Matching, Imitation | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [github](https://github.com/real-stanford/universal_manipulation_interface) |
+| 2024-01-04 | Mobile ALOHA, Whole-Body, Bimanual | Stanford | [Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117) | arXiv | [project](https://mobile-aloha.github.io) |
+| 2023-10-13 | RT-X, Cross-Embodiment, Multi-Dataset | Stanford | [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864) | arXiv | [project](https://robotics-transformer-x.github.io/) / [github](https://github.com/google-deepmind/open_x_embodiment) |
+| 2023-09-18 | One-Shot BC, Action Chunking | CMU | [One ACT Play: Single Demonstration Behavior Cloning with Action Chunking Transformers](https://arxiv.org/abs/2309.10175) | arXiv | [paper](https://arxiv.org/abs/2309.10175) |
+| 2023-04-23 | ACT, Bimanual, Low-Cost Hardware | Stanford | [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705) | arXiv | [project](https://tonyzhaozh.github.io/aloha/) |
+
+### Diffusion / ACT-style Policies
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2023-04-23 | ACT, Bimanual, Behavior Cloning | Stanford | [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705) | arXiv | [project](https://tonyzhaozh.github.io/aloha/) |
+| 2023-03-07 | Diffusion Policy, Visuomotor, Receding Horizon | Columbia | [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://arxiv.org/abs/2303.04137) | RSS 2023 | [project](https://diffusion-policy.cs.columbia.edu/) |
+
+### VLA
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-10-31 | pi0, VLA, Flow Matching | Physical Intelligence | [π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) | RSS 2025 | [page](https://physicalintelligence.company/blog/pi0) |
+| 2024-06-13 | OpenVLA, Open-Source, Transfer | Stanford | [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246) | arXiv | [project](https://openvla.github.io/) |
+| 2023-07-28 | RT-2, VLA, Generalist Control | Google DeepMind | [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818) | arXiv | [project](https://robotics-transformer2.github.io/) |
+| 2022-12-13 | RT-1, Robotics Transformer, Real-World Control | Google | [RT-1: Robotics Transformer for Real-World Control at Scale](https://arxiv.org/abs/2212.06817) | RSS 2023 | [project](https://robotics-transformer1.github.io/) |
+
+## UMI Taxonomy
+
+### Embodiments
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-02-06 | Humanoid, Pelvis, Feet, Bimanual | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
+| 2025-05-28 | Dexterous Hand, Inspire, XHand | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
+| 2024-07-14 | Legged, Mobile Manipulation | Stanford | [UMI on Legs](https://umi-on-legs.github.io/) | Dataset | [project](https://umi-on-legs.github.io/) |
+| 2024-02-15 | Bimanual, Parallel Gripper | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
+
+### Observation Modalities
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-11-08 | Image, Tactile | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
+| 2025-09-23 | Image x2, Wrist F/T | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
+| 2025-07-20 | Image, Tactile, Proprio | Columbia | [Touch in the Wild](https://binghao-huang.github.io/touch_in_the_wild/) | Dataset | [project](https://binghao-huang.github.io/touch_in_the_wild/) |
+| 2024-06-27 | Image, Audio, Proprio | Stanford | [ManiWAV](https://mani-wav.github.io/) | Dataset | [project](https://mani-wav.github.io/) |
+| 2024-02-15 | Image, Proprio, Bimanual | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
+
+### Action Spaces
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-05-28 | DexHand, Human-Hand Interface | Tsinghua | [DexUMI](https://umi-data.github.io/) | Dataset | [data](https://umi-data.github.io/) |
+| 2025-09-23 | 6-DoF EE, Parallel Gripper | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
+| 2024-02-15 | Relative Trajectory, 6-DoF, Hardware-Agnostic | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
+
+### Data Formats / Storage
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2025-10-09 | LeRobot, Large-Scale Household | Shanghai AI Lab | [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K) | Dataset | [github](https://github.com/MrKeee/FastUMI-100K) |
+| 2025-09-23 | HDF5, Force/Torque | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
+| 2024-10-24 | Zarr, MP4, Scaling | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset | [project](https://data-scaling-laws.github.io/) |
+| 2024-11-06 | HDF5, Sim2Real | UT Austin | [LEGATO](https://ut-hcrl.github.io/LEGATO/) | Dataset | [project](https://ut-hcrl.github.io/LEGATO/) |
+| 2024-02-15 | Zarr, MP4, Replay Buffer | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [data](https://umi-data.github.io/) |
+
+### Evaluation / Surveys / Notes
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2024-10-24 | Scaling Laws, Multi-Env, Data Efficiency | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset / Study | [project](https://data-scaling-laws.github.io/) |
+| 2024-02-15 | Zero-Shot, Cross-Platform, Long-Horizon | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
+| 2024-02-15 | Community Taxonomy, Family Index | Stanford | [UMI Data Community Site](https://umi-data.github.io/) | Website | [page](https://umi-data.github.io/) |
 
 ## Citation
-If you find this repository useful, please consider citing this paper:
-```
-@misc{ma2024llmsstep3dworld,
-      title={When LLMs step into the 3D World: A Survey and Meta-Analysis of 3D Tasks via Multi-modal Large Language Models}, 
-      author={Xianzheng Ma and Yash Bhalgat and Brandon Smart and Shuai Chen and Xinghui Li and Jian Ding and Jindong Gu and Dave Zhenyu Chen and Songyou Peng and Jia-Wang Bian and Philip H Torr and Marc Pollefeys and Matthias Nießner and Ian D Reid and Angel X. Chang and Iro Laina and Victor Adrian Prisacariu},
-      year={2024},
-      journal={arXiv preprint arXiv:2405.10255},
+
+Contributions are welcome.
+
+Before adding a new entry:
+- check `AGENTS.md`
+- keep the six-column metadata format
+- sort by **Date descending** within the subsection
+- prefer canonical paper/project/dataset links
+- keep the repository **UMI-first**
+
+For commit messages, use **Conventional Commits**, for example:
+- `docs(readme): add fastumi-100k to umi dataset`
+- `fix(readme): correct dexumi publication metadata`
+- `refactor(readme): reorganize umi policy subsections`
+
+If you find this repository useful, please consider citing the foundational UMI paper:
+
+```bibtex
+@article{chi2024universal,
+  title={Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots},
+  author={Chi, Cheng and Xu, Zhenjia and Pan, Chuer and Cousineau, Eric and Burchfiel, Ben and Feng, Siyuan and Tedrake, Russ and Song, Shuran},
+  journal={arXiv preprint arXiv:2402.10329},
+  year={2024}
 }
 ```
 
 ## Acknowledgement
-This repo is inspired by [Awesome-LLM](https://github.com/Hannibal046/Awesome-LLM?tab=readme-ov-file#other-awesome-lists)
 
+The README structure is inspired by the clean single-file awesome-list style used in `ActiveVisionLab/Awesome-LLM-3D`.
