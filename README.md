@@ -10,11 +10,11 @@
 <!-- [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) -->
 
 <p>
-  <a href="#umi-core">Core</a> |
-  <a href="#umi-method">Methods</a> |
-  <a href="#umi-dataset">Datasets</a> |
-  <a href="#umi-policy">Policies</a> |
-  <a href="#umi-taxonomy">Taxonomy</a>
+  <a href="#umi-core"><img alt="Core" src="https://img.shields.io/badge/Core-UMI%20Foundations-2f80ed?style=for-the-badge"></a>
+  <a href="#umi-method"><img alt="Methods" src="https://img.shields.io/badge/Methods-Robot--Free%20Teaching-27ae60?style=for-the-badge"></a>
+  <a href="#umi-dataset"><img alt="Datasets" src="https://img.shields.io/badge/Datasets-UMI%20Data-f2994a?style=for-the-badge"></a>
+  <a href="#umi-policy"><img alt="Policies" src="https://img.shields.io/badge/Policies-Robot%20Learning-9b51e0?style=for-the-badge"></a>
+  <a href="#umi-taxonomy"><img alt="Taxonomy" src="https://img.shields.io/badge/Taxonomy-Ecosystem%20Map-eb5757?style=for-the-badge"></a>
 </p>
 
 </div>
