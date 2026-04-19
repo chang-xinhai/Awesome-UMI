@@ -252,17 +252,6 @@ For commit messages, use **Conventional Commits**, for example:
 - `fix(readme): correct dexumi publication metadata`
 - `refactor(readme): reorganize umi policy subsections`
 
-If you find this repository useful, please consider citing the foundational UMI paper:
-
-```bibtex
-@article{chi2024universal,
-  title={Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots},
-  author={Chi, Cheng and Xu, Zhenjia and Pan, Chuer and Cousineau, Eric and Burchfiel, Ben and Feng, Siyuan and Tedrake, Russ and Song, Shuran},
-  journal={arXiv preprint arXiv:2402.10329},
-  year={2024}
-}
-```
-
 ## Acknowledgement
 
 The README structure is inspired by the clean single-file awesome-list style used in `ActiveVisionLab/Awesome-LLM-3D`.
