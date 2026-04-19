@@ -316,19 +316,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 ## Citation
 
-Contributions are welcome.
-
-Before adding a new entry:
-- check `AGENTS.md`
-- keep the six-column metadata format
-- sort by **Date descending** within the subsection
-- prefer canonical paper/project/dataset links
-- keep the repository **UMI-first**
-
-For commit messages, use **Conventional Commits**, for example:
-- `docs(readme): add fastumi-100k to umi dataset`
-- `fix(readme): correct dexumi publication metadata`
-- `refactor(readme): reorganize umi policy subsections`
+Contributions are welcome. Please check `AGENTS.md` before adding new entries, and use [Conventional Commits](https://www.conventionalcommits.org) for commit messages.
 
 ## Acknowledgement
 
