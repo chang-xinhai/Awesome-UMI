@@ -1,4 +1,23 @@
-# Awesome-UMI <!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) --> [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+<div align="center">
+
+<h1 id="awesome-umi">Awesome-UMI</h1>
+
+<p>
+  <strong>A curated map of papers, datasets, policies, and taxonomy for the Universal Manipulation Interface ecosystem.</strong>
+</p>
+
+<!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) -->
+<!-- [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) -->
+
+<p>
+  <a href="#umi-core">Core</a> |
+  <a href="#umi-method">Methods</a> |
+  <a href="#umi-dataset">Datasets</a> |
+  <a href="#umi-policy">Policies</a> |
+  <a href="#umi-taxonomy">Taxonomy</a>
+</p>
+
+</div>
 
 ## About
 
