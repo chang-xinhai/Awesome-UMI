@@ -124,6 +124,21 @@ When adding or updating entries, use sources in this order:
 
 If multiple sources disagree, prefer the most official public source.
 
+## Verification rule for new entries
+
+Do **not** add an entry unless it has a sufficiently reliable canonical public source.
+
+Minimum bar for inclusion:
+- a canonical paper URL such as arXiv / conference page / journal page,
+- and/or an official project page, dataset page, or GitHub repo from the authors / lab / organization
+
+If a candidate cannot be verified with enough confidence:
+- do **not** add it to `README.md`
+- do **not** guess missing metadata, URLs, venues, or affiliations
+- do **not** include partially confirmed or rumor-like items just because they seem relevant
+
+When in doubt, exclude first and wait for a reliable source.
+
 ## Entry format
 
 Each subsection should use the same compact table schema:
