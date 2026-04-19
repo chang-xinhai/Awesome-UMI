@@ -322,4 +322,4 @@ For commit messages, use **Conventional Commits**, for example:
 
 ## Acknowledgement
 
-The README structure is inspired by the clean single-file awesome-list style used in `ActiveVisionLab/Awesome-LLM-3D`.
+This repo is inspired by [Awesome-LLM-3D](https://github.com/ActiveVisionLab/Awesome-LLM-3D).
