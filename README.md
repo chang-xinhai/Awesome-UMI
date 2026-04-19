@@ -316,7 +316,8 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 ## Citation
 
-Contributions are welcome. Please check `AGENTS.md` before adding new entries, and use [Conventional Commits](https://www.conventionalcommits.org) for commit messages.
+Contributions are welcome!
+Please check `AGENTS.md` before adding new entries, and use [Conventional Commits](https://www.conventionalcommits.org) for commit messages.
 
 ## Acknowledgement
 
