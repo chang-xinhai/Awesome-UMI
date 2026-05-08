@@ -85,7 +85,7 @@ Start here if you want the shortest path through the UMI ecosystem.
     - [Mobile / Whole-Body Datasets](#mobile--whole-body-datasets)
   - [UMI Policy](#umi-policy)
     - [Imitation Learning](#imitation-learning)
-    - [Diffusion / ACT-style Policies](#diffusion--act-style-policies)
+    - [Reinforcement Learning](#reinforcement-learning)
     - [VLA](#vla)
   - [UMI Taxonomy](#umi-taxonomy)
     - [Embodiments](#embodiments)
@@ -236,24 +236,31 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2025-09-30 | UMI Framework, Planning, Real-World Manipulation | Xiaomi Robotics Lab | [Reinforced Embodied Planning with Verifiable Reward for Real-World Robotic Manipulation](https://arxiv.org/abs/2509.25852) | arXiv | [paper](https://arxiv.org/abs/2509.25852) |
+| 2025-10-15 | Tactile, Diffusion Policy, Force-Aware | TU Darmstadt / DFKI | [Tactile-Conditioned Diffusion Policy for Force-Aware Robotic Manipulation](https://arxiv.org/abs/2510.13324) | arXiv | [project](https://tactile-farm.github.io) |
+| 2025-03 | VQ-VAE, Behavior Generation, Fast Inference | CMU / UC Berkeley | [VQ-BeT: Behavior Generation with Latent Actions](https://arxiv.org/abs/2403.03181) | ICML 2024 | [project](https://sjlee.cc/vq-bet/) / [github](https://github.com/jayLEE0301/vq_bet_official) |
 | 2024-10-31 | Egocentric, Imitation, Human Video | Georgia Tech | [EgoMimic: Scaling Imitation Learning via Egocentric Video](https://arxiv.org/abs/2410.24221) | arXiv | [project](https://egomimic.github.io/) / [github](https://github.com/SimarKareer/EgoMimic) |
+| 2024-10-15 | 3D Diffusion Policy, Egocentric, Humanoid | Stanford / SFU / CMU | [iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies](https://arxiv.org/abs/2410.10803) | IROS 2025 | [project](https://humanoid-manipulation.github.io/) / [github](https://github.com/YanjieZe/Improved-3D-Diffusion-Policy) |
 | 2024-05-20 | Generalist Policy, Open-Source, Cross-Embodiment | Berkeley | [Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213) | arXiv | [project](https://octo-models.github.io/) |
+| 2024-03-06 | 3D Diffusion Policy, Point Cloud, Generalizable | Shanghai Qi Zhi / SJTU / Tsinghua | [DP3: 3D Diffusion Policy — Generalizable Visuomotor Policy Learning via Simple 3D Representations](https://arxiv.org/abs/2403.03954) | RSS 2024 | [project](https://3d-diffusion-policy.github.io/) / [github](https://github.com/YanjieZe/3D-Diffusion-Policy) |
+| 2024-02-16 | 3D Scene, Diffusion, Language-Conditioned | CMU | [3D Diffuser Actor: Policy Diffusion with 3D Scene Representations](https://arxiv.org/abs/2402.10885) | CoRL 2024 | [project](https://3d-diffuser-actor.github.io/) / [github](https://github.com/nickgkan/3d_diffuser_actor) |
 | 2024-02-15 | Relative Actions, Latency Matching, Imitation | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [github](https://github.com/real-stanford/universal_manipulation_interface) |
 | 2024-01-04 | Mobile ALOHA, Whole-Body, Bimanual | Stanford | [Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation](https://arxiv.org/abs/2401.02117) | arXiv | [project](https://mobile-aloha.github.io) |
 | 2023-10-13 | RT-X, Cross-Embodiment, Multi-Dataset | Stanford | [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864) | arXiv | [project](https://robotics-transformer-x.github.io/) / [github](https://github.com/google-deepmind/open_x_embodiment) |
 | 2023-09-18 | One-Shot BC, Action Chunking | CMU | [One ACT Play: Single Demonstration Behavior Cloning with Action Chunking Transformers](https://arxiv.org/abs/2309.10175) | arXiv | [paper](https://arxiv.org/abs/2309.10175) |
 | 2023-09-05 | Semantic Augmentation, Action Chunking, IL | CMU | [RoboAgent: Towards Sample Efficient Robot Manipulation with Semantic Augmentations and Action Chunking](https://arxiv.org/abs/2309.01918) | ICRA 2024 | [project](https://robopen.github.io/) / [github](https://github.com/robopen/roboagent/) |
 | 2023-04-23 | ACT, Bimanual, Low-Cost Hardware | Stanford | [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705) | arXiv | [project](https://tonyzhaozh.github.io/aloha/) |
+| 2023-03-07 | Diffusion Policy, Visuomotor, Receding Horizon | Columbia | [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://arxiv.org/abs/2303.04137) | RSS 2023 | [project](https://diffusion-policy.cs.columbia.edu/) |
 | 2021-08-06 | Offline IL, Manipulation Benchmark, robomimic | Stanford | [What Matters in Learning from Offline Human Demonstrations for Robot Manipulation](https://arxiv.org/abs/2108.03298) | CoRL 2021 | [project](https://robomimic.github.io/) / [github](https://github.com/ARISE-Initiative/robomimic) |
 
-### Diffusion / ACT-style Policies
+### Reinforcement Learning
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2025-10-15 | UMI Data, Tactile, Diffusion Policy | TU Darmstadt / DFKI | [Tactile-Conditioned Diffusion Policy for Force-Aware Robotic Manipulation](https://arxiv.org/abs/2510.13324) | arXiv | [project](https://tactile-farm.github.io) |
-| 2023-04-23 | ACT, Bimanual, Behavior Cloning | Stanford | [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://arxiv.org/abs/2304.13705) | arXiv | [project](https://tonyzhaozh.github.io/aloha/) |
-| 2023-03-07 | Diffusion Policy, Visuomotor, Receding Horizon | Columbia | [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://arxiv.org/abs/2303.04137) | RSS 2023 | [project](https://diffusion-policy.cs.columbia.edu/) |
+| 2025-09-30 | RL + UMI, Embodied Planning, Verifiable Reward | Xiaomi Robotics Lab | [Reinforced Embodied Planning with Verifiable Reward for Real-World Robotic Manipulation](https://arxiv.org/abs/2509.25852) | arXiv | [paper](https://arxiv.org/abs/2509.25852) |
+| 2025-03-03 | Multi-Stage RL, Demo-Augmented, World Model | UC San Diego | [DEMO³: Multi-Stage Manipulation with Demonstration-Augmented Reward, Policy, and World Model Learning](https://arxiv.org/abs/2503.01837) | ICML 2025 | [project](https://adrialopezescoriza.github.io/demo3/) / [github](https://github.com/adrialopezescoriza/demo3) |
+| 2024-10-29 | Human-in-the-Loop RL, Dexterous, Real-World | UC Berkeley | [HIL-SERL: Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](https://arxiv.org/abs/2410.21845) | arXiv | [project](https://hil-serl.github.io/) / [github](https://github.com/rail-berkeley/hil-serl) |
+| 2024-09-01 | Diffusion Policy, Policy Gradient, Fine-Tuning | Princeton / MIT | [DPPO: Diffusion Policy Policy Optimization](https://arxiv.org/abs/2409.00588) | arXiv | [project](https://diffusion-ppo.github.io/) |
+| 2023-02-06 | Off-Policy RL, Offline Data, Sample Efficient | Oxford / UC Berkeley | [RLPD: Efficient Online Reinforcement Learning with Offline Data](https://arxiv.org/abs/2302.02948) | ICML 2023 | [github](https://github.com/ikostrikov/rlpd) |
 
 ### VLA
 
