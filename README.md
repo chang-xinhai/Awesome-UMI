@@ -54,11 +54,12 @@ Start here if you want the shortest path through the UMI ecosystem.
 | Find UMI datasets | [UMI Data Community Site](https://umi-data.github.io/) |
 | Build on UMI hardware/data collection | [Universal Manipulation Interface Codebase](https://github.com/real-stanford/universal_manipulation_interface), [UMI-FT](https://github.com/real-stanford/UMI-FT), [exUMI](https://silicx.github.io/exUMI/) |
 | Explore dexterous UMI-style extensions | [DexUMI](https://arxiv.org/abs/2505.21864), [DexWild](https://dexwild.github.io/), [DexCap](https://arxiv.org/abs/2403.07788) |
-| Train UMI-relevant policies | [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/), [ACT / ALOHA](https://tonyzhaozh.github.io/aloha/), [OpenVLA](https://openvla.github.io/) |
+| Train UMI-relevant policies | [Hy-Embodied-0.5-VLA](https://arxiv.org/abs/2606.14409), [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/), [ACT / ALOHA](https://tonyzhaozh.github.io/aloha/), [OpenVLA](https://openvla.github.io/) |
 | Compare modalities and formats | [UMI Taxonomy](#umi-taxonomy), [UMI Data Community Site](https://umi-data.github.io/) |
 
 ## News
 
+- [2026-06-24] Added Hy-Embodied-0.5-VLA, Hy-Embodied-0.5-VLA-Data, FlowPRO, and a deployment constraints taxonomy subsection.
 - [2026-06-23] Added HALOMI, EgoGuide, EgoMI, and UMI-on-Air to the UMI method, policy, and taxonomy sections.
 - [2026-06-15] Added recent UMI-style dexterous, mobile, whole-body, tactile, benchmark, and VLA resources.
 - [2026-04-19] Rebuilt the repository into a single-file `README.md` structure for Awesome-UMI.
@@ -94,6 +95,7 @@ Start here if you want the shortest path through the UMI ecosystem.
     - [Observation Modalities](#observation-modalities)
     - [Action Spaces](#action-spaces)
     - [Data Formats / Storage](#data-formats--storage)
+    - [Deployment / System Constraints](#deployment--system-constraints)
     - [Evaluation / Surveys / Notes](#evaluation--surveys--notes)
   - [Citation](#citation)
   - [Acknowledgement](#acknowledgement)
@@ -199,6 +201,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-12 | Bimanual, 2K+ Hours, Lance/LeRobot | Tencent Robotics X | [Hy-Embodied-0.5-VLA-Data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.14409) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [model](https://huggingface.co/tencent/Hy-Embodied-0.5-VLA-UMI) |
 | 2026-06-09 | Benchmark, 10 Tasks, HuggingFace | Soochow University | [UMI-Bench 1.0](https://umibenchmark.github.io/) | Dataset / Benchmark | [paper](https://arxiv.org/abs/2606.10382) / [dataset](https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1) / [models](https://huggingface.co/UMIbenchmark/UMI-Benchmark-v1-checkpoints) |
 | 2026-06-08 | Bimanual, 1.20M Episodes, LeRobot | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) / [software](https://github.com/airoa-org/yubi-sw) |
 | 2026-06-03 | UMI-VQA, Fisheye, Validated Trajectories | TeleAI | [VISTA](https://tele-umi-vista.github.io/) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.04708) / [github](https://github.com/TeleHuman/umi-vista) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
@@ -286,6 +289,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-03 | Flow-Matching VLA, Preference RL, Bimanual | Tencent Robotics X | [FlowPRO: Reward-Free Reinforced Fine-Tuning of Flow-Matching VLAs via Proximalized Preference Optimization](https://arxiv.org/abs/2606.05468) | arXiv | [project](https://wuyeyexvnainai.github.io/flowpro/) |
 | 2025-09-30 | RL + UMI, Embodied Planning, Verifiable Reward | Xiaomi Robotics Lab | [Reinforced Embodied Planning with Verifiable Reward for Real-World Robotic Manipulation](https://arxiv.org/abs/2509.25852) | arXiv | [paper](https://arxiv.org/abs/2509.25852) |
 | 2025-03-03 | Multi-Stage RL, Demo-Augmented, World Model | UC San Diego | [DEMO³: Multi-Stage Manipulation with Demonstration-Augmented Reward, Policy, and World Model Learning](https://arxiv.org/abs/2503.01837) | ICML 2025 | [project](https://adrialopezescoriza.github.io/demo3/) / [github](https://github.com/adrialopezescoriza/demo3) |
 | 2024-10-29 | Human-in-the-Loop RL, Dexterous, Real-World | UC Berkeley | [HIL-SERL: Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning](https://arxiv.org/abs/2410.21845) | arXiv | [project](https://hil-serl.github.io/) / [github](https://github.com/rail-berkeley/hil-serl) |
@@ -297,6 +301,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-06-17 | Humanoid VLA, Active Perception, Transfer | SJTU | [HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
+| 2026-06-12 | UMI Pretraining, Flow-Matching VLA, Cross-Embodiment | Tencent Robotics X | [Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack](https://arxiv.org/abs/2606.14409) | arXiv | [project](https://tairos.tencent.com/openSourceModels/hy-embodied-0.5-vla) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [model](https://huggingface.co/tencent/Hy-Embodied-0.5-VLA-UMI) / [data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) |
 | 2026-06-03 | UMI Data, VLA, Physical Validation | TeleAI | [VISTA: Vision-Grounded and Physics-Validated Adaptation of UMI data for VLA Training](https://arxiv.org/abs/2606.04708) | arXiv | [project](https://tele-umi-vista.github.io/) / [github](https://github.com/TeleHuman/umi-vista) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
 | 2026-02-03 | UMI Data, Cross-Embodiment, Generalist Policy | Tsinghua | [RDT2: Exploring the Scaling Limit of UMI Data Towards Zero-shot Cross-embodiment Generalization](https://arxiv.org/abs/2602.03310) | arXiv | [project](https://rdt-robotics.github.io/rdt2/) / [github](https://github.com/thu-ml/RDT2) |
 | 2024-10-31 | pi0, VLA, Flow Matching | Physical Intelligence | [π0: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) | RSS 2025 | [page](https://physicalintelligence.company/blog/pi0) |
@@ -366,6 +371,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-12 | Lance, LeRobot v3, 30Hz, 18.8TB | Tencent Robotics X | [Hy-Embodied-0.5-VLA-Data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.14409) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) |
 | 2026-06-09 | HuggingFace, Benchmark Dataset | Soochow University | [UMI-Bench 1.0](https://umibenchmark.github.io/) | Dataset / Benchmark | [paper](https://arxiv.org/abs/2606.10382) / [dataset](https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1) |
 | 2026-06-08 | LeRobot, 30Hz, 1.20M Episodes | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) |
 | 2026-06-03 | UMI-VQA, HuggingFace, Validated Trajectories | TeleAI | [VISTA](https://tele-umi-vista.github.io/) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.04708) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
@@ -375,6 +381,15 @@ Structured references for embodiments, observation modalities, action spaces, st
 | 2024-11-06 | HDF5, Sim2Real | UT Austin | [LEGATO](https://ut-hcrl.github.io/LEGATO/) | Dataset | [project](https://ut-hcrl.github.io/LEGATO/) |
 | 2024-10-24 | Zarr, MP4, Scaling | Tsinghua | [Data Scaling Laws](https://data-scaling-laws.github.io/) | Dataset | [project](https://data-scaling-laws.github.io/) |
 | 2024-02-15 | Zarr, MP4, Replay Buffer | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [data](https://umi-data.github.io/) |
+
+### Deployment / System Constraints
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-12 | Real-World Stack, Async Inference, UMI | Tencent Robotics X | [Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack](https://arxiv.org/abs/2606.14409) | arXiv | [project](https://tairos.tencent.com/openSourceModels/hy-embodied-0.5-vla) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) |
+| 2025-10-02 | Controller Guidance, Embodiment Gap, Aerial | CMU | [UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
+| 2024-07-14 | Mobile Controller, Whole-Body, Legged | Stanford | [UMI on Legs: Making Manipulation Policies Mobile with a Manipulation-Centric Whole-body Controller](https://arxiv.org/abs/2407.10353) | CoRL 2024 | [github](https://github.com/real-stanford/umi-on-legs) |
+| 2024-02-15 | Latency Matching, Relative Actions, Calibration | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) / [github](https://github.com/real-stanford/universal_manipulation_interface) |
 
 ### Evaluation / Surveys / Notes
 
