@@ -59,6 +59,7 @@ Start here if you want the shortest path through the UMI ecosystem.
 
 ## News
 
+- [2026-06-24] Added TAMEn to UMI methods, datasets, and taxonomy as a tactile-aware closed-loop data collection stack.
 - [2026-06-24] Added Hy-Embodied-0.5-VLA, Hy-Embodied-0.5-VLA-Data, FlowPRO, and a deployment constraints taxonomy subsection.
 - [2026-06-23] Added HALOMI, EgoGuide, EgoMI, and UMI-on-Air to the UMI method, policy, and taxonomy sections.
 - [2026-06-15] Added recent UMI-style dexterous, mobile, whole-body, tactile, benchmark, and VLA resources.
@@ -162,6 +163,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 | 2026-06-11 | Whole-Body Tactile, Force-Supervised, Humanoid | Georgia Tech | [WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning](https://arxiv.org/abs/2606.13232) | arXiv | [project](https://wt-umi.github.io/WTUMI/) |
 | 2026-06-08 | Arm-Worn, Force, Vision-Tactile | SJTU | [AetheRock: An Arm-Worn Robot Teaching System for Force-Guided Vision-Tactile Learning](https://arxiv.org/abs/2606.09777) | arXiv | [paper](https://arxiv.org/abs/2606.09777) |
 | 2026-04-12 | Multimodal, Tactile, Force/Wrench | BAAI | [OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction](https://arxiv.org/abs/2604.10647) | arXiv | [paper](https://arxiv.org/abs/2604.10647) |
+| 2026-04-08 | Visuo-Tactile, Closed-Loop, Bimanual | Fudan University | [TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks](https://arxiv.org/abs/2604.07335) | arXiv | [project](https://opendrivelab.com/TAMEn) / [github](https://github.com/OpenDriveLab/TAMEn) / [dataset](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) |
 | 2026-01-21 | Tactile, Force/Torque, Contact-Rich | TU Munich | [TacUMI: A Multi-Modal Universal Manipulation Interface for Contact-Rich Tasks](https://arxiv.org/abs/2601.14550) | arXiv | [github](https://github.com/Tac-UMI/TacUMI) |
 | 2026-01-15 | Force, Compliance, Contact-Rich | Stanford | [In-the-Wild Compliant Manipulation with UMI-FT](https://arxiv.org/abs/2601.09988) | ICRA 2026 | [github](https://github.com/real-stanford/UMI-FT) |
 | 2025-12-10 | Tactile, Visuo-Tactile, TacThru-UMI | Peking University | [TacThru: Simultaneous Tactile-Visual Perception for Learning Multimodal Robot Manipulation](https://arxiv.org/abs/2512.09851) | RA-L | [github](https://github.com/YuyangLee/TacThru) |
@@ -206,6 +208,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 | 2026-06-08 | Bimanual, 1.20M Episodes, LeRobot | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) / [software](https://github.com/airoa-org/yubi-sw) |
 | 2026-06-03 | UMI-VQA, Fisheye, Validated Trajectories | TeleAI | [VISTA](https://tele-umi-vista.github.io/) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.04708) / [github](https://github.com/TeleHuman/umi-vista) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
 | 2026-04-15 | 3D Perception, LiDAR, UMI Extension | HKU | [UMI-3D](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) | Dataset | [paper](https://arxiv.org/abs/2604.14089) / [project](https://umi-3d.github.io/) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) |
+| 2026-04-08 | Visuo-Tactile, MP4/CSV, Recovery Data | Fudan University | [TAMEn](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) | Dataset | [paper](https://arxiv.org/abs/2604.07335) / [project](https://opendrivelab.com/TAMEn) / [github](https://github.com/OpenDriveLab/TAMEn) |
 | 2026-02-06 | Humanoid, Bimanual, Whole-Body | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
 | 2025-11-08 | Vision, Tactile, Parallel Gripper | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
 | 2025-10-09 | Large-Scale, Household, LeRobot | Shanghai AI Lab | [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K) | Dataset | [github](https://github.com/MrKeee/FastUMI-100K) |
@@ -243,6 +246,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-04-15 | LiDAR, 3D Perception, Raw Recordings | HKU | [UMI-3D](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) | Dataset | [paper](https://arxiv.org/abs/2604.14089) / [project](https://umi-3d.github.io/) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) |
+| 2026-04-08 | Visuo-Tactile, 4 Views, Trajectories | Fudan University | [TAMEn](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) | Dataset | [paper](https://arxiv.org/abs/2604.07335) / [project](https://opendrivelab.com/TAMEn) / [github](https://github.com/OpenDriveLab/TAMEn) |
 | 2025-11-08 | Vision+Tactile, Wiping, Scooping | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
 | 2025-09-23 | Wrist F/T, HDF5, Assembly | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
 | 2025-07-20 | Tactile, Proprio, In-the-Wild | Columbia | [Touch in the Wild](https://binghao-huang.github.io/touch_in_the_wild/) | Dataset | [project](https://binghao-huang.github.io/touch_in_the_wild/) |
@@ -343,6 +347,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 | 2026-06-03 | Wrist Fisheye, VQA, Physical Scores | TeleAI | [VISTA](https://tele-umi-vista.github.io/) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.04708) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
 | 2026-04-15 | Image, LiDAR, Point Cloud | HKU | [UMI-3D](https://umi-3d.github.io/) | Dataset | [paper](https://arxiv.org/abs/2604.14089) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) |
 | 2026-04-12 | RGB, Depth, Tactile, Force/Wrench | BAAI | [OmniUMI](https://arxiv.org/abs/2604.10647) | arXiv | [paper](https://arxiv.org/abs/2604.10647) |
+| 2026-04-08 | Multi-View Video, Tactile, Trajectory | Fudan University | [TAMEn](https://opendrivelab.com/TAMEn) | arXiv / Dataset | [paper](https://arxiv.org/abs/2604.07335) / [dataset](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) |
 | 2025-11-08 | Image, Tactile | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) |
 | 2025-10-31 | Head View, Wrist Views, Head/Hand Poses | UC Berkeley | [EgoMI](https://arxiv.org/abs/2511.00153) | arXiv | [project](https://egocentric-manipulation-interface.github.io/) |
 | 2025-09-23 | Image x2, Wrist F/T | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
@@ -375,6 +380,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 | 2026-06-09 | HuggingFace, Benchmark Dataset | Soochow University | [UMI-Bench 1.0](https://umibenchmark.github.io/) | Dataset / Benchmark | [paper](https://arxiv.org/abs/2606.10382) / [dataset](https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1) |
 | 2026-06-08 | LeRobot, 30Hz, 1.20M Episodes | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) |
 | 2026-06-03 | UMI-VQA, HuggingFace, Validated Trajectories | TeleAI | [VISTA](https://tele-umi-vista.github.io/) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.04708) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
+| 2026-04-08 | HuggingFace, MP4, CSV Trajectories | Fudan University | [TAMEn](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) | Dataset | [paper](https://arxiv.org/abs/2604.07335) / [github](https://github.com/OpenDriveLab/TAMEn) |
 | 2025-10-09 | LeRobot, Large-Scale Household | Shanghai AI Lab | [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K) | Dataset | [github](https://github.com/MrKeee/FastUMI-100K) |
 | 2025-09-23 | HDF5, Force/Torque | GIST | [ManipForce](https://sites.google.com/view/manipforce/) | Dataset | [project](https://sites.google.com/view/manipforce/) |
 | 2025-06-02 | Visuo-Tactile, Trajectories, Open Dataset | Shanghai Innovation Institute | [FreeTacMan](https://arxiv.org/abs/2506.01941) | Dataset | [project](https://opendrivelab.com/FreeTacMan) / [github](https://github.com/OpenDriveLab/FreeTacMan) |
@@ -387,6 +393,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-06-12 | Real-World Stack, Async Inference, UMI | Tencent Robotics X | [Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack](https://arxiv.org/abs/2606.14409) | arXiv | [project](https://tairos.tencent.com/openSourceModels/hy-embodied-0.5-vla) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) |
+| 2026-04-08 | Online Validation, Recovery Teleop, Data Flywheel | Fudan University | [TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks](https://arxiv.org/abs/2604.07335) | arXiv | [project](https://opendrivelab.com/TAMEn) / [github](https://github.com/OpenDriveLab/TAMEn) / [dataset](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) |
 | 2025-10-02 | Controller Guidance, Embodiment Gap, Aerial | CMU | [UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
 | 2024-07-14 | Mobile Controller, Whole-Body, Legged | Stanford | [UMI on Legs: Making Manipulation Policies Mobile with a Manipulation-Centric Whole-body Controller](https://arxiv.org/abs/2407.10353) | CoRL 2024 | [github](https://github.com/real-stanford/umi-on-legs) |
 | 2024-02-15 | Latency Matching, Relative Actions, Calibration | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) / [github](https://github.com/real-stanford/universal_manipulation_interface) |
