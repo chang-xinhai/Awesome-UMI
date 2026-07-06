@@ -127,12 +127,12 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | Humanoid, VR-UMI, Whole-Body | BAAI | [HumanoidUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2606.27239) | arXiv | [paper](https://arxiv.org/abs/2606.27239) |
 | 2026-06-17 | Humanoid, Active Perception, Head-Hand | SJTU | [HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
 | 2026-06-12 | Egocentric Guidance, Data Quality, AR | SJTU | [EgoGuide: Egocentric Guidance for Efficient Robot-Free Demonstration Collection and Learning](https://arxiv.org/abs/2606.14665) | arXiv | [project](https://silicx.github.io/EgoGuide/) |
 | 2026-06-08 | Finger-Aligned, Bimanual, Large-Scale | AIRoA | [YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale](https://arxiv.org/abs/2606.10244) | arXiv / ICRA 2026 Workshop | [project](https://yubi.airoa.io/) / [hardware](https://github.com/toyota/yubi-hw) / [software](https://github.com/airoa-org/yubi-sw) |
 | 2026-06-04 | Wearable DexHand, Tactile, In-Hand Vision | Peking University | [RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033) | arXiv | [project](https://research.beingbeyond.com/realdexumi) |
 | 2026-05-20 | Mobile Manipulation, Cross-View, Robot-Free | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
-| 2026-05-05 | Humanoid, VR, Robot-Free | BAAI | [BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2605.03452) | arXiv | [paper](https://arxiv.org/abs/2605.03452) |
 | 2026-04-15 | 3D Perception, LiDAR, UMI Extension | HKU | [UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception](https://arxiv.org/abs/2604.14089) | arXiv | [project](https://umi-3d.github.io/) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) / [policy](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Policy) |
 | 2026-03-27 | Underwater, Robot-Free, Domain Transfer | Stanford | [UMI-Underwater: Learning Underwater Manipulation without Underwater Teleoperation](https://arxiv.org/abs/2603.27012) | arXiv | [project](https://umi-under-water.github.io/) / [github](https://github.com/umi-under-water/UMI_underwater) |
 | 2025-11-12 | Egocentric Point Cloud, Cross-Embodiment | Tsinghua SIGS | [UMIGen: A Unified Framework for Egocentric Point Cloud Generation and Cross-Embodiment Robotic Imitation Learning](https://arxiv.org/abs/2511.09302) | arXiv | [paper](https://arxiv.org/abs/2511.09302) |
@@ -160,6 +160,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | DM-UMI, Contact-Rich, Hybrid Supervision | RAI Institute | [Bridging Handheld and Teleoperated Supervision for Contact-Rich Manipulation via State-Gated Experts](https://arxiv.org/abs/2606.26603) | arXiv | [project](https://nperi-rai.github.io/bridge-project/) |
 | 2026-06-11 | Whole-Body Tactile, Force-Supervised, Humanoid | Georgia Tech | [WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning](https://arxiv.org/abs/2606.13232) | arXiv | [project](https://wt-umi.github.io/WTUMI/) |
 | 2026-06-08 | Arm-Worn, Force, Vision-Tactile | SJTU | [AetheRock: An Arm-Worn Robot Teaching System for Force-Guided Vision-Tactile Learning](https://arxiv.org/abs/2606.09777) | arXiv | [paper](https://arxiv.org/abs/2606.09777) |
 | 2026-04-12 | Multimodal, Tactile, Force/Wrench | BAAI | [OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction](https://arxiv.org/abs/2604.10647) | arXiv | [paper](https://arxiv.org/abs/2604.10647) |
@@ -176,10 +177,10 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | Humanoid, Whole-Body, Robot-Free | BAAI | [HumanoidUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2606.27239) | arXiv | [paper](https://arxiv.org/abs/2606.27239) |
 | 2026-06-17 | Humanoid, Loco-Manipulation, Active Perception | SJTU | [HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
 | 2026-06-11 | Whole-Body, Tactile, Humanoid | Georgia Tech | [WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning](https://arxiv.org/abs/2606.13232) | arXiv | [project](https://wt-umi.github.io/WTUMI/) |
 | 2026-05-20 | Mobile Manipulation, Cross-View, Decoupled Kinematics | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
-| 2026-05-05 | Humanoid, Whole-Body, Robot-Free | BAAI | [BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2605.03452) | arXiv | [paper](https://arxiv.org/abs/2605.03452) |
 | 2026-03-03 | Whole-Body, Egocentric, Mobile Manipulation | Stanford | [HoMMI: Learning Whole-Body Mobile Manipulation from Human Demonstrations](https://arxiv.org/abs/2603.03243) | arXiv | [paper](https://arxiv.org/abs/2603.03243) |
 | 2026-02-06 | Humanoid, Whole-Body, Bimanual | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | arXiv / Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
 | 2025-10-31 | Egocentric, Active Head, Semi-Humanoid | UC Berkeley | [EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations](https://arxiv.org/abs/2511.00153) | arXiv | [project](https://egocentric-manipulation-interface.github.io/) |
@@ -269,6 +270,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | State-Gated Experts, Diffusion Policy, Contact-Rich | RAI Institute | [Bridging Handheld and Teleoperated Supervision for Contact-Rich Manipulation via State-Gated Experts](https://arxiv.org/abs/2606.26603) | arXiv | [project](https://nperi-rai.github.io/bridge-project/) |
 | 2026-06-12 | Egocentric Residual Policy, Data Efficiency | SJTU | [EgoGuide: Egocentric Guidance for Efficient Robot-Free Demonstration Collection and Learning](https://arxiv.org/abs/2606.14665) | arXiv | [project](https://silicx.github.io/EgoGuide/) |
 | 2026-05-20 | Cross-View Diffusion, Mobile, Latency-Aware | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
 | 2025-10-31 | Memory-Augmented Policy, Active Vision | UC Berkeley | [EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations](https://arxiv.org/abs/2511.00153) | arXiv | [project](https://egocentric-manipulation-interface.github.io/) |
@@ -304,6 +306,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-20 | Whole-Body VLA, HuMI Co-Training, Loco-Manipulation | Tsinghua | [OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation](https://arxiv.org/abs/2606.22174) | arXiv | [project](https://openhlm-project.github.io/) / [github](https://github.com/OpenHLM-project/OpenHLM) / [dataset](https://huggingface.co/datasets/OpenHLM/OpenHLM-data) / [models](https://huggingface.co/OpenHLM/OpenHLM-ckpts) |
 | 2026-06-17 | Humanoid VLA, Active Perception, Transfer | SJTU | [HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
 | 2026-06-12 | UMI Pretraining, Flow-Matching VLA, Cross-Embodiment | Tencent Robotics X | [Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack](https://arxiv.org/abs/2606.14409) | arXiv | [project](https://tairos.tencent.com/openSourceModels/hy-embodied-0.5-vla) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [model](https://huggingface.co/tencent/Hy-Embodied-0.5-VLA-UMI) / [data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) |
 | 2026-06-03 | UMI Data, VLA, Physical Validation | TeleAI | [VISTA: Vision-Grounded and Physics-Validated Adaptation of UMI data for VLA Training](https://arxiv.org/abs/2606.04708) | arXiv | [project](https://tele-umi-vista.github.io/) / [github](https://github.com/TeleHuman/umi-vista) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
@@ -321,12 +324,12 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | Humanoid Whole-Body, VR-UMI | BAAI | [HumanoidUMI](https://arxiv.org/abs/2606.27239) | arXiv | [paper](https://arxiv.org/abs/2606.27239) |
 | 2026-06-17 | Humanoid Loco-Manipulation, Head-Hand | SJTU | [HALOMI](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
 | 2026-06-11 | Humanoid, Whole-Body Tactile | Georgia Tech | [WT-UMI](https://wt-umi.github.io/WTUMI/) | arXiv | [paper](https://arxiv.org/abs/2606.13232) / [project](https://wt-umi.github.io/WTUMI/) |
 | 2026-06-08 | Bidigital Gripper, Bimanual | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) |
 | 2026-06-04 | Wearable Dexterous Hand | Peking University | [RealDexUMI](https://research.beingbeyond.com/realdexumi) | arXiv | [paper](https://arxiv.org/abs/2606.06033) / [project](https://research.beingbeyond.com/realdexumi) |
 | 2026-05-20 | Mobile Base + Manipulator | Zhejiang University | [Mobile UMI](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
-| 2026-05-05 | Humanoid, Whole-Body | BAAI | [BifrostUMI](https://arxiv.org/abs/2605.03452) | arXiv | [paper](https://arxiv.org/abs/2605.03452) |
 | 2026-02-06 | Humanoid, Pelvis, Feet, Bimanual | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | Dataset | [project](https://humanoid-manipulation-interface.github.io/) |
 | 2025-10-31 | Semi-Humanoid, Active Head | UC Berkeley | [EgoMI](https://arxiv.org/abs/2511.00153) | arXiv | [project](https://egocentric-manipulation-interface.github.io/) |
 | 2025-10-02 | Aerial Manipulator, Controller-Constrained | CMU | [UMI-on-Air](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
@@ -359,12 +362,12 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | Sparse Keypoints, Whole-Body Retargeting | BAAI | [HumanoidUMI](https://arxiv.org/abs/2606.27239) | arXiv | [paper](https://arxiv.org/abs/2606.27239) |
 | 2026-06-17 | Head-Hand Targets, Latent Whole-Body Controller | SJTU | [HALOMI](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
 | 2026-06-11 | EE Pose Chunks, Contact Force | Georgia Tech | [WT-UMI](https://wt-umi.github.io/WTUMI/) | arXiv | [paper](https://arxiv.org/abs/2606.13232) / [project](https://wt-umi.github.io/WTUMI/) |
 | 2026-06-08 | 6-DoF EE, Gripper Aperture | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) |
 | 2026-06-04 | Hand-Frame EE, Hand Commands | Peking University | [RealDexUMI](https://research.beingbeyond.com/realdexumi) | arXiv | [paper](https://arxiv.org/abs/2606.06033) / [project](https://research.beingbeyond.com/realdexumi) |
 | 2026-05-20 | SE(2) Base, SE(3) Hand | Zhejiang University | [Mobile UMI](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
-| 2026-05-05 | Human Keypoints, Whole-Body Retargeting | BAAI | [BifrostUMI](https://arxiv.org/abs/2605.03452) | arXiv | [paper](https://arxiv.org/abs/2605.03452) |
 | 2026-04-12 | Virtual Target Pose, Force-Aware Execution | BAAI | [OmniUMI](https://arxiv.org/abs/2604.10647) | arXiv | [paper](https://arxiv.org/abs/2604.10647) |
 | 2025-10-31 | 29D Action/State, Head Retargeting | UC Berkeley | [EgoMI](https://arxiv.org/abs/2511.00153) | arXiv | [project](https://egocentric-manipulation-interface.github.io/) |
 | 2025-10-02 | EE Trajectory, Controller-Guided Diffusion | CMU | [UMI-on-Air](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
@@ -392,6 +395,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-25 | Observed vs Desired Actions, DM-UMI, Contact | RAI Institute | [Bridging Handheld and Teleoperated Supervision for Contact-Rich Manipulation via State-Gated Experts](https://arxiv.org/abs/2606.26603) | arXiv | [project](https://nperi-rai.github.io/bridge-project/) |
 | 2026-06-12 | Real-World Stack, Async Inference, UMI | Tencent Robotics X | [Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack](https://arxiv.org/abs/2606.14409) | arXiv | [project](https://tairos.tencent.com/openSourceModels/hy-embodied-0.5-vla) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) |
 | 2026-04-08 | Online Validation, Recovery Teleop, Data Flywheel | Fudan University | [TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks](https://arxiv.org/abs/2604.07335) | arXiv | [project](https://opendrivelab.com/TAMEn) / [github](https://github.com/OpenDriveLab/TAMEn) / [dataset](https://huggingface.co/datasets/OpenDriveLab-org/TAMEn) |
 | 2025-10-02 | Controller Guidance, Embodiment Gap, Aerial | CMU | [UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
