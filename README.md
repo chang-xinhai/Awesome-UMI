@@ -127,6 +127,8 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-10 | Single-View Human Demo, Physics Validation, Retargeting | KU Leuven | [DemoBridge: A Simulation-in-the-Loop Toolkit for Single-View Human Demonstration Retargeting](https://arxiv.org/abs/2607.09519) | arXiv | [gitlab](https://gitlab.kuleuven.be/u0123974/demo-bridge) |
+| 2026-07-09 | FPV Video, Mixed Reality, Full-Hand Retargeting | Skoltech | [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](https://arxiv.org/abs/2607.08857) | arXiv | [paper](https://arxiv.org/abs/2607.08857) |
 | 2026-06-25 | Humanoid, VR-UMI, Whole-Body | BAAI | [HumanoidUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2606.27239) | arXiv | [paper](https://arxiv.org/abs/2606.27239) |
 | 2026-06-25 | Handheld+Teleop, State-Gated Experts, Contact-Rich | RAI Institute | [Bridging Handheld and Teleoperated Supervision for Contact-Rich Manipulation via State-Gated Experts](https://arxiv.org/abs/2606.26603) | arXiv | [project](https://nperi-rai.github.io/bridge-project/) |
 | 2026-06-17 | Humanoid, Active Perception, Head-Hand | SJTU | [HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
@@ -228,6 +230,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-15 | Egocentric Human Video, 2,000 Hours, Retargeting Toolchain | Ant Group | [Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning](https://arxiv.org/abs/2607.14183) | arXiv | [github](https://github.com/ant-research/Open-AoE) / [dataset](https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h) |
 | 2024-03-19 | In-the-Wild, Large-Scale, Multi-Robot | Stanford | [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945) | arXiv | [project](https://droid-dataset.github.io/) |
 | 2023-10-26 | Scalable Data Generation, Simulation, Demonstrations | NVIDIA | [MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596) | CoRL 2023 | [project](https://mimicgen.github.io/) / [github](https://github.com/NVlabs/mimicgen_environments) |
 | 2023-10-13 | Cross-Embodiment, RT-X, Multi-Dataset | Stanford | [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864) | arXiv | [project](https://robotics-transformer-x.github.io/) / [github](https://github.com/google-deepmind/open_x_embodiment) |
@@ -272,6 +275,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-14 | Single RGB-D Demo, Synthetic Augmentation, Mobile Manipulation | Carnegie Mellon University | [Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154) | arXiv | [project](https://wanda.lecar-lab.org/) / [dataset](https://huggingface.co/datasets/LeCAR-Lab/Wanda) |
 | 2026-06-25 | State-Gated Experts, Diffusion Policy, Contact-Rich | RAI Institute | [Bridging Handheld and Teleoperated Supervision for Contact-Rich Manipulation via State-Gated Experts](https://arxiv.org/abs/2606.26603) | arXiv | [project](https://nperi-rai.github.io/bridge-project/) |
 | 2026-06-12 | Egocentric Residual Policy, Data Efficiency | SJTU | [EgoGuide: Egocentric Guidance for Efficient Robot-Free Demonstration Collection and Learning](https://arxiv.org/abs/2606.14665) | arXiv | [project](https://silicx.github.io/EgoGuide/) |
 | 2026-05-20 | Cross-View Diffusion, Mobile, Latency-Aware | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
