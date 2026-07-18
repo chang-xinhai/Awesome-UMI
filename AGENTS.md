@@ -147,7 +147,7 @@ Each subsection should use the same compact table schema:
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 
 ### Column rules
-- `Date`: use `YYYY-MM-DD` whenever possible
+- `Date`: if a work has an arXiv record, always use the initial `v1` submission date shown by arXiv, not a revision date, acceptance date, conference date, project-page launch, code release, or local-time conversion. If no arXiv record exists, use the official conference or journal publication date. Use `YYYY-MM` or `YYYY` only when that canonical source does not publish a precise day
 - `Keywords`: short tags only; keep them scannable
 - `Institute (first)`: first institution / lab only, concise and normalized
 - `Paper`: title linked to the canonical paper URL
@@ -158,7 +158,7 @@ Each subsection should use the same compact table schema:
 
 - Sort every subsection by `Date` descending.
 - Newer entries must appear above older ones.
-- If only month or year is public, infer the best consistent date from the canonical public release page and keep formatting stable.
+- If only a month or year is available from the applicable canonical source, preserve that partial precision rather than inferring a day.
 
 ## Overlap policy
 
