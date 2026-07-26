@@ -124,6 +124,16 @@ When adding or updating entries, use sources in this order:
 
 If multiple sources disagree, prefer the most official public source.
 
+### Candidate discovery feeds
+
+Use the following broad feeds to discover candidates and recent omissions:
+- `https://github.com/jiangranlv/robotics_arXiv_daily`
+- `https://github.com/Vincentqyw/cv-arxiv-daily`
+
+These feeds are candidate indexes only. Never copy dates, venues, affiliations,
+or links from them without returning to arXiv v1, an official proceedings page,
+the paper PDF, or an author-maintained project/code page for verification.
+
 ## Verification rule for new entries
 
 Do **not** add an entry unless it has a sufficiently reliable canonical public source.
