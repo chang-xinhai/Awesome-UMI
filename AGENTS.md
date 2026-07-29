@@ -88,6 +88,7 @@ It may contain papers, websites, docs, conventions, or notes.
 Typical subsections:
 - Embodiments
 - Observation Modalities
+- Pose Tracking / State Estimation
 - Action Spaces
 - Data Formats / Storage Conventions
 - Deployment / System Constraints

@@ -28,7 +28,7 @@ This repository focuses on:
 - **UMI Method**: strong adjacent methods for robot-free teaching, teleoperation, dexterous manipulation, multimodal sensing, and cross-embodiment transfer
 - **UMI Dataset**: official UMI datasets and UMI-native dataset families
 - **UMI Policy**: policies trained on UMI-like data or commonly used as relevant baselines/support models
-- **UMI Taxonomy**: embodiments, modalities, data formats, deployment-facing notes, and survey-style resources
+- **UMI Taxonomy**: embodiments, modalities, pose tracking, data formats, deployment-facing notes, and survey-style resources
 
 This list is intentionally **UMI-first**, not a generic robot-manipulation survey.
 
@@ -55,10 +55,11 @@ Start here if you want the shortest path through the UMI ecosystem.
 | Build on UMI hardware/data collection | [Universal Manipulation Interface Codebase](https://github.com/real-stanford/universal_manipulation_interface), [UMI-FT](https://github.com/real-stanford/UMI-FT), [exUMI](https://silicx.github.io/exUMI/) |
 | Explore dexterous UMI-style extensions | [DexUMI](https://arxiv.org/abs/2505.21864), [DexWild](https://dexwild.github.io/), [DexCap](https://arxiv.org/abs/2403.07788) |
 | Train UMI-relevant policies | [Hy-Embodied-0.5-VLA](https://arxiv.org/abs/2606.14409), [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/), [ACT / ALOHA](https://tonyzhaozh.github.io/aloha/), [OpenVLA](https://openvla.github.io/) |
-| Compare modalities and formats | [UMI Taxonomy](#umi-taxonomy), [UMI Data Community Site](https://umi-data.github.io/) |
+| Compare modalities, tracking, and formats | [UMI Taxonomy](#umi-taxonomy), [UMI Data Community Site](https://umi-data.github.io/) |
 
 ## News
 
+- [2026-07-30] Added and expanded a dedicated pose-tracking taxonomy covering UMI-used trackers and candidate VIO, LIO, LVIO, RGB-D, event-camera, structured-light, fiducial, learned-monocular, and calibration stacks.
 - [2026-07-30] Completed the HiFi-UMI entry with its official project and 2,000-hour public dataset; added its dataset and UMI-only post-training roles.
 - [2026-07-26] Added recent UMI-style data engines, teleoperation hardware, cross-embodiment deployment, recovery learning, and force/tactile policies; corrected BifrostUMI's canonical record.
 - [2026-06-24] Added TAMEn to UMI methods, datasets, and taxonomy as a tactile-aware closed-loop data collection stack.
@@ -96,6 +97,7 @@ Start here if you want the shortest path through the UMI ecosystem.
   - [UMI Taxonomy](#umi-taxonomy)
     - [Embodiments](#embodiments)
     - [Observation Modalities](#observation-modalities)
+    - [Pose Tracking / State Estimation](#pose-tracking--state-estimation)
     - [Action Spaces](#action-spaces)
     - [Data Formats / Storage](#data-formats--storage)
     - [Deployment / System Constraints](#deployment--system-constraints)
@@ -376,7 +378,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 ## UMI Taxonomy
 
-Structured references for embodiments, observation modalities, action spaces, storage formats, and evaluation dimensions in the UMI ecosystem.
+Structured references for embodiments, observation modalities, pose tracking, action spaces, storage formats, and evaluation dimensions in the UMI ecosystem.
 
 ### Embodiments
 
@@ -423,6 +425,59 @@ Structured references for embodiments, observation modalities, action spaces, st
 | 2025-07-20 | Image, Tactile, Proprio | Columbia | [Touch in the Wild](https://binghao-huang.github.io/touch_in_the_wild/) | Dataset | [project](https://binghao-huang.github.io/touch_in_the_wild/) |
 | 2024-06-27 | Image, Audio, Proprio | Stanford | [ManiWAV](https://mani-wav.github.io/) | Dataset | [project](https://mani-wav.github.io/) |
 | 2024-02-15 | Image, Proprio, Bimanual | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) |
+
+### Pose Tracking / State Estimation
+
+Pose tracking turns robot-free capture into metric action labels. `UMI-Used` marks a tracker or state-estimation design actually used by a UMI system; `UMI-Adjacent` marks a demonstrated egocentric or robot-free capture design that is directly transferable; `Candidate` marks a promising substitute or supporting method without a demonstrated UMI integration. Prefer metric 6-DoF estimates with hardware-aligned timestamps; monocular visual-only methods need an explicit scale source before they can supervise SE(3) actions.
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-28 | UMI-Used, Stereo-Inertial SLAM, Relative Pose, Hardware Sync | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
+| 2026-07-27 | Candidate, Structured-Light Depth, Depth-Centric SLAM | Peking University | [NSL-SLAM: High-Fidelity Neural Structured-Light Depth for Practical SLAM and Reconstruction](https://arxiv.org/abs/2607.24495) | arXiv | [paper](https://arxiv.org/abs/2607.24495) |
+| 2026-06-19 | Candidate, WIO/VIO/LIO/LVIO, Online Spatiotemporal Calibration | Beijing Institute of Technology | [Ultra-Fusion: A Resilient Tightly-Coupled Multi-Sensor Fusion SLAM Framework under Sensor Degradation and Spatiotemporal Perturbation for Intelligent Transportation Systems](https://arxiv.org/abs/2606.21223) | arXiv | [project](https://sjtuyinjie.github.io/ultrafusion-web/) / [github](https://github.com/sjtuyinjie/Ultra-Fusion) |
+| 2026-06-04 | UMI-Used, External 6-DoF Tracker, Hand-Frame SE(3) | Peking University | [RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033) | arXiv | [project](https://research.beingbeyond.com/realdexumi) |
+| 2026-05-24 | UMI-Adjacent, Stereo-Inertial SLAM, 3D Hand Tracking | University of Maryland | [HumanEgo: Zero-Shot Robot Learning from Minutes of Human Egocentric Videos](https://arxiv.org/abs/2605.24934) | arXiv | [project](https://humanego-ai.github.io/) / [github](https://github.com/TX-Leo/HumanEgo) |
+| 2026-05-20 | UMI-Used, Dual OpenVINS, ChArUco Frame Alignment | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [OpenVINS](https://github.com/rpng/open_vins) |
+| 2026-05-08 | Candidate, Stereo Event-Inertial SLAM, HDR, Motion-Blur Resistance | ETH Zurich | [AERO-VIS: Asynchronous Event-based Real-time Onboard Visual-Inertial SLAM](https://arxiv.org/abs/2605.07885) | arXiv | [project](https://ethz-mrl.github.io/AERO-VIS/) |
+| 2026-05-05 | UMI-Used, VR Inside-Out Tracking, Sparse Body Trackers | BAAI | [BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2605.03452) | arXiv | [project](https://baai-aether.github.io/BifrostUMI/) |
+| 2026-04-15 | UMI-Used, LiDAR-Inertial SLAM, ESIKF, Calibrated Camera Pose | HKU | [UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception](https://arxiv.org/abs/2604.14089) | arXiv | [project](https://umi-3d.github.io/) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) |
+| 2026-03-05 | UMI-Adjacent, Phone VIO, Fisheye, World-Map Merging | SJTU | [RoboPocket: Improve Robot Policies Instantly with Your Phone](https://arxiv.org/abs/2603.05504) | arXiv | [project](https://robo-pocket.github.io/) |
+| 2026-02-06 | UMI-Used, Vive Inside-Out Trackers, Whole-Body Pose | Tsinghua | [Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations](https://arxiv.org/abs/2602.06643) | arXiv | [project](https://humanoid-manipulation-interface.github.io/) |
+| 2025-12-16 | Candidate, Structured-Light Depth, Neural Decoding | Peking University | [Robust Single-shot Structured Light 3D Imaging via Neural Feature Decoding](https://arxiv.org/abs/2512.14028) | SIGGRAPH Asia 2025 | [project](https://namisntimpot.github.io/NSLweb/) |
+| 2025-10-07 | Candidate, Metric Monocular Depth, Dynamic Masking, RGB-D Backend | Technical University of Munich | [Dropping the D: RGB-D SLAM Without the Depth Sensor](https://arxiv.org/abs/2510.06216) | arXiv | [project](https://tum-pf.github.io/dropd-slam/) |
+| 2025-10-02 | UMI-Used, VR Inside-Out Tracking, Head/Controller 6-DoF | Shanghai University | [ActiveUMI: Robotic Manipulation with Active Perception from Robot-Free Human Demonstrations](https://arxiv.org/abs/2510.01607) | arXiv | [project](https://activeumi.github.io/) |
+| 2025-09-06 | Candidate, Multi-Fisheye LVIO, Panoramic Features, Loop Closure | Tongji University | [Multi-LVI-SAM: A Robust LiDAR-Visual-Inertial Odometry for Multiple Fisheye Cameras](https://arxiv.org/abs/2509.05740) | arXiv | [paper](https://arxiv.org/abs/2509.05740) |
+| 2025-05-28 | UMI-Used, iPhone ARKit, Wrist Pose | Stanford | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | CoRL 2025 | [github](https://github.com/real-stanford/DexUMI) |
+| 2025-01-11 | Candidate, Neural RGB-D SLAM, Dense Tracking, Scene Priors | Zhejiang University of Technology | [SP-SLAM: Neural Real-Time Dense SLAM With Scene Priors](https://arxiv.org/abs/2501.06469) | arXiv | [paper](https://arxiv.org/abs/2501.06469) |
+| 2024-12-16 | Candidate, Learned Monocular SLAM, Camera-Model Agnostic, Dense Geometry | Imperial College London | [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](https://arxiv.org/abs/2412.12392) | CVPR 2025 | [project](https://edexheim.github.io/mast3r-slam/) / [github](https://github.com/rmurai0610/MASt3R-SLAM) |
+| 2024-09-29 | UMI-Used, RealSense T265 VIO, Off-the-Shelf Tracking | Shanghai AI Lab | [FastUMI: A Scalable and Hardware-Independent Universal Manipulation Interface with Dataset](https://arxiv.org/abs/2409.19499) | arXiv | [dataset](https://github.com/MrKeee/FastUMI-100K) |
+| 2024-08-26 | Candidate, Direct LVIO, ESIKF, Unified Voxel Map | HKU | [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](https://arxiv.org/abs/2408.14035) | arXiv | [github](https://github.com/hku-mars/FAST-LIVO2) |
+| 2024-03-10 | Candidate, RGB-D/Stereo/LiDAR, Graph SLAM, Loop Closure | Université de Sherbrooke | [RTAB-Map as an Open-Source Lidar and Visual SLAM Library for Large-Scale and Long-Term Online Operation](https://arxiv.org/abs/2403.06341) | JFR 2019 | [project](https://introlab.github.io/rtabmap/) / [github](https://github.com/introlab/rtabmap) |
+| 2024-02-15 | UMI-Used, Monocular-Inertial, Raw Fisheye, Metric Scale | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [project](https://umi-gripper.github.io/) / [github](https://github.com/real-stanford/universal_manipulation_interface) |
+| 2024-01-12 | Candidate, Metric-Semantic VIO, Mono/Stereo/RGB-D, Robust Loop Closure | MIT | [Kimera2: Robust and Accurate Metric-Semantic SLAM in the Real World](https://arxiv.org/abs/2401.06323) | ISER 2023 | [github](https://github.com/MIT-SPARK/Kimera) |
+| 2023-12-04 | Candidate, RGB-D SLAM, 3D Gaussian Tracking, Dense Mapping | Carnegie Mellon University | [SplaTAM: Splat, Track & Map 3D Gaussians for Dense RGB-D SLAM](https://arxiv.org/abs/2312.02126) | CVPR 2024 | [project](https://spla-tam.github.io/) / [github](https://github.com/spla-tam/SplaTAM) |
+| 2023-06-01 | Candidate, Multi-Fisheye VIO, Factor Graph, Dense Depth | Huawei Munich Research Center | [BAMF-SLAM: Bundle Adjusted Multi-Fisheye Visual-Inertial SLAM Using Recurrent Field Transforms](https://arxiv.org/abs/2306.01173) | ICRA 2023 | [paper](https://arxiv.org/abs/2306.01173) |
+| 2023-04-21 | Candidate, RGB-D-Inertial Odometry, Dynamic-Object Rejection, Lightweight | Harbin Institute of Technology, Shenzhen | [RGB-D Inertial Odometry for a Resource-Restricted Robot in Dynamic Environments](https://arxiv.org/abs/2304.10987) | RA-L 2022 | [github](https://github.com/HITSZ-NRSL/Dynamic-VINS) |
+| 2023-04-07 | Candidate, High-Bandwidth LIO, Aggressive Motion, Solid-State LiDAR | HKU | [Point-LIO: Robust High-Bandwidth Light Detection and Ranging Inertial Odometry](https://hub.hku.hk/bitstream/10722/331147/1/content.pdf) | Advanced Intelligent Systems 2023 | [github](https://github.com/hku-mars/Point-LIO) |
+| 2022-12-01 | Candidate, Multi-Modal Mapping, Multi-Session, Non-Visual Landmarks | ETH Zurich | [maplab 2.0 -- A Modular and Multi-Modal Mapping Framework](https://arxiv.org/abs/2212.00654) | RA-L 2023 | [github](https://github.com/ethz-asl/maplab) |
+| 2022-09-30 | Candidate, LiDAR Odometry, Handheld, No IMU | University of Bonn | [KISS-ICP: In Defense of Point-to-Point ICP](https://arxiv.org/abs/2209.15397) | RA-L 2023 | [github](https://github.com/PRBonn/kiss-icp) |
+| 2022-08-25 | Candidate, Rolling-Shutter VIO, Continuous Time, Online Line-Delay Calibration | Zhejiang University | [Ctrl-VIO: Continuous-Time Visual-Inertial Odometry for Rolling Shutter Cameras](https://arxiv.org/abs/2208.12008) | arXiv | [github](https://github.com/APRIL-ZJU/Ctrl-VIO) |
+| 2022-08-24 | Candidate, Dynamic-Scene VIO, IMU-Guided Outlier Rejection | KAIST | [DynaVINS: A Visual-Inertial SLAM for Dynamic Environments](https://arxiv.org/abs/2208.11500) | RA-L 2022 | [github](https://github.com/url-kaist/dynaVINS) |
+| 2022-02-18 | Candidate, Multi-Camera VIO, Loop Closure | Imperial College London | [OKVIS2: Realtime Scalable Visual-Inertial SLAM with Loop Closure](https://arxiv.org/abs/2202.09199) | arXiv | [github](https://github.com/ethz-mrl/okvis2) |
+| 2022-01-11 | Candidate, Monocular VIO, Robust IMU Initialization, Photometric BA | Technical University of Munich | [DM-VIO: Delayed Marginalization Visual-Inertial Odometry](https://arxiv.org/abs/2201.04114) | RA-L 2022 | [github](https://github.com/lukasvst/dm-vio) |
+| 2021-09-10 | Candidate, LVIO, Photometric Fusion, Dense Mapping | HKU | [R3LIVE: A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual Tightly-coupled State Estimation and Mapping Package](https://arxiv.org/abs/2109.07982) | ICRA 2022 | [github](https://github.com/hku-mars/r3live) |
+| 2021-08-24 | Candidate, Deep Visual SLAM, Mono/Stereo/RGB-D | Princeton | [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](https://arxiv.org/abs/2108.10869) | NeurIPS 2021 | [github](https://github.com/princeton-vl/DROID-SLAM) |
+| 2021-07-14 | Candidate, Direct LIO, Solid-State LiDAR, Handheld | HKU | [FAST-LIO2: Fast Direct LiDAR-Inertial Odometry](https://arxiv.org/abs/2107.06829) | T-RO 2022 | [github](https://github.com/hku-mars/FAST_LIO) |
+| 2021-04-22 | Candidate, LVIO, Failure-Tolerant Fusion | Stevens Institute of Technology | [LVI-SAM: Tightly-coupled Lidar-Visual-Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2104.10831) | ICRA 2021 | [github](https://github.com/TixiaoShan/LVI-SAM) |
+| 2020-07-23 | Candidate, Visual/Inertial SLAM, Fisheye, Multi-Map | University of Zaragoza | [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](https://arxiv.org/abs/2007.11898) | T-RO 2021 | [github](https://github.com/UZ-SLAMLab/ORB_SLAM3) |
+| 2020-07-01 | Candidate, Factor-Graph LIO, Loop Closure | Stevens Institute of Technology | [LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](https://arxiv.org/abs/2007.00258) | IROS 2020 | [github](https://github.com/TixiaoShan/LIO-SAM) |
+| 2020 | Candidate, Filter VIO, Mono/Stereo, Online Calibration | University of Delaware | [OpenVINS: A Research Platform for Visual-Inertial Estimation](https://pgeneva.com/downloads/papers/Geneva2020ICRA.pdf) | ICRA 2020 | [docs](https://docs.openvins.com/) / [github](https://github.com/rpng/open_vins) |
+| 2019-10-01 | Candidate, AprilTag SLAM, Fiducial Anchors, Multi-Camera Calibration | University of Pennsylvania | [TagSLAM: Robust SLAM with Fiducial Markers](https://arxiv.org/abs/1910.00679) | arXiv | [github](https://github.com/berndpfrommer/tagslam) |
+| 2019-06 | Candidate, Direct RGB-D SLAM, Dense Bundle Adjustment, Sync Diagnostics | ETH Zurich | [BAD SLAM: Bundle Adjusted Direct RGB-D SLAM](https://openaccess.thecvf.com/content_CVPR_2019/html/Schops_BAD_SLAM_Bundle_Adjusted_Direct_RGB-D_SLAM_CVPR_2019_paper.html) | CVPR 2019 | [github](https://github.com/ETH3D/badslam) |
+| 2019-04-13 | Candidate, VIO Mapping, Non-Linear Factor Recovery, Calibration Tools | Technical University of Munich | [Visual-Inertial Mapping with Non-Linear Factor Recovery](https://arxiv.org/abs/1904.06504) | RA-L 2020 | [github](https://github.com/VladyslavUsenko/basalt) |
+| 2017-08-13 | Candidate, Monocular VIO, Loop Closure, iOS | HKUST | [VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator](https://arxiv.org/abs/1708.03852) | T-RO 2018 | [github](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) |
+| 2016-04-05 | Candidate, RGB-D Global Pose Optimization, Relocalization, Dense Fusion | Stanford | [BundleFusion: Real-time Globally Consistent 3D Reconstruction using On-the-fly Surface Re-integration](https://arxiv.org/abs/1604.01093) | TOG 2017 | [github](https://github.com/niessner/BundleFusion) |
+| 2013 | Candidate, Camera-IMU Spatiotemporal Calibration, Multi-Camera Calibration | ETH Zurich | [Unified Temporal and Spatial Calibration for Multi-Sensor Systems](https://www.research-collection.ethz.ch/handle/20.500.11850/81865) | IROS 2013 | [github](https://github.com/ethz-asl/kalibr) |
 
 ### Action Spaces
 
