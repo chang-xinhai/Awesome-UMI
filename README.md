@@ -128,6 +128,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Authors | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [paper](https://arxiv.org/abs/2607.25895) |
 | 2026-07-23 | Browser Teleoperation, Community Data Engine, Data Refinement | Axis Robotics | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | arXiv | [project](https://axisaiorg.github.io/AXIS-V1/) |
 | 2026-07-22 | Human Recovery Demo, Egocentric, Corrective Intent | Fudan University | [EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration](https://arxiv.org/abs/2607.19745) | arXiv | [paper](https://arxiv.org/abs/2607.19745) |
 | 2026-07-21 | Modular Teleoperation, Bimanual Mobile, Wearable Backpack | Stanford | [ModPack: An Extensible Teleoperation Interface for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.19479) | arXiv | [project](https://modpack-robotics.github.io/) |
@@ -259,6 +260,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-27 | Embodied Data Taxonomy, UMI, Data Scaling | Peking University | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | arXiv | [paper](https://arxiv.org/abs/2607.24744) |
 | 2026-07-23 | Community Teleoperation, 50K+ Trajectories, 207 Tasks | Axis Robotics | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | Dataset / arXiv | [project](https://axisaiorg.github.io/AXIS-V1/) |
 | 2026-07-15 | Egocentric Human Video, 2,000 Hours, Retargeting Toolchain | Ant Group | [Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning](https://arxiv.org/abs/2607.14183) | arXiv | [github](https://github.com/ant-research/Open-AoE) / [dataset](https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h) |
 | 2026-06-16 | 4D Hand-Object, Action100M, Four Robot Embodiments | Rice University | [EgoInfinity](https://arxiv.org/abs/2606.17385) | Dataset / arXiv | [project](https://rice-robotpi-lab.github.io/EgoInfinity/) / [github](https://github.com/Rice-RobotPI-Lab/EgoInfinity) / [dataset](https://huggingface.co/datasets/Rice-RobotPI-Lab/egoinfinity) |
@@ -354,6 +356,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-07-20 | Force Memory, Non-Markovian Tasks, Contact-Rich VLA | Tsinghua | [FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231) | arXiv | [project](https://qft-333.github.io/FM-VLA-Page/) |
+| 2026-07-16 | UMI Pretraining, 100K Hours, Mobile Manipulation | Xiaomi Robotics Lab | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | arXiv | [project](https://robotics.xiaomi.com/xiaomi-robotics-1.html) |
 | 2026-07-16 | Future Tactile Prediction, Action-Expert Features, VLA | Fudan University | [Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2607.14609) | arXiv | [paper](https://arxiv.org/abs/2607.14609) |
 | 2026-07-07 | LingBot-VLA 2.0, 20 Embodiments, Human Video | Robbyant | [From Foundation to Application: Improving VLA Models in Practice](https://github.com/Robbyant/lingbot-vla-v2/blob/main/assets/LingBot_VLA_2_0.pdf) | Tech Report | [github](https://github.com/Robbyant/lingbot-vla-v2) / [model](https://huggingface.co/robbyant/lingbot-vla-v2-6b) / [paper](https://arxiv.org/abs/2607.06403) |
 | 2026-06-22 | Wrist-View Masking, Zero-Shot Transfer, Unseen End-Effectors | Stanford | [Cloak: Zero-Shot Cross-Embodiment Manipulation by Masking the End-Effector from the VLA](https://arxiv.org/abs/2606.22836) | arXiv | [project](https://tml.stanford.edu/cloak/) |
