@@ -59,6 +59,7 @@ Start here if you want the shortest path through the UMI ecosystem.
 
 ## News
 
+- [2026-07-30] Completed the HiFi-UMI entry with its official project and 2,000-hour public dataset; added its dataset and UMI-only post-training roles.
 - [2026-07-26] Added recent UMI-style data engines, teleoperation hardware, cross-embodiment deployment, recovery learning, and force/tactile policies; corrected BifrostUMI's canonical record.
 - [2026-06-24] Added TAMEn to UMI methods, datasets, and taxonomy as a tactile-aware closed-loop data collection stack.
 - [2026-06-24] Added Hy-Embodied-0.5-VLA, Hy-Embodied-0.5-VLA-Data, FlowPRO, and a deployment constraints taxonomy subsection.
@@ -128,7 +129,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Authors | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [paper](https://arxiv.org/abs/2607.25895) |
+| 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
 | 2026-07-23 | Browser Teleoperation, Community Data Engine, Data Refinement | Axis Robotics | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | arXiv | [project](https://axisaiorg.github.io/AXIS-V1/) |
 | 2026-07-22 | Human Recovery Demo, Egocentric, Corrective Intent | Fudan University | [EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration](https://arxiv.org/abs/2607.19745) | arXiv | [paper](https://arxiv.org/abs/2607.19745) |
 | 2026-07-21 | Modular Teleoperation, Bimanual Mobile, Wearable Backpack | Stanford | [ModPack: An Extensible Teleoperation Interface for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.19479) | arXiv | [project](https://modpack-robotics.github.io/) |
@@ -236,6 +237,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-28 | Bimanual, 2,000 Hours, 6 Views, LeRobot v3 | Simple AI | [HiFi-UMI-2K](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) | Dataset / arXiv | [paper](https://arxiv.org/abs/2607.25895) / [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) |
 | 2026-06-12 | Bimanual, 2K+ Hours, Lance/LeRobot | Tencent Robotics X | [Hy-Embodied-0.5-VLA-Data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.14409) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [model](https://huggingface.co/tencent/Hy-Embodied-0.5-VLA-UMI) |
 | 2026-06-09 | Benchmark, 10 Tasks, HuggingFace | Soochow University | [UMI-Bench 1.0](https://umibenchmark.github.io/) | Dataset / Benchmark | [paper](https://arxiv.org/abs/2606.10382) / [dataset](https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1) / [models](https://huggingface.co/UMIbenchmark/UMI-Benchmark-v1-checkpoints) |
 | 2026-06-08 | Bimanual, 1.20M Episodes, LeRobot | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) / [software](https://github.com/airoa-org/yubi-sw) |
@@ -310,6 +312,7 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-28 | UMI-Only Post-Training, Bimanual, Zero-Robot Deployment | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
 | 2026-07-22 | Human Recovery Data, Corrective Intent, Recovery Gate | Fudan University | [EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration](https://arxiv.org/abs/2607.19745) | arXiv | [paper](https://arxiv.org/abs/2607.19745) |
 | 2026-07-19 | Vision+Force Composition, Asynchronous Inference, Relative Actions | SJTU | [Asynchronous Multimodal Diffusion Policy Composition via Latency-Aware Guidance Fusion](https://arxiv.org/abs/2607.17257) | arXiv | [project](https://lag-fusion.github.io/) |
 | 2026-07-14 | Single RGB-D Demo, Synthetic Augmentation, Mobile Manipulation | Carnegie Mellon University | [Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](https://arxiv.org/abs/2607.13154) | arXiv | [project](https://wanda.lecar-lab.org/) / [dataset](https://huggingface.co/datasets/LeCAR-Lab/Wanda) |
@@ -445,6 +448,7 @@ Structured references for embodiments, observation modalities, action spaces, st
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-07-28 | 6 Views, LeRobot v3, Parquet, MP4 | Simple AI | [HiFi-UMI-2K](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) | Dataset / arXiv | [paper](https://arxiv.org/abs/2607.25895) / [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) |
 | 2026-07-23 | Unified Trajectories, RGB-D, Task Snapshots | Axis Robotics | [AXIS](https://arxiv.org/abs/2607.21588) | Dataset / Benchmark | [project](https://axisaiorg.github.io/AXIS-V1/) |
 | 2026-07-02 | Training-Ready Rollouts, Full Logs, Replay Viewer | Beihang University | [EVA-Client](https://arxiv.org/abs/2607.02646) | Framework / arXiv | [github](https://github.com/Noietch/EVA-CLIENT) |
 | 2026-06-16 | HuggingFace, NPZ, Four Embodiments | Rice University | [EgoInfinity](https://huggingface.co/datasets/Rice-RobotPI-Lab/egoinfinity) | Dataset | [paper](https://arxiv.org/abs/2606.17385) / [github](https://github.com/Rice-RobotPI-Lab/EgoInfinity) |
