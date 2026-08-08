@@ -56,9 +56,11 @@ Start here if you want the shortest path through the UMI ecosystem.
 | Explore dexterous UMI-style extensions | [DexUMI](https://arxiv.org/abs/2505.21864), [DexWild](https://dexwild.github.io/), [DexCap](https://arxiv.org/abs/2403.07788) |
 | Train UMI-relevant policies | [Hy-Embodied-0.5-VLA](https://arxiv.org/abs/2606.14409), [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/), [ACT / ALOHA](https://tonyzhaozh.github.io/aloha/), [OpenVLA](https://openvla.github.io/) |
 | Compare modalities, tracking, and formats | [UMI Taxonomy](#umi-taxonomy), [UMI Data Community Site](https://umi-data.github.io/) |
+| Scale robot-free supervision | [VLAff / EgoAffordance](https://arxiv.org/abs/2608.05215), [JoyAI-RA 0.5](https://arxiv.org/abs/2608.05674), [HiFi-UMI](https://arxiv.org/abs/2607.25895) |
 
 ## News
 
+- [2026-08-08] Added the latest cross-embodiment and robot-free learning wave: VLAff/EgoAffordance, JoyAI-RA 0.5, World-to-Wrist, XEWorld, GeniWorld, DyPES-VLA, and MDIR.
 - [2026-08-04] Added Behavior Prompting Policy/iPhUMI, DexDirect, ContactFlow, BARX, and TacPrint to cover demonstration prompting, low-setup dexterous capture, embodiment-agnostic contact conditioning, behavior-aligned transfer, and wearable tactile replay.
 - [2026-07-30] Added and expanded a dedicated pose-tracking taxonomy covering UMI-used trackers and candidate VIO, LIO, LVIO, RGB-D, event-camera, structured-light, fiducial, learned-monocular, and calibration stacks.
 - [2026-07-30] Completed the HiFi-UMI entry with its official project and 2,000-hour public dataset; added its dataset and UMI-only post-training roles.
@@ -132,6 +134,9 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-06 | Egocentric + Simulation + Robot Data, Dual Action Alignment | Joy Future Academy, JD | [JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment](https://arxiv.org/abs/2608.05674) | arXiv | [project](https://joyai-ra-05.github.io/) |
+| 2026-08-05 | Egocentric Video, 3D Affordances, Robot-Free Teaching | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
+| 2026-07-31 | Contact-Rich Teleoperation, Impedance Retargeting, Force Safety | University of Tokyo | [MDIR: A Task-Manifold Impedance Retargeting Method for Contact-Rich Teleoperation](https://arxiv.org/abs/2607.29271) | arXiv | [paper](https://arxiv.org/abs/2607.29271) |
 | 2026-07-30 | Kinesthetic Arm Guidance, DexHand, Low-Setup Capture | UCLA | [DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection](https://arxiv.org/abs/2607.27784) | arXiv | [paper](https://arxiv.org/abs/2607.27784) |
 | 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
 | 2026-07-23 | Browser Teleoperation, Community Data Engine, Data Refinement | Axis Robotics | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | arXiv | [project](https://axisaiorg.github.io/AXIS-V1/) |
@@ -270,6 +275,7 @@ Dataset families for UMI-native collection and strong adjacent manipulation sett
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-05 | EgoAffordance, 204K Episodes, 3D Grasp/Trajectory Affordances | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 / Dataset | [project](https://ojh6404.github.io/) |
 | 2026-07-27 | Embodied Data Taxonomy, UMI, Data Scaling | Peking University | [Data Pyramid for Embodied Manipulation](https://arxiv.org/abs/2607.24744) | arXiv | [paper](https://arxiv.org/abs/2607.24744) |
 | 2026-07-23 | Community Teleoperation, 50K+ Trajectories, 207 Tasks | Axis Robotics | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | Dataset / arXiv | [project](https://axisaiorg.github.io/AXIS-V1/) |
 | 2026-07-15 | Egocentric Human Video, 2,000 Hours, Retargeting Toolchain | Ant Group | [Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning](https://arxiv.org/abs/2607.14183) | arXiv | [github](https://github.com/ant-research/Open-AoE) / [dataset](https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h) |
@@ -320,6 +326,9 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-06 | Egocentric + Simulation + Robot Data, Dual Action Alignment | Joy Future Academy, JD | [JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment](https://arxiv.org/abs/2608.05674) | arXiv | [project](https://joyai-ra-05.github.io/) |
+| 2026-08-05 | Human Video, Visual/Grasp/Trajectory Affordances, Zero-Shot | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
+| 2026-07-31 | Contact-Rich Teleoperation, Impedance Retargeting, Force Safety | University of Tokyo | [MDIR: A Task-Manifold Impedance Retargeting Method for Contact-Rich Teleoperation](https://arxiv.org/abs/2607.29271) | arXiv | [paper](https://arxiv.org/abs/2607.29271) |
 | 2026-07-30 | Cross-Embodiment, Behavior-Aligned Representations, End-Effector Traces | Stanford | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | ICRA 2026 | [project](https://bar-x-anon.github.io/) |
 | 2026-07-29 | Contact-Point Conditioning, Human+Robot Video, World Model | University of Bonn | [ContactFlow: A Video Action Conditioning That Transfers Across Embodiments](https://arxiv.org/abs/2607.26579) | arXiv | [paper](https://arxiv.org/abs/2607.26579) |
 | 2026-07-28 | UMI-Only Post-Training, Bimanual, Zero-Robot Deployment | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
@@ -369,6 +378,12 @@ Policies and support models that are trained on UMI-like data, evaluated in adja
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-06 | Cross-Embodiment, Dynamics Priors, Native Action Experts | HKUST (Guangzhou) | [DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation](https://arxiv.org/abs/2608.06374) | arXiv | [project](https://livfour.github.io/DyPES-VLA_RELEASE/) |
+| 2026-08-06 | Interactive World Model, Visual Actions, Human Teleoperation | Tsinghua University | [GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions](https://arxiv.org/abs/2608.06332) | arXiv | [project](https://chenghaogu.github.io/GeniWorld/) |
+| 2026-08-06 | Cross-Embodiment World Model, Held-Out Robots, Benchmark | Chinese Academy of Sciences | [XEWorld: Can Action-Conditioned World Models Generalize to Unseen Robot Embodiments?](https://arxiv.org/abs/2608.05799) | arXiv | [paper](https://arxiv.org/abs/2608.05799) |
+| 2026-08-06 | Egocentric + Simulation + Robot Data, Dual Action Alignment | Joy Future Academy, JD | [JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment](https://arxiv.org/abs/2608.05674) | arXiv | [project](https://joyai-ra-05.github.io/) |
+| 2026-08-05 | Task-Conditioned Wrist Prediction, Fine-Grained Contact | HKUST | [World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation](https://arxiv.org/abs/2608.05369) | arXiv | [paper](https://arxiv.org/abs/2608.05369) |
+| 2026-08-05 | Human Video, 3D Affordances, Unified Actionable Outputs | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
 | 2026-07-20 | Force Memory, Non-Markovian Tasks, Contact-Rich VLA | Tsinghua | [FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231) | arXiv | [project](https://qft-333.github.io/FM-VLA-Page/) |
 | 2026-07-16 | UMI Pretraining, 100K Hours, Mobile Manipulation | Xiaomi Robotics Lab | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | arXiv | [project](https://robotics.xiaomi.com/xiaomi-robotics-1.html) |
 | 2026-07-16 | Future Tactile Prediction, Action-Expert Features, VLA | Fudan University | [Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation](https://arxiv.org/abs/2607.14609) | arXiv | [paper](https://arxiv.org/abs/2607.14609) |
@@ -411,6 +426,8 @@ Structured references for embodiments, observation modalities, pose tracking, ac
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-05 | Main View + Wrist View, Future Wrist Latents, Bimanual | HKUST | [World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation](https://arxiv.org/abs/2608.05369) | arXiv | [paper](https://arxiv.org/abs/2608.05369) |
+| 2026-08-05 | Egocentric Video, 3D SfM, Hand Mesh, Affordances | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
 | 2026-07-31 | Wearable Fingertip Tactile, Contact Depth, Human-to-Robot Replay | Chinese Academy of Sciences | [TacPrint: A Wearable Fingertip Tactile Sensor for Human-to-Robot Contact Reproduction](https://arxiv.org/abs/2607.29231) | arXiv | [paper](https://arxiv.org/abs/2607.29231) |
 | 2026-07-20 | Force History, Wrench Memory, State History | Tsinghua | [FM-VLA](https://arxiv.org/abs/2607.18231) | arXiv | [project](https://qft-333.github.io/FM-VLA-Page/) |
 | 2026-07-16 | Future Tactile Embeddings, Contact Outcomes | Fudan University | [Representation-Aligned Tactile Grounding](https://arxiv.org/abs/2607.14609) | arXiv | [paper](https://arxiv.org/abs/2607.14609) |
@@ -493,6 +510,9 @@ Pose tracking turns robot-free capture into metric action labels. `UMI-Used` mar
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-06 | Native Action Experts, Embodiment Metadata, Dynamics Priors | HKUST (Guangzhou) | [DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation](https://arxiv.org/abs/2608.06374) | arXiv | [project](https://livfour.github.io/DyPES-VLA_RELEASE/) |
+| 2026-08-06 | Camera-Frame Chunk-Relative EE Actions, Dual Alignment | Joy Future Academy, JD | [JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment](https://arxiv.org/abs/2608.05674) | arXiv | [project](https://joyai-ra-05.github.io/) |
+| 2026-08-05 | Visual Affordance, Grasp Pose, Trajectory | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
 | 2026-07-29 | 3D Contact-Point Trajectory, Embodiment-Agnostic, Human+Robot | University of Bonn | [ContactFlow: A Video Action Conditioning That Transfers Across Embodiments](https://arxiv.org/abs/2607.26579) | arXiv | [paper](https://arxiv.org/abs/2607.26579) |
 | 2026-07-03 | Canonical Sphere Deformation, Cascade IK | UT Dallas | [Unified Hand Action Space](https://arxiv.org/abs/2607.03570) | arXiv / RSS 2026 Workshop | [project](https://irvlutd.github.io/UHAS/) |
 | 2026-06-17 | Head-Hand Targets, Latent Whole-Body Controller | SJTU | [HALOMI](https://arxiv.org/abs/2606.18772) | arXiv | [project](https://halomi-humanoid.github.io/) |
@@ -537,6 +557,11 @@ Pose tracking turns robot-free capture into metric action labels. `UMI-Used` mar
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-06 | Cross-Embodiment Control, Native Action Experts, Dynamics Priors | HKUST (Guangzhou) | [DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation](https://arxiv.org/abs/2608.06374) | arXiv | [project](https://livfour.github.io/DyPES-VLA_RELEASE/) |
+| 2026-08-06 | World-Model Evaluation, Held-Out Embodiments, OOD Generalization | Chinese Academy of Sciences | [XEWorld: Can Action-Conditioned World Models Generalize to Unseen Robot Embodiments?](https://arxiv.org/abs/2608.05799) | arXiv | [paper](https://arxiv.org/abs/2608.05799) |
+| 2026-08-06 | Interactive World Model, URDF Actions, Human Teleoperation | Tsinghua University | [GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions](https://arxiv.org/abs/2608.06332) | arXiv | [project](https://chenghaogu.github.io/GeniWorld/) |
+| 2026-08-06 | Egocentric/Simulation/Robot Fusion, Latent+Explicit Alignment | Joy Future Academy, JD | [JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment](https://arxiv.org/abs/2608.05674) | arXiv | [project](https://joyai-ra-05.github.io/) |
+| 2026-07-31 | Contact-Rich Teleoperation, Task-Manifold Impedance, Force Safety | University of Tokyo | [MDIR: A Task-Manifold Impedance Retargeting Method for Contact-Rich Teleoperation](https://arxiv.org/abs/2607.29271) | arXiv | [paper](https://arxiv.org/abs/2607.29271) |
 | 2026-07-22 | Recovery Gate, Corrective Intent, Failure Starts | Fudan University | [EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration](https://arxiv.org/abs/2607.19745) | arXiv | [paper](https://arxiv.org/abs/2607.19745) |
 | 2026-07-21 | Onboard Compute, Modular Hardware, Mobile Deployment | Stanford | [ModPack: An Extensible Teleoperation Interface for Bimanual Mobile Manipulation](https://arxiv.org/abs/2607.19479) | arXiv | [project](https://modpack-robotics.github.io/) |
 | 2026-07-19 | Asynchronous Modalities, Latency-Aware Fusion | SJTU | [Asynchronous Multimodal Diffusion Policy Composition via Latency-Aware Guidance Fusion](https://arxiv.org/abs/2607.17257) | arXiv | [project](https://lag-fusion.github.io/) |
@@ -555,6 +580,9 @@ Pose tracking turns robot-free capture into metric action labels. `UMI-Used` mar
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-06 | Cross-Embodiment Benchmark, Held-Out Robots, Dynamics vs Appearance | Chinese Academy of Sciences | [XEWorld: Can Action-Conditioned World Models Generalize to Unseen Robot Embodiments?](https://arxiv.org/abs/2608.05799) | arXiv | [paper](https://arxiv.org/abs/2608.05799) |
+| 2026-08-06 | World-Model Evaluator, OOD Scenes, Policy Data Generation | Tsinghua University | [GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions](https://arxiv.org/abs/2608.06332) | arXiv | [project](https://chenghaogu.github.io/GeniWorld/) |
+| 2026-08-05 | Affordance Benchmark, 204K Episodes, 3D Action Labels | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
 | 2026-07-30 | Cross-Embodiment Benchmark, Behavior-Aligned Representations, Sim-to-Real | Stanford | [Cross-Embodiment Transfer via Behavior-Aligned Representations](https://arxiv.org/abs/2607.27549) | ICRA 2026 | [project](https://bar-x-anon.github.io/) |
 | 2026-07-23 | Growable Benchmark, Held-Out Tasks, Data Scaling | Axis Robotics | [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](https://arxiv.org/abs/2607.21588) | Dataset / Benchmark | [project](https://axisaiorg.github.io/AXIS-V1/) |
 | 2026-06-12 | Online Data Guidance, Coverage, Data Quality | SJTU | [EgoGuide: Egocentric Guidance for Efficient Robot-Free Demonstration Collection and Learning](https://arxiv.org/abs/2606.14665) | arXiv | [project](https://silicx.github.io/EgoGuide/) |
