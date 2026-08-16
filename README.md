@@ -60,6 +60,7 @@ Start here if you want the shortest path through the UMI ecosystem.
 
 ## News
 
+- [2026-08-16] Added SiMDex, C2Dex, TWINS, and Ego2Robot for egocentric human-video mining, monocular dexterous retargeting, wearable isomorphic tactile teaching, and large-scale ego-to-robot data synthesis.
 - [2026-08-08] Added the latest cross-embodiment and robot-free learning wave: VLAff/EgoAffordance, JoyAI-RA 0.5, World-to-Wrist, XEWorld, GeniWorld, DyPES-VLA, and MDIR.
 - [2026-08-04] Added Behavior Prompting Policy/iPhUMI, DexDirect, ContactFlow, BARX, and TacPrint to cover demonstration prompting, low-setup dexterous capture, embodiment-agnostic contact conditioning, behavior-aligned transfer, and wearable tactile replay.
 - [2026-07-30] Added and expanded a dedicated pose-tracking taxonomy covering UMI-used trackers and candidate VIO, LIO, LVIO, RGB-D, event-camera, structured-light, fiducial, learned-monocular, and calibration stacks.
@@ -136,6 +137,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-08-06 | Egocentric + Simulation + Robot Data, Dual Action Alignment | Joy Future Academy, JD | [JoyAI-RA 0.5: Scaling Robot Manipulation Learning via Dual Action Alignment](https://arxiv.org/abs/2608.05674) | arXiv | [project](https://joyai-ra-05.github.io/) |
 | 2026-08-05 | Egocentric Video, 3D Affordances, Robot-Free Teaching | University of Tokyo | [VLAff: Vision-Language-Affordance Model for Unified Actionable Affordances](https://arxiv.org/abs/2608.05215) | IROS 2026 | [project](https://ojh6404.github.io/) |
+| 2026-08-03 | Egocentric Video, Robot-Data Synthesis, 15 Morphologies | Renmin University of China | [Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data](https://arxiv.org/abs/2608.02580) | arXiv | [project](https://www-ye.github.io/ego2robot_blog/) |
 | 2026-07-31 | Contact-Rich Teleoperation, Impedance Retargeting, Force Safety | University of Tokyo | [MDIR: A Task-Manifold Impedance Retargeting Method for Contact-Rich Teleoperation](https://arxiv.org/abs/2607.29271) | arXiv | [paper](https://arxiv.org/abs/2607.29271) |
 | 2026-07-30 | Kinesthetic Arm Guidance, DexHand, Low-Setup Capture | UCLA | [DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection](https://arxiv.org/abs/2607.27784) | arXiv | [paper](https://arxiv.org/abs/2607.27784) |
 | 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
@@ -181,6 +183,8 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-07 | Monocular Human Video, Contact-Consistent Retargeting, DexHand | Nanjing University | [C2Dex: Contact-Consistent Reconstruction and Retargeting for Dexterous Manipulation from Monocular Video](https://arxiv.org/abs/2608.07045) | arXiv | [project](https://k-jie.github.io/C2Dex/) / [github](https://github.com/K-Jie/C2Dex_code) |
+| 2026-08-04 | Egocentric Video Mining, VLA Post-Training, Cross-Embodiment | University of Tokyo | [SiMDex: Mining Similar Egocentric Videos for Cross-Embodiment Dexterous Manipulation](https://arxiv.org/abs/2608.04196) | arXiv | [project](https://lin-nie.github.io/SiMDex/) |
 | 2026-07-30 | Kinesthetic Arm Guidance, Webcam Retargeting, 13-DoF Hand | UCLA | [DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection](https://arxiv.org/abs/2607.27784) | arXiv | [paper](https://arxiv.org/abs/2607.27784) |
 | 2026-07-17 | Reconfigurable Hardware, DexHand+Humanoid, Teleoperation | UNC Chapel Hill | [Handroid: Bridging Dexterous Hand and Humanoid](https://arxiv.org/abs/2607.16187) | arXiv | [project](https://handroid.org/) |
 | 2026-07-13 | Hand-Object Co-Tracking, In-Hand Dexterity, Teleoperation | Tsinghua | [Towards Human-level Dexterous Teleoperation](https://arxiv.org/abs/2607.11481) | arXiv | [project](https://bigai-dex.github.io/blog/teledexter) |
@@ -199,6 +203,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-08-03 | Wearable Dual-Arm, Isomorphic Transfer, Body-Surface Tactile | AIST | [TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning](https://arxiv.org/abs/2608.01733) | arXiv | [project](https://mmurooka.github.io/twins-project-page/) |
 | 2026-07-31 | Wearable Fingertip Tactile, Human-to-Robot Replay, Contact Depth | Chinese Academy of Sciences | [TacPrint: A Wearable Fingertip Tactile Sensor for Human-to-Robot Contact Reproduction](https://arxiv.org/abs/2607.29231) | arXiv | [paper](https://arxiv.org/abs/2607.29231) |
 | 2026-07-20 | Force Memory, VLA, Contact History | Tsinghua | [FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](https://arxiv.org/abs/2607.18231) | arXiv | [project](https://qft-333.github.io/FM-VLA-Page/) |
 | 2026-07-19 | Asynchronous Vision+Force, Diffusion Policy, Latency | SJTU | [Asynchronous Multimodal Diffusion Policy Composition via Latency-Aware Guidance Fusion](https://arxiv.org/abs/2607.17257) | arXiv | [project](https://lag-fusion.github.io/) |
