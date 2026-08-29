@@ -196,6 +196,16 @@ Use compact summaries in the table itself and keep verbose explanation out of th
 
 ## Maintenance workflow
 
+### News policy
+
+`News` is a milestone log, not a paper-update changelog.
+
+Only add a `News` entry for repository initialization, a major new module or
+top-level taxonomy, a substantial navigation/restructuring change, or a new
+automated/infrastructure capability. Routine paper additions, deep-audit
+passes, metadata fixes, link refreshes, and bulk content updates do **not**
+qualify, regardless of how many rows changed.
+
 When adding entries:
 1. decide the primary section first
 2. check whether the resource should also appear in a second section

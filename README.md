@@ -60,20 +60,8 @@ Start here if you want the shortest path through the UMI ecosystem.
 
 ## News
 
-- [2026-08-28] Added a second-round deep audit of human-video action recovery, UMI-style capture hardware, cross-embodiment action geometry, and intent-level imitation evaluation.
-- [2026-08-20] Deep-audited the UMI lineage and robot-free human-demonstration neighborhood; promoted 26 verified works across core interfaces, dexterous/force capture, human-video transfer, datasets, policies, and taxonomy.
-- [2026-08-16] Added SiMDex, C2Dex, TWINS, and Ego2Robot for egocentric human-video mining, monocular dexterous retargeting, wearable isomorphic tactile teaching, and large-scale ego-to-robot data synthesis.
-- [2026-08-08] Added the latest cross-embodiment and robot-free learning wave: VLAff/EgoAffordance, JoyAI-RA 0.5, World-to-Wrist, XEWorld, GeniWorld, DyPES-VLA, and MDIR.
-- [2026-08-04] Added Behavior Prompting Policy/iPhUMI, DexDirect, ContactFlow, BARX, and TacPrint to cover demonstration prompting, low-setup dexterous capture, embodiment-agnostic contact conditioning, behavior-aligned transfer, and wearable tactile replay.
 - [2026-07-30] Added and expanded a dedicated pose-tracking taxonomy covering UMI-used trackers and candidate VIO, LIO, LVIO, RGB-D, event-camera, structured-light, fiducial, learned-monocular, and calibration stacks.
-- [2026-07-30] Completed the HiFi-UMI entry with its official project and 2,000-hour public dataset; added its dataset and UMI-only post-training roles.
-- [2026-07-26] Added recent UMI-style data engines, teleoperation hardware, cross-embodiment deployment, recovery learning, and force/tactile policies; corrected BifrostUMI's canonical record.
-- [2026-06-24] Added TAMEn to UMI methods, datasets, and taxonomy as a tactile-aware closed-loop data collection stack.
-- [2026-06-24] Added Hy-Embodied-0.5-VLA, Hy-Embodied-0.5-VLA-Data, FlowPRO, and a deployment constraints taxonomy subsection.
-- [2026-06-23] Added HALOMI, EgoGuide, EgoMI, and UMI-on-Air to the UMI method, policy, and taxonomy sections.
-- [2026-06-15] Added recent UMI-style dexterous, mobile, whole-body, tactile, benchmark, and VLA resources.
 - [2026-04-19] Rebuilt the repository into a single-file `README.md` structure for Awesome-UMI.
-- [2026-04-19] Added `AGENTS.md` to define curation scope, metadata rules, and Conventional Commits.
 
 ## Contents
 
