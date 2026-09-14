@@ -101,7 +101,7 @@ Foundational UMI resources: the original paper, official project/code/data links
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2024-02-15 | Official Dataset Index, Data Community | Stanford | [UMI Data Community Site](https://umi-data.github.io/) | Website | [page](https://umi-data.github.io/) |
+| 2024-02-15 | Official Dataset Index, MP4/VIO/Zarr Tiers, 59.94 Hz Schema | Stanford | [UMI Data Community Site and Dataset Format](https://umi-data.github.io/) | Website | [format specification](https://umi-data.github.io/) |
 | 2024-02-15 | Official Code, Training Stack | Stanford | [Universal Manipulation Interface Codebase](https://github.com/real-stanford/universal_manipulation_interface) | GitHub | [github](https://github.com/real-stanford/universal_manipulation_interface) |
 | 2024-02-15 | Official Project Page | Stanford | [UMI Project Page](https://umi-gripper.github.io/) | Website | [project](https://umi-gripper.github.io/) |
 
@@ -227,7 +227,7 @@ A compact comparison of the design choices that distinguish the curated UMI syst
 | Observation | [$\mathcal{N}_0$-TacUMI](https://arxiv.org/abs/2608.29601), [WT-UMI](https://wt-umi.github.io/WTUMI/), [OmniUMI](https://arxiv.org/abs/2604.10647), [UMI-FT](https://github.com/real-stanford/UMI-FT), [TacUMI](https://github.com/Tac-UMI/TacUMI), [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | RGB/fisheye, depth, proprioception, tactile images, dense force fields, or wrist force/torque |
 | Pose / state | [Original UMI](https://umi-gripper.github.io/), [FastUMI](https://fastumi.com/), [UMI-3D](https://umi-3d.github.io/), [ActiveUMI](https://activeumi.github.io/), [HiFi-UMI](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) | Monocular/stereo VIO, LiDAR-inertial SLAM, VR tracking, relative pose, scale recovery, and synchronization |
 | Action space | [Original UMI](https://arxiv.org/abs/2402.10329), [LEGATO](https://ut-hcrl.github.io/LEGATO/), [DexUMI](https://umi-data.github.io/), [UMI-on-Air](https://umi-on-air.github.io/) | Relative end-effector motion, tool-centric motion invariance, dexterous joint/contact state, or embodiment-constrained control |
-| Data format / scale | [UMI data community](https://umi-data.github.io/), [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K), [HiFi-UMI-2K](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K), [OpenNeoData](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData), [Hy-Embodied data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) | Zarr/HDF5/LeRobot-style storage, multiview video, language, touch, and public-vs-gated scale |
+| Data format / scale | [UMI data community](https://umi-data.github.io/), [FastUMI-100K](https://github.com/MrKeee/FastUMI-100K), [HiFi-UMI-2K](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K), [OpenNeoData](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData), [Hy-Embodied data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) | MP4/VIO/Zarr tiers, 59.94 Hz aligned arrays, HDF5/LeRobot variants, language, touch, and public-vs-gated scale |
 | Evaluation | [UMI-Bench 1.0](https://umibenchmark.github.io/), [gripper-design study](https://arxiv.org/abs/2603.17189), [HiFi-UMI](https://arxiv.org/abs/2607.25895) | Task success, replay fidelity, tracking quality, interface ergonomics, and demonstration quality |
 
 ## Citation
