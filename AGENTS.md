@@ -8,7 +8,7 @@ The goal is not to be a generic robot-manipulation bibliography. The goal is to 
 - UMI core papers and official resources
 - UMI-style methods for robot-free teaching, teleoperation, and cross-embodiment transfer
 - UMI-related datasets and dataset families
-- policies trained on UMI data or commonly used as UMI-relevant baselines / support models
+- policies explicitly trained on, adapted with, or evaluated on UMI data
 - structured taxonomy knowledge such as embodiments, modalities, data formats, deployment constraints, and surveys
 
 ## Single-file content policy
@@ -55,21 +55,21 @@ Typical subsections include:
 - Multimodal / Force / Tactile Extensions
 - In-the-Wild / Egocentric / Mobile Extensions
 
-Do **not** expand this section into a general manipulation-method survey.
+Do **not** expand this section into a general manipulation-method, human-video, teleoperation, tactile, or dexterous-hand survey.
 
 ### UMI Dataset
 Include all relevant datasets for the UMI ecosystem.
 This includes:
 - official UMI datasets
 - direct UMI-native dataset families from the community site
-- strongly related dexterous / bimanual / multimodal / mobile dataset families
-- method papers that also release a dataset
+- datasets released by a named UMI extension or explicitly packaged for UMI-backed training/evaluation
+- method papers that also release a directly associated UMI dataset
 
 ### UMI Policy
 Include policies that are:
 - trained on UMI data,
-- evaluated on UMI-like datasets/tasks,
-- or commonly used as relevant policy baselines / support models for the ecosystem.
+- adapted using a named UMI system or dataset,
+- or evaluated on a public UMI benchmark.
 
 Typical subsections:
 - Imitation Learning
@@ -106,13 +106,15 @@ The repository uses **core + strong adjacent** scope.
 - direct descendants and strong neighboring work around robot-free teaching, teleoperation, cross-embodiment transfer, dexterous UMI, multimodal UMI, and UMI-style deployment
 
 ### Include selectively
-- policy papers such as ACT, Diffusion Policy, or VLA systems when they are clearly used by or relevant to UMI-style training and evaluation
 - survey / taxonomy papers that explicitly help explain the UMI ecosystem
+- adjacent interfaces only when the paper explicitly positions the system as a UMI extension, replacement, or compatible data source and releases enough evidence to verify that relationship
 
 ### Usually exclude
 - generic manipulation papers with weak or no UMI connection
 - broad teleoperation or imitation-learning papers that do not materially help understand or use UMI
 - unrelated robot planning, control, or benchmark papers
+- generic human-video, dexterous-hand, tactile, VLA, world-model, SLAM, or dataset work that merely cites UMI or could hypothetically be used with UMI
+- generic policy baselines as full rows; keep a compact link in `Must Read` only when needed for orientation
 
 ## Source priority
 
@@ -173,7 +175,7 @@ Each subsection should use the same compact table schema:
 
 ## Overlap policy
 
-Controlled duplication is allowed.
+Controlled duplication is allowed only when a work has two distinct released assets, such as a collection system and a dataset.
 
 Examples:
 - a method paper with a released dataset may appear in both `UMI Method` and `UMI Dataset`
@@ -183,6 +185,8 @@ When duplicating an entry:
 - keep the metadata consistent across placements
 - adjust `Keywords` only if needed to explain the local role
 - do not create unnecessary variant titles
+- never repeat the same work twice inside one top-level section
+- keep taxonomy references compact and assign each work to its single most informative taxonomy dimension
 
 ## Dataset metadata guidance
 
@@ -207,12 +211,14 @@ passes, metadata fixes, link refreshes, and bulk content updates do **not**
 qualify, regardless of how many rows changed.
 
 When adding entries:
-1. decide the primary section first
-2. check whether the resource should also appear in a second section
-3. normalize the six metadata columns
-4. insert in descending date order
-5. update the Table of Contents only if headings changed
-6. keep the README readable; do not over-tag
+1. record the explicit UMI relationship: named UMI system, UMI-compatible interface, UMI-native dataset, UMI-backed training, or UMI benchmark
+2. if that relationship cannot be supported by a primary source, exclude the work
+3. decide the primary section first
+4. check whether a separately released asset justifies one secondary placement
+5. normalize the six metadata columns
+6. insert in descending date order
+7. update the Table of Contents only if headings changed
+8. keep the README readable; do not over-tag
 
 When reorganizing:
 - prefer adding or refining subsections over inventing many new top-level sections
