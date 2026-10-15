@@ -87,6 +87,7 @@ Start here if you want the shortest path through the UMI ecosystem.
   - [UMI Taxonomy](#umi-taxonomy)
     - [Design Dimensions](#design-dimensions)
     - [Data Scaling / Collection Quality](#data-scaling--collection-quality)
+    - [Benchmarks / Evaluation Dimensions](#benchmarks--evaluation-dimensions)
     - [Related Curated Indexes](#related-curated-indexes)
   - [Citation](#citation)
   - [Acknowledgement](#acknowledgement)
@@ -118,9 +119,10 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-09-19 | KIWI, Dual-Lens 360 Cameras, Shared Metric Map, Modular Bimanual Capture | Autel US | [Kinematic Interface for the Wild: Modular Bimanual Loco-Manipulation Capture from 360° Cameras Alone](https://arxiv.org/abs/2609.22809) | arXiv | [project](https://lingfeng.moe/KIWI/) / [hardware](https://github.com/TToTMooN/KIWI_hardware) / [code (forthcoming)](https://github.com/TToTMooN/KIWI_software) |
 | 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
-| 2026-06-29 | Behavior Prompting, iPhUMI, One-Shot Demo | Stanford | [Behavior Prompting Policy: Demonstrations as Prompts for Manipulation](https://arxiv.org/abs/2606.30457) | arXiv | [project](https://behavior-prompting.github.io/) / [github](https://github.com/real-stanford/behavior_prompting) / [iPhUMI](https://github.com/real-stanford/iPhUMI) |
-| 2026-06-08 | Finger-Aligned, Bimanual, Large-Scale | AIRoA | [YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale](https://arxiv.org/abs/2606.10244) | arXiv / ICRA 2026 Workshop | [project](https://yubi.airoa.io/) / [hardware](https://github.com/toyota/yubi-hw) / [software](https://github.com/airoa-org/yubi-sw) |
+| 2026-06-29 | Behavior Prompting, iPhUMI, One-Shot Demo | Stanford | [What Enables In-Context Behavior Prompting for Manipulation?](https://arxiv.org/abs/2606.30457) | arXiv | [project](https://behavior-prompting.github.io/) / [github](https://github.com/real-stanford/behavior_prompting) / [iPhUMI](https://github.com/real-stanford/iPhUMI) |
+| 2026-06-08 | Finger-Aligned, Bimanual, Large-Scale | AIRoA | [YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale](https://arxiv.org/abs/2606.10244) | CoRL 2026 | [project](https://yubi.airoa.io/) / [hardware](https://github.com/toyota/yubi-hw) / [software](https://github.com/airoa-org/yubi-sw) |
 | 2026-04-15 | 3D Perception, LiDAR, UMI Extension | HKU | [UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception](https://arxiv.org/abs/2604.14089) | arXiv | [project](https://umi-3d.github.io/) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) / [policy](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Policy) |
 | 2026-03-17 | UMI Gripper, Demonstration Quality, Ergonomics | UMass Amherst | [Influence of Gripper Design on Human Demonstration Quality for Robot Learning](https://arxiv.org/abs/2603.17189) | ICRA 2026 | [paper](https://arxiv.org/abs/2603.17189) |
 | 2025-11-12 | Egocentric Point Cloud, Cross-Embodiment | Tsinghua SIGS | [UMIGen: A Unified Framework for Egocentric Point Cloud Generation and Cross-Embodiment Robotic Imitation Learning](https://arxiv.org/abs/2511.09302) | arXiv | [paper](https://arxiv.org/abs/2511.09302) |
@@ -134,9 +136,9 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| 2026-09-10 | Shared Human/Robot Exoskeleton, 20-DoF Encoders, Paired Contact Calibration | Peking University | [SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration](https://arxiv.org/abs/2609.11753) | arXiv | [project](https://tengbo-yu.github.io/SEED-UMI/) |
+| 2026-09-10 | Shared Human/Robot Exoskeleton, 20-DoF Encoders, Paired Contact Calibration | Peking University | [SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration](https://arxiv.org/abs/2609.11753) | CoRL 2026 | [project](https://tengbo-yu.github.io/SEED-UMI/) / [github](https://github.com/Tengbo-Yu/SEED-UMI) |
 | 2026-06-04 | Wearable DexHand, Tactile, In-Hand Vision | Peking University | [RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033) | arXiv | [project](https://research.beingbeyond.com/realdexumi) |
-| 2025-05-28 | DexHand, Wearable, Cross-Hand | Stanford | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | CoRL 2025 | [data](https://umi-data.github.io/) |
+| 2025-05-28 | DexHand, Wearable, Cross-Hand | Stanford | [DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation](https://arxiv.org/abs/2505.21864) | CoRL 2025 | [project](https://dex-umi.github.io/) / [github](https://github.com/real-stanford/DexUMI) / [data](https://umi-data.github.io/) |
 
 ### Multimodal / Force / Tactile
 
@@ -149,7 +151,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 | 2026-01-21 | Tactile, Force/Torque, Contact-Rich | TU Munich | [TacUMI: A Multi-Modal Universal Manipulation Interface for Contact-Rich Tasks](https://arxiv.org/abs/2601.14550) | arXiv | [github](https://github.com/Tac-UMI/TacUMI) |
 | 2026-01-15 | Force, Compliance, Contact-Rich | Stanford | [In-the-Wild Compliant Manipulation with UMI-FT](https://arxiv.org/abs/2601.09988) | ICRA 2026 | [github](https://github.com/real-stanford/UMI-FT) |
 | 2025-12-04 | Force-Grounded, Cross-View, UMI Gripper, Articulated Objects | ETH Zurich | [Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](https://arxiv.org/abs/2512.04884) | CVPR 2026 | [project](https://hoi-dataset.ethz.ch/index.html) |
-| 2025-11-08 | Vision+Tactile, Fine Manipulation | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | arXiv | [project](https://chuanyune.github.io/ViTaMIn-B_page/) / [paper](https://arxiv.org/abs/2511.05858) |
+| 2025-11-08 | Vision+Tactile, Fine Manipulation | Tsinghua | [ViTaMIn-B: A Reliable and Efficient Visuo-Tactile Bimanual Manipulation Interface](https://arxiv.org/abs/2511.05858) | arXiv | [project](https://chuanyune.github.io/ViTaMIn-B_page/) / [github](https://github.com/chuanyune/ViTaMIn-B_code) / [dataset](https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt) |
 | 2025-09-18 | Tactile, Robot Teaching, Single-Arm | SJTU | [exUMI: Extensible Robot Teaching System with Action-aware Task-agnostic Tactile Representation](https://silicx.github.io/exUMI/) | CoRL 2025 | [project](https://silicx.github.io/exUMI/) / [github](https://github.com/silicx/exUMI) / [paper](https://arxiv.org/abs/2509.14688) |
 | 2025-07-20 | UMI Gripper Adaptation, Flexible Touch, Cross-Modal Pretraining | Columbia University | [Touch in the Wild: Learning Fine-Grained Manipulation with a Portable Visuo-Tactile Gripper](https://arxiv.org/abs/2507.15062) | NeurIPS 2025 | [project](https://binghao-huang.github.io/touch_in_the_wild/) / [github](https://github.com/YolandaXinyueZhu/touch_in_the_wild) / [dataset](https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset) |
 | 2025-06-02 | Robot-Free, Visuo-Tactile, Wearable | Shanghai Innovation Institute | [FreeTacMan: Robot-free Visuo-Tactile Data Collection System for Contact-rich Manipulation](https://arxiv.org/abs/2506.01941) | ICRA 2026 | [project](https://opendrivelab.com/FreeTacMan) / [github](https://github.com/OpenDriveLab/FreeTacMan) |
@@ -160,6 +162,8 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-08 | UMI Grippers, Wearable Contact Patches, Humanoid Whole-Body Dexterity | Stanford | [PanTact: Teaching Whole-Body Dexterity with a Wearable Contact Interface](https://arxiv.org/abs/2610.12558) | arXiv | [project](https://pantact.github.io/) |
+| 2026-10-06 | VOMMI, UMI-Style Gripper, RGB Body/Hand VO, Mobile VLA | Zhejiang University | [VOMMI: Collecting and Leveraging Portable Demonstrations for Mobile Manipulation](https://arxiv.org/abs/2610.08220) | arXiv | — |
 | 2026-09-19 | Native UMI Transfer, Humanoid, Whole-Body Motion Generation | Zhejiang University | [Whole-Body UMI: Transferring UMI Manipulation Skills to Humanoid Whole-Body Manipulation via Real-Time Motion Generation](https://arxiv.org/abs/2609.22829) | arXiv | — |
 | 2026-05-20 | Mobile Manipulation, Cross-View, Robot-Free | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
 | 2026-05-05 | VR-UMI, Robot-Free, Humanoid Whole-Body | BAAI | [BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](https://arxiv.org/abs/2605.03452) | arXiv | [project](https://baai-aether.github.io/BifrostUMI/) |
@@ -168,14 +172,16 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 | 2026-02-06 | Humanoid, Whole-Body, Bimanual | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | arXiv / Dataset | [project](https://humanoid-manipulation-interface.github.io/) / [paper](https://arxiv.org/abs/2602.06643) |
 | 2025-10-31 | Egocentric, Active Vision, Whole-Body | UC Berkeley | [EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations](https://arxiv.org/abs/2511.00153) | arXiv | [project](https://egocentric-manipulation-interface.github.io/) |
 | 2025-10-02 | Aerial Manipulation, Embodiment-Aware Guidance | CMU | [UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
-| 2024-07-14 | Mobile Manipulation, Whole-Body, Legged | Stanford | [UMI on Legs: Making Manipulation Policies Mobile with a Manipulation-Centric Whole-body Controller](https://arxiv.org/abs/2407.10353) | CoRL 2024 | [github](https://github.com/real-stanford/umi-on-legs) |
+| 2024-07-14 | Mobile Manipulation, Whole-Body, Legged | Stanford | [UMI on Legs: Making Manipulation Policies Mobile with Manipulation-Centric Whole-body Controllers](https://arxiv.org/abs/2407.10353) | CoRL 2024 | [github](https://github.com/real-stanford/umi-on-legs) |
 
 ### Closed-Loop Collection / Policy Feedback
 
-Interfaces that use feasibility checks, policy predictions, or corrective interaction to guide data acquisition. TAMEn currently releases its tAmeR teleoperation tools; its dataset and training pipeline remain on the [release roadmap](https://github.com/OpenDriveLab/TAMEn#-todo-list).
+Interfaces that use feasibility checks, coverage feedback, policy predictions, or corrective interaction to guide data acquisition. EgoGuide currently provides a project page, with code and its assembly guide marked as forthcoming. TAMEn currently releases its tAmeR teleoperation tools; its dataset and training pipeline remain on the [release roadmap](https://github.com/OpenDriveLab/TAMEn#-todo-list).
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-06-12 | EgoGuide-UMI, AR Coverage Guidance, Wrist+Head Views, Gated Residual Policy | SJTU | [EgoGuide: Egocentric Guidance for Efficient Robot-Free Demonstration Collection and Learning](https://arxiv.org/abs/2606.14665) | arXiv | [project](https://silicx.github.io/EgoGuide/) |
+| 2026-04-14 | XRZero-G0, VR Tracking, Dual Grippers, Closed-Loop Quality Control | X Square Robot | [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](https://arxiv.org/abs/2604.13001) | Technical Report | [github](https://github.com/X-Square-Robot/XRZero-G0) |
 | 2026-04-08 | UMI-Style, Dual-Mode Tracking, Tactile Recovery | Fudan University | [TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks](https://arxiv.org/abs/2604.07335) | arXiv | [github](https://github.com/OpenDriveLab/TAMEn) |
 | 2026-03-05 | Handheld UMI Alternative, AR Foresight, Online Finetuning | SJTU | [RoboPocket: Improve Robot Policies Instantly with Your Phone](https://arxiv.org/abs/2603.05504) | CoRL 2026 | [project](https://robo-pocket.github.io/) |
 
@@ -195,15 +201,15 @@ Datasets collected by a named UMI system, released as part of a direct UMI exten
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-08-30 | OpenNeoData, 5,000 Open Hours, RGB+Dual Touch, Six Embodiments, 250+ Tasks | NeoteAI | [$\mathcal{N}_0$-Foundation / OpenNeoData](https://arxiv.org/abs/2608.29601) | Technical Report / Dataset | [project](https://research.neoteai.com/n0-foundation/) / [dataset](https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData) / [model](https://huggingface.co/NeoteAI/NeoForce) |
 | 2026-07-28 | Bimanual, 2,000 Hours, 6 Views, LeRobot v3 | Simple AI | [HiFi-UMI-2K](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) | Dataset / arXiv | [paper](https://arxiv.org/abs/2607.25895) / [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) |
-| 2026-06-29 | iPhUMI, Bimanual, iPhone, One-Shot Prompts | Stanford | [Behavior Prompting Policy: Demonstrations as Prompts for Manipulation](https://arxiv.org/abs/2606.30457) | Dataset / arXiv | [project](https://behavior-prompting.github.io/) / [github](https://github.com/real-stanford/iPhUMI) / [laundry](https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding) / [drawing](https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real) |
+| 2026-06-29 | iPhUMI, Bimanual, iPhone, One-Shot Prompts | Stanford | [What Enables In-Context Behavior Prompting for Manipulation?](https://arxiv.org/abs/2606.30457) | Dataset / arXiv | [project](https://behavior-prompting.github.io/) / [github](https://github.com/real-stanford/iPhUMI) / [laundry](https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding) / [drawing](https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real) |
 | 2026-06-12 | Bimanual, 2K+ Hours, Lance/LeRobot | Tencent Robotics X | [Hy-Embodied-0.5-VLA-Data](https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.14409) / [github](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA) / [model](https://huggingface.co/tencent/Hy-Embodied-0.5-VLA-UMI) |
 | 2026-06-09 | Benchmark, 10 Tasks, HuggingFace | Soochow University | [UMI-Bench 1.0](https://umibenchmark.github.io/) | Dataset / Benchmark | [paper](https://arxiv.org/abs/2606.10382) / [dataset](https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1) / [models](https://huggingface.co/UMIbenchmark/UMI-Benchmark-v1-checkpoints) |
-| 2026-06-08 | Bimanual, 1.20M Episodes, LeRobot | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) / [software](https://github.com/airoa-org/yubi-sw) |
+| 2026-06-08 | Bimanual, 8,434 Hours, 1.20M Episodes, 119 Tasks, LeRobot | AIRoA | [YUBI](https://yubi.airoa.io/) | Dataset (release pending) / CoRL 2026 | [paper](https://arxiv.org/abs/2606.10244) / [project](https://yubi.airoa.io/) / [software](https://github.com/airoa-org/yubi-sw) |
 | 2026-06-03 | UMI-VQA, Fisheye, Validated Trajectories | TeleAI | [VISTA](https://tele-umi-vista.github.io/) | Dataset / VLA | [paper](https://arxiv.org/abs/2606.04708) / [github](https://github.com/TeleHuman/umi-vista) / [dataset](https://huggingface.co/collections/TeleEmbodied/vista) |
 | 2026-04-15 | 3D Perception, LiDAR, UMI Extension | HKU | [UMI-3D](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) | Dataset | [paper](https://arxiv.org/abs/2604.14089) / [project](https://umi-3d.github.io/) / [dataset](https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset) |
 | 2026-02-06 | Humanoid, Bimanual, Whole-Body | Tsinghua | [HuMI](https://humanoid-manipulation-interface.github.io/) | Dataset | [project](https://humanoid-manipulation-interface.github.io/) / [paper](https://arxiv.org/abs/2602.06643) |
 | 2025-12-31 | 789,772 Demos, Bimanual, Image+Proprio+Tactile | GenRobot | [GenRobot 10Kh-RealOmin OpenData](https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData) | Dataset | [page](https://www.genrobot.ai/) / [index](https://umi-data.github.io/) |
-| 2025-11-08 | Vision, Tactile, Parallel Gripper | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) / [paper](https://arxiv.org/abs/2511.05858) |
+| 2025-11-08 | Vision, Tactile, Parallel Gripper | Tsinghua | [ViTaMIn-B](https://chuanyune.github.io/ViTaMIn-B_page/) | Dataset | [project](https://chuanyune.github.io/ViTaMIn-B_page/) / [paper](https://arxiv.org/abs/2511.05858) / [dataset](https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt) |
 | 2025-10-09 | 100K+ Demos, 54 Tasks, Multi-View Fisheye, EE State, Text | Shanghai AI Lab | [FastUMI-100K: Advancing Data-driven Robotic Manipulation with a Large-scale UMI-style Dataset](https://arxiv.org/abs/2510.08022) | arXiv / Dataset | [github](https://github.com/MrKeee/FastUMI-100K) / [dataset](https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot) |
 | 2025-09-23 | Multi-View, Segmentation, Placement | NYU Abu Dhabi | [MV-UMI](https://arxiv.org/abs/2509.18757) | Dataset / arXiv | [project](https://mv-umi.github.io/) |
 | 2025-09-18 | exUMI, Single-Arm, Tactile | SJTU | [exUMI](https://silicx.github.io/exUMI/) | Dataset | [project](https://silicx.github.io/exUMI/) |
@@ -224,7 +230,7 @@ Policies explicitly trained on UMI data, adapted through a named UMI system, or 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
 | 2026-07-28 | UMI-Only Post-Training, Bimanual, Zero-Robot Deployment | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
-| 2026-06-29 | Behavior Prompt, In-Context Visuomotor Policy, Test-Time Adaptation | Stanford | [Behavior Prompting Policy: Demonstrations as Prompts for Manipulation](https://arxiv.org/abs/2606.30457) | arXiv | [project](https://behavior-prompting.github.io/) / [github](https://github.com/real-stanford/behavior_prompting) / [iPhUMI](https://github.com/real-stanford/iPhUMI) |
+| 2026-06-29 | Behavior Prompt, In-Context Visuomotor Policy, Test-Time Adaptation | Stanford | [What Enables In-Context Behavior Prompting for Manipulation?](https://arxiv.org/abs/2606.30457) | arXiv | [project](https://behavior-prompting.github.io/) / [github](https://github.com/real-stanford/behavior_prompting) / [iPhUMI](https://github.com/real-stanford/iPhUMI) |
 | 2026-05-20 | Cross-View Diffusion, Mobile, Latency-Aware | Zhejiang University | [Mobile UMI: Cross-View Diffusion Policy with Decoupled Kinematics for Mobile Manipulation](https://arxiv.org/abs/2605.20894) | arXiv | [paper](https://arxiv.org/abs/2605.20894) |
 | 2025-10-02 | Embodiment-Aware Diffusion, Controller Guidance | CMU | [UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies](https://arxiv.org/abs/2510.02614) | ICRA 2026 | [project](https://umi-on-air.github.io/) / [github](https://github.com/LeCAR-Lab/UMI-on-Air) |
 | 2024-02-15 | Relative Actions, Latency Matching, Imitation | Stanford | [Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots](https://arxiv.org/abs/2402.10329) | RSS 2024 | [github](https://github.com/real-stanford/universal_manipulation_interface) |
@@ -234,6 +240,7 @@ Policies explicitly trained on UMI data, adapted through a named UMI system, or 
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-07 | RoboPace, YUBI-Pretrained VLA, Contact-Aware Retiming, Robot Constraints | AIRoA | [RoboPace: Contact-Aware Time-Optimal Retiming for Action-Chunk Policies](https://arxiv.org/abs/2610.09696) | arXiv | — |
 | 2026-09-17 | Policy-Guided Collection, Robot-Free HIL, Advantage Conditioning | Xi’an Jiaotong University | [HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface](https://arxiv.org/abs/2609.20659) | arXiv | [project](https://hil-umi.github.io/) |
 | 2026-09-16 | Action-Anchored Alignment, Ego–UMI–Robot, VLA Co-training | Tsinghua University | [UMI-Bridge: Action-Anchored Latent Alignment across Human and Robot Manipulation Data](https://arxiv.org/abs/2609.18232) | arXiv | [project](https://umi-bridge.github.io/) |
 | 2026-07-16 | UMI Pretraining, 100K Hours, Mobile Manipulation | Xiaomi Robotics Lab | [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](https://arxiv.org/abs/2607.15330) | arXiv | [project](https://robotics.xiaomi.com/xiaomi-robotics-1.html) |
@@ -244,10 +251,11 @@ Policies explicitly trained on UMI data, adapted through a named UMI system, or 
 
 ### World-Action / Video-Action Policies
 
-Models with verified UMI data in their training mixture: LingBot-VA uses the UMI community datasets (excluding DexUMI), and LingBot-VA 2.0 retains UMI-style data alongside robot and human data.
+Models with verified UMI data in their training mixture: LingBot-VA uses the UMI community datasets (excluding DexUMI), LingBot-VA 2.0 retains UMI-style data alongside robot and human data, and InternW0-Δ uses filtered Hy-UMI-10K demonstrations. InternW0-Δ releases code; its model weights and processed data remain forthcoming.
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-09-25 | InternW0-Δ, Hy-UMI-10K Pretraining, Unified State/Action, Causal Imprint | Shanghai AI Lab | [InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data](https://arxiv.org/abs/2609.31394) | arXiv | [project](https://internrobotics.github.io/InternW0-Delta/) / [github](https://github.com/InternRobotics/InternW0-Delta) |
 | 2026-07-09 | LingBot-VA 2.0, UMI-Style Training Data, Causal Video-Action | Robbyant | [Native Video-Action Pretraining for Generalizable Robot Control](https://arxiv.org/abs/2607.08639) | arXiv | [project](https://technology.robbyant.com/lingbot-va-v2) |
 | 2026-01-29 | LingBot-VA, UMI Community Data, Autoregressive Diffusion | Robbyant | [Causal World Modeling for Robot Control](https://arxiv.org/abs/2601.21998) | arXiv | [project](https://technology.robbyant.com/lingbot-va) / [github](https://github.com/Robbyant/lingbot-va) |
 
@@ -270,9 +278,20 @@ A compact comparison of the design choices that distinguish the curated UMI syst
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-08 | UMI-Style Bimanual, Wrist FoV, Head-View ROI, Data Scaling | Soochow University | [Assessing the Marginal Utility of Exocentric Head Views in UMI-Style Large-FoV Wrist-Camera Manipulation](https://arxiv.org/abs/2610.14075) | Technical Report | — |
+| 2026-10-06 | DexUMI-Family Exoskeleton, Interface Geometry, Contact Shifts, Spatial Force | University of Florida | [From Wearable Interfaces to Dexterous Policies: Contact Shifts and Tactile Representations](https://arxiv.org/abs/2610.08870) | arXiv | — |
 | 2024-10-24 | UMI Data, Environment/Object Diversity, Diffusion Policy | Tsinghua | [Data Scaling Laws in Imitation Learning for Robotic Manipulation](https://arxiv.org/abs/2410.18647) | ICLR 2025 | [project](https://data-scaling-laws.github.io/) / [github](https://github.com/Fanqi-Lin/Data-Scaling-Laws) / [dataset](https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset) |
 
 The scaling study separates environment diversity, object diversity, and demonstrations per setting; its [UMI collection notes](https://arxiv.org/html/2410.18647v1#A2.SS2) also discuss randomized starting poses, visually textured scenes for SLAM, and consistent demonstration conventions. For deployment, the [official UMI codebase](https://github.com/real-stanford/universal_manipulation_interface) covers camera/IMU calibration, SLAM processing, relative-action training, and latency-aware execution.
+
+### Benchmarks / Evaluation Dimensions
+
+| Date | Keywords | Institute (first) | Paper | Publication | Others |
+| :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-07 | MILD, AprilVINS, Manipulation Localization, TCP Error, Temporal Coverage | Chongqing University | [Towards Accurate End-Effector Localization for UMI-Style Robotic Manipulation Teaching](https://arxiv.org/abs/2610.09857) | arXiv | [project](https://mild-web.github.io/) |
+| 2026-08-21 | Shared-Robot Evaluation, YUBI, 8 Tasks, Gated Competition Data | AIRoA | [The UMI Arena: From Handheld Devices to Real-World Policies](https://umi-arena.airoa.io/) | CoRL 2026 Workshop | [announcement](https://airoa.org/updates/20260821/649/) / [protocol](https://umi-arena.airoa.io/evaluation.html) / [dataset](https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena) |
+
+MILD describes 86 real-world sensor sequences and a simulation subset; its code, data, and evaluation manifests are scheduled for release upon acceptance. UMI Arena initially provides about 580 hours to registered teams under a data-sharing agreement; 20,000 hours is a planned expansion, not the currently available release. The full YUBI corpus is also marked as forthcoming on its official project page.
 
 ### Related Curated Indexes
 
