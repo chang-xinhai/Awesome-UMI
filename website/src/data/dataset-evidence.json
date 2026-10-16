@@ -1,0 +1,2714 @@
+{
+  "schemaVersion": 1,
+  "verified": "2026-10-16",
+  "scope": "Source-backed dataset attributes. Unknown fields are null. Reported and released scale retain their separate sources.",
+  "records": {
+    "2606.10244": {
+      "id": "2606.10244",
+      "name": "YUBI",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://yubi.airoa.io/",
+      "access": "Coming soon",
+      "accessNote": "Project dataset button still says Coming Soon; full corpus is not confirmed downloadable.",
+      "license": null,
+      "formats": [
+        "LeRobot"
+      ],
+      "fps": 30,
+      "observations": [
+        "Wrist RGB",
+        "Top-view stereo RGB",
+        "6-DoF gripper pose",
+        "Gripper aperture",
+        "Sub-action annotations"
+      ],
+      "action": "Bimanual end-effector pose and gripper aperture",
+      "embodiments": [
+        "Bidigital handheld grippers",
+        "Bimanual UR",
+        "Bimanual Franka",
+        "Toyota ELEY"
+      ],
+      "reportedScale": {
+        "hours": 8434,
+        "episodes": 1200000,
+        "episodesQualifier": "rounded",
+        "tasks": 119,
+        "collectionDesks": 22,
+        "operators": 179
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "Collection desks are not environment count. Full corpus release is pending; the separately gated UMI Arena competition subset is a different release."
+      ],
+      "sources": [
+        {
+          "url": "https://yubi.airoa.io/",
+          "supports": "Scale, 30-Hz LeRobot format, observations, embodiments, Coming Soon status",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "license"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://yubi.airoa.io/"
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2607.25895": {
+      "id": "2607.25895",
+      "name": "HiFi-UMI-2K",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K",
+      "access": "Public download",
+      "accessNote": "Anonymous dataset-card read and file listing available; publicly released subset is 2,000 hours.",
+      "license": "CC BY 4.0",
+      "formats": [
+        "LeRobot v3-style",
+        "Parquet",
+        "MP4"
+      ],
+      "fps": 25,
+      "observations": [
+        "6 synchronized RGB views",
+        "Bimanual end-effector pose",
+        "Gripper state",
+        "Language",
+        "Validity masks"
+      ],
+      "action": "20D absolute next-state target: right and left [xyz, rot6d, gripper]; may require relative-action conversion",
+      "embodiments": [
+        "Bimanual handheld capture"
+      ],
+      "reportedScale": {
+        "hours": 20000,
+        "hoursQualifier": ">",
+        "episodes": 4320000,
+        "episodesQualifier": ">",
+        "scenes": 480,
+        "scenesQualifier": ">",
+        "scope": "Source corpus"
+      },
+      "publicScale": {
+        "hours": 2000
+      },
+      "scopeNotes": [
+        "4.32M+ episodes and 480+ scenes describe source corpus, not independently verified released-subset totals.",
+        "Official UMI community index separately lists 482,000 released demonstrations across 110+ environments; preserve this separate provenance if shown.",
+        "A sampled public part meta/info.json stores all six views at25FPS,512×640. This is export frequency, distinct from capture sensor rates."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K",
+          "supports": "Public subset, corpus scale, format, license, schema",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Index lists 482,000 demos and 110+ environments for this family",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K/resolve/main/chunk-0000/part-0000/meta/info.json",
+          "supports": "Sampled export schema:25FPS,six512×640RGBviews,20Dstateand20Daction. Per-part episode/task counts are not whole-release totals.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF first-shard Parquet HEAD200; part-levelmetadata parsed."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "simple-world-lab/HiFi-UMI-2K",
+          "sha": "a53b7b5784afdd50b2fda9195c9f724ef75ffdaf",
+          "createdAt": "2026-07-19T06:40:17.000Z",
+          "lastModified": "2026-07-29T02:17:44.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "indexedScale": {
+        "episodes": 482000,
+        "environments": 110,
+        "environmentsQualifier": "+",
+        "scope": "Official UMI community index, not independently summed from release shards"
+      },
+      "fpsScope": "Sampled public export; capture sensor rates may differ"
+    },
+    "2409.19499": {
+      "id": "2409.19499",
+      "name": "FastUMI",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI-Data",
+      "access": "Gated download",
+      "accessNote": "Requires Hugging Face sign-in and accepting contact-sharing conditions; anonymous raw README returns HTTP 401.",
+      "license": "MIT",
+      "formats": [
+        "HDF5",
+        "Split tar.gz"
+      ],
+      "fps": null,
+      "observations": [
+        "Wrist RGB",
+        "End-effector pose"
+      ],
+      "action": "Published HDF5 card mirrors position+quaternion qpos into 7D action; gripper channel not documented there",
+      "embodiments": [
+        "Hardware-independent gripper"
+      ],
+      "reportedScale": {
+        "episodes": 10000,
+        "episodesQualifier": ">",
+        "tasks": 22
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "Official community index lists 8,965 demonstration rows over 22 tasks; this is indexed released material, distinct from the paper 10K+ claim."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI-Data",
+          "supports": "Gating, MIT, HDF5 schema",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "22 listed task rows total 8,965 demos",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://arxiv.org/abs/2409.19499",
+          "supports": "Paper and claimed scale",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI-Data"
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2510.08022": {
+      "id": "2510.08022",
+      "name": "FastUMI-100K",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "Apache-2.0",
+      "formats": [
+        "LeRobot v2.1",
+        "Parquet",
+        "MP4"
+      ],
+      "fps": 20,
+      "observations": [
+        "Single or dual wrist fisheye RGB",
+        "7D or 14D end-effector state",
+        "Task language"
+      ],
+      "action": "Relative-frame 7D per hand [xyz, roll, pitch, yaw, normalized gripper]",
+      "embodiments": [
+        "Single-arm gripper",
+        "Bimanual grippers"
+      ],
+      "reportedScale": {
+        "episodes": 100000,
+        "episodesQualifier": ">",
+        "tasks": 54
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "Official community table currently indexes 32 rows totaling 92,823 demos; do not infer it enumerates the complete 54-task paper corpus.",
+        "Sampled Add Rice to Rice Cooker meta/info.json independently confirms LeRobot v2.1,20FPS,14Dstate/action. Its3748episodes are one task only."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot",
+          "supports": "100K+, 54 tasks, 20 FPS, LeRobot2.1, Apache2.0, schema",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "32 indexed task rows total 92,823",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF Add Rice episodeParquet HEAD200; taskmetadata parsed."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "IPEC-COMMUNITY/FastUMI_100k_lerobot",
+          "sha": "4cf7cca8fdc15d6f71ee0055553ce8a5e78aa9a0",
+          "createdAt": "2026-03-09T13:26:48.000Z",
+          "lastModified": "2026-04-16T15:07:15.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2608.29601": {
+      "id": "2608.29601",
+      "name": "OpenNeoData / N0-Foundation",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData",
+      "access": "Gated download",
+      "accessNote": "HF requires login and consent to share contact information; anonymous raw card returns HTTP 401.",
+      "license": "CC BY-NC-SA 4.0",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "HEVC MP4"
+      ],
+      "fps": 30,
+      "observations": [
+        "Wrist RGB",
+        "Dual tactile camera per gripper",
+        "Tracked EEF pose or robot joint state",
+        "Task language"
+      ],
+      "action": "UMI 10D per hand [xyz, rot6d, gripper]; robot portions use platform-specific joint actions",
+      "embodiments": [
+        "ALOHA",
+        "ARX-5 dual",
+        "ARX-5 single",
+        "Flexiv Rizon 4s",
+        "UR5e/UR7e",
+        "UMI dual",
+        "UMI single"
+      ],
+      "reportedScale": {
+        "hours": 5000,
+        "hoursQualifier": ">",
+        "episodes": 200000,
+        "episodesQualifier": ">",
+        "tasks": 257,
+        "scope": "Mixed robot + UMI release"
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "Card says 6 embodiments but enumerates 7 folders (five fixed-arm configurations plus two UMI configurations); preserve names rather than a conflicting total.",
+        "N0 technical report 30K-hour corpus differs from OpenNeoData 5K-hour release. No UMI-only hours or episodes established."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData",
+          "supports": "Gating, release scale, modality, exact folder inventory, schema, license",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData"
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2606.10382": {
+      "id": "2606.10382",
+      "name": "UMI-Bench 1.0",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "CC BY 4.0",
+      "formats": [
+        "TAR session shards",
+        "CSV/JSON metadata"
+      ],
+      "fps": null,
+      "observations": [],
+      "action": null,
+      "embodiments": [
+        "Single-arm",
+        "Bimanual"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "sessions": 20000,
+        "tasks": 10,
+        "singleArmTasks": 4,
+        "dualArmTasks": 6,
+        "singleArmSessions": 9988,
+        "dualArmSessions": 10012
+      },
+      "scopeNotes": [
+        "Dataset viewer row count is checksum/manifest text, not episodes.",
+        "Dataset card documents session counts and TAR layout but not complete trajectory feature schema; leave observations/action unknown until paper or shard schema is verified."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1",
+          "supports": "Public download, exact task/session counts, license and storage",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "fps",
+        "action"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1"
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2402.10329": {
+      "id": "2402.10329",
+      "name": "UMI original datasets",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://umi-data.github.io/",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr",
+        "MP4"
+      ],
+      "fps": 59.94,
+      "observations": [
+        "Bimanual",
+        "Image",
+        "Proprio"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Single handheld gripper",
+        "Bimanual handheld grippers"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 2543,
+        "taskConfigurations": 5,
+        "scope": "Training Zarr; sum of 5 official task rows"
+      },
+      "scopeNotes": [
+        "Four semantic task families; cup arrangement has separate lab/in-the-wild releases.",
+        "Raw MP4 counts exceed filtered Zarr counts: cloth249 vs372; tossing284 vs296; cup lab305 vs331; cup wild1447/30env vs2795/71env.",
+        "Do not sum task environments as unique environments."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/#data-format",
+          "supports": "59.94Hz aligned Zarr schema: camera RGB, EEF xyz/axis-angle, gripper width and episode boundaries",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Bimanual Dish Washing",
+          "episodes": 258,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/umi/data/dish_washing/bimanual_dish_washing.zarr.zip",
+            "MP4": "https://real.stanford.edu/umi/data/dish_washing/bimanual_dish_washing_mp4s.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Bimanual Cloth Folding",
+          "episodes": 249,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/umi/data/bimanual_cloth_folding/bimanual_cloth_folding.zarr.zip",
+            "MP4": "https://real.stanford.edu/umi/data/bimanual_cloth_folding/bimanual_cloth_folding_mp4s.zip"
+          },
+          "notes": "372 demos in the mp4 zip for two demo collection sessions, 249 of them are included in the zarr file"
+        },
+        {
+          "task": "Dynamic Tossing",
+          "episodes": 284,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/umi/data/dynamic_tossing/dynamic_tossing.zarr.zip",
+            "MP4": "https://real.stanford.edu/umi/data/dynamic_tossing/dynamic_tossing_mp4s.zip"
+          },
+          "notes": "296 demos of 5 demo collection sessions are included in the mp4 zip, 284 of them are included in the zarr file"
+        },
+        {
+          "task": "Cup Arrangement in the Lab",
+          "episodes": 305,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/umi/data/cup_arrangement/cup_in_the_lab.zarr.zip",
+            "MP4": "https://real.stanford.edu/umi/data/cup_arrangement/cup_in_lab_mp4s.zip"
+          },
+          "notes": "331 demos of 6 demo collection sessions are included in the mp4 zip, 305 of them are included in the zarr file"
+        },
+        {
+          "task": "Cup Arrangement in the Wild",
+          "episodes": 1447,
+          "environments": 30,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/umi/data/cup_in_the_wild/cup_in_the_wild.zarr.zip",
+            "MP4": "https://real.stanford.edu/umi/data/cup_in_the_wild/cup_in_the_wild_mp4s.zip"
+          },
+          "notes": "2795 demos from 71 environments are included in the mp4s.zip, 1447 of them for 30 environments are included in the zarr file for policy training"
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://real.stanford.edu/umi/data/dish_washing/bimanual_dish_washing.zarr.zip",
+        "https://real.stanford.edu/umi/data/dish_washing/bimanual_dish_washing_mp4s.zip",
+        "https://real.stanford.edu/umi/data/bimanual_cloth_folding/bimanual_cloth_folding.zarr.zip",
+        "https://real.stanford.edu/umi/data/bimanual_cloth_folding/bimanual_cloth_folding_mp4s.zip",
+        "https://real.stanford.edu/umi/data/dynamic_tossing/dynamic_tossing.zarr.zip",
+        "https://real.stanford.edu/umi/data/dynamic_tossing/dynamic_tossing_mp4s.zip",
+        "https://real.stanford.edu/umi/data/cup_arrangement/cup_in_the_lab.zarr.zip",
+        "https://real.stanford.edu/umi/data/cup_arrangement/cup_in_lab_mp4s.zip",
+        "https://real.stanford.edu/umi/data/cup_in_the_wild/cup_in_the_wild.zarr.zip",
+        "https://real.stanford.edu/umi/data/cup_in_the_wild/cup_in_the_wild_mp4s.zip"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "Author-hosted dish-washingZIP HEAD200,22.84GB."
+      },
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2505.21864": {
+      "id": "2505.21864",
+      "name": "DexUMI",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://real.stanford.edu/dexumi/dataset/",
+      "access": "Public download",
+      "accessNote": "Direct author-hosted ZIP URLs are listed for all five task-hand configurations.",
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP"
+      ],
+      "fps": null,
+      "observations": [
+        "Force/Torque",
+        "Image",
+        "Proprio",
+        "Tactile"
+      ],
+      "action": "6 DoF End Effector; Dexterous Hand",
+      "embodiments": [
+        "Inspire Hand",
+        "XHand"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 1792,
+        "taskHandConfigurations": 5,
+        "semanticTasks": 4
+      },
+      "scopeNotes": [
+        "1,792 is a derived sum of five official task×hand rows. Tool use appears separately for Inspire and XHand; this is four semantic tasks, not five distinct task semantics.",
+        "Force/torque observation applies to Inspire datasets; tactile observation applies to XHand datasets."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://dex-umi.github.io/",
+          "supports": "Task semantics and Inspire/XHand platform mapping",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Inspire Hand: Cube Picking",
+          "episodes": 309,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/dexumi/dataset/inspire/cube_picking.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Inspire Hand: Egg Carton",
+          "episodes": 175,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/dexumi/dataset/inspire/egg_carton.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Inspire Hand: Tool Using",
+          "episodes": 404,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/dexumi/dataset/inspire/tool_use.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "XHand: Tool Using",
+          "episodes": 440,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/dexumi/dataset/xhand/tool_use.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "XHand: Kitchen",
+          "episodes": 464,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/dexumi/dataset/xhand/kitchen.zip"
+          },
+          "notes": null
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://real.stanford.edu/dexumi/dataset/inspire/cube_picking.zip",
+        "https://real.stanford.edu/dexumi/dataset/inspire/egg_carton.zip",
+        "https://real.stanford.edu/dexumi/dataset/inspire/tool_use.zip",
+        "https://real.stanford.edu/dexumi/dataset/xhand/tool_use.zip",
+        "https://real.stanford.edu/dexumi/dataset/xhand/kitchen.zip"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "Author-hosted Inspire cubeZIP HEAD200,2.02GB."
+      },
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2511.05858": {
+      "id": "2511.05858",
+      "name": "ViTaMIn-B",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
+      "access": "Public download",
+      "accessNote": "HF API gated=false; four task ZIPs, rawdata.zip and checkpoints are listed. Repository has no README card, so absence of a card is not absence of data.",
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP",
+        "Raw data ZIP"
+      ],
+      "fps": null,
+      "observations": [
+        "Image",
+        "Tactile"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Bimanual grippers"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 844,
+        "tasks": 4
+      },
+      "scopeNotes": [
+        "DuoTact sensor camera runs at30FPS; this is not assumed to be the aligned dataset frame rate."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
+          "supports": "Actual non-gated files",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://chuanyune.github.io/ViTaMIn-B_page/",
+          "supports": "DuoTact, Quest3 tracking, four bimanual tasks",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Weight Placement",
+          "episodes": 123,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt/tree/main"
+          },
+          "notes": null
+        },
+        {
+          "task": "Bean Scooping",
+          "episodes": 345,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt/tree/main"
+          },
+          "notes": null
+        },
+        {
+          "task": "Cube Storage",
+          "episodes": 195,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt/tree/main"
+          },
+          "notes": null
+        },
+        {
+          "task": "Beaker Wiping",
+          "episodes": 181,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt/tree/main"
+          },
+          "notes": null
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt/tree/main"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "No-gating API lists four taskZIPs plusrawdataZIP; no datasetREADME exists."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "chuanyune/ViTaMIn-B_data_and_ckpt",
+          "sha": "f75196abb22a13eed01983e25655c9856200bf1e",
+          "createdAt": "2025-11-02T14:24:55.000Z",
+          "lastModified": "2026-04-10T04:29:42.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2507.15062": {
+      "id": "2507.15062",
+      "name": "Touch in the Wild",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP",
+        "MP4"
+      ],
+      "fps": null,
+      "observations": [
+        "Image",
+        "Proprio",
+        "Tactile"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Portable visuo-tactile gripper"
+      ],
+      "reportedScale": {
+        "episodes": 2700,
+        "episodesQualifier": ">",
+        "tasks": 43,
+        "environments": 12
+      },
+      "publicScale": {
+        "indexedDemos": 2737,
+        "indexedRows": 20,
+        "pretrainingVideos": 2700,
+        "pretrainingVideosQualifier": "approximately"
+      },
+      "scopeNotes": [
+        "43 tasks/12 environments describe paper coverage, while community rows enumerate20 dataset groups; these are different counting units.",
+        "Pretraining videos are not an additional 2,700 independent demonstrations to add to the public totals."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset",
+          "supports": "MIT, release layout, approximately2,700 pretraining videos",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://arxiv.org/abs/2507.15062",
+          "supports": "43task/12environment corpus description",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Campus",
+          "episodes": 38,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/campus"
+          },
+          "notes": "In-the-wild data are grouped by locations"
+        },
+        {
+          "task": "Chipotle",
+          "episodes": 14,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/chipotle"
+          },
+          "notes": null
+        },
+        {
+          "task": "Hardware Store",
+          "episodes": 164,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/hardware_store"
+          },
+          "notes": null
+        },
+        {
+          "task": "Kitchen",
+          "episodes": 51,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/kitchen"
+          },
+          "notes": null
+        },
+        {
+          "task": "Lawn",
+          "episodes": 24,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/lawn"
+          },
+          "notes": null
+        },
+        {
+          "task": "Library",
+          "episodes": 26,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/library"
+          },
+          "notes": null
+        },
+        {
+          "task": "Lounge",
+          "episodes": 40,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/lounge"
+          },
+          "notes": null
+        },
+        {
+          "task": "Makerspace",
+          "episodes": 275,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/makerspace"
+          },
+          "notes": null
+        },
+        {
+          "task": "Starbucks",
+          "episodes": 50,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/starbucks"
+          },
+          "notes": null
+        },
+        {
+          "task": "Fluid Transfer",
+          "episodes": 244,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/fluid_transfer"
+          },
+          "notes": "Main task"
+        },
+        {
+          "task": "Pencil Insertion",
+          "episodes": 192,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/pencil_insertion"
+          },
+          "notes": "Main task"
+        },
+        {
+          "task": "Test Tube Collection",
+          "episodes": 266,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/test_tube_collection"
+          },
+          "notes": "Main task"
+        },
+        {
+          "task": "Whiteboard Erasing",
+          "episodes": 150,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/whiteboard_erasing"
+          },
+          "notes": "Main task"
+        },
+        {
+          "task": "Hex Key Insertion",
+          "episodes": 188,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/hex_key_insertion"
+          },
+          "notes": "Indoor"
+        },
+        {
+          "task": "Move Cup",
+          "episodes": 107,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/moving_cup"
+          },
+          "notes": "Indoor"
+        },
+        {
+          "task": "Move Tape",
+          "episodes": 202,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/moving_tape"
+          },
+          "notes": "Indoor"
+        },
+        {
+          "task": "Peg Insertion",
+          "episodes": 114,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/peg_insertion"
+          },
+          "notes": "Indoor"
+        },
+        {
+          "task": "Tossing",
+          "episodes": 239,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/tossing"
+          },
+          "notes": "Indoor"
+        },
+        {
+          "task": "Whiteboard Erasing (Indoor)",
+          "episodes": 150,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/whiteboard_erasing"
+          },
+          "notes": "Indoor"
+        },
+        {
+          "task": "Writing",
+          "episodes": 203,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/writing"
+          },
+          "notes": "Indoor"
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/campus",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/chipotle",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/hardware_store",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/kitchen",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/lawn",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/library",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/lounge",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/makerspace",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/in_the_wild_data/starbucks",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/fluid_transfer",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/pencil_insertion",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/test_tube_collection",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/four_tasks/whiteboard_erasing",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/hex_key_insertion",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/moving_cup",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/moving_tape",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/peg_insertion",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/tossing",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/whiteboard_erasing",
+        "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset/tree/main/indoor_data/writing"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF fluid-transferZarrZIP HEAD200."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "binghaohuang-robot/touch_in_the_wild-dataset",
+          "sha": "b518ef66eb46c416a0e9970c9f35533bf99503b1",
+          "createdAt": "2025-09-23T21:27:16.000Z",
+          "lastModified": "2026-01-21T19:18:43.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2406.19464": {
+      "id": "2406.19464",
+      "name": "ManiWAV",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://real.stanford.edu/maniwav/data/",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP",
+        "MP4"
+      ],
+      "fps": null,
+      "observations": [
+        "Audio",
+        "Image",
+        "Proprio"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Single handheld parallel gripper"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 1014,
+        "taskConfigurations": 5,
+        "semanticTasks": 4
+      },
+      "scopeNotes": [
+        "Four task semantics; bagel flipping has lab and separate in-the-wild recordings. The in-the-wild bagel portion contains274 demonstrations in7 environments.",
+        "Do not treat7 in-the-wild environments plus4 lab rows as11 unique environments."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://maniwav.github.io/",
+          "supports": "Audio-visual collection system and task semantics",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Whiteboard Shape Wipe",
+          "episodes": 119,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/maniwav/data/wipe/replay_buffer.zarr.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Flip bagel",
+          "episodes": 283,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/maniwav/data/flip/replay_buffer.zarr.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Pour dice",
+          "episodes": 145,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/maniwav/data/pour/replay_buffer.zarr.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Strap wires with velcro tape",
+          "episodes": 193,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://real.stanford.edu/maniwav/data/velcro_tape/replay_buffer.zarr.zip"
+          },
+          "notes": null
+        },
+        {
+          "task": "Flip bagel in the wild",
+          "episodes": 274,
+          "environments": 7,
+          "downloads": {
+            "MP4": "https://real.stanford.edu/maniwav/data/bagel_in_wild/demos/",
+            "Zarr": "https://real.stanford.edu/maniwav/data/bagel_in_wild/replay_buffer.zarr.zip"
+          },
+          "notes": null
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://real.stanford.edu/maniwav/data/wipe/replay_buffer.zarr.zip",
+        "https://real.stanford.edu/maniwav/data/flip/replay_buffer.zarr.zip",
+        "https://real.stanford.edu/maniwav/data/pour/replay_buffer.zarr.zip",
+        "https://real.stanford.edu/maniwav/data/velcro_tape/replay_buffer.zarr.zip",
+        "https://real.stanford.edu/maniwav/data/bagel_in_wild/demos/",
+        "https://real.stanford.edu/maniwav/data/bagel_in_wild/replay_buffer.zarr.zip"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "Author-hosted wipe ZarrZIP HEAD200,2.85GB."
+      },
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2602.06643": {
+      "id": "2602.06643",
+      "name": "HuMI",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/collections/Richard-Nai/humi",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "CC BY 4.0",
+      "formats": [
+        "Zarr",
+        "LeRobot v3.0",
+        "Raw data"
+      ],
+      "fps": 60,
+      "observations": [
+        "Bimanual",
+        "Image",
+        "Proprio"
+      ],
+      "action": "6 DoF Poses; Bimanual; Feet; Parallel Gripper; Pelvis",
+      "embodiments": [
+        "Whole-body humanoid interface"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 827,
+        "tasks": 5
+      },
+      "scopeNotes": [
+        "827 is the sum of five task datasets. Squat & Pick Ground reports410 demonstrations across7 environments; others each list1 environment.",
+        "LeRobot Dynamic Toss meta/info.json independently confirms104episodes/60FPS and records wrists, pelvis/feet and29D joint_pos. Frame rows are not episodes."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/collections/Richard-Nai/humi",
+          "supports": "Five task datasets plus processedZarr/raw releases; all non-gated",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/Richard-Nai/HuMI-Toss/resolve/main/meta/info.json",
+          "supports": "60FPS,104episodes and feature schema",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Marriage Proposal",
+          "episodes": 103,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/proposal",
+            "Raw Data": "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/proposal",
+            "LeRobot": "https://huggingface.co/datasets/Richard-Nai/HuMI-Proposal"
+          },
+          "notes": null
+        },
+        {
+          "task": "Walk & Clean Table",
+          "episodes": 105,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/walk-clean-table",
+            "Raw Data": "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/walk-clean-table",
+            "LeRobot": "https://huggingface.co/datasets/Richard-Nai/HuMI-Walk-Clean-Table"
+          },
+          "notes": null
+        },
+        {
+          "task": "Unsheathe Sword",
+          "episodes": 105,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/unsheathe",
+            "Raw Data": "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/unsheathe-sword",
+            "LeRobot": "https://huggingface.co/datasets/Richard-Nai/HuMI-Unsheathe"
+          },
+          "notes": null
+        },
+        {
+          "task": "Dynamic Toss",
+          "episodes": 104,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/toss",
+            "Raw Data": "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/toss",
+            "LeRobot": "https://huggingface.co/datasets/Richard-Nai/HuMI-Toss"
+          },
+          "notes": null
+        },
+        {
+          "task": "Squat & Pick Ground",
+          "episodes": 410,
+          "environments": 7,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/squat-pick-ground",
+            "Raw Data": "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/squat-pick-ground",
+            "LeRobot": "https://huggingface.co/datasets/Richard-Nai/HuMI-Squat-Pick-Ground"
+          },
+          "notes": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/proposal",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/proposal",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Proposal",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/walk-clean-table",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/walk-clean-table",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Walk-Clean-Table",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/unsheathe",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/unsheathe-sword",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Unsheathe",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/toss",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/toss",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Toss",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Zarrs/tree/main/squat-pick-ground",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Raw-Data/tree/main/squat-pick-ground",
+        "https://huggingface.co/datasets/Richard-Nai/HuMI-Squat-Pick-Ground"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF HuMI-Zarrs proposalZIP HEAD200; HuMI-Toss metadata and Parquet HEAD200."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "Richard-Nai/HuMI-Toss",
+          "sha": "2d36e5160d9b784377615018786e878925019a73",
+          "createdAt": "2026-03-08T09:39:59.000Z",
+          "lastModified": "2026-03-09T04:03:44.000Z",
+          "gated": false
+        },
+        {
+          "id": "Richard-Nai/HuMI-Zarrs",
+          "sha": "b4c8825cefe5b51ef75ac684c5b12e603d550a03",
+          "createdAt": "2026-03-09T04:24:56.000Z",
+          "lastModified": "2026-03-12T03:37:39.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2604.14089": {
+      "id": "2604.14089",
+      "name": "UMI-3D",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr",
+        "ROS bag"
+      ],
+      "fps": null,
+      "observations": [
+        "Image",
+        "Point Cloud",
+        "Proprio"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Handheld parallel gripper"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 4609,
+        "tasks": 3
+      },
+      "scopeNotes": [
+        "4609=3500cup+769curtain+340door/cup; environmentcounts4/3/1are per task and not a guaranteed8unique total.",
+        "LiDAR point clouds are used for capture/trajectory estimation; policies may use RGB-only observations."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset",
+          "supports": "Official HFprocessed datasets, BaiduROSbags and models",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Cup-to-Saucer Placement",
+          "episodes": 3500,
+          "environments": 4,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/ZIMBOT/umi-3d-dataset-cup",
+            "Rosbag": "https://pan.baidu.com/s/1ukL6oDFspRRjbqr6Vdy5VQ?pwd=kyg6"
+          },
+          "notes": "UMI-3D extends UMI with LiDAR-enhanced data collection for robust trajectory estimation in challenging real-world environments (e.g., textureless surfaces, dynamic scenes, occlusions). The dataset remains fully compatible with existing UMI pipelines and supports image-only policy learning. Pretrained policy: <a href=\"https://huggingface.co/ZIMBOT/umi-3d-policy-cup\">umi-3d-policy-cup</a>."
+        },
+        {
+          "task": "Curtain Pulling",
+          "episodes": 769,
+          "environments": 3,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/ZIMBOT/umi-3d-dataset-curtain",
+            "Rosbag": "https://pan.baidu.com/s/1-ZTBTXOFqplpWlRUnBSAIQ?pwd=4m3j"
+          },
+          "notes": "Pretrained policy: <a href=\"https://huggingface.co/ZIMBOT/umi-3d-policy-curtain\">umi-3d-policy-curtain</a>."
+        },
+        {
+          "task": "Door Opening and Cup Placement",
+          "episodes": 340,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/ZIMBOT/umi-3d-dataset-door-cup",
+            "Rosbag": "https://pan.baidu.com/s/1QVurpNRc9u0ERTpR_iixhg?pwd=k5nb"
+          },
+          "notes": "Pretrained policy: <a href=\"https://huggingface.co/ZIMBOT/umi-3d-policy-door-cup\">umi-3d-policy-door-cup</a>."
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/ZIMBOT/umi-3d-dataset-cup",
+        "https://pan.baidu.com/s/1ukL6oDFspRRjbqr6Vdy5VQ?pwd=kyg6",
+        "https://huggingface.co/datasets/ZIMBOT/umi-3d-dataset-curtain",
+        "https://pan.baidu.com/s/1-ZTBTXOFqplpWlRUnBSAIQ?pwd=4m3j",
+        "https://huggingface.co/datasets/ZIMBOT/umi-3d-dataset-door-cup",
+        "https://pan.baidu.com/s/1QVurpNRc9u0ERTpR_iixhg?pwd=k5nb"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF cupZarrZIP HEAD200."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "ZIMBOT/umi-3d-dataset-cup",
+          "sha": "d03209df7684fffd01814687524ec70032d8a92d",
+          "createdAt": "2026-04-16T08:00:40.000Z",
+          "lastModified": "2026-04-16T08:03:18.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2504.06156": {
+      "id": "2504.06156",
+      "name": "ViTaMIn",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP"
+      ],
+      "fps": null,
+      "observations": [
+        "Image",
+        "Proprio",
+        "Tactile"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Single handheld visuo-tactile gripper"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "semanticTasks": 6
+      },
+      "scopeNotes": [
+        "Official community table contains8rows, including repeated Articulated Object83 and Dynamic Peg101 with/without tactile variants. Do not sum841 as unique physical demonstrations.",
+        "Six task-name groups total657 only after de-duplicating the two observation variants; uniqueness has not been proven from episode metadata, so a unique demo total is deliberately not set."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task records; release tiers, modalities, license and task-level counts",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://chuanyune.github.io/ViTaMIn_page/",
+          "supports": "Visuo-tactile collection and six task categories",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Orange Placement",
+          "episodes": 73,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Sponge Insertion",
+          "episodes": 138,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Test Tube Reorientation",
+          "episodes": 125,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Scissor Hanging",
+          "episodes": 137,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Articulated Object Manipulation",
+          "episodes": 83,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Dynamic Peg Insertion",
+          "episodes": 101,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Articulated Object Manipulation",
+          "episodes": 83,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        },
+        {
+          "task": "Dynamic Peg Insertion",
+          "episodes": 101,
+          "environments": 1,
+          "downloads": {
+            "HuggingFace": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+          },
+          "notes": null
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF Articulated Object ManipulationZarrZIP HEAD200."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "chuanyune/ViTaMIn_dataset",
+          "sha": "cda8f7b08ce13b37c95f3a9db0fe3ebf1a1ca936",
+          "createdAt": "2025-04-15T10:24:24.000Z",
+          "lastModified": "2025-04-15T10:50:12.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2610.20320": {
+      "id": "2610.20320",
+      "name": "TacClaw-Infinity",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity",
+      "access": "Public subset",
+      "accessNote": null,
+      "license": "CC BY-NC-SA4.0",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "MP4",
+        "MP3"
+      ],
+      "fps": 30,
+      "observations": [
+        "Wrist fisheye RGB",
+        "Fingertip tactile",
+        "EEF trajectory",
+        "Gripper state",
+        "Language",
+        "Device-specific audio"
+      ],
+      "action": "Unified114Dstate and111Daction schema; device-inapplicable blocks use placeholders. DataClaw and DataDex require different valid feature subsets.",
+      "embodiments": [
+        "DM-DataClaw",
+        "DM-DataDex"
+      ],
+      "reportedScale": {
+        "hours": 10000,
+        "hoursQualifier": ">",
+        "episodes": 1000000,
+        "episodesQualifier": ">",
+        "tasks": 1000,
+        "tasksQualifier": ">",
+        "locations": 50,
+        "locationsQualifier": ">"
+      },
+      "publicScale": {
+        "hours": 1000,
+        "scope": "Daimon-Infinity first release stated ondataset card"
+      },
+      "scopeNotes": [
+        "TacClaw project download buttons say Coming soon. The broader Daimon-Infinity repository publishes files and announces its first1000-hour batch; the full10000+hours is not a verified complete public release.",
+        "The card analyzes approximately1209collected hours; this is a separate scope from its first1000-hour release.",
+        "The first batch mixes DataClaw and DataDex; do not describe every released hour as TacClaw-only.",
+        "A sampled DataClaw meta/info.json confirms30FPS,114Dstate/111Daction and247episodes. It is one recording folder, not a release-wide episode count."
+      ],
+      "sources": [
+        {
+          "url": "https://daimon-robotics.github.io/tacclaw-infinity-page/",
+          "supports": "Paper corpus scale and download buttons still marked Coming soon.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity",
+          "supports": "First 1,000-hour release, license, mixed devices and downloadable file layout.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF oneDataClawfolder Parquet HEAD200; metadata parsed."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "daimonrobotics/Daimon-Infinity",
+          "sha": "9867a9b1f57db28a1ab7bc9d79e62e541401f3f0",
+          "createdAt": "2026-10-09T01:53:17.000Z",
+          "lastModified": "2026-10-16T05:31:55.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "fpsScope": "Sampled public export; capture sensor rates may differ"
+    },
+    "2602.03310": {
+      "id": "2602.03310",
+      "name": "RDT2",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/robotics-diffusion-transformer/BimanualUR5eExample",
+      "access": "Example data only",
+      "accessNote": null,
+      "license": "Apache-2.0 (UR5e example)",
+      "formats": [
+        "WebDataset"
+      ],
+      "fps": 30,
+      "observations": [
+        "Left/right wrist RGB",
+        "Task instruction"
+      ],
+      "action": "Example data:relative0.8-second action chunk at30Hz plus discrete RVQ action tokens",
+      "embodiments": [
+        "Custom UMI collector",
+        "BimanualUR5e example",
+        "BimanualFranka deployment"
+      ],
+      "reportedScale": {
+        "hours": 10000,
+        "hoursQualifier": ">",
+        "indoorScenes": 100,
+        "indoorScenesQualifier": ">"
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "The full10000+hour UMI training corpus is not confirmed publicly downloadable from current project/repository links.",
+        "BimanualUR5eExample is a released robot finetuning example, not the UMI pretraining corpus. Its Apache2.0license and WebDataset schema must not be applied to the unreleased corpus."
+      ],
+      "sources": [
+        {
+          "url": "https://rdt-robotics.github.io/rdt2/",
+          "supports": "10,000+ collected hours in 100+ scenes; project announcement distinguishes pending broader data release.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://github.com/thu-ml/RDT2",
+          "supports": "Current training and deployment code links only a public UR5e example.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/robotics-diffusion-transformer/BimanualUR5eExample",
+          "supports": "Robot finetuning example, Apache2.0 license, WebDataset schema.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/robotics-diffusion-transformer/BimanualUR5eExample"
+      ],
+      "repositorySnapshots": [
+        {
+          "id": "robotics-diffusion-transformer/BimanualUR5eExample",
+          "sha": "5550bc13fc38348360626a030dc585c8d2d5298f",
+          "createdAt": "2025-09-22T02:43:01.000Z",
+          "lastModified": "2026-02-07T05:18:49.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2606.04708": {
+      "id": "2606.04708",
+      "name": "VISTA",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/collections/TeleEmbodied/vista",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "Apache-2.0",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "MP4",
+        "JSONL",
+        "TAR image shards"
+      ],
+      "fps": 20,
+      "observations": [
+        "Two wrist fisheye RGB views",
+        "16D bimanual EEF state",
+        "Task language",
+        "Image VQA"
+      ],
+      "action": "VISTA-UMI-5K public schema:16D[xyz,quaternion,gripper]×2; no action-relative convention is inferred here",
+      "embodiments": [
+        "UMI collection",
+        "RealMan rm7500",
+        "ARX AC one",
+        "Galaxea R1 Pro"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "trajectories": 5000,
+        "tasks": 30,
+        "vqaSamples": 8000000,
+        "realWorldVqaSamples": 3000000,
+        "fisheyeRefSpatialVqaSamples": 5000000
+      },
+      "scopeNotes": [
+        "VQA samples are not demonstration episodes. Five million RefSpatial samples use FLUX-edited fisheye imagery.",
+        "HF Dataset Viewer exposes two250-row previews, while full VQA images and JSONL annotations are stored separately as shards. Do not mistake preview size for release size.",
+        "The paper trains on100Krobot trajectories, while VISTA-UMI-5K releases5000validated trajectories across30tasks.",
+        "20FPS and16Dstate/action were checked in one released task metadata file."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/TeleEmbodied/UMI-VQA-8M",
+          "supports": "8M VQA samples; full image/JSONL shards differ from the lightweight250-row preview subsets.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/TeleEmbodied/VISTA-UMI-5K",
+          "supports": "5,000 validated trajectories across30tasks; LeRobot3.0 and three validation robots.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://tele-umi-vista.github.io/",
+          "supports": "100K training trajectory mixture is separate from the public5K release.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/collections/TeleEmbodied/vista"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF firstVISTA-UMI-5Ktask Parquet HEAD200; fullVQA shards listed."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "TeleEmbodied/UMI-VQA-8M",
+          "sha": "f258f349c53e5031275047eaa587ab7fe9d7ed99",
+          "createdAt": "2026-05-21T05:41:50.000Z",
+          "lastModified": "2026-06-11T09:41:50.000Z",
+          "gated": false
+        },
+        {
+          "id": "TeleEmbodied/VISTA-UMI-5K",
+          "sha": "75f6a4fe04415e3078191f509a2144f3cc7eeb94",
+          "createdAt": "2026-05-20T05:25:29.000Z",
+          "lastModified": "2026-06-11T09:42:28.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2606.14409": {
+      "id": "2606.14409",
+      "name": "Hy-Embodied-0.5-VLA-Data",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data",
+      "access": "Public subset",
+      "accessNote": null,
+      "license": "CC BY4.0",
+      "formats": [
+        "Lance",
+        "LeRobot v3.0 schema"
+      ],
+      "fps": 30,
+      "observations": [
+        "Head RGB",
+        "Left/right wrist RGB",
+        "16D bimanual EEF state",
+        "Task language"
+      ],
+      "action": "Dataset card defines2D[left,right]gripper-openness action; EEF pose is stored in16Dobservation.state",
+      "embodiments": [
+        "Fingertip UMI device"
+      ],
+      "reportedScale": {
+        "hours": 10000,
+        "hoursQualifier": ">",
+        "scope": "Fulltrainingcorpus"
+      },
+      "publicScale": {
+        "hours": 2163,
+        "episodes": 250304,
+        "frames": 233600314,
+        "tasks": 70,
+        "tasksQualifier": ">",
+        "tables": 22
+      },
+      "scopeNotes": [
+        "The open-source release represents approximately20%of the full10000+hour corpus.",
+        "Do not automatically convert16Dstate into16Daction:the exported action column documents only two gripper openness values.",
+        "Each camera is240×424pixels. Dataset is split into22tables with per-table metadata."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data",
+          "supports": "Exact released hours, episodes and frames;20% corpus scope; Lance/LeRobot schema;2D gripper action and license.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data"
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2606.30457": {
+      "id": "2606.30457",
+      "name": "iPhUMI behavior-prompting datasets",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://behavior-prompting.github.io/",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP",
+        "Raw data ZIP"
+      ],
+      "fps": null,
+      "observations": [
+        "Bimanual",
+        "Image",
+        "Proprio"
+      ],
+      "action": "6 DoF End Effector; Bimanual; Marker Attachment; Parallel Gripper",
+      "embodiments": [
+        "Bimanual iPhone grippers",
+        "Single iPhUMI marker attachment"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 7360,
+        "datasetFamilies": 2,
+        "laundryEpisodes": 1572,
+        "drawingEpisodes": 5788,
+        "uniqueDrawings": 1000
+      },
+      "scopeNotes": [
+        "Laundry contains three folding subtasks; drawing contains1000unique drawings with around5–6demonstrations each.",
+        "7360sums1572laundry+5788drawing demonstrations with different embodiments; do not label all7360as bimanual gripper demonstrations."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official community task-level counts and exact downloadable release paths.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding",
+          "supports": "Laundry Zarr and raw files under MIT.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real",
+          "supports": "Drawing Zarr and raw files under MIT.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Sweater Folding",
+          "episodes": 1572,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding/blob/main/sweater_folding_replay_buffer.zarr.zip",
+            "Raw Data": "https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding/blob/main/sweater_folding_raw_data.zip"
+          },
+          "notes": "Collected with <a href=\"https://github.com/real-stanford/iPhUMI\">iPhUMI</a>, an iPhone-based UMI (iPhone in place of GoPro). 3 sub-tasks: left-arm fold, right-arm fold, and fold-up. Each gripper collects both main and ultrawide iPhone camera. See the <a href=\"https://github.com/real-stanford/behavior_prompting/blob/main/docs/laundry_folding.md\">task documentation</a> for details."
+        },
+        {
+          "task": "Whiteboard Drawing",
+          "episodes": 5788,
+          "environments": 1,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real/blob/main/drawanything_real_replay_buffer.zarr.zip",
+            "Raw Data": "https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real/blob/main/drawanything_real_raw_data.zip"
+          },
+          "notes": "Single-arm whiteboard drawing collected with <a href=\"https://github.com/real-stanford/iPhUMI\">iPhUMI</a>. Uses a custom attachment holding a whiteboard marker (the gripper is held fully closed) instead of a parallel gripper. 1,000 unique drawings, ~5-6 demos each; main and ultrawide iPhone cameras. See the <a href=\"https://github.com/real-stanford/behavior_prompting/blob/main/docs/drawanything_real.md\">task documentation</a> for details."
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding/blob/main/sweater_folding_replay_buffer.zarr.zip",
+        "https://huggingface.co/datasets/austinpatel/iphumi_bimanual_laundry_folding/blob/main/sweater_folding_raw_data.zip",
+        "https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real/blob/main/drawanything_real_replay_buffer.zarr.zip",
+        "https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real/blob/main/drawanything_real_raw_data.zip"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "Both HF raw-dataZIPs HEAD200."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "austinpatel/iphumi_bimanual_laundry_folding",
+          "sha": "e6b1bbf3e1c12ee6fb4382d660941e9361eadc78",
+          "createdAt": "2026-06-28T19:54:52.000Z",
+          "lastModified": "2026-06-28T22:21:03.000Z",
+          "gated": false
+        },
+        {
+          "id": "austinpatel/iphumi_drawinganything_real",
+          "sha": "d0977da7fa1449a209f4772af0db89c82e8d074c",
+          "createdAt": "2026-06-28T20:23:37.000Z",
+          "lastModified": "2026-08-27T02:48:55.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData": {
+      "id": "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData",
+      "name": "GenRobot10Kh-RealOmin-OpenData",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData",
+      "access": "Gated download",
+      "accessNote": "HFAPI reports gated=auto. Anonymous raw card fetch returns401; sign-in and contact-sharing consent are required.",
+      "license": "CC BY-SA4.0",
+      "formats": [
+        "MCAP",
+        "Protobuf",
+        "H.264"
+      ],
+      "fps": 30,
+      "observations": [
+        "Bimanual fisheye RGB",
+        "EEF trajectory",
+        "Gripper aperture",
+        "6-axis IMU",
+        "Tactile array claimed"
+      ],
+      "action": "Timestamped EEF pose plus magnetic gripper-aperture stream; no universal policy-action tensor is asserted",
+      "embodiments": [
+        "Bimanual Gen DAS Gripper"
+      ],
+      "reportedScale": {
+        "hours": 13000,
+        "hoursQualifier": ">",
+        "clips": 5000000,
+        "clipsQualifier": ">",
+        "householdScenarios": 10000,
+        "householdScenariosQualifier": ">"
+      },
+      "publicScale": {
+        "indexedDemos": 789772,
+        "scope": "OfficialUMIcommunitylistedvalue"
+      },
+      "scopeNotes": [
+        "Current HF card says13000+hours and5M+clips after Stage3. The community index lists789772demonstrations; these are different versions/counting units.",
+        "Clips must not be labeled episodes. Card still preserves old Stage1/2 release figures950h+653h, alongside the newer Stage3 completion statement.",
+        "Tactile is claimed in the statistics table, but the documented example MCAP topics show camera,IMU,encoder andEEFpose only. The tactile payload schema remains unverified.",
+        "No canonical arXiv ID exists in the current README; official dataset URL is the association key."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/api/datasets/genrobot2025/10Kh-RealOmin-OpenData",
+          "supports": "Current Stage3 description, automatic gating and CC BY-SA4.0.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Community index demonstration count and observation modalities.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData"
+      ],
+      "repositorySnapshots": [
+        {
+          "id": "genrobot2025/10Kh-RealOmin-OpenData",
+          "sha": "fcbc0d38550e134f273426aa7c9cc2b491270bc4",
+          "createdAt": "2025-12-31T07:17:19.000Z",
+          "lastModified": "2026-04-24T05:02:26.000Z",
+          "gated": "auto"
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2410.18647": {
+      "id": "2410.18647",
+      "name": "Data Scaling Laws datasets",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset",
+      "access": "Public download",
+      "accessNote": null,
+      "license": "MIT",
+      "formats": [
+        "Zarr ZIP",
+        "Raw GoPro MP4"
+      ],
+      "fps": null,
+      "observations": [
+        "Image",
+        "Proprio"
+      ],
+      "action": "6 DoF End Effector; Parallel Gripper",
+      "embodiments": [
+        "Single handheld gripper"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "tasks": 4,
+        "processedSplits": 6
+      },
+      "scopeNotes": [
+        "PourWater and MouseArrangement each have overlapping32environment/object1and16environment×4object splits. Their processed counts must not be summed into a unique episode total.",
+        "Nominal collected samples in the HF card differ from the filtered valid Zarr counts enumerated by the official community index.",
+        "Environment-object pairs and physical environments are different counting units."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Official task-specific counts, overlapping splits and licensing.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset",
+          "supports": "Four tasks, six processed splits, environment-object layout and count files.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "taskBreakdown": [
+        {
+          "task": "Pour Water - Split 1",
+          "episodes": 3648,
+          "environments": 32,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/pour_water",
+            "MP4": "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/pour_water"
+          },
+          "notes": "This first split corresponds to the dataset generated from all videos in env_{1~32}/object_1, with a total of 3,648 demos. The MP4 link contains 9,600 demos from 32 environments. In the first 16 environments, 4 different objects were collected, while in the remaining 16 environments, only 1 object was collected. Each object has 120 demos."
+        },
+        {
+          "task": "Pour Water - Split 2",
+          "episodes": 6896,
+          "environments": 16,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/pour_water_16_env_4_object",
+            "MP4": "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/pour_water"
+          },
+          "notes": "This second split corresponds to the dataset generated from all videos in env_{1~16}/object_{1~4}, with a total of 6,896 demos. The MP4 link contains 9,600 demos from 32 environments. In the first 16 environments, 4 different objects were collected, while in the remaining 16 environments, only 1 object was collected. Each object has 120 demos."
+        },
+        {
+          "task": "Mouse Arrangement - Split 1",
+          "episodes": 3564,
+          "environments": 32,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/arrange_mouse",
+            "MP4": "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/pick_place_mouse"
+          },
+          "notes": "This first split corresponds to the dataset generated from all videos in env_{1~32}/object_1, with a total of 3,564 demos. The MP4 link contains 9,600 demos from 32 environments. In the first 16 environments, 4 different objects were collected, while in the remaining 16 environments, only 1 object was collected. Each object has 120 demos."
+        },
+        {
+          "task": "Mouse Arrangement - Split 2",
+          "episodes": 6505,
+          "environments": 16,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/arrange_mouse_16_env_4_object",
+            "MP4": "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/pick_place_mouse"
+          },
+          "notes": "This second split corresponds to the dataset generated from all videos in env_{1~16}/object_{1~4}, with a total of 6,505 demos. In the first 16 environments, 4 different objects were collected, while in the remaining 16 environments, only 1 object was collected. Each object has 120 demos."
+        },
+        {
+          "task": "Fold Towels",
+          "episodes": 1752,
+          "environments": 32,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/fold_towel",
+            "MP4": "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/fold_towel"
+          },
+          "notes": "1,920 demos from 32 environments are included in the MP4 link, with 60 demos per environment. 1,752 valid demos of them are included in the Zarr file for policy learning."
+        },
+        {
+          "task": "Unplug Charger",
+          "episodes": 1733,
+          "environments": 32,
+          "downloads": {
+            "Zarr": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/unplug_charger",
+            "MP4": "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/unplug_charger"
+          },
+          "notes": "1,920 demos from 32 environments are included in the MP4 link, with 60 demos per environment. 1,733 valid demos of them are included in the Zarr file for policy learning."
+        }
+      ],
+      "unknownFields": [
+        "fps"
+      ],
+      "evidenceLevel": "Official project / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/pour_water",
+        "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/pour_water",
+        "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/pour_water_16_env_4_object",
+        "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/arrange_mouse",
+        "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/pick_place_mouse",
+        "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/arrange_mouse_16_env_4_object",
+        "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/fold_towel",
+        "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/fold_towel",
+        "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset/tree/main/unplug_charger",
+        "https://huggingface.co/datasets/Fanqi-Lin/GoPro-Raw-Videos/tree/main/unplug_charger"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HEAD / official API / small JSON metadata",
+        "result": "HF arrange_mouseZarrZIP HEAD200."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "Fanqi-Lin/Processed-Task-Dataset",
+          "sha": "e8a738212eecdd4f7db41b217079dff351ad7375",
+          "createdAt": "2024-10-24T04:13:52.000Z",
+          "lastModified": "2024-11-13T08:15:20.000Z",
+          "gated": false
+        }
+      ],
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+    },
+    "2509.18757": {
+      "id": "2509.18757",
+      "name": "MV-UMI",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://mv-umi.github.io/",
+      "access": "Not verified",
+      "accessNote": "No dataset download is linked on the official project. Its Code (soon) button has an empty href; the paper release claim does not establish a current downloadable dataset.",
+      "license": null,
+      "formats": [],
+      "fps": null,
+      "observations": [
+        "GoPro wrist RGB",
+        "Third-person RGB (human-segmented / inpainted)",
+        "Recovered 6-DoF gripper pose",
+        "Gripper aperture"
+      ],
+      "action": "6-DoF end-effector pose + gripper aperture",
+      "embodiments": [
+        "Handheld gripper demonstrations",
+        "Robot-mounted matching gripper"
+      ],
+      "reportedScale": {
+        "tasks": 3
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "The three reported tasks are Bottles-Rack-Inserter, Marker-Cup-Placer, and Cans-Shelf-Placer. Demonstration count and environment count are not stated in the inspected paper.",
+        "Paper Sec. III-B describes raw MP4 capture, but the export/storage format of a public release is not verified.",
+        "Paper says the complete pipeline is publicly released, while the current author project still labels code as coming soon and offers no data link. Retain this discrepancy instead of inferring release status."
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2509.18757v1",
+          "supports": "Sections III-B and IV: observations, action extraction, three tasks; no corpus episode count.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://mv-umi.github.io/",
+          "supports": "Actual current resource links and Code (soon) status.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "public dataset release",
+        "episode count",
+        "environment count",
+        "license",
+        "export formats",
+        "fps"
+      ],
+      "evidenceLevel": "Official paper / author project",
+      "downloadLinks": [],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous GET of author project and inspection of resource hrefs",
+        "result": "Project accessible; no dataset link; Code (soon) empty href."
+      }
+    },
+    "2509.14688": {
+      "id": "2509.14688",
+      "name": "exUMI",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/silicx/exUMI",
+      "access": "Public download",
+      "accessNote": "Official author repository links an anonymous, ungated Hugging Face dataset with eight task archives and raw videos.",
+      "license": null,
+      "formats": [
+        "Zarr ZIP",
+        "MP4"
+      ],
+      "fps": null,
+      "observations": [
+        "Wrist RGB",
+        "Combined left/right tactile images",
+        "6-DoF end-effector pose",
+        "Gripper aperture"
+      ],
+      "action": "Relative end-effector pose + gripper state",
+      "embodiments": [
+        "exUMI handheld gripper",
+        "Flexiv Rizon 4 + Grav gripper"
+      ],
+      "reportedScale": {
+        "frames": 1000000,
+        "framesQualifier": ">",
+        "environments": 10,
+        "objects": 300,
+        "objectsQualifier": ">",
+        "scope": "Paper human-play pretraining corpus"
+      },
+      "publicScale": {
+        "tasks": 8
+      },
+      "scopeNotes": [
+        "The paper human-play pretraining corpus and the released task-specific ZIP files are different scopes. Do not label one million frames as released episodes.",
+        "The current author Hugging Face listing contains 1,488 raw MP4 files across eight task directories. These are raw capture files, not an independently verified processed-episode total.",
+        "Paper Sec. 4.2 gives about one million aligned image/tactile/action frames and 480K tactile frames from five hours; Appendix Table 5 gives 480.9K raw frames. Keep these definitions separate rather than treating all frame totals as equivalent.",
+        "The dataset card has no license metadata and its root file listing has no LICENSE file. A paper license or software-repository license does not establish dataset licensing.",
+        "The dataset-card example has episode_ends length 139 for insert_pen only; it is not the full release size."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/silicx/exUMI",
+          "supports": "Published storage schema, combined tactile channel, raw videos, example 139-episode task.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/silicx/exUMI",
+          "supports": "Anonymous snapshot: gated=false, eight task ZIP archives, 1,488 MP4 files, no declared dataset license.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://github.com/silicx/exUMI",
+          "supports": "Author link authenticates the Hugging Face release and distinguishes task-specific datasets.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://github.com/silicx/exUMI/blob/main/DATA_COLLECTION.md",
+          "supports": "Post-processing produces dataset.zarr.zip after pose/video alignment.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://arxiv.org/html/2509.14688v1",
+          "supports": "Sec.4.2 /5.1 and Appendix: human-play corpus, 10 environments, 300+ objects, frame scopes, action representation.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "dataset license",
+        "export fps",
+        "processed release episode total"
+      ],
+      "evidenceLevel": "Official paper / author data repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/silicx/exUMI"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous HF API, dataset card, recursive file listing",
+        "result": "Public and ungated, eight Zarr ZIP task archives visible; no full archive downloaded."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "silicx/exUMI",
+          "sha": "2184ea250d38614c0c38538571bdf47e8c50f740",
+          "lastModified": "2026-03-09T09:52:30.000Z",
+          "gated": false,
+          "taskArchives": 8,
+          "rawMp4Files": 1488,
+          "rawMp4ByTask": {
+            "insert_pen": 139,
+            "open_bottle": 270,
+            "peg_in_hole": 163,
+            "pick_brocolli": 170,
+            "pick_carrot": 135,
+            "pick_cube": 208,
+            "pull_drawer": 202,
+            "stack_cube": 201
+          }
+        }
+      ]
+    },
+    "2411.03682": {
+      "id": "2411.03682",
+      "name": "LEGATO",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://utexas.box.com/s/5twb8okdnfr2uhyf4fj3bh5ohu4w3o4r",
+      "access": "Public download",
+      "accessNote": "Author README links simulation demonstrations; anonymous Box folder metadata lists three HDF5 task files. Real-robot demonstration release is not established.",
+      "license": null,
+      "formats": [
+        "HDF5"
+      ],
+      "fps": null,
+      "fpsScope": "The paper policy predicts at 10 Hz, but archive frame-rate metadata was not independently inspected.",
+      "observations": [
+        "Stereo grayscale images (128×128)",
+        "Previous gripper trajectory actions",
+        "Relative position / Euler history"
+      ],
+      "action": "7D relative gripper trajectory + grasp",
+      "embodiments": [
+        "Abstract (simulation)",
+        "Panda (simulation)",
+        "Spot (simulation)",
+        "GR-1 (simulation)",
+        "Google Robot (simulation)"
+      ],
+      "reportedScale": {
+        "tasks": 3
+      },
+      "publicScale": {
+        "tasks": 3
+      },
+      "scopeNotes": [
+        "The downloadable files are simulation datasets: closing_the_lid.hdf5, cup_shelving.hdf5, ladle_reorganization.hdf5. The current gallery figure is explicitly labeled simulation.",
+        "Paper Sec. IV-C says comparison models use a dataset of 150 task demonstrations; this is a training-comparison scope, not a verified total across the three downloadable archives. Do not multiply or sum this into a corpus episode count.",
+        "README MIT license applies to the software project. The inspected Box dataset folder does not declare separate dataset licensing, so dataset license remains unknown.",
+        "Author docs specify seven-dimensional actions and stereo grayscale observations. Export fps is not inferred from the paper 10-Hz policy or 100/500-Hz control loops."
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/UT-HCRL/LEGATO",
+          "supports": "Dataset and Pre-trained Models section links the simulation release; project code license is MIT.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://github.com/UT-HCRL/LEGATO/blob/main/docs/usage.md",
+          "supports": "Three simulation tasks, HDF5 format, 7D actions, stereo128×128 schema and download link.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://utexas.box.com/s/5twb8okdnfr2uhyf4fj3bh5ohu4w3o4r",
+          "supports": "Anonymous shared folder metadata lists three named HDF5 datasets, owned by Mingyo Seo.",
+          "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://arxiv.org/html/2411.03682v3",
+          "supports": "Sec.IV-C simulation embodiments and 150-demonstration training comparison; Fig.5 simulation task sequences.",
+          "checked": "2026-10-16",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "dataset license",
+        "archive episode total",
+        "export fps",
+        "public real-robot dataset"
+      ],
+      "evidenceLevel": "Official paper / author data repository",
+      "downloadLinks": [
+        "https://utexas.box.com/s/5twb8okdnfr2uhyf4fj3bh5ohu4w3o4r"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-16",
+        "method": "Anonymous GET of author README/docs and Box shared folder HTML metadata",
+        "result": "Shared folder accessible; three HDF5 files listed. Full archives not downloaded."
+      },
+      "repositorySnapshots": [
+        {
+          "id": "Box folder 276288035696",
+          "taskFiles": [
+            {
+              "name": "ladle_reorganization.hdf5",
+              "size": 403536952
+            },
+            {
+              "name": "closing_the_lid.hdf5",
+              "size": 215511970
+            },
+            {
+              "name": "cup_shelving.hdf5",
+              "size": 232268559
+            }
+          ]
+        }
+      ]
+    },
+    "2604.13001": {
+      "name": "XRZero-G0-3K",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K",
+      "access": "Public download",
+      "accessNote": "Public, ungated files verified in the official HF API. The broader paper source corpus is not equated with this release.",
+      "license": "Not reported",
+      "formats": [
+        "LeRobot v3.0",
+        "Parquet",
+        "MP4"
+      ],
+      "fps": 30,
+      "fpsScope": "All 20 released meta/info.json snapshots report 30 Hz.",
+      "observations": [
+        "Three RGB views: head / left wrist / right wrist",
+        "14-D bimanual state"
+      ],
+      "action": "14-D: dual position, rotation and gripper commands",
+      "embodiments": [
+        "Bimanual parallel grippers"
+      ],
+      "reportedScale": {
+        "hours": 2000,
+        "tasks": 3000
+      },
+      "publicScale": {
+        "episodes": 3697,
+        "tasks": 20,
+        "frames": 1359573
+      },
+      "scopeNotes": [
+        "3,697 released episodes / 1,359,573 frames sum 20 distinct task-folder meta/info.json files.",
+        "Paper describes 2,000 hours and 3,000 tasks in the source corpus. Neither label is used as released scale.",
+        "The GitHub MIT badge does not establish a dataset license; HF API has no cardData license.",
+        "Actual released features are RGB and state/action. Future tactile/audio ambitions are not asserted as fields in this release."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/tree/main",
+          "section": "Public task directories and meta/info.json"
+        },
+        {
+          "url": "https://arxiv.org/html/2604.13001",
+          "section": "§4.1 source-corpus statistics"
+        }
+      ],
+      "repositorySnapshots": [
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/Pick_up_vase_left_side_table_and_place_middle_table/meta/info.json",
+          "episodes": 144,
+          "frames": 15547,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/Pour_the_kettle_water_into_the_pot/meta/info.json",
+          "episodes": 170,
+          "frames": 195265,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/Put_the_bowl_Nobody/meta/info.json",
+          "episodes": 176,
+          "frames": 34094,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/arrange_1_flowers/meta/info.json",
+          "episodes": 746,
+          "frames": 165256,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/fold_towel/meta/info.json",
+          "episodes": 48,
+          "frames": 14484,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/open_the_lock/meta/info.json",
+          "episodes": 94,
+          "frames": 55910,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/pair_up_items/meta/info.json",
+          "episodes": 251,
+          "frames": 65250,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/pick_cup_from_table/meta/info.json",
+          "episodes": 177,
+          "frames": 27810,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/pick_first_aid_kit_from_table/meta/info.json",
+          "episodes": 128,
+          "frames": 30071,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/pick_fruits_into_basket/meta/info.json",
+          "episodes": 167,
+          "frames": 48712,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/pick_sponge_from_table/meta/info.json",
+          "episodes": 58,
+          "frames": 8174,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/place_fruit_in_tray/meta/info.json",
+          "episodes": 112,
+          "frames": 10651,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/put_blocks_to_color/meta/info.json",
+          "episodes": 229,
+          "frames": 86252,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/put_mung_beans_into_pot/meta/info.json",
+          "episodes": 108,
+          "frames": 23894,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/put_stationery_in_case/meta/info.json",
+          "episodes": 273,
+          "frames": 149339,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/put_the_towel_on_hook/meta/info.json",
+          "episodes": 270,
+          "frames": 126478,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/select_banana/meta/info.json",
+          "episodes": 100,
+          "frames": 23107,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/soak_and_clean_spilled_liquid_with_sponge/meta/info.json",
+          "episodes": 182,
+          "frames": 226844,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/tap_battery_back_with_tool/meta/info.json",
+          "episodes": 117,
+          "frames": 11953,
+          "tasks": 1,
+          "fps": 30
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K/resolve/main/white_sock_picking/meta/info.json",
+          "episodes": 147,
+          "frames": 40482,
+          "tasks": 1,
+          "fps": 30
+        }
+      ]
+    },
+    "2512.09851": {
+      "name": "TacThru-UMI Tasks",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/aidenli/tacthru_umi_tasks",
+      "access": "Public download",
+      "accessNote": "Five task archives are public and ungated; archive internals not downloaded or re-counted.",
+      "license": "MIT",
+      "formats": [
+        "Zarr",
+        "ZIP"
+      ],
+      "fps": 30,
+      "fpsScope": "Paper §4.2 synchronized training-recording rate; archive filename suffix 120 is not used as an FPS claim.",
+      "observations": [
+        "Wrist RGB",
+        "See-through tactile images",
+        "Tactile marker deviations",
+        "Proprioception"
+      ],
+      "action": "6-DoF end-effector pose + gripper width",
+      "embodiments": [
+        "Single-arm parallel gripper"
+      ],
+      "reportedScale": {
+        "tasks": 5
+      },
+      "publicScale": {
+        "tasks": 5
+      },
+      "scopeNotes": [
+        "Paper reports 62–147 demonstrations per task; no total episode count inferred without reading archive contents.",
+        "Public five task archives: PickBottle, PullTissue, SortBolt, HangScissors and InsertCap."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/aidenli/tacthru_umi_tasks",
+          "section": "License and five .zarr.zip files"
+        },
+        {
+          "url": "https://arxiv.org/html/2512.09851",
+          "section": "§§4.2,5.1–5.2"
+        },
+        {
+          "url": "https://github.com/YuyangLee/TacThru",
+          "section": "Download Datasets"
+        }
+      ]
+    },
+    "2604.07335": {
+      "name": "BiTacMan / TAMEn",
+      "verified": "2026-10-16",
+      "datasetUrl": "https://huggingface.co/datasets/OpenDriveLab-org/BiTacMan",
+      "access": "Public download",
+      "accessNote": "724 CSV trajectories and all four paired MP4 views are public and ungated; this is newer evidence than the unchecked GitHub dataset roadmap.",
+      "license": "CC BY-NC-SA 4.0",
+      "formats": [
+        "CSV",
+        "MP4"
+      ],
+      "fps": null,
+      "fpsScope": "No per-video frame-rate measurement performed in this pass.",
+      "observations": [
+        "Four synchronized camera streams",
+        "Timestamped dual-arm joint positions and gripper widths"
+      ],
+      "action": "Sampled CSV: left/right 7 joint positions + left/right gripper width",
+      "embodiments": [
+        "Bimanual parallel grippers"
+      ],
+      "reportedScale": {
+        "tasks": 4
+      },
+      "publicScale": {
+        "trajectories": 724,
+        "tasks": 4
+      },
+      "scopeNotes": [
+        "Indexed 724 distinct *_traj.csv files: Binder Clip Removal159, Cable Mounting271, Dish Washing148, Herbal Transfer146.",
+        "Every CSV prefix has camera1–camera4 MP4 counterparts; 724*4=2896 videos.",
+        "CSV sample verified columns Timestamp, left_joint1–7, right_joint1–7, left_gripper_m and right_gripper_m.",
+        "Paper describes wrist RGB and fingertip tactile sensing; HF card labels four synchronized cameras without a per-camera sensor mapping. Do not treat all four as RGB scene cameras.",
+        "The GitHub TODO still lists dataset release as pending; actual downloadable files and dataset card establish present access."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/OpenDriveLab-org/BiTacMan",
+          "section": "Dataset card, actual file tree and license"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/OpenDriveLab-org/BiTacMan",
+          "section": "Public file inventory snapshot"
+        },
+        {
+          "url": "https://arxiv.org/html/2604.07335",
+          "section": "§III; Fig.6 task overview"
+        }
+      ],
+      "repositorySnapshots": [
+        {
+          "url": "https://huggingface.co/api/datasets/OpenDriveLab-org/BiTacMan",
+          "files": 3627,
+          "trajectoryFiles": 724,
+          "pairedVideos": 2896,
+          "taskFolders": {
+            "Binder_Clip_Removal": 159,
+            "Cable_Mounting": 271,
+            "Dish_Washing": 148,
+            "Herbal_Transfer": 146
+          }
+        }
+      ]
+    }
+  }
+}

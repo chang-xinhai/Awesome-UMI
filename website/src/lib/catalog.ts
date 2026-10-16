@@ -2,7 +2,11 @@ import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { createHash } from "node:crypto";
 import media from "../data/media.json";
+import hardwareAudit from "../data/hardware-evidence.json";
+import datasetAudit from "../data/dataset-evidence.json";
+import releaseAudit from "../data/release-evidence.json";
 import { SITE } from "./site";
+import { compareDates } from "./order";
 export interface Work {
   id: string;
   name: string;
@@ -19,6 +23,7 @@ export interface Work {
   kind: string;
   stage: string;
   form: string;
+  forms?: string[];
   tracking: string;
   signals: string[];
   format: string;
@@ -31,6 +36,32 @@ export interface Work {
   credit?: string;
   reviewed?: string;
   summary?: string;
+  coverImage?: string;
+  coverAlt?: string;
+  coverType?: string;
+  coverSource?: string;
+  coverIsPhoto?: boolean;
+  hardwareImage?: string;
+  hardwareImageAlt?: string;
+  hardwareImageSource?: string;
+  hardwareImagePage?: string;
+  hardwareImageType?: string;
+  datasetImage?: string;
+  datasetImageAlt?: string;
+  datasetImageSource?: string;
+  datasetImagePage?: string;
+  datasetImageType?: string;
+  datasetSummary?: string;
+  datasetName?: string;
+  openness?: string;
+  commercial?: boolean;
+  release?: Record<string, unknown>;
+  research?: {
+    hardware?: Record<string, unknown>;
+    dataset?: Record<string, unknown>;
+  };
+  tactileStatus?: string;
+  forceStatus?: string;
 }
 const clean = (s: string) =>
   s
@@ -43,6 +74,13 @@ const links = (s: string) =>
     label: clean(m[1]),
     url: m[2],
   }));
+// These author-maintained dataset pages describe the released asset of the
+// corresponding paper. Keep both README placements and source links in one work.
+const datasetAliases: Record<string, string> = {
+  "https://silicx.github.io/exUMI": "2509.14688",
+  "https://chuanyune.github.io/ViTaMIn_page": "2504.06156",
+  "https://ut-hcrl.github.io/LEGATO": "2411.03682",
+};
 export function getCatalog(): Work[] {
   const text = readFileSync(resolve(process.cwd(), "../README.md"), "utf8");
   const map = new Map<string, Work>();
@@ -67,7 +105,7 @@ export function getCatalog(): Work[] {
     }
     if (
       !(SITE.headings as readonly string[]).includes(top) ||
-      !/^\| \d{4}/.test(line)
+      !/^\| (?:\d{4}|—)/.test(line)
     )
       continue;
     const c = line
@@ -78,11 +116,12 @@ export function getCatalog(): Work[] {
     const paper = links(c[3])[0];
     if (!paper) continue;
     const other = links(c[5]);
-    const arxiv = [paper, ...other]
+    const arxiv = [paper, ...other.filter((l) => /^paper(?:\s|$)|arxiv/i.test(l.label))]
       .map((l) => l.url.match(/arxiv\.org\/(?:abs|pdf)\/(\d{4}\.\d{4,5})/))
       .find(Boolean)?.[1];
     const id =
       arxiv ??
+      datasetAliases[paper.url.replace(/\/$/, "")] ??
       "resource-" +
         createHash("sha1")
           .update(paper.url.replace(/\/$/, ""))
@@ -176,7 +215,7 @@ export function getCatalog(): Work[] {
           : paper.label,
       title: paper.label,
       date: c[0],
-      year: c[0].slice(0, 4),
+      year: c[0] === "—" ? "Undated" : c[0].slice(0, 4),
       institute: c[2],
       publication: c[4],
       keywords: kw,
@@ -225,17 +264,58 @@ export function getCatalog(): Work[] {
       throw new Error(
         `Media must reference an existing unique README work: ${item.id}`,
       );
-    if (
-      !item.image ||
-      !existsSync(resolve(process.cwd(), "public", item.image))
-    )
+    const images = [item.image, item.coverImage, item.hardwareImage, item.datasetImage].filter(Boolean) as string[];
+    if (!images.length || images.some((file) => !existsSync(resolve(process.cwd(), "public", file))))
       throw new Error(`Missing visual preview for ${item.id}`);
     mediaIds.add(item.id);
     Object.assign(work, item);
+  }
+  const hardware = hardwareAudit.works as Record<
+    string,
+    Record<string, unknown>
+  >;
+  const datasets = datasetAudit.records as Record<
+    string,
+    Record<string, unknown>
+  >;
+  const releases = releaseAudit.works as Record<string, Record<string, unknown>>;
+  for (const id of Object.keys(releases))
+    if (!map.has(id)) throw new Error(`Release evidence must reference an existing README work: ${id}`);
+  for (const work of map.values()) {
+    const h = hardware[work.id],
+      d = datasets[work.id] ?? datasets[work.paperUrl];
+    work.release = releases[work.id];
+    work.openness = String(work.release?.status ?? "unknown");
+    work.commercial = work.publication === "Product" || work.release?.commercial === true || work.commercial === true;
+    if (h || d) work.research = { hardware: h, dataset: d };
+    work.tactileStatus = String(
+      (h?.tactile as Record<string, unknown> | undefined)?.status ?? "unknown",
+    );
+    work.forceStatus = String(
+      (h?.forceTorque as Record<string, unknown> | undefined)?.status ??
+        "unknown",
+    );
+    if (h) {
+      const forms = Array.isArray(h.interfaceForms)
+        ? (h.interfaceForms.filter((v) => typeof v === "string") as string[])
+        : [];
+      if (forms.length) {
+        work.forms = forms;
+        work.form = forms[0];
+      }
+      work.tracking = String(h.poseTracking ?? work.tracking);
+      if (Array.isArray(h.observationSignals))
+        work.signals = h.observationSignals.filter(
+          (v) => typeof v === "string",
+        ) as string[];
+    }
+    if (d?.access) work.dataAccess = String(d.access);
+    if (Array.isArray(d?.formats) && d.formats.length)
+      work.format = d.formats.join(" / ");
   }
   if (!map.size)
     throw new Error(
       "The canonical README produced no curated works. Check the build working directory and taxonomy.",
     );
-  return [...map.values()].sort((a, b) => b.date.localeCompare(a.date));
+  return [...map.values()].sort(compareDates);
 }

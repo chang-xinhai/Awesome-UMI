@@ -5,418 +5,360 @@ import { getCatalog } from "../lib/catalog";
 import { SITE } from "../lib/site";
 import { sitePath } from "../lib/paths";
 const works = getCatalog();
-const visual = works.filter((w) => w.image);
-const sources = [...new Set(works.map((w) => w.source))];
+const hardware = works.filter(
+  (w) => (w.hardwareImage ?? w.coverImage ?? w.image) && (w.kind === "System" || w.form !== "Not reported"),
+);
+const initial = [
+  "2402.10329",
+  "2505.21864",
+  "2607.25895",
+  "2606.10244",
+  "2609.29760",
+  "2511.05858",
+  "2604.14089",
+  "2409.19499",
+  "2601.09988",
+  "2407.10353",
+  "2604.13001",
+  "2512.09851",
+];
+const first = hardware.slice(0, 12);
 const years = [...new Set(works.map((w) => w.year))].sort().reverse();
-const hero =
-  SITE.kind === "umi"
-    ? ["2607.25895", "2402.10329", "2505.21864"]
-    : ["2403.12945", "2607.25895", "2311.18259", "2603.04356"];
-const heroWorks = hero
-  .map((id) => works.find((w) => w.id === id && w.image))
-  .filter(Boolean);
-const initial =
-  SITE.kind === "umi"
-    ? [
-        "2402.10329",
-        "2505.21864",
-        "2606.10244",
-        "2609.29760",
-        "2511.05858",
-        "2604.14089",
-      ]
-    : [
-        "2403.12945",
-        "2310.08864",
-        "2412.13877",
-        "2402.10329",
-        "2311.18259",
-        "2603.04356",
-      ];
-const data = JSON.stringify(works).replace(/</g, "\\u003c");
+const access = [...new Set(works.map((w) => w.dataAccess))].sort();
+const icon = {
+  search: "M21 21l-4.35-4.35M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z",
+  filter: "M4 7h16M7 12h10M10 17h4",
+  chevron: "m6 9 6 6 6-6",
+  close: "m6 6 12 12M6 18 18 6",
+  share: "M12 16V3m-4 4 4-4 4 4M5 12v8h14v-8",
+};
 ---
 
 <BaseLayout
-  title={SITE.name + " — " + SITE.tagline}
+  title="Awesome UMI — Interfaces for robot learning"
   description={SITE.description}
 >
-  <section
-    class:list={[
-      "atlas-hero",
-      "shell",
-      SITE.kind === "umi" ? "is-umi" : "is-engine",
-    ]}
-  >
-    <div class="atlas-intro">
-      <p class="atlas-eyebrow">
-        <span class="live-dot"></span>
-        {SITE.kind === "umi"
-          ? "THE HARDWARE & LEARNING FIELD GUIDE"
-          : "THE ROBOT DATA FIELD GUIDE"}
-      </p>
-      <h1>
-        {SITE.kind === "umi" ? (
-          <>
-            Human demonstrations.
-            <br />
-            <em>Robot possibilities.</em>
-          </>
-        ) : (
-          <>
-            Experience in.
-            <br />
-            <em>Robot-ready data out.</em>
-          </>
-        )}
-      </h1>
-      <p class="atlas-deck">{SITE.description}</p>
-      <div class="atlas-hero-actions">
-        <a class="atlas-primary" href="#catalog">
-          {SITE.kind === "umi"
-            ? "Explore the interfaces"
-            : "Explore the data ecosystem"}{" "}
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href={SITE.github + "#readme"} class="atlas-text-link">
-          Read the awesome list <span aria-hidden="true">↗</span>
-        </a>
+  <section class="library-intro wrap">
+    <h1><span>Human skill.</span>{" "}<span>Robot potential.</span></h1>
+    <p>
+      A living collection of interfaces, datasets, and ideas for robot learning.
+    </p>
+  </section>
+  <section class="library wrap" id="library" aria-label="Research library">
+    <div class="library-toolbar" id="library-toolbar">
+      <div class="library-tabs" role="group" aria-label="Collection">
+        <button type="button" data-collection="hardware" aria-pressed="true">
+          Hardware
+        </button>
+        <button type="button" data-collection="datasets" aria-pressed="false">
+          Datasets
+        </button>
+        <button type="button" data-collection="research" aria-pressed="false">
+          All research
+        </button>
       </div>
-      <div class="atlas-facts">
-        <span>
-          <strong>{works.length}</strong> unique works
+      <label class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d={icon.search} />
+        </svg>
+        <input
+          id="catalog-search"
+          type="search"
+          autocomplete="off"
+          placeholder="Find a device, sensor, dataset, or institution…"
+          aria-label="Search the library"
+        />
+        <kbd>/</kbd>
+      </label>
+      <button
+        class="filters-toggle"
+        id="filters-toggle"
+        aria-label="Filters"
+        aria-expanded="false"
+        aria-controls="filter-panel"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d={icon.filter} />
+        </svg>
+        <span>Filters</span>
+        <span class="filter-count" id="filter-count" hidden>
+          0
         </span>
-        <span>
-          <strong>{visual.length}</strong> visual entries
-        </span>
-        <span>Primary-source curation</span>
+      </button>
+      <div class="filter-panel" id="filter-panel" hidden>
+        <div class="filter-heading">
+          <h2>Refine your collection</h2>
+          <button id="reset-filters" type="button">
+            Reset
+          </button>
+        </div>
+        <div class="filter-fields">
+          <label>
+            Research area
+            <select id="source-filter">
+              <option value="all">All areas</option>
+              {["Core", "Method", "Dataset", "Policy", "Taxonomy"].map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Interface
+            <select id="form-filter">
+              <option value="all">All interfaces</option>
+              {[
+                "Handheld",
+                "Wearable",
+                "Mobile",
+                "Whole-body",
+                "Not reported",
+              ].map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Tactile sensing
+            <select id="tactile-filter">
+              <option value="all">Any status</option>
+              <option value="present">Present</option>
+              <option value="optional">Optional</option>
+              <option value="none">None</option>
+              <option value="unknown">Not verified</option>
+            </select>
+          </label>
+          <label>
+            Force / torque
+            <select id="force-filter">
+              <option value="all">Any status</option>
+              <option value="present">Present</option>
+              <option value="optional">Optional</option>
+              <option value="none">None</option>
+              <option value="unknown">Not verified</option>
+            </select>
+          </label>
+          <label>
+            Dataset access
+            <select id="access-filter">
+              <option value="all">All access states</option>
+              {access.map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Source release
+            <select id="openness-filter">
+              <option value="all">All releases</option>
+              <option value="open">Open source</option>
+              <option value="partial">Partial release</option>
+              <option value="closed">Closed source</option>
+              <option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label>
+            Availability
+            <select id="availability-filter">
+              <option value="all">Research & products</option>
+              <option value="research">Research / DIY</option>
+              <option value="commercial">Companies & products</option>
+            </select>
+          </label>
+          <label>
+            Paper / resource year
+            <select id="year-filter">
+              <option value="all">All years</option>
+              {years.map((v) => (
+                <option value={v}>{v}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <fieldset class="signal-filters">
+          <legend>Recorded channels</legend>
+          {[
+            "Vision",
+            "Tactile",
+            "Force",
+            "Audio",
+            "Depth",
+            "IMU",
+            "Contact",
+            "Proprioception",
+          ].map((v) => (
+            <label>
+              <input type="checkbox" name="signal" value={v} />
+              <span>
+                {v === "Proprioception" ? "State / proprioception" : v}
+              </span>
+            </label>
+          ))}
+        </fieldset>
+        <p class="filter-note">
+          Open source requires licensed hardware files and software. Partial
+          releases and unknown status are separate; commercial products may include open software.
+        </p>
+        <button type="button" id="apply-filters" class="button-dark">
+          Done
+        </button>
+      </div>
+    </div>
+    <div class="library-meta">
+      <p id="result-count" role="status" aria-live="polite">
+        {hardware.length} hardware entries
+      </p>
+      <div class="library-meta-actions">
+        <button type="button" id="share-view" aria-label="Copy this view link">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d={icon.share} />
+          </svg>
+          <span>Share view</span>
+        </button>
+        <label class="sort-label">
+          <span>Sort:</span>
+          <select id="sort-order" aria-label="Sort results">
+            <option value="newest" selected>Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="name">Name A–Z</option>
+            <option value="recommended">Curated</option>
+          </select>
+        </label>
       </div>
     </div>
     <div
-      class:list={[
-        "atlas-hero-visual",
-        SITE.kind === "umi" ? "hardware-board" : "source-board",
-      ]}
-    >
-      {heroWorks.map(
-        (w, i) =>
-          w && (
-            <a
-              class:list={["hero-specimen", i === 0 && "specimen-main"]}
-              href={"?item=" + w.id + "#catalog"}
-              aria-label={"View " + w.name}
-            >
-              <img
-                src={sitePath(w.image!)}
-                alt={w.imageAlt}
-                width="640"
-                height="380"
-                loading={i === 0 ? "eager" : "lazy"}
-              />
-              <div>
-                <span>
-                  {SITE.kind === "umi"
-                    ? w.form === "Not reported"
-                      ? "ROBOT-FREE INTERFACE"
-                      : w.form + " INTERFACE"
-                    : w.source}
-                </span>
-                <strong>
-                  {w.name}
-                  <b aria-hidden="true">↗</b>
-                </strong>
-              </div>
-            </a>
-          ),
-      )}
-      <span class="board-caption">
-        {SITE.kind === "umi"
-          ? "Different interfaces. A shared path from human to robot."
-          : "Four sources of experience. One connected data engine."}
+      class="active-filters"
+      id="active-filters"
+      aria-label="Active filters"
+    ></div>
+    <div id="catalog-results" class="catalog-feed" aria-busy="false">
+      <div class="feed-batch">
+        {first.map((w) => w && <CatalogCard work={w} />)}
+      </div>
+    </div>
+    <div id="catalog-empty" class="empty-state" hidden>
+      <h2>No matches this time.</h2>
+      <p>Try another phrase or use fewer filters.</p>
+      <button type="button" id="empty-reset" class="button-dark">
+        Clear filters
+      </button>
+    </div>
+    <div class="feed-boundary" id="feed-boundary">
+      <div
+        class="loading-dots"
+        id="loading-dots"
+        role="status"
+        aria-label="Loading more entries"
+        hidden
+      >
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+      <span id="feed-end" hidden>
+        end
       </span>
-    </div>
-  </section>
-  {SITE.kind === "engine" && (
-    <nav
-      class="atlas-pipeline shell"
-      aria-label="Browse the data engine by stage"
-    >
-      <span>FOLLOW THE DATA</span>
-      {[
-        "Collect",
-        "Recover",
-        "Align",
-        "Curate",
-        "Generate",
-        "Mix",
-        "Evaluate",
-      ].map((s) => (
-        <a href={"?stage=" + s + "&view=index#catalog"}>
-          {s}
-          <span aria-hidden="true">→</span>
-        </a>
-      ))}
-    </nav>
-  )}
-  <section
-    id="catalog"
-    class="atlas-catalog shell"
-    aria-labelledby="catalog-title"
-  >
-    <div class="atlas-catalog-heading">
-      <div>
-        <p class="atlas-eyebrow">
-          {SITE.kind === "umi"
-            ? "A CLOSER LOOK AT THE ECOSYSTEM"
-            : "FIND THE NEXT PIECE OF YOUR PIPELINE"}
-        </p>
-        <h2 id="catalog-title">
-          {SITE.kind === "umi"
-            ? "Meet the interfaces."
-            : "Explore the ecosystem."}
-        </h2>
-      </div>
-      <p>
-        Browse visually. Investigate deeply.
-        <br />
-        Compare the details that matter.
-      </p>
-    </div>
-    <div class="atlas-browser">
-      <aside class="atlas-filters" aria-label="Catalog filters">
-        <details id="filter-panel" open>
-          <summary>
-            Refine your view <span aria-hidden="true">⌄</span>
-          </summary>
-          <div class="filter-body">
-            <label class="atlas-select-label">
-              {SITE.kind === "umi" ? "Research area" : "Data source"}
-              <select id="source-filter">
-                <option value="all">
-                  All {SITE.kind === "umi" ? "areas" : "sources"}
-                </option>
-                {sources.map((s) => (
-                  <option value={s}>{s}</option>
-                ))}
-              </select>
-            </label>
-            <fieldset>
-              <legend>
-                {SITE.kind === "umi" ? "Interface form" : "Pipeline stage"}
-              </legend>
-              {(SITE.kind === "umi"
-                ? ["Handheld", "Wearable", "Mobile", "Whole-body"]
-                : [
-                    "Collect",
-                    "Recover",
-                    "Align",
-                    "Curate",
-                    "Generate",
-                    "Mix",
-                    "Evaluate",
-                    "Dataset",
-                  ]
-              ).map((v) => (
-                <label class="atlas-check">
-                  <input type="checkbox" name="facet" value={v} />
-                  <span>{v}</span>
-                </label>
-              ))}
-            </fieldset>
-            <fieldset>
-              <legend>Observation signals</legend>
-              {[
-                "Vision",
-                "Tactile",
-                "Force",
-                "Audio",
-                "Depth",
-                "IMU",
-                "Contact",
-                "Proprioception",
-              ].map((v) => (
-                <label class="atlas-check">
-                  <input type="checkbox" name="signal" value={v} />
-                  <span>{v}</span>
-                </label>
-              ))}
-            </fieldset>
-            <label class="atlas-select-label">
-              First release
-              <select id="year-filter">
-                <option value="all">All years</option>
-                {years.map((y) => (
-                  <option value={y}>{y}</option>
-                ))}
-              </select>
-            </label>
-            <label class="atlas-select-label">
-              Dataset access
-              <select id="access-filter">
-                <option value="all">All access states</option>
-                {[
-                  "Dataset linked",
-                  "Public subset",
-                  "Access conditions",
-                  "Release pending",
-                  "Not reported",
-                ].map((v) => (
-                  <option value={v}>{v}</option>
-                ))}
-              </select>
-            </label>
-            <button id="reset-filters" class="atlas-reset" type="button">
-              Reset all filters <span aria-hidden="true">↺</span>
-            </button>
-            <p class="atlas-filter-note">
-              Unreported attributes stay unreported. A linked repository or
-              dataset is not a claim of a complete release.
-            </p>
-          </div>
-        </details>
-      </aside>
-      <div class="atlas-results-area">
-        <div class="atlas-toolbar">
-          <div class="atlas-view-tabs" role="group" aria-label="Catalog view">
-            <button data-view="gallery" aria-pressed="true">
-              Visual atlas <span>{visual.length}</span>
-            </button>
-            <button data-view="index" aria-pressed="false">
-              Research index <span>{works.length}</span>
-            </button>
-          </div>
-          <button class="atlas-share" id="share-view" type="button">
-            Share view ↗
-          </button>
-        </div>
-        <div class="atlas-search-row">
-          <label class="atlas-search">
-            <span aria-hidden="true">⌕</span>
-            <input
-              id="catalog-search"
-              type="search"
-              placeholder={
-                SITE.kind === "umi"
-                  ? "Find a device, sensor, policy, or institution…"
-                  : "Find a dataset, method, benchmark, or institution…"
-              }
-              aria-label="Search the catalog"
-              autocomplete="off"
-            />
-            <kbd>/</kbd>
-          </label>
-          <select id="sort-order" aria-label="Sort results">
-            <option value="recommended">Curated order</option>
-            <option value="newest">Newest first</option>
-            <option value="oldest">Oldest first</option>
-            <option value="name">Name A–Z</option>
-          </select>
-        </div>
-        <div
-          id="active-filters"
-          class="atlas-active-filters"
-          aria-label="Active filters"
-        ></div>
-        <div class="atlas-results-meta">
-          <p id="result-count" role="status" aria-live="polite">
-            {visual.length} visual entries
-          </p>
-          <span id="view-explanation">
-            Selected projects with official imagery · full coverage in Research
-            index
-          </span>
-        </div>
-        <div id="catalog-results" class="atlas-grid">
-          {visual.slice(0, 24).map((work) => (
-            <CatalogCard work={work} />
-          ))}
-        </div>
-        <div class="atlas-empty" id="catalog-empty" hidden>
-          <span aria-hidden="true">⌕</span>
-          <h3>No matching entries</h3>
-          <p>Try fewer filters, or search the complete research index.</p>
-          <button id="empty-index" type="button" class="atlas-primary">
-            Search the research index
-          </button>
-          <button id="empty-reset" type="button" class="atlas-reset">
-            Clear filters
-          </button>
-        </div>
-        <div class="atlas-more-wrap">
-          <button id="load-more" class="atlas-more" type="button">
-            Show more entries <span aria-hidden="true">↓</span>
-          </button>
-        </div>
-        <noscript>
-          <p>
-            The interactive explorer needs JavaScript.{" "}
-            <a href={SITE.github + "#readme"}>
-              Read every entry in the accessible README
-            </a>
-            .
-          </p>
-        </noscript>
+      <div id="feed-error" hidden>
+        <p>The collection could not be loaded.</p>
+        <button type="button" id="retry-load">
+          Try again
+        </button>
       </div>
     </div>
-  </section>
-  <section class="atlas-about shell">
-    <div>
-      <p class="atlas-eyebrow">BUILT FOR RESEARCH THAT MOVES</p>
-      <h2>
-        A useful starting point.
-        <br />A traceable path forward.
-      </h2>
-    </div>
-    <div>
-      <p>
-        Every work connects back to its paper and official resources. Images are
-        credited to their original projects. This field guide helps you discover
-        and compare; primary sources hold the full technical detail.
+    <noscript>
+      <p class="no-script">
+        For the complete collection,{" "}
+        <a href={SITE.github + "#readme"}>read the README</a>. Search,
+        comparison, and continuous loading require JavaScript.
       </p>
-      <a class="atlas-text-link" href={SITE.github + "/issues/new"}>
-        Suggest a resource or correction ↗
-      </a>
-    </div>
+    </noscript>
   </section>
-  <div class="atlas-tray" id="compare-tray" hidden>
+  <div class="compare-tray" id="compare-tray" hidden>
     <div>
       <strong id="compare-count">0 selected</strong>
       <span id="compare-names"></span>
     </div>
-    <button id="open-compare" class="atlas-primary" type="button" disabled>
-      Compare selected
+    <button type="button" id="open-compare" class="button-dark" disabled>
+      Compare
     </button>
-    <button id="clear-compare" type="button" aria-label="Clear comparison">
-      ×
+    <button
+      type="button"
+      id="clear-compare"
+      class="icon-button"
+      aria-label="Clear comparison"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
     </button>
   </div>
-  <dialog id="detail-dialog" class="atlas-dialog">
+  <dialog id="detail-dialog" class="detail-dialog">
     <button
-      class="atlas-dialog-close"
-      data-close
       type="button"
+      class="dialog-close icon-button"
+      data-close
       aria-label="Close details"
     >
-      ×
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
     </button>
     <div id="detail-content"></div>
   </dialog>
-  <dialog id="compare-dialog" class="atlas-dialog atlas-compare-dialog">
+  <dialog id="compare-dialog" class="compare-dialog">
     <button
-      class="atlas-dialog-close"
-      data-close
       type="button"
+      class="dialog-close icon-button"
+      data-close
       aria-label="Close comparison"
     >
-      ×
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
     </button>
     <div id="compare-content"></div>
   </dialog>
-  <p
-    id="atlas-announcement"
-    class="atlas-toast"
-    role="status"
-    aria-live="polite"
-  ></p>
+  <dialog id="about-dialog" class="about-dialog">
+    <button
+      type="button"
+      class="dialog-close icon-button"
+      data-close
+      aria-label="Close about"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d={icon.close} />
+      </svg>
+    </button>
+    <h2>A clearer view of UMI.</h2>
+    <p>
+      Awesome UMI connects the hardware, datasets, and research behind robot
+      learning from human demonstrations.
+    </p>
+    <p>
+      The README is the canonical collection. Specifications and release
+      information are checked against papers and official resources. Images
+      belong to their credited projects.
+    </p>
+    <p>
+      Paper-reported scale, indexed data, and downloadable releases are kept
+      separate. Missing information stays unverified.
+    </p>
+    <a class="button-dark" href={SITE.github + "#readme"}>
+      Read the collection ↗
+    </a>
+  </dialog>
+  <p id="announcement" class="toast" role="status" aria-live="polite"></p>
+  <script
+    is:inline
+    id="catalog-settings"
+    type="application/json"
+    set:html={JSON.stringify({
+      initial,
+      base: import.meta.env.BASE_URL,
+      endpoint: sitePath("catalog.json"),
+      github: SITE.github,
+    })}
+  />
   <script
     is:inline
     type="application/ld+json"
@@ -425,28 +367,7 @@ const data = JSON.stringify(works).replace(/</g, "\\u003c");
       "@type": "CollectionPage",
       name: SITE.name,
       description: SITE.description,
-      mainEntity: {
-        "@type": "ItemList",
-        itemListElement: visual
-          .slice(0, 24)
-          .map((w, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            name: w.name,
-            url: w.paperUrl,
-          })),
-      },
-    })}
-  />
-  <script is:inline id="catalog-data" type="application/json" set:html={data} />
-  <script
-    is:inline
-    id="catalog-settings"
-    type="application/json"
-    set:html={JSON.stringify({
-      kind: SITE.kind,
-      initial,
-      base: import.meta.env.BASE_URL,
+      numberOfItems: works.length,
     })}
   />
   <script>

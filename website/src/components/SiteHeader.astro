@@ -2,39 +2,37 @@
 import { SITE } from "../lib/site";
 import { sitePath } from "../lib/paths";
 interface Props {
-  pathname: string;
+  pathname?: string;
 }
 ---
 
-<header class="atlas-header">
-  <div class="shell atlas-nav">
-    <a class="atlas-brand" href={sitePath()}>
-      <span class="atlas-brand-mark" aria-hidden="true">
-        {SITE.kind === "umi" ? (
-          <svg viewBox="0 0 32 32">
-            <path d="M9 5v9l-4 7 5 6m13-22v9l4 7-5 6M9 10h14M12 22h8" />
-          </svg>
-        ) : (
-          <svg viewBox="0 0 32 32">
-            <path d="M5 8h8v8H5zM19 16h8v8h-8zM9 16v8h10M13 12h10v4" />
-          </svg>
-        )}
-      </span>
-      <span class="atlas-brand-full">{SITE.name}</span>
-      <span class="atlas-brand-short">
-        {SITE.kind === "umi" ? "Awesome UMI" : "Robot Data Engine"}
-      </span>
+<header class="site-header wrap">
+  <a class="brand" href={sitePath()} aria-label="Awesome UMI home">
+    <span class="brand-icon" aria-hidden="true">
+      <svg viewBox="0 0 32 32">
+        <path d="M10 5v8l-5 8 5 6M22 5v8l5 8-5 6M10 10h12M12 22h8" />
+      </svg>
+    </span>
+    <span>Awesome UMI</span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href={sitePath() + "#library"}>Library</a>
+    <button type="button" data-about>
+      About
+    </button>
+    <a
+      class="github-button"
+      href={SITE.github}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.57 9.57 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+        />
+      </svg>
+      GitHub
     </a>
-    <nav aria-label="Main navigation">
-      <a href={sitePath() + "#catalog"}>Explore</a>
-      {SITE.kind === "engine" && <a href={sitePath("sources/")}>Sources</a>}
-      <a href={SITE.github + "#readme"} class="nav-readme">
-        README ↗
-      </a>
-      <a href={SITE.github} class="atlas-github">
-        <span class="star-label">Star on </span>GitHub{" "}
-        <span aria-hidden="true">↗</span>
-      </a>
-    </nav>
-  </div>
+  </nav>
 </header>

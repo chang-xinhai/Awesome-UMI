@@ -7,35 +7,31 @@ interface Props {
 const { work: w } = Astro.props;
 ---
 
-<article class="atlas-card" data-id={w.id}>
+<article class="library-card" data-id={w.id}>
   <button
-    type="button"
-    class="atlas-card-image"
+    class="card-cover"
     data-detail={w.id}
-    aria-label={"View " + w.name + " details"}
+    type="button"
+    aria-label={"View " + w.name}
   >
     <img
-      src={sitePath(w.image!)}
-      alt={w.imageAlt}
+      src={sitePath(w.hardwareImage ?? w.coverImage ?? w.image!)}
+      alt={w.hardwareImageAlt ?? w.coverAlt ?? w.imageAlt}
       width="640"
-      height="400"
+      height="360"
       loading="lazy"
+      decoding="async"
     />
-    <span class="image-credit">{w.credit}</span>
-    <span class="atlas-image-arrow" aria-hidden="true">
-      ↗
-    </span>
   </button>
-  <div class="atlas-card-body">
-    <div class="atlas-card-top">
-      <span>{w.kind}</span>
-      <time>{w.year}</time>
-    </div>
-    <h3>
+  <div class="card-copy">
+    <p class="card-meta">
+      {w.institute} <span>·</span> {w.year}
+    </p>
+    <h2>
       <a href={w.paperUrl}>{w.name}</a>
-    </h3>
-    <p class="atlas-card-description">{w.summary ?? w.keywords}</p>
-    <div class="atlas-tags">
+    </h2>
+    <p class="card-description">{w.summary ?? w.keywords}</p>
+    <div class="card-tags">
       {w.signals
         .filter((s) => s !== "Not reported")
         .slice(0, 3)
@@ -43,18 +39,18 @@ const { work: w } = Astro.props;
           <span>{s}</span>
         ))}
     </div>
-    <div class="atlas-card-footer">
-      <button type="button" data-detail={w.id} class="atlas-detail-link">
-        View details ↗
+    <div class="card-actions">
+      <button type="button" data-detail={w.id}>
+        Details <span aria-hidden="true">↗</span>
       </button>
-      <label class="atlas-compare-check">
-        <input
-          type="checkbox"
-          data-compare={w.id}
-          aria-label={"Compare " + w.name}
-        />
-        Compare
-      </label>
+      <button
+        type="button"
+        class="compare-toggle"
+        data-compare={w.id}
+        aria-pressed="false"
+      >
+        <span aria-hidden="true">+</span> Compare
+      </button>
     </div>
   </div>
 </article>

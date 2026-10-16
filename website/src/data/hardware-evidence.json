@@ -1,0 +1,3754 @@
+{
+  "schemaVersion": 1,
+  "scope": "Primary-source audit of existing Awesome-UMI works. Unknown is distinct from none. Prices and mass require scope; paper-level statistics are not cross-paper rankings.",
+  "reviewed": "2026-10-16",
+  "works": {
+    "2402.10329": {
+      "id": "2402.10329",
+      "name": "UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld parallel-jaw gripper; single or bimanual",
+      "poseTracking": "GoPro visual–inertial ORB-SLAM3; ArUco gripper aperture",
+      "vision": "Wrist GoPro, 155° fisheye and side mirrors",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "Paper describes GoPro as the only sensor; compliant fingers do not measure touch."
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "No dedicated F/T sensor; grasp force is only implicit through compliant finger deformation."
+      },
+      "actionSpace": "Relative 6-DoF end-effector trajectory and continuous gripper width",
+      "hardwareAvailability": "Open hardware instructions and code: https://github.com/real-stanford/universal_manipulation_interface",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2402.10329",
+          "section": "III; HD1–HD5",
+          "note": "Single GoPro records vision/IMU. ORB-SLAM3 recovers wrist motion; finger markers recover continuous aperture. The policy uses relative trajectories."
+        }
+      ],
+      "corrections": [
+        "Do not equate implicit grasp-force control with a measured force modality."
+      ],
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Collector records GoPro images and IMU; ORB-SLAM3 and ArUco recover pose/aperture. Proprioception includes derived relative EE/inter-gripper histories and width, which are policy observations. Raw IMU supports tracking and is not asserted as a direct policy input. Soft fingers do not establish force or tactile measurements.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Trigger-operated gripper, optionally duplicated for bimanual work. In-the-wild portability alone is not a claim of whole-body/mobile capture.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2402.10329",
+        "section": "III; HD1–HD5; PD2.2–PD2.3"
+      },
+      "display": {
+        "form": "Handheld gripper",
+        "tracking": "GoPro visual–inertial SLAM",
+        "vision": "155° wrist fisheye",
+        "actions": "6-DoF pose + aperture"
+      }
+    },
+    "2409.19499": {
+      "id": "2409.19499",
+      "name": "FastUMI",
+      "verified": "2026-10-16",
+      "form": "Handheld gripper; hardware-independent robot mounting",
+      "poseTracking": "Intel RealSense T265 visual–inertial tracking; RoboBaton MINI also evaluated",
+      "vision": "GoPro with 155° fisheye; ArUco markers measure aperture",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "End-effector trajectory plus continuous aperture; TCP actions or IK-derived robot joint trajectories",
+      "hardwareAvailability": "Official data/tools repository; hardware design described in paper. CAD availability not independently verified: https://github.com/YdingTeam/FastUMI_Data",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2409.19499",
+          "section": "II-B, II-C, III; Fig. 1",
+          "note": "Separate T265 tracks the handheld device; GoPro observes the task. Robot-mounted variant omits T265. ArUco distance maps to continuous aperture."
+        }
+      ],
+      "corrections": [
+        "T265 is the handheld tracking sensor, not a policy scene-depth camera."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "GoPro images, T265 end-effector poses and ArUco aperture are recorded/recovered. T265 internally fuses inertial measurements, but raw IMU export is not verified here, so no IMU tag. Policy/data variants use TCP states or IK-converted joint states.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Collector is a handheld gripper. Robot-mounted deployment variant is distinct from the manual collection form.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2409.19499",
+        "section": "II-B; III; IV/V policy and data variants"
+      },
+      "display": {
+        "form": "Handheld gripper",
+        "tracking": "T265 / RoboBaton MINI",
+        "vision": "155° wrist fisheye",
+        "actions": "Pose + aperture"
+      }
+    },
+    "2505.21864": {
+      "id": "2505.21864",
+      "name": "DexUMI",
+      "verified": "2026-10-16",
+      "form": "Wearable hand exoskeleton, adapted separately for XHand and Inspire Hand",
+      "poseTracking": "iPhone ARKit 6-DoF wrist pose; resistive Alps joint encoders",
+      "vision": "Ventral OAK-1 camera, 150° diagonal FOV",
+      "tactile": {
+        "status": "present",
+        "type": "Electromagnetic for XHand; FSR resistive for Inspire",
+        "note": "Same sensor type installed on human exoskeleton and target robot hand."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "Relative wrist pose and finger trajectories; encoder-to-motor calibration differs by robot hand",
+      "hardwareAvailability": "CAD and hardware assembly tutorials public for both exoskeleton variants: https://dex-umi.github.io/tutorial/hardware.html; software https://github.com/real-stanford/DexUMI",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2505.21864",
+          "section": "3.2 S.1–S.4; evaluation action ablation",
+          "note": "ARKit supplies wrist pose; Alps encoders supply hand state. OAK-1 captures wrist images. Tactile technology depends on the target hand."
+        }
+      ],
+      "corrections": [
+        "Replace unknown tracking with ARKit.",
+        "Do not label all DexUMI tactile sensors as optical or all as FSR."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "OAK-1 images, matching robot-specific tactile sensors, encoder hand states and ARKit wrist poses are recorded. ARKit is a pose provider, not proof of exported raw IMU. Policy uses visual/tactile/hand-state cues; tactile type differs between XHand and Inspire implementations.",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Human wears a robot-specific hand exoskeleton; this is not an ordinary trigger-held gripper.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2505.21864",
+        "section": "3.2 S.1–S.4; policy setup"
+      },
+      "display": {
+        "form": "Hand exoskeleton",
+        "tracking": "ARKit + joint encoders",
+        "vision": "OAK-1 · 150°",
+        "actions": "Wrist pose + finger joints"
+      }
+    },
+    "2606.10244": {
+      "id": "2606.10244",
+      "name": "YUBI",
+      "verified": "2026-10-16",
+      "form": "Finger-aligned handheld bidigital gripper; bimanual",
+      "poseTracking": "Quest 3S VR 6-DoF controller tracking; magnetic aperture encoder",
+      "vision": "Wrist fisheye; stationary rig adds RealSense D435 overhead; portable setup adds egocentric view",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "6-DoF end-effector trajectory plus gripper aperture, independent of robot joint space",
+      "hardwareAvailability": "Hardware and software repositories public: https://github.com/toyota/yubi-hw and https://github.com/airoa-org/yubi-sw",
+      "cost": null,
+      "mass": {
+        "value": 319,
+        "unit": "g",
+        "scope": "200 g gripper plus 119 g VR controller; not total rig, headset, cameras, or compute",
+        "source": "https://yubi.airoa.io/",
+        "shortScope": "gripper + controller"
+      },
+      "evidence": [
+        {
+          "url": "https://yubi.airoa.io/",
+          "section": "Gripper Design; Operation Setup; Robot Policy Deployment",
+          "note": "Thumb and index/middle fingers actuate jaws. Quest 3S tracks controllers; a magnetic encoder records aperture. Fixed and portable rigs differ."
+        }
+      ],
+      "corrections": [
+        "Keep mass scope explicit.",
+        "Data link currently says Coming Soon even though the abstract says release; verify artifact before marking released."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Wrist RGB, top stereo RGB or portable egocentric view, Quest gripper poses and magnetic aperture are recorded. D435 is specified as a workspace view; stored metric depth and raw headset IMU are not verified, so neither Depth nor IMU is added. Dataset channels are broader than the stated wrist-data policy input.",
+      "interfaceForms": [
+        "Handheld",
+        "Mobile"
+      ],
+      "interfaceFormsNote": "Finger-driven handheld collector; official portable configuration supports multi-room, whole-body/mobile scenarios. Mobile describes collection mode, not a full-body joint-state sensor or a requirement on the deployment robot.",
+      "signalsEvidence": {
+        "url": "https://yubi.airoa.io/",
+        "section": "Gripper Design; Operation Setup; Large-Scale Bimanual Dataset; Robot Policy Deployment"
+      },
+      "display": {
+        "form": "Finger-aligned gripper",
+        "tracking": "Quest 3S + aperture encoder",
+        "vision": "Wrist fisheye",
+        "actions": "6-DoF pose + aperture"
+      }
+    },
+    "2609.29760": {
+      "id": "2609.29760",
+      "name": "PolyUMI",
+      "verified": "2026-10-16",
+      "form": "Wireless handheld gripper with transferable multimodal sensing finger",
+      "poseTracking": "Monocular–inertial ORB-SLAM3 from GoPro; ArUco aperture",
+      "vision": "GoPro Hero 12 + MAX Lens Mod 2.0, approximately 177° FOV, 1080p60",
+      "tactile": {
+        "status": "present",
+        "type": "Vision-based optical tactile",
+        "note": "Internal camera views deformable reflective surface; shared sensing finger also carries contact microphone."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "Relative end-effector commands plus gripper aperture; multimodal policy operates at 10 Hz",
+      "hardwareAvailability": "Hardware build guide https://docs.google.com/document/d/1HTwjLjrNoQFs5rB2DTdoAflJh1zYnw8AD4wD-CD382k/edit; firmware/software https://github.com/polyumi/PolyUMI-platform. Guide body/CAD files not independently audited.",
+      "cost": {
+        "value": 235.96,
+        "currency": "USD",
+        "scope": "Additional multimodal sensing finger, not full collector; paper estimates ~$240 and four hours assembly",
+        "source": "https://arxiv.org/html/2609.29760",
+        "shortScope": "sensing finger only"
+      },
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.29760",
+          "section": "III-A.1–4; Tables II–III",
+          "note": "Handheld device has onboard computer, battery and audio interface. Optical tactile images, piezo contact audio and GoPro vision share a timeline; ORB-SLAM3 and ArUco recover actions."
+        }
+      ],
+      "corrections": [
+        "Replace unknown tracking with ORB-SLAM3 visual–inertial.",
+        "Proprioception and contact audio are recorded in addition to vision/touch."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Audio",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "GoPro/IMU, optical tactile images and piezo contact audio are recorded. SLAM/ArUco derive gripper pose and aperture. VisTA consumes vision, tactile, audio and common EE-state observations; raw IMU is used for trajectory recovery, not claimed as a direct policy input. Audio is contact sound, unlike KIWI synchronization audio.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Wireless handheld gripper. Untethered collection does not by itself establish a locomotion/body-state capture mode.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2609.29760",
+        "section": "III-A.1–4; Table II"
+      },
+      "display": {
+        "form": "Wireless handheld gripper",
+        "tracking": "GoPro visual–inertial SLAM",
+        "vision": "Hero 12 · ~177°",
+        "actions": "Pose + aperture"
+      }
+    },
+    "2504.06156": {
+      "id": "2504.06156",
+      "name": "ViTaMIn",
+      "verified": "2026-10-16",
+      "form": "Handheld compliant Fin Ray gripper",
+      "poseTracking": "GoPro SLAM with synchronized built-in IMU; ArUco aperture",
+      "vision": "GoPro Hero 10 155° fisheye, 2704×2028 at 60 FPS; auxiliary sync camera",
+      "tactile": {
+        "status": "present",
+        "type": "Dual AllTact vision-based compliant Fin Ray",
+        "note": "Internal cameras observe global finger and local contact deformation."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "End-effector pose trajectory and continuous aperture",
+      "hardwareAvailability": "Paper/project publicly describe hardware; downloadable CAD release not independently verified",
+      "cost": null,
+      "mass": {
+        "value": 1960,
+        "unit": "g",
+        "scope": "Complete illustrated collector, including backbox/Raspberry Pi/battery per Figure 1",
+        "source": "https://arxiv.org/html/2504.06156",
+        "shortScope": "illustrated collector"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2504.06156",
+          "section": "III-A System Overview; III-B Data Processing",
+          "note": "Two AllTact fingers and sync camera connect to a battery-powered Raspberry Pi 5. GoPro IMU improves SLAM; ArUco markers recover aperture."
+        }
+      ],
+      "corrections": [
+        "Original ViTaMIn uses GoPro SLAM; VR tracking belongs to the later B variant.",
+        "Human force feedback through compliant fingers is not a dedicated F/T measurement."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "GoPro images and synchronized IMU, dual AllTact images and a sync camera are collected; SLAM and ArUco recover wrist trajectory and aperture. IMU is for pose recovery rather than a claimed raw policy modality. Compliant physical feedback does not establish a separate F/T channel.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld compliant Fin Ray gripper with Raspberry Pi backbox; different from the later bimanual B version.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2504.06156",
+        "section": "III-A System Overview; proprioceptive observations; III-B Data Processing"
+      },
+      "display": {
+        "form": "Compliant handheld gripper",
+        "tracking": "GoPro SLAM + aperture markers",
+        "vision": "Hero 10 · 155°",
+        "actions": "Pose + aperture"
+      }
+    },
+    "2511.05858": {
+      "id": "2511.05858",
+      "name": "ViTaMIn-B",
+      "verified": "2026-10-16",
+      "form": "Bimanual handheld compliant grippers",
+      "poseTracking": "Meta Quest 3 controllers, unified 6-DoF frame; ArUco aperture",
+      "vision": "GoPro Hero 10 per hand; tactile/vision streams 30 Hz, pose stream 72 Hz",
+      "tactile": {
+        "status": "present",
+        "type": "Dual DuoTact optical tactile per gripper",
+        "note": "Flexible frame and reflective compliant contact layer; reconstructed global-deformation point clouds used by policy."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "Relative end-effector transforms plus aperture",
+      "hardwareAvailability": "Public code, sensor/hardware files and dataset: https://github.com/chuanyune/ViTaMIn-B_code",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2511.05858",
+          "section": "III; IV-A–D",
+          "note": "DuoTact replaces AllTact; Quest replaces GoPro SLAM. Sensors stream to host computer; this version removes onboard Raspberry Pi. Foot pedal controls recording."
+        }
+      ],
+      "corrections": [
+        "Do not reuse original ViTaMIn 1.96 kg or Raspberry Pi specification for B.",
+        "Touch type is DuoTact optical, not force/torque."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "GoPro vision, DuoTact tactile images, Quest poses and ArUco aperture are aligned. Tactile deformation point clouds remain a tactile representation, not scene Depth. Raw Quest IMU is not verified. Policy consumes visual/tactile/proprioceptive embeddings.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Two handheld grippers for bimanual collection; not a full-body capture system.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2511.05858",
+        "section": "IV-A–C"
+      },
+      "display": {
+        "form": "Bimanual compliant grippers",
+        "tracking": "Quest 3 + aperture markers",
+        "vision": "Hero 10 per hand",
+        "actions": "Relative pose + aperture"
+      }
+    },
+    "2601.14550": {
+      "id": "2601.14550",
+      "name": "TacUMI",
+      "verified": "2026-10-16",
+      "form": "Handheld parallel gripper with continuously locking trigger",
+      "poseTracking": "HTC Vive external base-station 6-DoF tracking",
+      "vision": "Third-person scene camera in cable-mounting setup; wrist camera not verified",
+      "tactile": {
+        "status": "present",
+        "type": "GelSight Mini vision-based ViTac",
+        "note": "Optical tactile sensors on fingertips."
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "One six-axis F/T transducer",
+        "note": "Mounted between rear wrist-equivalent handle and gripper, measuring external wrench."
+      },
+      "actionSpace": "Recorded TCP pose and gripper operation for event segmentation; executable policy action space not established by this paper",
+      "hardwareAvailability": "3D print models on official project; repository https://github.com/Tac-UMI/TacUMI",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2601.14550",
+          "section": "III-A; Fig. 1–2; III-B",
+          "note": "GelSight Mini, Vive and a wrist-equivalent 6-axis F/T stack are explicit. Continuous locking reduces trigger-force contamination; camera shown is third-person."
+        }
+      ],
+      "corrections": [
+        "Do not assume wrist-mounted GoPro from the generic UMI name.",
+        "This paper evaluates multimodal segmentation, not learned action-policy success; label its evaluation accordingly.",
+        "Keep distinct from NeoteAI N0-TacUMI."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Force",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Third-person RGB, GelSight Mini images, a dedicated six-axis wrench and Vive TCP poses are synchronized for event segmentation. Here Proprioception means measured tool pose, not robot joint sensors on the human. The reported model is a segmentation model, not an action policy.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld gripper with continuous trigger locking and an external base-station tracker.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2601.14550",
+        "section": "III-A–B; Fig. 1–2"
+      },
+      "display": {
+        "form": "Locking-trigger gripper",
+        "tracking": "HTC Vive",
+        "vision": "Third-person camera",
+        "actions": "TCP pose + gripper state"
+      }
+    },
+    "2601.09988": {
+      "id": "2601.09988",
+      "name": "UMI-FT",
+      "verified": "2026-10-16",
+      "form": "Handheld UMI gripper with sensorized fingers",
+      "poseTracking": "iPhone 15 Pro ARKit 6-DoF; ArUco aperture",
+      "vision": "Main RGB 60 Hz, ultrawide RGB 10 Hz, depth 30 Hz",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "No spatial tactile array is described; finger-level contact is measured as six-axis wrench."
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Two CoinFT capacitive six-axis sensors",
+        "note": "One per finger; 360 Hz, calibrated in situ against ATI Gamma."
+      },
+      "actionSpace": "Adaptive-compliance policy predicts position targets, grasp force and stiffness",
+      "hardwareAvailability": "Hardware instructions linked at https://umi-ft.github.io/; code https://github.com/real-stanford/UMI-FT",
+      "cost": {
+        "value": 10,
+        "currency": "USD",
+        "scope": "CoinFT bill of materials per sensor only; excludes both full gripper and iPhone/laptop, fabrication and calibration",
+        "source": "https://arxiv.org/html/2601.09988",
+        "shortScope": "per CoinFT sensor"
+      },
+      "mass": {
+        "value": 2,
+        "unit": "g",
+        "scope": "One CoinFT sensor only; not whole device",
+        "source": "https://arxiv.org/html/2601.09988",
+        "shortScope": "per CoinFT sensor"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2601.09988",
+          "section": "III-A–B; Introduction; policy architecture",
+          "note": "iPhone synchronizes RGB/depth/pose. Each finger carries CoinFT; USB-serial force logging uses laptop and post-hoc synchronization."
+        }
+      ],
+      "corrections": [
+        "$10 and 2 g refer to one force sensor, never the full interface.",
+        "Contact audio shown in experiments is a baseline, not a sensor in UMI-FT."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Force",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "iPhone RGB/depth/ARKit pose, ArUco aperture and two 360 Hz CoinFT six-axis wrenches are collected. Force means a dedicated calibrated wrench sensor here; there is no tactile image/taxel array. Raw phone IMU is not verified as an exported channel. Compliance learning/control uses pose and finger-force measurements.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld UMI gripper; finger sensor component mass/cost must remain distinct from full system mass/cost.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2601.09988",
+        "section": "III-A–B; policy/control architecture"
+      },
+      "display": {
+        "form": "Handheld force-sensing gripper",
+        "tracking": "ARKit + aperture markers",
+        "vision": "iPhone RGB + depth",
+        "actions": "Position + force + stiffness"
+      }
+    },
+    "2609.11753": {
+      "id": "2609.11753",
+      "name": "SEED-UMI",
+      "verified": "2026-10-16",
+      "form": "Wearable 20-DoF exoskeleton shared by human and Wuji hand",
+      "poseTracking": "Intel RealSense T265 wrist pose; 20 magnetic rotary joint encoders",
+      "vision": "Ventral 150° fisheye fixed to shared exoskeleton",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "Paper explicitly leaves adding tactile sensing to future work; contact-aware calibration is not tactile sensing."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "6-DoF wrist action and 20-DoF encoder-space hand target, mapped to robot commands",
+      "hardwareAvailability": "Repository documentation is public; downloadable CAD and executable collection/training code have not been verified. https://github.com/Tengbo-Yu/SEED-UMI",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.11753",
+          "section": "3.2; 4; policy setup; conclusion",
+          "note": "T265 and fisheye share exoskeleton frame. All joints have magnetic encoders. Contact-aware mapping uses paired encoder trajectories; future work proposes tactile sensors."
+        }
+      ],
+      "corrections": [
+        "Do not label paired contact calibration as tactile modality.",
+        "20 DoF is measured hand state/action; not total including wrist."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Wrist fisheye images, T265 wrist poses and 20 magnetic encoder readings are recorded. T265 raw IMU logging is not verified. Policies use raw wrist images and encoder states; contact-aware paired encoder calibration is not tactile sensing, which the paper leaves to future work.",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "interfaceFormsNote": "The same wearable exoskeleton is shared by human and Wuji robot hand; distinct from a handheld gripper.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2609.11753",
+        "section": "3.2; 4; conclusion"
+      },
+      "display": {
+        "form": "20-DoF hand exoskeleton",
+        "tracking": "T265 + 20 joint encoders",
+        "vision": "150° ventral fisheye",
+        "actions": "Wrist pose + 20 hand joints"
+      }
+    },
+    "2609.22809": {
+      "id": "2609.22809",
+      "name": "KIWI",
+      "verified": "2026-10-16",
+      "form": "Modular handheld chopstick/parallel-jaw or wearable wrist cuff",
+      "poseTracking": "Offline front/rear lens localization in shared metric map plus IMU factor-graph fusion",
+      "vision": "Dual-lens Insta360 X5 per wrist; optional GO 3 head view; audio synchronizes cameras",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "Only electronics are cameras; tools are passive, without wired sensors."
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "Camera-native video/IMU/audio and visual jaw readout only."
+      },
+      "actionSpace": "World-frame 6-DoF left/right tool and optional head trajectories plus visually measured gripper opening; paper evaluates capture, not manipulation policy",
+      "hardwareAvailability": "Chopsticks gripper CAD/print parts, robot twin and build notes released at https://github.com/TToTMooN/KIWI_hardware; parallel-jaw and bare-wrist variants Coming Soon. https://github.com/TToTMooN/KIWI_software currently documentation only; executable code Coming Soon (stated estimate 2026-10-16, not proof of delivery).",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.22809",
+          "section": "Abstract; 1; 2.1; 4.1–4.3",
+          "note": "Rear lenses build a shared room map; front lenses observe action. Offline IMU fusion handles missing visual localization. Camera microphones supply synchronization, not contact audio sensing."
+        },
+        {
+          "url": "https://github.com/TToTMooN/KIWI_hardware",
+          "section": "Release Status",
+          "note": "Hardware release is partial: chopsticks collector/robot gripper released, parallel and bare-hand modules pending. Software README explicitly states code coming soon."
+        }
+      ],
+      "corrections": [
+        "Handheld alone misses bare-hand wrist-mount mode.",
+        "Do not call camera-only visual tracking: IMU is explicitly fused.",
+        "Do not treat camera audio used for timing as a contact microphone modality.",
+        "Table open-source tick includes planned release; verify current files."
+      ],
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Audio",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Cameras record front/rear video, native IMU and ambient audio. Audio is used for cross-camera synchronization, not contact sensing or a demonstrated audio-conditioned policy. Offline map/IMU fusion yields hand/head poses and visual jaw state; Proprioception denotes these recovered outputs. Paper evaluates capture/reconstruction, not a learned policy.",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "interfaceFormsNote": "Handheld chopstick/parallel tools, bare-hand wrist cuff and room-scale loco-manipulation are described. Current release status remains partial: chopsticks hardware released; parallel and wrist-cuff modules and executable software pending.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2609.22809",
+        "section": "1; 2.1; 4.1–4.3"
+      },
+      "display": {
+        "form": "Handheld / wearable / mobile",
+        "tracking": "Dual-lens localization + IMU",
+        "vision": "Insta360 X5 · optional head view",
+        "actions": "Tool / head pose + aperture"
+      }
+    },
+    "2607.25895": {
+      "id": "2607.25895",
+      "name": "HiFi-UMI",
+      "verified": "2026-10-16",
+      "form": "Full-palm glove-like two-finger grippers, bimanual",
+      "poseTracking": "Head-mounted offline stereo-inertial SLAM plus per-hand fiducial-marker cube localization",
+      "vision": "Six cameras: stereo head rig plus two nonparallel fisheyes per hand, ~200° coverage; GPIO hardware sync",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "End-effector trajectories and encoder opening angle; downstream action tensorization follows each tested policy backbone",
+      "hardwareAvailability": "Public dataset verified by canonical README; hardware CAD/source release not verified",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2607.25895",
+          "section": "3.1.1–3.1.4; 5",
+          "note": "Head trajectory and marker-relative hand poses compose globally consistent wrist trajectories. Gripper encoders and head/hand IMUs share GPIO timing. Full-palm morphology preserves natural sensation but no measured tactile channel is established."
+        }
+      ],
+      "corrections": [
+        "Old handheld label obscures full-palm glove form.",
+        "Tracking is head SLAM plus visual markers, not independent wrist GoPro VIO.",
+        "Do not assume ZED or Quest from another paper comparison table.",
+        "3 mm accuracy and claimed superiority require its benchmark protocol, not an across-paper ranking."
+      ],
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Six camera views, head/hand IMUs and gripper opening encoders share a hardware trigger. Marker/head SLAM yields gripper trajectories. Raw IMU is a collection/state-estimation channel; tested policy backbones use their own visual/state observation interfaces. Natural human contact sensation does not establish a tactile or force sensor. Stereo images alone do not establish an exported metric-depth channel.",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Portable manual grippers use a full-palm glove-like form factor; both handheld system family and wearable interaction are supported by the design description. No whole-body joint/locomotion capture claim is added.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2607.25895",
+        "section": "3.1.1–3.1.3; 5 policy setup"
+      },
+      "display": {
+        "form": "Bimanual palm grippers",
+        "tracking": "Head SLAM + hand markers",
+        "vision": "Six synchronized cameras",
+        "actions": "End-effector pose + opening"
+      }
+    },
+    "2606.06033": {
+      "id": "2606.06033",
+      "name": "RealDexUMI",
+      "verified": "2026-10-16",
+      "form": "Wearable deployable dexterous robot hand controlled by palm-side glove",
+      "poseTracking": "Rigidly attached 6-DoF tracker; tracker technology/model not specified in verified text",
+      "vision": "Shared in-hand RGB camera retained at deployment",
+      "tactile": {
+        "status": "present",
+        "type": "Piezoresistive fingertip arrays",
+        "note": "Five fingertip signals, 5×10×4 tensor; same contact surfaces used during demonstration/deployment."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "Hand-frame relative 6-DoF motion plus six executable hand commands; hand has 11 mechanical DoF, six actuated",
+      "hardwareAvailability": "Official project https://research.beingbeyond.com/realdexumi; paper promises dataset, downloadable hardware/source not verified",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.06033",
+          "section": "3.1–3.4; 4.1",
+          "note": "Wearable module includes real robot hand; human fingers operate an isomorphic glove with magnetic encoders. Objects contact the robot fingertips, not human fingers."
+        }
+      ],
+      "corrections": [
+        "Replace unspecified tactile type with piezoresistive arrays.",
+        "Do not infer tracker is ARKit, Quest or T265.",
+        "11 DoF mechanics must be distinguished from six actuated commands."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Shared in-hand RGB, piezoresistive tactile arrays, measured hand states, six glove-command channels and 6-DoF tracker poses are recorded. Policy observes RGB/tactile/actuated hand state; tracker absolute pose is used only to form relative action labels. Tracker hardware model/raw IMU are not verified.",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Wearable real robot hand and palm-side command glove; objects contact the robot fingertips rather than the human hand.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2606.06033",
+        "section": "3.1–3.4; 4.1"
+      },
+      "display": {
+        "form": "Wearable dexterous hand",
+        "tracking": "6-DoF tracker",
+        "vision": "In-hand RGB",
+        "actions": "Wrist pose + 6 hand commands"
+      }
+    },
+    "2604.14089": {
+      "id": "2604.14089",
+      "name": "UMI-3D",
+      "verified": "2026-10-16",
+      "form": "Handheld trigger parallel-jaw UMI gripper",
+      "poseTracking": "Livox MID-360 LiDAR–inertial odometry with iterated error-state Kalman filter; ArUco aperture",
+      "vision": "Hikrobot MV-CB013-A0UC-S industrial camera, ~185° M12 fisheye; LiDAR metric point clouds",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "6-DoF end-effector motion and continuous width; camera-centric visuomotor policy retained",
+      "hardwareAvailability": "Project states open hardware/software; public dataset and policy repositories linked from https://umi-3d.github.io/",
+      "cost": {
+        "value": 700,
+        "currency": "USD",
+        "scope": "Paper component estimate: $50 printed gripper plus $650 LiDAR/camera; does not establish complete system incl. compute, wiring, power or assembly",
+        "source": "https://arxiv.org/html/2604.14089",
+        "shortScope": "listed components"
+      },
+      "mass": {
+        "value": 1120,
+        "unit": "g",
+        "scope": "UMI-3D illustrated gripper; inclusion of external compute/power not specified",
+        "source": "https://arxiv.org/html/2604.14089",
+        "shortScope": "illustrated gripper"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.14089",
+          "section": "III-A HD1–HD4; III-B",
+          "note": "Hardware-synchronized camera/LiDAR/IMU replaces GoPro visual odometry. Printed gripper mechanics largely match UMI. Image captures at 20 Hz, LiDAR point clouds at 10 Hz."
+        }
+      ],
+      "corrections": [
+        "Replace unknown tracking with LiDAR–inertial, not generic depth camera.",
+        "Do not call its wrist camera GoPro.",
+        "LiDAR adds depth/geometry, not tactile sensing."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Industrial fisheye RGB, Livox metric point clouds and IMU support synchronized LiDAR-inertial state estimation. Depth denotes LiDAR geometry, not an RGB-D camera. Pose/aperture become action/state records; the paper retains camera-centric visuomotor policy inputs rather than asserting LiDAR as a policy observation.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Trigger handheld parallel-jaw collector; original UMI mechanics are retained except sensor mount.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2604.14089",
+        "section": "III-A; III-B SP1/SP3; III-C"
+      },
+      "display": {
+        "form": "Handheld gripper",
+        "tracking": "LiDAR–inertial odometry",
+        "vision": "~185° fisheye + LiDAR",
+        "actions": "6-DoF pose + aperture"
+      }
+    },
+    "2509.14688": {
+      "id": "2509.14688",
+      "name": "exUMI",
+      "verified": "2026-10-16",
+      "form": "Handheld UMI-style gripper with upgraded visuotactile fingertips",
+      "poseTracking": "Meta Quest 3 AR motion capture; AS5600 magnetic aperture encoder",
+      "vision": "Forward-mounted GoPro fisheye, matching handheld and robot viewpoints",
+      "tactile": {
+        "status": "present",
+        "type": "Upgraded 9DTact vision-based sensors",
+        "note": "Two custom DIY optical fingertips; paper improves their consistency and durability."
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "Dedicated F/T sensing is listed as future work."
+      },
+      "actionSpace": "6-DoF end-effector motion plus magnetic-encoder aperture",
+      "hardwareAvailability": "Hardware/collection guide and software: https://github.com/silicx/exUMI",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2509.14688",
+          "section": "3.1; Appendix A; limitations",
+          "note": "Quest AR tracking and AS5600 replace SLAM/ArUco failure modes. Upgraded 9DTact adds contact observations; F/T integration remains future work."
+        }
+      ],
+      "corrections": [
+        "Quest is primary evaluated tracker; Vive is a possible adaptation, not current default.",
+        "Do not infer force sensor merely because 9DTact can estimate contact forces."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "GoPro fisheye, two upgraded 9DTact images, Quest poses and AS5600 aperture are recorded. Raw Quest IMU is not verified. Action-aware tactile pretraining uses motion/state information; dedicated F/T sensing remains future work.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld trigger gripper with AR tracking and optical tactile fingertips, not a wearable hand exoskeleton.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2509.14688",
+        "section": "3.1; Appendix A; limitations"
+      },
+      "display": {
+        "form": "Visuotactile handheld gripper",
+        "tracking": "Quest 3 + aperture encoder",
+        "vision": "GoPro fisheye",
+        "actions": "6-DoF pose + aperture"
+      }
+    },
+    "2507.15062": {
+      "id": "2507.15062",
+      "name": "Touch in the Wild",
+      "verified": "2026-10-16",
+      "form": "Handheld soft Fin Ray-style gripper with flexible taxel pads",
+      "poseTracking": "UMI visual–inertial SLAM pipeline present in released code; paper does not detail pose recovery",
+      "vision": "GoPro Hero 9 at 60 Hz; host-clock QR-code synchronization",
+      "tactile": {
+        "status": "present",
+        "type": "Flexible piezoresistive matrix pads, 12×32 taxels each",
+        "note": "Each pad uses a sensing layer between two FPCs; streamed at 23 Hz."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "UMI trajectory/continuous aperture in released pipeline; tactile pretraining also uses action-free image pairs",
+      "hardwareAvailability": "Collection, tactile pipeline and training code public: https://github.com/YolandaXinyueZhu/touch_in_the_wild",
+      "cost": null,
+      "mass": {
+        "value": 962,
+        "unit": "g",
+        "scope": "Full handheld unit including batteries per paper; external host device is separately described",
+        "source": "https://arxiv.org/html/2507.15062",
+        "shortScope": "including battery"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2507.15062",
+          "section": "3.1–3.2; synchronization",
+          "note": "Flexible FPC pads have 2×2 mm taxels. Arduino PCBs stream tactile frames; QR timestamps align GoPro and tactile streams."
+        },
+        {
+          "url": "https://github.com/YolandaXinyueZhu/touch_in_the_wild",
+          "section": "Repository root run_slam_pipeline.py and scripts_slam_pipeline",
+          "note": "Released collector includes the UMI SLAM processing path; pose specification should link code separately from paper."
+        }
+      ],
+      "corrections": [
+        "Touch type is piezoresistive array, not optical.",
+        "Do not count the separate external host as included in the 962 g claim."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "observationSignalsNote": "The portable human pretraining corpus explicitly records synchronized GoPro images and piezoresistive tactile frames. Downstream robot imitation additionally uses robot proprioception, but this does not prove that the action-free handheld pretraining release contains human pose/encoder/IMU streams. Repository UMI SLAM code alone is not used to add those tags.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Portable soft handheld gripper; no verified body/locomotion or hand-exoskeleton capture mode.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2507.15062",
+        "section": "3.1–3.2; 4.1 problem formulation"
+      },
+      "display": {
+        "form": "Soft handheld gripper",
+        "tracking": "UMI visual–inertial SLAM",
+        "vision": "Hero 9 · 60 Hz",
+        "actions": "Pose + aperture"
+      }
+    },
+    "2406.19464": {
+      "id": "2406.19464",
+      "name": "ManiWAV",
+      "verified": "2026-10-16",
+      "form": "Handheld UMI gripper with one contact-audio finger",
+      "poseTracking": "Original UMI GoPro visual–inertial wrist trajectory; visual aperture markers",
+      "vision": "GoPro wrist camera; contact mic audio enters mic port into same MP4",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "Contact audio senses interaction vibrations; it is not a tactile image or taxel array."
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "No dedicated F/T sensor in described GoPro-plus-audio device."
+      },
+      "actionSpace": "Relative end-effector trajectory and continuous width via UMI diffusion policy",
+      "hardwareAvailability": "Hardware instructions and code released: https://github.com/real-stanford/maniwav",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2406.19464",
+          "section": "3 Hardware and Policy; Introduction",
+          "note": "One UMI finger embeds a piezoelectric contact microphone. Audio and video share GoPro MP4 timing; matched robot fingertip preserves audio geometry."
+        }
+      ],
+      "corrections": [
+        "Label contact microphone as Audio/contact sound rather than tactile image sensor."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Audio",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "GoPro RGB and 48 kHz piezo contact audio share MP4 timing; UMI-style trajectories and gripper width supply action labels. The described model takes RGB and audio, so recovered action/state records are not equated with its direct policy inputs. The paper does not explicitly specify a new raw IMU export; no IMU tag is added solely from GoPro internals.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld UMI gripper with one contact-microphone finger. Contact audio is different from a tactile image or spatial pressure array.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2406.19464",
+        "section": "3.1 Ear-in-Hand Hardware Design; 3.2 Policy Design"
+      },
+      "display": {
+        "form": "Handheld audio-sensing gripper",
+        "tracking": "GoPro visual–inertial SLAM",
+        "vision": "GoPro wrist camera",
+        "actions": "Relative pose + aperture"
+      }
+    },
+    "2608.29601": {
+      "id": "2608.29601",
+      "name": "N0-TacUMI / N0-Foundation",
+      "verified": "2026-10-16",
+      "form": "Handheld parallel-jaw gripper, distinct from TUM TacUMI",
+      "poseTracking": "Infrared 6-DoF tracker with base stations; magnetic aperture encoder",
+      "vision": "160° fisheye wrist camera; dual tactile cameras",
+      "tactile": {
+        "status": "present",
+        "type": "Dual camera-based visuotactile fingers",
+        "note": "Textured elastic layer viewed by embedded RGB camera; optical deformation supports force reconstruction."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No separate F/T transducer verified. NeoForce reconstructs pointwise 3-axis force fields from touch; this is a representation, not proof of a wrench sensor."
+      },
+      "actionSpace": "Relative end-effector motion and aperture",
+      "hardwareAvailability": "Model/data/code at https://github.com/neoteai/N0-Foundation; downloadable hardware CAD not verified",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2608.29601",
+          "section": "3.2–3.3; 4.2; 5",
+          "note": "Parallel gripper records wrist RGB, two tactile images, encoder aperture and infrared tracker pose. Dataset mixes this interface with five teleoperated robot embodiments."
+        }
+      ],
+      "corrections": [
+        "Do not merge with TUM TacUMI (2601.14550).",
+        "30,000 h describes mixed NeoData, not N0-TacUMI-only recordings; 5,000 h is the announced open subset.",
+        "Reconstructed force fields are not dedicated six-axis F/T hardware."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Handheld N0-TacUMI records wrist RGB, dual optical tactile images, infrared tracker pose and magnetic aperture. NeoForce calibrated dense force fields are derived tactile representations, not evidence of a dedicated six-axis F/T transducer; no Force tag is assigned to collector hardware. Mixed-embodiment NeoData observations are not all N0-TacUMI hardware channels.",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Parallel-jaw handheld collector; infrared base stations remain part of the collection setup.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2608.29601",
+        "section": "3.2–3.3; 4.2; 5"
+      },
+      "display": {
+        "form": "Handheld tactile gripper",
+        "tracking": "Infrared tracker + aperture encoder",
+        "vision": "160° fisheye + tactile cameras",
+        "actions": "Relative pose + aperture"
+      }
+    },
+    "2506.01941": {
+      "id": "2506.01941",
+      "name": "FreeTacMan",
+      "verified": "2026-10-16",
+      "form": "Wearable finger-operated in-situ parallel gripper; modular robot end effector",
+      "poseTracking": "External optical motion capture; main text names NOKOV, appendix says OptiTrack; verify model before specific branding",
+      "vision": "HBVCAM fisheye scene camera, 30 Hz; tactile camera images also 30 Hz",
+      "tactile": {
+        "status": "present",
+        "type": "Camera-based visuotactile fingertips",
+        "note": "Sensor layer directly interfaces operator finger and object; no long trigger linkage."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
+      },
+      "actionSpace": "6D pose and aperture converted by target-robot IK to joint-position actions; ACT policy",
+      "hardwareAvailability": "Software public at https://github.com/OpenDriveLab/FreeTacMan; linked hardware assembly guide https://docs.google.com/document/d/1Hhi2stn_goXUHdYi7461w10AJbzQDC0fdYaSxMdMVXM/edit. Guide download/CAD completeness not audited.",
+      "cost": null,
+      "mass": {
+        "value": 157.5,
+        "unit": "g",
+        "scope": "Compact wearable gripper/interface only; external optical tracking and host not included",
+        "source": "https://arxiv.org/html/2506.01941",
+        "shortScope": "gripper only"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2506.01941",
+          "section": "III-A–B; Appendix B; implementation",
+          "note": "Reflective markers recover pose and width; paper text has inconsistent optical-mocap brand names. Main system description gives 240 Hz mocap; common samples are aligned at 30 Hz."
+        }
+      ],
+      "corrections": [
+        "Use generic external optical mocap because main text and appendix differ on brand.",
+        "Not VR/Quest tracking.",
+        "157.5 g is the local interface, not a complete mocap rig."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "HBVCAM RGB, optical tactile images and marker-based pose/aperture are synchronized; target-robot IK produces joint-position supervision. External mocap is a recorded/recovered state source, not an IMU. Main text/appendix disagree on tracker brand, so the tag makes no brand assertion.",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Fingertip-worn in-situ parallel gripper with straps; external optical tracking required. It is not whole-body sensing just because it is wearable.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2506.01941",
+        "section": "III-A–B; Appendix B"
+      },
+      "display": {
+        "form": "Wearable gripper",
+        "tracking": "Optical motion capture",
+        "vision": "HBVCAM fisheye · 30 Hz",
+        "actions": "6D pose + aperture"
+      }
+    },
+    "2610.12558": {
+      "id": "2610.12558",
+      "name": "PanTact",
+      "verified": "2026-10-16",
+      "form": "Whole-body wearable modular contact patches plus bimanual UMI grippers",
+      "poseTracking": "HTC Vive trackers on head, wrists and each contact patch",
+      "vision": "Stereo egocentric view plus wrist fisheyes; RGB at 60 Hz",
+      "tactile": {
+        "status": "present",
+        "type": "FSR resistive contact tiles",
+        "note": "44×44 mm unit with one FSR; patch streams up to 16 channels at 1 kHz, policy uses binary contact and 3D location."
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "FSR contact intensity is not a six-axis wrench sensor; no added robot-body contact sensors at deployment."
+      },
+      "actionSpace": "End-effector trajectories plus per-sensor contact state and 3D target; contact-aware whole-body controller",
+      "hardwareAvailability": "Project https://pantact.github.io/; downloadable hardware/software release not independently verified",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.12558",
+          "section": "3 Data Collection Interface; 4 Contact-predictive policy",
+          "note": "Vive localizes modular FSR patches, head and wrists. Contacts are binarized against adaptive channel baselines and stored as N×4 state/location arrays. Robot executes goals without body contact sensors."
+        }
+      ],
+      "corrections": [
+        "Replace tracking unknown with external Vive.",
+        "Contact is measured by resistive FSR tiles, not a generic unspecified skin.",
+        "Whole-body contact patches are on the human during collection; robot has no added body contact sensors."
+      ],
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Contact",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Ego/wrist RGB, Vive head/wrist/patch poses, gripper width and resistive FSR tile readings are collected. Policy supervision uses binary contact states plus 3D locations. Contact/Tactile denote FSR patch sensing, not six-axis wrench hardware; raw tracker IMU is not verified. Robot deployment has no added body contact sensors.",
+      "interfaceForms": [
+        "Whole-body",
+        "Wearable",
+        "Handheld"
+      ],
+      "interfaceFormsNote": "One collection system combines wearable whole-body contact patches and bimanual handheld UMI grippers; these component forms must not be collapsed by first-match ordering.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2610.12558",
+        "section": "3 Data Collection Interface; 4 Contact-predictive policy"
+      },
+      "display": {
+        "form": "Body patches + UMI grippers",
+        "tracking": "HTC Vive",
+        "vision": "Head stereo + wrist fisheyes",
+        "actions": "Pose + contact targets"
+      }
+    },
+    "resource-3515d52be0": {
+      "id": "resource-3515d52be0",
+      "name": "XTac-UMI G1",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Pico4 Ultra headset + trackers",
+      "vision": "Fisheye RGB + first-person stereo",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "2 × visuotactile sensors"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF hand/head pose + gripper aperture",
+      "hardwareAvailability": "Public shell CAD; internal design not released",
+      "mass": {
+        "value": 370,
+        "unit": "g",
+        "scope": "Master gripper; approximate",
+        "shortScope": "Master gripper; approximate"
+      },
+      "evidence": [
+        {
+          "url": "https://xenserobotics.com/product/392226/detail/22",
+          "section": "Official product specifications"
+        },
+        {
+          "url": "https://docs.xenserobotics.com/en/docs/latest/xtac/",
+          "section": "Official device manual"
+        },
+        {
+          "url": "https://docs.xenserobotics.com/en/docs/latest/hardware/gripper-models/",
+          "section": "Public external shell STEP models"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper#firmware",
+          "section": "Firmware binaries; source not shipped"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Pico4 Ultra headset + trackers",
+        "vision": "Fisheye RGB + first-person stereo",
+        "actions": "6-DoF hand/head pose + gripper aperture"
+      }
+    },
+    "resource-e07d628c06": {
+      "id": "resource-e07d628c06",
+      "name": "DAS Gripper",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Stereo visual-inertial odometry",
+      "vision": "Triple-camera RGB / stereo depth",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Audio",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Tactile jaw array"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + gripper aperture",
+      "hardwareAvailability": "Design source not verified",
+      "mass": {
+        "value": 520,
+        "unit": "g",
+        "scope": "Current product manual",
+        "shortScope": "Current product manual"
+      },
+      "evidence": [
+        {
+          "url": "https://www.genrobot.ai/products/das",
+          "section": "Official product specifications"
+        },
+        {
+          "url": "https://docs.genrobot.ai/products/das-gripper",
+          "section": "Official device manual"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Stereo visual-inertial odometry",
+        "vision": "Triple-camera RGB / stereo depth",
+        "actions": "6-DoF pose + gripper aperture"
+      }
+    },
+    "resource-46b114e148": {
+      "id": "resource-46b114e148",
+      "name": "DAS Fingers",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Ego + dual-Finger visual-inertial odometry",
+      "vision": "Wide-angle RGB; optional DAS Ego views",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Tactile jaw array"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + finger aperture",
+      "hardwareAvailability": "Design source not verified",
+      "mass": {
+        "value": 285,
+        "unit": "g",
+        "scope": "Manual v2.0 main unit",
+        "shortScope": "Manual v2.0 main unit"
+      },
+      "evidence": [
+        {
+          "url": "https://www.genrobot.ai/products/finger",
+          "section": "Official product specifications"
+        },
+        {
+          "url": "https://docs.genrobot.ai/products/das-finger",
+          "section": "Official device manual"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Ego + dual-Finger visual-inertial odometry",
+        "vision": "Wide-angle RGB; optional DAS Ego views",
+        "actions": "6-DoF pose + finger aperture"
+      }
+    },
+    "resource-aee30f067d": {
+      "id": "resource-aee30f067d",
+      "name": "DAS Dex",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Hand spatial tracking + joint encoders",
+      "vision": "150° wrist camera",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "3D fingertip tactile sensing"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "23-DoF joint angles + fingertip trajectories",
+      "hardwareAvailability": "Design source not verified",
+      "mass": {
+        "value": 210,
+        "unit": "g",
+        "scope": "Vendor-stated wearable mass",
+        "shortScope": "Vendor-stated wearable mass"
+      },
+      "evidence": [
+        {
+          "url": "https://www.genrobot.ai/products/dex",
+          "section": "Official product specifications"
+        }
+      ],
+      "display": {
+        "form": "Wearable",
+        "tracking": "Hand spatial tracking + joint encoders",
+        "vision": "150° wrist camera",
+        "actions": "23-DoF joint angles + fingertip trajectories"
+      }
+    },
+    "resource-8d47a36123": {
+      "id": "resource-8d47a36123",
+      "name": "Pika Sense",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Pika Station / sensor-fused pose",
+      "vision": "RGB + depth",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + gripper aperture",
+      "hardwareAvailability": "Design source not verified",
+      "mass": {
+        "value": 460,
+        "unit": "g",
+        "scope": "PiKA Sense handheld unit",
+        "shortScope": "PiKA Sense handheld unit"
+      },
+      "evidence": [
+        {
+          "url": "https://global.agilex.ai/products/pika",
+          "section": "Official product specifications"
+        },
+        {
+          "url": "https://github.com/agilexrobotics/pika_sdk",
+          "section": "Official device manual"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Pika Station / sensor-fused pose",
+        "vision": "RGB + depth",
+        "actions": "6-DoF pose + gripper aperture"
+      }
+    },
+    "resource-bdec4666c2": {
+      "id": "resource-bdec4666c2",
+      "name": "TRumi",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Visual-inertial SLAM",
+      "vision": "GoPro HERO13 Black + Ultra Wide Lens Mod",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "6-DoF end-effector pose + gripper aperture",
+      "hardwareAvailability": "Public reference drawings; complete source not verified",
+      "mass": {
+        "value": 800,
+        "unit": "g",
+        "scope": "Approximate configured unit",
+        "shortScope": "Approximate configured unit"
+      },
+      "evidence": [
+        {
+          "url": "https://www.trossenrobotics.com/trumi",
+          "section": "Official product specifications"
+        },
+        {
+          "url": "https://docs.trossenrobotics.com/trumi/index.html",
+          "section": "Official device manual"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Visual-inertial SLAM",
+        "vision": "GoPro HERO13 Black + Ultra Wide Lens Mod",
+        "actions": "6-DoF end-effector pose + gripper aperture"
+      }
+    },
+    "resource-0ad4540dbf": {
+      "id": "resource-0ad4540dbf",
+      "name": "Mantis UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Vive 3.0 / Vive Ultimate / Quest 3",
+      "vision": "Optional ZED X One S Fisheye wrist cameras",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Bimanual Cartesian pose + gripper opening",
+      "hardwareAvailability": "Public 3D models; hardware license not verified",
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://www.almond.bot/mantis-umi",
+          "section": "Official product specifications"
+        },
+        {
+          "url": "https://docs.almond.bot/mantis/hardware",
+          "section": "Official device manual"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Vive 3.0 / Vive Ultimate / Quest 3",
+        "vision": "Optional ZED X One S Fisheye wrist cameras",
+        "actions": "Bimanual Cartesian pose + gripper opening"
+      }
+    },
+    "resource-60263449a3": {
+      "id": "resource-60263449a3",
+      "name": "FastUMI Pro",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Visual SLAM; optional Vive Tracker 3.0",
+      "vision": "Fisheye RGB + four SLAM cameras + ToF",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Optional visuotactile fingertips"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + gripper width",
+      "hardwareAvailability": "Design source not verified",
+      "mass": {
+        "value": 635,
+        "unit": "g",
+        "scope": "Rotational portable configuration",
+        "shortScope": "Rotational portable configuration"
+      },
+      "evidence": [
+        {
+          "url": "https://www.lumosbot.tech/products/fastumi-pro/",
+          "section": "Official product specifications"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Visual SLAM; optional Vive Tracker 3.0",
+        "vision": "Fisheye RGB + four SLAM cameras + ToF",
+        "actions": "6-DoF pose + gripper width"
+      }
+    },
+    "resource-a5f0f380d8": {
+      "id": "resource-a5f0f380d8",
+      "name": "Orbbec UMI Finger / Gripper",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Mono SLAM cameras + IMU",
+      "vision": "Fisheye RGB + mono SLAM",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Pose + gripper opening",
+      "hardwareAvailability": "Design source not verified",
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://www.orbbec.com/robot-free-data-collection/",
+          "section": "Official product specifications"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Mono SLAM cameras + IMU",
+        "vision": "Fisheye RGB + mono SLAM",
+        "actions": "Pose + gripper opening"
+      }
+    },
+    "resource-fd5070524c": {
+      "id": "resource-fd5070524c",
+      "name": "HandUMI",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Pico4 Ultra / Quest 3 controllers",
+      "vision": "IMX335 USB wrist camera",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF wrist pose + gripper width",
+      "hardwareAvailability": "Public build files / assembly guide",
+      "evidence": [
+        {
+          "url": "https://github.com/murobotics-ai/handumi-hw",
+          "section": "Build instructions, source files, and Apache-2.0 license"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-sw",
+          "section": "Executable collection software and license"
+        }
+      ],
+      "cost": {
+        "value": 104,
+        "currency": "USD",
+        "scope": "Parts per hand, headset excluded",
+        "shortScope": "Parts per hand, headset excluded"
+      },
+      "display": {
+        "form": "Wearable",
+        "tracking": "Pico4 Ultra / Quest 3 controllers",
+        "vision": "IMX335 USB wrist camera",
+        "actions": "6-DoF wrist pose + gripper width"
+      }
+    },
+    "resource-af05253706": {
+      "id": "resource-af05253706",
+      "name": "Grabette",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "RGB-D SLAM; optional OAK-D inertial fusion",
+      "vision": "RPi fisheye + Gemini 305 or OAK-D SR",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + two finger-joint encoders",
+      "hardwareAvailability": "Public build files / assembly guide",
+      "evidence": [
+        {
+          "url": "https://github.com/pollen-robotics/grabette",
+          "section": "Build instructions, source files, and Apache-2.0 license"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette",
+          "section": "Executable collection software and license"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette/tree/develop/packages/grabette",
+          "section": "Current Gemini305 default and optional OAK-D SR sensor configurations"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "RGB-D SLAM; optional OAK-D inertial fusion",
+        "vision": "RPi fisheye + Gemini 305 or OAK-D SR",
+        "actions": "6-DoF pose + two finger-joint encoders"
+      }
+    },
+    "2511.00153": {
+      "id": "2511.00153",
+      "name": "EgoMI",
+      "verified": "2026-10-16",
+      "form": "Two controller-mounted physical grippers plus a head-worn headset and stereo camera",
+      "poseTracking": "Meta Quest 3S tracks head and both controllers in a shared 6-DoF frame",
+      "vision": "Head-mounted ZED 2i stereo camera and controller-mounted wrist cameras",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Relative Cartesian targets for both end effectors and head, plus gripper commands; 29D representation",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2511.00153",
+          "section": "III-A; III-B; IV-C–IV-D; Figure 2",
+          "note": "Quest 3S head/controllers, a rigidly mounted ZED 2i and wrist-camera mounts are specified. Controller triggers actuate physical Robotiq 2F-85 grippers. Policy predicts head/end-effector poses and grip commands in a 29D relative Cartesian representation."
+        }
+      ],
+      "corrections": [
+        "Head movement is recorded; the paper explicitly says this hardware has no eye-gaze tracking.",
+        "29D is the policy representation dimension, not a mechanical DoF count."
+      ],
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Two controller-mounted physical grippers plus a head-worn headset and stereo camera",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Synchronized head/wrist video, tracked head and hand poses, gripper actions and proprioception. Stereo hardware does not by itself establish an exported depth channel. Quest internal IMU is not asserted as a separately recorded signal.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2511.00153",
+        "section": "III-A; III-B; IV-C–IV-D; Figure 2"
+      },
+      "display": {
+        "form": "Bimanual grippers + head rig",
+        "tracking": "Quest 3S",
+        "vision": "ZED 2i stereo + wrist cameras",
+        "actions": "Head / hand poses + grips · 29D"
+      }
+    },
+    "2610.20320": {
+      "id": "2610.20320",
+      "name": "TacClaw-Infinity",
+      "verified": "2026-10-16",
+      "form": "Direct finger-to-jaw handheld gripper; two devices plus an ego camera for bimanual capture",
+      "poseTracking": "Stereo visual–inertial odometry; rear fiducials register two devices and ego camera",
+      "vision": "Monocular wrist RGB, stereo tracking camera, and an additional ego view in bimanual episodes",
+      "tactile": {
+        "status": "present",
+        "type": "DM-Tac X camera-based visuotactile sensor",
+        "note": "Three co-registered tactile outputs: deformation, shear and contact depth. Sensor rate up to 120 Hz; recorded episode streams synchronized at 30 Hz."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "End-effector trajectories and encoder-measured gripper state; robot-specific kinematic filtering",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.20320",
+          "section": "III-B; III-C; Figures 1 and 4",
+          "note": "The primary TacClaw collector integrates wrist/stereo cameras, hardware-synchronized IMU, gripper encoder and DM-Tac X visuotactile sensing up to 120 Hz. The exported multimodal episode streams are synchronized at 30 Hz."
+        }
+      ],
+      "corrections": [
+        "Three-axis tactile outputs do not establish a dedicated six-axis wrench sensor.",
+        "200 deployed collectors is not a verified open-hardware release."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Direct finger-to-jaw handheld gripper; two devices plus an ego camera for bimanual capture",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Collector records RGB, deformation/shear/tactile-depth, and EE trajectory at synchronized 30 Hz. Hardware-synchronized IMU supports stereo VIO; it is not asserted as a direct policy input. Tactile depth is not scene depth.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2610.20320",
+        "section": "III-B; III-C; Figures 1 and 4"
+      },
+      "display": {
+        "form": "Bimanual finger-driven grippers",
+        "tracking": "Stereo VIO + fiducials",
+        "vision": "Wrist RGB + stereo · optional ego view",
+        "actions": "End-effector pose + aperture"
+      }
+    },
+    "2606.10382": {
+      "id": "2606.10382",
+      "name": "UMI-Bench",
+      "verified": "2026-10-16",
+      "form": "FastUMI Pro handheld collection setup and a standardized tabletop evaluation workstation",
+      "poseTracking": "FastUMI Pro spatial-trajectory stream; underlying tracking method/model not identified in audited protocol",
+      "vision": "Collection-side wrist RGB and TOF; evaluation-side wrist RGB, with optional robot proprioception",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Per-arm 8D export: XYZ, quaternion and clamp; waypoint chunks executed through robot SDK",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.10382",
+          "section": "3.1–3.2; Appendices A–C",
+          "note": "FastUMI Pro is the collection toolchain rather than a new UMI-Bench collector. Protocol reference rates are 60 Hz RGB, 30 Hz TOF and 500 Hz pose/IMU. HDF5 stores eight-dimensional state/action vectors per arm; training frequency can be 20/30/60 Hz."
+        }
+      ],
+      "corrections": [
+        "Do not copy original FastUMI T265 specifications into FastUMI Pro.",
+        "Collection RGB/TOF/IMU rates differ from evaluation wrist cameras (1280×1280 at 100 FPS)."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "FastUMI Pro handheld collection setup and a standardized tabletop evaluation workstation",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Appendix B explicitly checks RGB, TOF, IMU, pose and gripper streams. TOF/IMU are collection channels; evaluation policies use wrist RGB and optionally proprioception. Third-person video is auditing/debugging only.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2606.10382",
+        "section": "3.1–3.2; Appendices A–C"
+      },
+      "display": {
+        "form": "FastUMI Pro benchmark rig",
+        "tracking": "FastUMI Pro trajectory stream",
+        "vision": "Wrist RGB + TOF",
+        "actions": "Pose + clamp · 8D per arm"
+      }
+    },
+    "2603.05504": {
+      "id": "2603.05504",
+      "name": "RoboPocket",
+      "verified": "2026-10-16",
+      "form": "Handheld iPhone Pro collector with a 3D-printed adaptive gripper matching Robotiq 2F-85 geometry",
+      "poseTracking": "iPhone visual–inertial odometry at 60 Hz; magnetic encoder measures gripper width",
+      "vision": "iPhone Pro camera with a custom external fisheye lens and mount",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "End-effector pose trajectories and continuous gripper width; AR verification of kinematic feasibility",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.05504",
+          "section": "III-A.1–III-A.3; III-B; Figure 2",
+          "note": "iPhone acts as a compute hub running VIO, IK and AR at 60 Hz. An ESP32 BLE board receives a magnetic encoder over 1 Mbps RS485, with 0.088° angular resolution at 30 Hz. An external fisheye expands visual context."
+        }
+      ],
+      "corrections": [
+        "Passive compliant gripper joints do not establish tactile or force sensing.",
+        "iPhone Pro hardware does not by itself verify recorded LiDAR depth."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld iPhone Pro collector with a 3D-printed adaptive gripper matching Robotiq 2F-85 geometry",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Phone camera, recovered 6-DoF trajectory and magnetic-encoder aperture are verified. VIO uses inertial sensing internally, but a separately exported raw-IMU stream is not established here.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2603.05504",
+        "section": "III-A.1–III-A.3; III-B; Figure 2"
+      },
+      "display": {
+        "form": "Handheld iPhone gripper",
+        "tracking": "iPhone VIO · 60 Hz",
+        "vision": "iPhone + fisheye lens",
+        "actions": "End-effector pose + aperture"
+      }
+    },
+    "2603.03243": {
+      "id": "2603.03243",
+      "name": "HoMMI",
+      "verified": "2026-10-16",
+      "form": "Two handheld iPhone grippers plus a cap-mounted iPhone for portable head/hand capture",
+      "poseTracking": "Shared ARKit multi-device world frame across three iPhones",
+      "vision": "Three synchronized iPhone RGB views and depth maps",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Two end-effector poses, a 3D look-at point and two gripper widths; 23D policy representation",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.03243",
+          "section": "IV; V; Appendix I; Figure 2",
+          "note": "Collection uses two iPhones on grippers and one on a cap, sharing an ARKit coordinate frame; paper describes synchronized 60 Hz collection. Policy uses wrist RGB and head RGB/pointmap. Output is two 9D pose representations + 3D look-at + two widths."
+        }
+      ],
+      "corrections": [
+        "Human collection uses three iPhones; deployment robot stereo/wrist cameras are a different sensor setup.",
+        "23D is a representation dimension, not the number of mechanical joints."
+      ],
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "interfaceFormsNote": "Two handheld iPhone grippers plus a cap-mounted iPhone for portable head/hand capture",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Human collector records RGB, depth, 6-DoF pose and gripper width streams. The head/hand trajectories support mobile manipulation. ARKit internal IMU is not asserted as an exported raw channel. Policy consumes head pointmaps, wrist images and proprioception.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2603.03243",
+        "section": "IV; V; Appendix I; Figure 2"
+      },
+      "display": {
+        "form": "Bimanual grippers + head phone",
+        "tracking": "Shared ARKit frame · 3 iPhones",
+        "vision": "Three iPhone RGB + depth views",
+        "actions": "Hands + look-at + widths · 23D"
+      }
+    },
+    "2606.30457": {
+      "id": "2606.30457",
+      "name": "iPhUMI / Behavior Prompting",
+      "verified": "2026-10-16",
+      "form": "Handheld iPhone UMI gripper; optional bimanual and head-mounted phone setup; spring-mounted marker variant",
+      "poseTracking": "ARKit real-time SLAM; shared session for up to three phones; ArUco tags recover gripper width",
+      "vision": "Main and ultrawide iPhone cameras plus LiDAR depth capture",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "6-DoF gripper trajectory and width; a compliant marker variant supports drawing demonstrations",
+      "hardwareAvailability": "Paper states the custom iPhUMI iOS application is open source; hardware instantiations are documented in Appendix J.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.30457",
+          "section": "Appendix J; J.1–J.2; Figures 15–17",
+          "note": "The custom iOS app captures main RGB at 1920×1440/60 Hz, ultrawide at 640×480/10 Hz and LiDAR depth at 256×192/60 Hz during collection. Width uses calibrated ArUco detections; shared ARKit supports a head phone. Drawing uses spring compliance without needing an F/T sensor."
+        }
+      ],
+      "corrections": [
+        "Recorded depth is not a policy input in the reported experiments.",
+        "The spring in the marker variant provides compliance; it is not a force sensor.",
+        "Collection and deployment camera resolutions/rates are different."
+      ],
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Handheld iPhone UMI gripper; optional bimanual and head-mounted phone setup; spring-mounted marker variant",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Recorded channels include main RGB 60 Hz, ultrawide 10 Hz, LiDAR depth 60 Hz, pose 60 Hz and width 10 Hz. Depth is explicitly unused by models/experiments in this paper; DrawAnything-Real also excludes ultrawide input. Spoken task narration becomes text labels; raw audio recording is not established.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2606.30457",
+        "section": "Appendix J; J.1–J.2; Figures 15–17"
+      },
+      "display": {
+        "form": "Handheld iPhone gripper",
+        "tracking": "ARKit + aperture markers",
+        "vision": "iPhone RGB + LiDAR capture",
+        "actions": "6-DoF pose + aperture"
+      }
+    },
+    "2510.01607": {
+      "id": "2510.01607",
+      "name": "ActiveUMI",
+      "verified": "2026-10-16",
+      "form": "Controller-mounted physical grippers, head-worn Quest headset and portable backpack computer",
+      "poseTracking": "Quest inside-out SLAM tracks head and controller 6-DoF poses in a common world frame",
+      "vision": "Wrist fisheye cameras plus the HMD front-facing color cameras",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Head and end-effector pose trajectories with gripper commands for active perception",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2510.01607",
+          "section": "3.1 Data Collection System; Figure 2",
+          "note": "The hardware section specifies Meta Quest 3s controllers/HMD, a micro-motor on each controller for physical gripper actuation and wrist fisheye cameras. A wearable computer supports untethered collection and HMD feedback of a virtual robot."
+        }
+      ],
+      "corrections": [
+        "Use the hardware-section Quest 3S designation; other paragraphs shorten it to Quest 3.",
+        "No magnetic aperture encoder or separate eye-gaze sensor was verified."
+      ],
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "interfaceFormsNote": "Controller-mounted physical grippers, head-worn Quest headset and portable backpack computer",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Head/wrist images, tracked poses and gripper actions are verified. Quest IMU internals do not establish a raw exported IMU channel. Backpack compute enables portable human capture; it is not a lower-body joint capture system.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2510.01607",
+        "section": "3.1 Data Collection System; Figure 2"
+      },
+      "display": {
+        "form": "Bimanual grippers + headset",
+        "tracking": "Quest inside-out SLAM",
+        "vision": "Wrist fisheyes + head RGB",
+        "actions": "Head / hand poses + grips"
+      }
+    },
+    "2509.18757": {
+      "id": "2509.18757",
+      "name": "MV-UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld UMI-style gripper with an additional third-person scene camera",
+      "poseTracking": "GoPro IMU-assisted ORB-SLAM3; ArUco jaw markers estimate aperture",
+      "vision": "Gripper-mounted egocentric RGB and an uncalibrated overhead/third-person RGB view",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "End-effector pose and continuous gripper-width trajectories",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2509.18757",
+          "section": "III-A–III-C; Figure 2",
+          "note": "Each episode contains gripper RGB, third-person RGB, device pose and width. ORB-SLAM3 uses GoPro IMU to estimate poses relative to the initial frame; widths come from two ArUco jaw markers. Third-person placement is deliberately not formally calibrated."
+        }
+      ],
+      "corrections": [
+        "Third-person view is an additional camera observation, not an external motion-capture tracker."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld UMI-style gripper with an additional third-person scene camera",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Collection records wrist/third-person video; GoPro IMU supports offline pose estimation and marker detections recover width. The described policy uses the visual views with pose/width supervision; raw IMU is not asserted as policy input.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2509.18757",
+        "section": "III-A–III-C; Figure 2"
+      },
+      "display": {
+        "form": "Handheld multi-view gripper",
+        "tracking": "GoPro visual–inertial SLAM",
+        "vision": "Wrist RGB + third-person RGB",
+        "actions": "End-effector pose + aperture"
+      }
+    },
+    "2411.03682": {
+      "id": "2411.03682",
+      "name": "LEGATO",
+      "verified": "2026-10-16",
+      "form": "Shared handheld grasping tool with interchangeable handles for humans and robot grippers",
+      "poseTracking": "RealSense T265 visual–inertial odometry; SeerSense XR50 is listed as an alternative",
+      "vision": "Stereo fisheye images from the tracking camera",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Relative SE(3) tool motion and binary open/close grasping action",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2411.03682",
+          "section": "III-B–III-C; IV-A; Figure 4",
+          "note": "The same 3D-printed parallel-linkage tool and fin-ray fingers are carried by humans or held by robot grippers using replacement handles. T265/XR50 provides stereo imaging and visual odometry. The grasp head is trained as binary opening/closing classification."
+        }
+      ],
+      "corrections": [
+        "Compliant fin-ray fingertips are mechanical compliance, not tactile sensors.",
+        "Robot deployment can use mobile/humanoid embodiments without changing the human collector into a whole-body capture device."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Shared handheld grasping tool with interchangeable handles for humans and robot grippers",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Demonstrations record stereo images and visual-odometry estimates. Deployment streams stereo images only; policy also conditions on previous actions. IMU is part of the tracking camera, but independently saved raw IMU was not established.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2411.03682",
+        "section": "III-B–III-C; IV-A; Figure 4"
+      },
+      "display": {
+        "form": "Transferable grasping tool",
+        "tracking": "RealSense T265 VIO",
+        "vision": "Stereo fisheye",
+        "actions": "Relative pose + open / close"
+      }
+    },
+    "2606.13232": {
+      "id": "2606.13232",
+      "name": "WT-UMI",
+      "verified": "2026-10-16",
+      "form": "Wearable chest plate and forearm covers plus handheld GripTac end effectors shared with the humanoid",
+      "poseTracking": "PICO headset/controllers via XRoboToolkit track bimanual poses; human mode mounts one controller per GripTac",
+      "vision": "Distributed tactile images; no scene RGB camera stream is specified for the reported planner",
+      "tactile": {
+        "status": "present",
+        "type": "Thin-film piezoresistive arrays: SensX 187 chest, SensX 160 palms, FlexiTac-style forearms",
+        "note": "Same physical sensing modules on human and humanoid. Palm arrays are calibrated for normal-force estimation; chest/forearm arrays chiefly provide contact localization."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "Calibrated palm normal-force estimates come from tactile activation, not a verified dedicated force/torque transducer. No six-axis wrench sensor is established."
+      },
+      "actionSpace": "Corrected bimanual pose chunks plus predicted palm normal-force trajectories; transport variant predicts SE(2) base velocity",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.13232",
+          "section": "3.1–3.4; 4; 8.1; 8.5; Figure 3",
+          "note": "Thin-film piezoresistive arrays are TouchTronix SensX 187 at chest, SensX 160 at palms and custom 16×26 FlexiTac-style forearms. Only palm sensors are quantitatively force-calibrated (0–25 N) using a compliant gel pad. Raw tactile is 100 Hz; synchronized planner streams are 50 Hz."
+        }
+      ],
+      "corrections": [
+        "Do not label tactile-array images as scene Vision.",
+        "Only palm force calibration is quantitative; do not apply its 0–25 N range to every body patch.",
+        "Normal-force prediction is scalar per palm, not six-axis wrench control."
+      ],
+      "interfaceForms": [
+        "Whole-body",
+        "Wearable",
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Wearable chest plate and forearm covers plus handheld GripTac end effectors shared with the humanoid",
+      "observationSignals": [
+        "Tactile",
+        "Force",
+        "Contact",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Both collection modes stream hand poses, tactile arrays and calibrated force estimates; teleoperation additionally logs robot proprioception and VR commands. The planner observes tactile images and bimanual pose. Force is a calibrated proxy from palm tactile arrays, not evidence of a six-axis wrench sensor. Chest/forearm patches primarily localize contact.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2606.13232",
+        "section": "3.1–3.4; 4; 8.1; 8.5; Figure 3"
+      },
+      "display": {
+        "form": "Body patches + GripTac grippers",
+        "tracking": "PICO / XRoboToolkit",
+        "vision": "Scene RGB not specified",
+        "actions": "Hand pose + palm normal force"
+      }
+    },
+    "2512.04884": {
+      "id": "2512.04884",
+      "name": "Hoi!",
+      "verified": "2026-10-16",
+      "form": "Motorized handheld gripper-on-a-stick, wrist sensors and a battery-powered Jetson backpack",
+      "poseTracking": "Project Aria SLAM/MPS trajectories and calibrated device extrinsics",
+      "vision": "ZED Mini stereo RGB-D wrist view; Aria egocentric view; synchronized static iPhone RGB/LiDAR views in the dataset",
+      "tactile": {
+        "status": "present",
+        "type": "Two opposing GelSight DIGIT camera-based tactile sensors",
+        "note": "High-resolution fingertip tactile imaging on the custom Hoi gripper; not present on every dataset embodiment."
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Bota SensONE six-axis force/torque sensor; calibrated handle load cell",
+        "note": "SensONE measures interaction wrench at wrist. Handle load cell modulates gripping force; these are different measurements."
+      },
+      "actionSpace": "Human gripper pose and load-cell-regulated grasping force; dataset also records interaction wrench and tactile signals",
+      "hardwareAvailability": "Paper describes an open-source custom gripper design; downloadable CAD/BOM release was not independently verified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2512.04884",
+          "section": "3 Data Collection; Supplementary B; Figures 3 and 9",
+          "note": "The custom collector has two opposing GelSight DIGIT sensors, Dynamixel XM430-W350-T actuation, Bota SensONE six-axis F/T, a calibrated handle load cell, ZED Mini and Project Aria. Battery Jetson Orin Nano backpack enables portable recording. Aria MPS estimates trajectories for posing attached sensors."
+        }
+      ],
+      "corrections": [
+        "Figure 3 caption reverses sensor roles in one sentence; body text clearly assigns DIGIT to tactile imaging and SensONE to wrist wrench.",
+        "Do not attribute all multimodal streams to every Hoi dataset embodiment."
+      ],
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "interfaceFormsNote": "Motorized handheld gripper-on-a-stick, wrist sensors and a battery-powered Jetson backpack",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "Force",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "The Hoi gripper subset records wrist RGB-D, Aria pose, DIGIT tactile and SensONE six-axis wrench; handle load controls grip force. Dataset also includes human, Spot and original-UMI embodiments, so not every sequence has the custom gripper sensor suite.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2512.04884",
+        "section": "3 Data Collection; Supplementary B; Figures 3 and 9"
+      },
+      "display": {
+        "form": "Motorized handheld gripper",
+        "tracking": "Aria SLAM / MPS",
+        "vision": "ZED Mini + Aria + static iPhones",
+        "actions": "Gripper pose + grasp force"
+      }
+    },
+    "2605.03452": {
+      "id": "2605.03452",
+      "name": "BifrostUMI",
+      "verified": "2026-10-16",
+      "form": "Two handheld motorized grippers with a wearable PICO 4 headset, waist tracker and two foot trackers",
+      "poseTracking": "PICO SDK/XRoboToolkit; controller poses plus SMPL-derived pelvis and foot poses",
+      "vision": "A wrist fisheye camera on each gripper",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Five keypoint poses plus two gripper widths: 47D; seven-keypoint variant adds knees",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2605.03452",
+          "section": "III-A–III-C; Figures 2–4",
+          "note": "PICO-based capture uses headset/controllers and three lower-body trackers. Each custom gripper includes fisheye camera, motor-driven rack-and-pinion mechanism and controller mount; motor encoder provides width. Five poses use XYZ plus 6D rotation, giving 5×9+2=47 dimensions."
+        }
+      ],
+      "corrections": [
+        "47D is a task-space representation, not 47 physical DoF.",
+        "The default five-keypoint capture differs from the optional seven-keypoint knee variant."
+      ],
+      "interfaceForms": [
+        "Whole-body",
+        "Wearable",
+        "Handheld",
+        "Mobile"
+      ],
+      "interfaceFormsNote": "Two handheld motorized grippers with a wearable PICO 4 headset, waist tracker and two foot trackers",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Synchronized wrist RGB, tracked pelvis/feet/TCP poses and motor-encoder apertures are recorded. PICO internally fuses inertial/geomagnetic/IR sensing; separately exported raw IMU is not established. Default policy condition includes wrist images and lower-body proprioception.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2605.03452",
+        "section": "III-A–III-C; Figures 2–4"
+      },
+      "display": {
+        "form": "Grippers + body trackers",
+        "tracking": "PICO / XRoboToolkit",
+        "vision": "Wrist fisheye per gripper",
+        "actions": "Five body poses + grips · 47D"
+      }
+    },
+    "2603.27012": {
+      "id": "2603.27012",
+      "name": "UMI-Underwater / UMI-Aquatic",
+      "verified": "2026-10-16",
+      "form": "On-land handheld iPhone gripper; separate autonomous underwater robot collection pipeline",
+      "poseTracking": "AprilTags recover gripper openness/closure timing; handheld world-pose tracking is not specified",
+      "vision": "On-land iPhone RGB; depth is inferred from monocular RGB using Depth Anything V2",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Land collector labels grasp/contact pixel trajectories; underwater policy predicts robot control actions conditioned on depth and affordance",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.27012",
+          "section": "III-B–III-C; Figures 5–7",
+          "note": "UMI-Aquatic mounts an iPhone and jaw AprilTags for land collection. Closure detection seeds CoTracker3 contact-pixel supervision. Monocular depth and camera crop/warp align land data with underwater observations; no on-land SLAM or six-axis pose export is established."
+        }
+      ],
+      "corrections": [
+        "Do not infer ARKit/6-DoF pose logging merely from use of an iPhone.",
+        "Depth Anything output is inferred depth, not LiDAR/TOF hardware.",
+        "The 800 land demos and 536 self-supervised underwater episodes are different collection pipelines."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "On-land handheld iPhone gripper; separate autonomous underwater robot collection pipeline",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Contact",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Collector verifies RGB and tag-derived aperture/closure timing. Depth is a model-derived representation, not a physical depth sensor. Contact pixels are automatically inferred from closure timing and point tracking, not measured with a tactile/contact transducer. Robot proprioception belongs to the separate underwater policy.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2603.27012",
+        "section": "III-B–III-C; Figures 5–7"
+      },
+      "display": {
+        "form": "On-land iPhone gripper",
+        "tracking": "World-pose tracking unknown",
+        "vision": "iPhone RGB + inferred depth",
+        "actions": "Grasp / contact pixel paths"
+      }
+    },
+    "2510.02614": {
+      "id": "2510.02614",
+      "name": "UMI-on-Air",
+      "verified": "2026-10-16",
+      "form": "Handheld lightweight compliant gripper for human capture; a separate aerial manipulator executes the policy",
+      "poseTracking": "iPhone visual–inertial SLAM for EE pose; finger fiducials measure continuous width",
+      "vision": "Lightweight OAK-1 W wrist RGB camera with a wide field of view",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Relative EE pose trajectories and continuous gripper widths; controller-gradient guidance adapts actions to aerial dynamics",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2510.02614",
+          "section": "III-A–III-C; Figure 4",
+          "note": "The collector replaces the original GoPro with OAK-1 W, reduces finger size/inertia and adds iPhone-based visual-inertial SLAM. Policy predicts EE trajectories and widths; embodiment-aware diffusion uses gradients from a low-level controller at inference."
+        }
+      ],
+      "corrections": [
+        "The aerial robot is a deployment embodiment; human demonstration hardware remains handheld.",
+        "Compliant 3D-printed fingers do not establish force/tactile measurements."
+      ],
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "interfaceFormsNote": "Handheld lightweight compliant gripper for human capture; a separate aerial manipulator executes the policy",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Synchronized wrist RGB, recovered EE pose and fiducial width are verified. iPhone inertial data supports SLAM, but a separate exported raw IMU channel is not established. The observation window contains images, relative poses and widths.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2510.02614",
+        "section": "III-A–III-C; Figure 4"
+      },
+      "display": {
+        "form": "Compliant handheld gripper",
+        "tracking": "iPhone visual–inertial SLAM",
+        "vision": "OAK-1 W wrist RGB",
+        "actions": "Relative pose + aperture"
+      }
+    },
+    "2606.14665": {
+      "id": "2606.14665",
+      "name": "EgoGuide",
+      "verified": "2026-10-16",
+      "form": "Handheld exUMI-derived gripper plus a head-worn Quest headset for synchronized ego capture and AR guidance",
+      "poseTracking": "Quest controller tracks wrist pose; headset provides head pose in a shared world frame",
+      "vision": "Industrial board-level wrist fisheye camera and Quest head RGB via Unity Passthrough API",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated tactile sensor. Absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
+      },
+      "actionSpace": "Wrist-relative EE action chunks and gripper command; an ego residual branch gates corrections to a wrist-view policy",
+      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.14665",
+          "section": "3.1–3.3; Figure 2",
+          "note": "A rotary sensor and industrial board-level fisheye feed an onboard Raspberry Pi. Quest controller on the gripper and headset provide spatial tracking/ego RGB. UDP streams synchronize within 20 ms; workstation computes online coverage guidance and returns AR feedback."
+        }
+      ],
+      "corrections": [
+        "Do not inherit exUMI tactile specifications without an explicit EgoGuide hardware statement.",
+        "Collection head-worn Quest differs from the fixed Quest used as a third-person-view proxy during robot evaluation."
+      ],
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "interfaceFormsNote": "Handheld exUMI-derived gripper plus a head-worn Quest headset for synchronized ego capture and AR guidance",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "The aligned observation contains wrist/head RGB, wrist/head poses and rotary-sensor aperture. Headset streams at 72 Hz; Raspberry Pi captures wrist/width at 20 Hz and aligns packets. No tactile sensor is established merely by inheritance from exUMI.",
+      "signalsEvidence": {
+        "url": "https://arxiv.org/html/2606.14665",
+        "section": "3.1–3.3; Figure 2"
+      },
+      "display": {
+        "form": "exUMI gripper + Quest headset",
+        "tracking": "Quest controller + headset",
+        "vision": "Wrist fisheye + head RGB",
+        "actions": "Relative hand pose + grip"
+      }
+    },
+    "2410.07554": {
+      "id": "2410.07554",
+      "name": "ForceMimic / ForceCapture",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "RealSense T265 VIO",
+      "vision": "External RealSense L515 RGB-D",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Force",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "6-axis force/torque sensor"
+      },
+      "actionSpace": "6-DoF pose + wrench + gripper width",
+      "hardwareAvailability": "Design/source release not independently verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "RealSense T265 VIO",
+        "vision": "External RealSense L515 RGB-D",
+        "actions": "6-DoF pose + wrench + gripper width"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2410.07554",
+          "section": "§III-A hardware design; §III-B collection; bibliography[5]",
+          "note": "Hardware design explicitly develops ForceCapture from existing handheld motion devices[5,6]; reference5 is originalUMI. Wrench is added to pose/width demonstrations for robot transfer."
+        }
+      ]
+    },
+    "2509.04441": {
+      "id": "2509.04441",
+      "name": "DEXOP",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "SLAM / IMU or arm-exoskeleton variants",
+      "vision": "Palm fisheye; scene camera variants",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "GelSim(ple) vision-based whole-hand sensors"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Hand joint angles + global hand pose",
+      "hardwareAvailability": "Design/source release not independently verified",
+      "display": {
+        "form": "Wearable",
+        "tracking": "SLAM / IMU or arm-exoskeleton variants",
+        "vision": "Palm fisheye; scene camera variants",
+        "actions": "Hand joint angles + global hand pose"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2509.04441",
+          "section": "§2.2 related hardware; §§3.3–3.4 sensing/collection",
+          "note": "§2.2 explicitly states that DEXOP advances the passive-gripper direction represented byUMI into whole-hand manipulation; §3.4 supports hand pose viaUMI-style SLAM/IMU."
+        }
+      ]
+    },
+    "2603.17851": {
+      "id": "2603.17851",
+      "name": "DexViTac",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "RealSense T265 VIO + Manus hand kinematics",
+      "vision": "GoPro HERO12 + Max Lens Mod2.0",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "HIT LongLin-96 fingertip pressure arrays"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF wrist pose + 19-DoF hand parameters",
+      "hardwareAvailability": "Design/source release not independently verified",
+      "display": {
+        "form": "Wearable",
+        "tracking": "RealSense T265 VIO + Manus hand kinematics",
+        "vision": "GoPro HERO12 + Max Lens Mod2.0",
+        "actions": "6-DoF wrist pose + 19-DoF hand parameters"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.17851",
+          "section": "Introduction; §III-A hardware; §III-C retargeting",
+          "note": "Introduction identifiesUMI low-DoF/contact limitations; §III designs a robot-free replacement with mirrored tactile/vision modalities and explicit hand/arm retargeting to robot action space."
+        }
+      ]
+    },
+    "2603.17323": {
+      "id": "2603.17323",
+      "name": "DexEXO",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "iPhone AR tracking via TeleDex",
+      "vision": "Wrist Intel RealSense RGB",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + six hand joint encoders",
+      "hardwareAvailability": "Design/source release not independently verified",
+      "display": {
+        "form": "Wearable",
+        "tracking": "iPhone AR tracking via TeleDex",
+        "vision": "Wrist Intel RealSense RGB",
+        "actions": "6-DoF pose + six hand joint encoders"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.17323",
+          "section": "§II-C; §III hardware; §IV-A collection",
+          "note": "§II explicitly contrastsDexUMI geometry/visual preprocessing; proposed passive hand matchesROHand geometry and trains directly from raw wristRGB; user study directly evaluatesDexUMI replacement."
+        }
+      ]
+    },
+    "2604.15013": {
+      "id": "2604.15013",
+      "name": "DEX-Mouse",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "poseTracking": "VIVE Ultimate Tracker",
+      "vision": "Logitech C270 wrist RGB",
+      "observationSignals": [
+        "Vision",
+        "Force",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Measured motor joint torque"
+      },
+      "actionSpace": "Absolute hand joints + global hand pose",
+      "hardwareAvailability": "Design/source release not independently verified",
+      "display": {
+        "form": "Handheld / Wearable",
+        "tracking": "VIVE Ultimate Tracker",
+        "vision": "Logitech C270 wrist RGB",
+        "actions": "Absolute hand joints + global hand pose"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.15013",
+          "section": "§IV-F integration; §V-D downstream policy learning",
+          "note": "§V-D explicitly followsDexUMI policy architecture, replacing relative hand positions with absolute target-embodiment joints and tactile inputs with motor torques. Attached configuration places target hand on operator forearm."
+        }
+      ]
+    },
+    "resource-be8bb4251c": {
+      "id": "resource-be8bb4251c",
+      "name": "Koala",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Camera-based tracking; estimator unspecified",
+      "vision": "HD wide-angle gripper cameras",
+      "observationSignals": [
+        "Vision",
+        "Force",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Force sensors; dimensionality unspecified"
+      },
+      "actionSpace": "Matched gripper state + pose / force",
+      "hardwareAvailability": "Design/source release not independently verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "Camera-based tracking; estimator unspecified",
+        "vision": "HD wide-angle gripper cameras",
+        "actions": "Matched gripper state + pose / force"
+      },
+      "evidence": [
+        {
+          "url": "https://rai-inst.com/resources/blog/handheld-robotic-data-collection/",
+          "section": "The Evolution of Co-Designing Grippers; The Koala Platform",
+          "note": "Official article explicitly traces firstcapturedevice toUMI, then describesKoala as nextco-design with identical handheld/actuated geometry and sensor suite."
+        }
+      ]
+    },
+    "2407.10353": {
+      "id": "2407.10353",
+      "name": "UMI on Legs",
+      "verified": "2026-10-16",
+      "form": "Handheld / Mobile",
+      "interfaceForms": [
+        "Handheld",
+        "Mobile"
+      ],
+      "poseTracking": "UMI VIO; iPhone ARKit for robot odometry",
+      "vision": "UMI wrist GoPro",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "6-DoF end-effector trajectory + gripper width",
+      "hardwareAvailability": "Public assembly / 3D-printing guide",
+      "display": {
+        "form": "UMI collector / quadruped deployment",
+        "tracking": "UMI VIO; iPhone ARKit for robot odometry",
+        "vision": "UMI wrist GoPro",
+        "actions": "6-DoF end-effector trajectory + gripper width"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2407.10353",
+          "section": "§3; Fig.2; appendix9.1",
+          "note": "Original UMI is the human collector; Unitree Go2 + ARX5 + iPhone is the deployment system, not a new handheld collector. Repository includes source for WBC training/deployment, iPhone odometry and hardware assembly documentation. Downloads provide preprocessed manipulation trajectories and WBC checkpoints; this is not a separately verified full RGB UMI dataset release."
+        }
+      ],
+      "corrections": [
+        "Original UMI is the human collector; Unitree Go2 + ARX5 + iPhone is the deployment system, not a new handheld collector.",
+        "Repository includes source for WBC training/deployment, iPhone odometry and hardware assembly documentation.",
+        "Downloads provide preprocessed manipulation trajectories and WBC checkpoints; this is not a separately verified full RGB UMI dataset release."
+      ]
+    },
+    "2604.13001": {
+      "id": "2604.13001",
+      "name": "XRZero-G0",
+      "verified": "2026-10-16",
+      "form": "Handheld / Wearable / Mobile",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "poseTracking": "PICO 4 inside-out controller tracking",
+      "vision": "Head RGB + dual wrist RGB",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Dual 6-DoF poses + gripper commands",
+      "hardwareAvailability": "Not released / not verified",
+      "display": {
+        "form": "Handheld / Wearable / Mobile",
+        "tracking": "PICO 4 inside-out controller tracking",
+        "vision": "Head RGB + dual wrist RGB",
+        "actions": "Dual 6-DoF poses + gripper commands"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.13001",
+          "section": "§3.1; §4.1; §6.2; Fig.3",
+          "note": "Paper G0 uses PICO 4 with a backpack and H/G physical grippers; do not apply later G1 headband/UMI-VIO specifications to this paper. Tactile integration is future work in §6.2; preserving physical human contact is not a recorded tactile signal. GitHub main tree contains only README and teaser images despite an MIT badge. No executable code or CAD was found. Public dataset snapshot has 3,697 episodes in 20 task folders; paper describes a broader 2,000-hour / 3,000-task source corpus."
+        }
+      ],
+      "corrections": [
+        "Paper G0 uses PICO 4 with a backpack and H/G physical grippers; do not apply later G1 headband/UMI-VIO specifications to this paper.",
+        "Tactile integration is future work in §6.2; preserving physical human contact is not a recorded tactile signal.",
+        "GitHub main tree contains only README and teaser images despite an MIT badge. No executable code or CAD was found.",
+        "Public dataset snapshot has 3,697 episodes in 20 task folders; paper describes a broader 2,000-hour / 3,000-task source corpus."
+      ]
+    },
+    "2512.09851": {
+      "id": "2512.09851",
+      "name": "TacThru-UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "HTC Vive Tracker",
+      "vision": "Wrist RGB + see-through tactile cameras",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Transparent vision-based TacThru"
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "6-DoF end-effector pose + gripper width",
+      "hardwareAvailability": "Public STEP / sensor models",
+      "display": {
+        "form": "Handheld",
+        "tracking": "HTC Vive Tracker",
+        "vision": "Wrist RGB + see-through tactile cameras",
+        "actions": "6-DoF end-effector pose + gripper width"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2512.09851",
+          "section": "§§4.1–4.2; Fig.1",
+          "note": "Shared collector/end-effector geometry integrates transparent vision-based TacThru tactile fingers. Paper §4.2 records synchronized wrist vision, tactile and proprioception at 30 FPS. Archive suffix 120 is not used as the published training sample rate. Repository provides sensor model and gripper STEP file under its MIT license; hardware guide linked from the official project."
+        }
+      ],
+      "corrections": [
+        "Shared collector/end-effector geometry integrates transparent vision-based TacThru tactile fingers.",
+        "Paper §4.2 records synchronized wrist vision, tactile and proprioception at 30 FPS. Archive suffix 120 is not used as the published training sample rate.",
+        "Repository provides sensor model and gripper STEP file under its MIT license; hardware guide linked from the official project."
+      ]
+    },
+    "2604.07335": {
+      "id": "2604.07335",
+      "name": "BiTacMan / TAMEn",
+      "verified": "2026-10-16",
+      "form": "Handheld / Wearable",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "poseTracking": "NOKOV motion capture / PICO VR controllers",
+      "vision": "Wrist fisheye RGB + fingertip tactile cameras",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Modular vision-based tactile sensors"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Dual 6-DoF poses + gripper opening",
+      "hardwareAvailability": "CAD coming soon",
+      "display": {
+        "form": "Handheld / Wearable",
+        "tracking": "NOKOV motion capture / PICO VR controllers",
+        "vision": "Wrist fisheye RGB + fingertip tactile cameras",
+        "actions": "Dual 6-DoF poses + gripper opening"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.07335",
+          "section": "§III-B; appendixA; Fig.2",
+          "note": "Official repository now uses the name BiTacMan (formerly TAMEn); paper record remains TAMEn. NOKOV markers support precision capture; quick-swap VR controllers support portable capture and AR recovery. BiTacAR teleoperation code is released under Apache-2.0. CAD and policy training remain on the roadmap. Official HF now contains 724 indexed trajectories with four synchronized MP4 files per CSV across four tasks; GitHub dataset TODO is stale."
+        }
+      ],
+      "corrections": [
+        "Official repository now uses the name BiTacMan (formerly TAMEn); paper record remains TAMEn.",
+        "NOKOV markers support precision capture; quick-swap VR controllers support portable capture and AR recovery.",
+        "BiTacAR teleoperation code is released under Apache-2.0. CAD and policy training remain on the roadmap.",
+        "Official HF now contains 724 indexed trajectories with four synchronized MP4 files per CSV across four tasks; GitHub dataset TODO is stale."
+      ]
+    },
+    "2604.10647": {
+      "id": "2604.10647",
+      "name": "OmniUMI",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Vive tracker",
+      "vision": "Fisheye RGB + depth camera",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Tactile",
+        "Force",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Vision-based fingertip sensing"
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "6-axis external wrench sensor"
+      },
+      "actionSpace": "End-effector motion + gripper / force-aware targets",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "Vive tracker",
+        "vision": "Fisheye RGB + depth camera",
+        "actions": "End-effector motion + gripper / force-aware targets"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.10647",
+          "section": "§§3.3–3.5; Fig.2",
+          "note": "One shared handheld/robot gripper embodiment synchronizes vision, depth, tactile, pose, grasp-force estimates and 6-axis external wrench. Internal grasping force is estimated from motor current/transmission dynamics; it is not an additional fingertip load cell. Hardware diagram labels Vive tracker and 6-axis force sensor. The official project links a paper but no downloadable code/CAD at audit time."
+        }
+      ],
+      "corrections": [
+        "One shared handheld/robot gripper embodiment synchronizes vision, depth, tactile, pose, grasp-force estimates and 6-axis external wrench.",
+        "Internal grasping force is estimated from motor current/transmission dynamics; it is not an additional fingertip load cell.",
+        "Hardware diagram labels Vive tracker and 6-axis force sensor. The official project links a paper but no downloadable code/CAD at audit time."
+      ]
+    },
+    "2511.09302": {
+      "id": "2511.09302",
+      "name": "Cloud-UMI / UMIGen",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "RealSense T265 VIO",
+      "vision": "RealSense L515 RGB-D / point cloud",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "6-DoF end-effector pose + gripper command",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "RealSense T265 VIO",
+        "vision": "RealSense L515 RGB-D / point cloud",
+        "actions": "6-DoF end-effector pose + gripper command"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2511.09302",
+          "section": "§III-A; Fig.1c",
+          "note": "Cloud-UMI is the paper's collector; UMIGen is its point-cloud augmentation/learning framework. Intel RealSense L515 captures RGB-D / point clouds; T265 provides tracking. “No visual SLAM” refers to avoiding the original offline UMI pipeline, not removing T265 VIO. Flexible passive fingers are not measured tactile or force channels. For the card, use the Cloud-UMI device panel within official Figure1 (crop provided), rather than the complete generation pipeline."
+        }
+      ],
+      "corrections": [
+        "Cloud-UMI is the paper's collector; UMIGen is its point-cloud augmentation/learning framework.",
+        "Intel RealSense L515 captures RGB-D / point clouds; T265 provides tracking. “No visual SLAM” refers to avoiding the original offline UMI pipeline, not removing T265 VIO.",
+        "Flexible passive fingers are not measured tactile or force channels.",
+        "For the card, use the Cloud-UMI device panel within official Figure1 (crop provided), rather than the complete generation pipeline."
+      ]
+    },
+    "2605.20894": {
+      "id": "2605.20894",
+      "name": "Mobile UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld / Wearable / Mobile",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "poseTracking": "OpenVINS + ChArUco spatial anchor",
+      "vision": "Chest + wrist Orbbec Gemini 2L RGB",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "SE(2) base + chest-relative SE(3) hand + gripper",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "Handheld / Wearable / Mobile",
+        "tracking": "OpenVINS + ChArUco spatial anchor",
+        "vision": "Chest + wrist Orbbec Gemini 2L RGB",
+        "actions": "SE(2) base + chest-relative SE(3) hand + gripper"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2605.20894",
+          "section": "§III-A–D; Fig.1",
+          "note": "Two Orbbec Gemini 2L camera-IMU nodes capture chest and hand; only RGB and IMU are claimed from the RGB-D capable sensor. OpenVINS estimates each pose, with a stationary ChArUco board aligning frames; chest-relative actions separate walking from manipulation. Study reports 450 demonstrations across four tasks. No public downloadable dataset or executable code was found in the paper. Hardware view is the left operator/gripper panel of Fig.1; whole figure is retained for context."
+        }
+      ],
+      "corrections": [
+        "Two Orbbec Gemini 2L camera-IMU nodes capture chest and hand; only RGB and IMU are claimed from the RGB-D capable sensor.",
+        "OpenVINS estimates each pose, with a stationary ChArUco board aligning frames; chest-relative actions separate walking from manipulation.",
+        "Study reports 450 demonstrations across four tasks. No public downloadable dataset or executable code was found in the paper.",
+        "Hardware view is the left operator/gripper panel of Fig.1; whole figure is retained for context."
+      ]
+    },
+    "2609.22829": {
+      "id": "2609.22829",
+      "name": "Whole-Body UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld / Mobile",
+      "interfaceForms": [
+        "Handheld",
+        "Mobile"
+      ],
+      "poseTracking": "Native UMI trajectories",
+      "vision": "Wrist RGB",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "End-effector trajectories → whole-body references",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "UMI collection / humanoid deployment",
+        "tracking": "Native UMI trajectories",
+        "vision": "Wrist RGB",
+        "actions": "End-effector trajectories → whole-body references"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.22829",
+          "section": "§III-A; §III-C; teaser Fig.1",
+          "note": "Deployment and motion-generation framework, not a newly designed collector. Native UMI task data are combined with independent retargeted mocap. The official teaser shows actual UMI collection, generated motion references and humanoid execution; do not describe all three columns as physical devices. Sensing/tracking not newly specified beyond native UMI wrist RGB and proprioception. No public executable code/CAD was located."
+        }
+      ],
+      "corrections": [
+        "Deployment and motion-generation framework, not a newly designed collector. Native UMI task data are combined with independent retargeted mocap.",
+        "The official teaser shows actual UMI collection, generated motion references and humanoid execution; do not describe all three columns as physical devices.",
+        "Sensing/tracking not newly specified beyond native UMI wrist RGB and proprioception. No public executable code/CAD was located."
+      ]
+    },
+    "2610.08220": {
+      "id": "2610.08220",
+      "name": "VOMMI",
+      "verified": "2026-10-16",
+      "form": "Handheld / Wearable / Mobile",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "poseTracking": "RGB-based R2-VO; offline reference supervision",
+      "vision": "Chest + wrist fisheye RGB",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "SE(2) base + local SE(3) hand + gripper",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "Handheld / Wearable / Mobile",
+        "tracking": "RGB-based R2-VO; offline reference supervision",
+        "vision": "Chest + wrist fisheye RGB",
+        "actions": "SE(2) base + local SE(3) hand + gripper"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.08220",
+          "section": "§III-A; §V; Fig.2",
+          "note": "RGB-only body and hand views drive the proposed reconstruction and mobile policy. Collection-time sensor-derived reference trajectories are privileged supervision; the paper does not establish their sensor models and they are not deployment policy inputs. Do not add IMU or depth modality merely because compared portable systems use those sensors. Paper Fig.2 shows the collector operator and UMI-style gripper; crop the left collector panel for the hardware card."
+        }
+      ],
+      "corrections": [
+        "RGB-only body and hand views drive the proposed reconstruction and mobile policy.",
+        "Collection-time sensor-derived reference trajectories are privileged supervision; the paper does not establish their sensor models and they are not deployment policy inputs.",
+        "Do not add IMU or depth modality merely because compared portable systems use those sensors.",
+        "Paper Fig.2 shows the collector operator and UMI-style gripper; crop the left collector panel for the hardware card."
+      ]
+    },
+    "2506.09494": {
+      "id": "2506.09494",
+      "name": "Agricultural UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "External ArUco + onboard IMU EKF",
+      "vision": "GoPro fisheye + two external cameras",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "End-effector trajectories + gripper width",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "External ArUco + onboard IMU EKF",
+        "vision": "GoPro fisheye + two external cameras",
+        "actions": "End-effector trajectories + gripper width"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2506.09494",
+          "section": "§§2–4; Fig.1",
+          "note": "UMI adaptation adds frontal lighting, gripper markers and two external cameras for agricultural capture. EKF fuses onboard GoPro inertial measurements with external ArUco localization; this setup is not external-tracker-free. The paper reports an additional EUR600 for external cameras/parts/lights and a total budget below EUR900; not a standalone collector sale price. Study validates continuous apple-harvesting segmentation and trajectory estimation, not a separately released robot-policy training dataset."
+        }
+      ],
+      "corrections": [
+        "UMI adaptation adds frontal lighting, gripper markers and two external cameras for agricultural capture.",
+        "EKF fuses onboard GoPro inertial measurements with external ArUco localization; this setup is not external-tracker-free.",
+        "The paper reports an additional EUR600 for external cameras/parts/lights and a total budget below EUR900; not a standalone collector sale price.",
+        "Study validates continuous apple-harvesting segmentation and trajectory estimation, not a separately released robot-policy training dataset."
+      ],
+      "cost": {
+        "value": "<900",
+        "currency": "EUR",
+        "scope": "Total experimental acquisition setup; paper estimate, not retail",
+        "source": "https://arxiv.org/html/2506.09494"
+      }
+    },
+    "2603.17189": {
+      "id": "2603.17189",
+      "name": "UMI Gripper Design Study",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "None in user-study apparatus",
+      "vision": "None in user-study apparatus",
+      "observationSignals": [],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "Manual gripper mechanics only",
+      "hardwareAvailability": "Paper only / not verified",
+      "display": {
+        "form": "UMI mechanical user study",
+        "tracking": "None in user-study apparatus",
+        "vision": "None in user-study apparatus",
+        "actions": "Manual gripper mechanics only"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.17189",
+          "section": "§II-B; §III; §VI; Fig.2",
+          "note": "A mechanical user study of UMI finger load paths, not a complete released demonstration collection system. Authors explicitly removed cameras during the user study and state sensors/markers required for end-to-end data collection were absent. Do not assign original UMI Vision/IMU/state channels to the tested apparatus. Rigid PLA fingers and revised mounts enable thin-bandage grasping; the diagram contrasts original and modified finger mounting."
+        }
+      ],
+      "corrections": [
+        "A mechanical user study of UMI finger load paths, not a complete released demonstration collection system.",
+        "Authors explicitly removed cameras during the user study and state sensors/markers required for end-to-end data collection were absent.",
+        "Do not assign original UMI Vision/IMU/state channels to the tested apparatus.",
+        "Rigid PLA fingers and revised mounts enable thin-bandage grasping; the diagram contrasts original and modified finger mounting."
+      ]
+    },
+    "2610.19839": {
+      "id": "2610.19839",
+      "name": "FOMI",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Lighthouse 6-DoF pose tracker",
+      "vision": "Wrist fisheye RGB",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null
+      },
+      "actionSpace": "Relative end-effector pose + gripper command",
+      "hardwareAvailability": "Coming soon",
+      "display": {
+        "form": "Handheld",
+        "tracking": "Lighthouse 6-DoF pose tracker",
+        "vision": "Wrist fisheye RGB",
+        "actions": "Relative end-effector pose + gripper command"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.19839",
+          "section": "§§3.1–3.2; Fig.3",
+          "note": "Scissor-shaped links physically transmit interaction forces to the operator without measuring them. Mechanical feedback is not a force or tactile observation channel. Hardware records fisheye RGB, Lighthouse 6-DoF poses and two AS5047P magnetic rotary encoders for aperture. Project Code/CAD buttons are placeholders, and paper explicitly says hardware designs, code and datasets will be released. Maximum opening84.9mm is collector travel, not a mass or force measurement."
+        }
+      ],
+      "corrections": [
+        "Scissor-shaped links physically transmit interaction forces to the operator without measuring them. Mechanical feedback is not a force or tactile observation channel.",
+        "Hardware records fisheye RGB, Lighthouse 6-DoF poses and two AS5047P magnetic rotary encoders for aperture.",
+        "Project Code/CAD buttons are placeholders, and paper explicitly says hardware designs, code and datasets will be released.",
+        "Maximum opening84.9mm is collector travel, not a mass or force measurement."
+      ]
+    },
+    "resource-2f993dd610": {
+      "id": "resource-2f993dd610",
+      "name": "FastUMI Go",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Via attached UMI devices",
+      "vision": "Via attached Pro / Ego cameras",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Pose + gripper width (with Pro)",
+      "hardwareAvailability": "Commercial workstation; design source not verified",
+      "display": {
+        "form": "Wearable",
+        "tracking": "Via attached UMI devices",
+        "vision": "Via attached Pro / Ego cameras",
+        "actions": "Pose + gripper width (with Pro)"
+      },
+      "evidence": [
+        {
+          "url": "https://www.lumosbot.tech/products/fastumi-go/",
+          "section": "System modules, hardware interfaces and system configurations"
+        },
+        {
+          "url": "https://www.lumosbot.tech/about/",
+          "section": "Company development milestones",
+          "note": "2026.02 — FastUMI Go launched"
+        }
+      ],
+      "mass": {
+        "value": 4415,
+        "unit": "g",
+        "scope": "Complete backpack workstation; excludes attached grippers",
+        "shortScope": "backpack workstation"
+      }
+    },
+    "resource-d213114dfe": {
+      "id": "resource-d213114dfe",
+      "name": "MEgo Gripper",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Visual-inertial; Pico on Ultra",
+      "vision": "Three RGB cameras + depth",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Audio",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Quick-change 3D tactile fingertips"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + gripper width",
+      "hardwareAvailability": "Design source not verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "Visual-inertial; Pico on Ultra",
+        "vision": "Three RGB cameras + depth",
+        "actions": "6-DoF pose + gripper width"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maniformer.net/mego",
+          "section": "MEgo Gripper core parameters and output data"
+        },
+        {
+          "url": "https://www.maniformer.net/support/mego-gripper-manual-cn",
+          "section": "Versions, standard kit and replaceable tactile fingertips"
+        }
+      ],
+      "mass": {
+        "value": 540,
+        "unit": "g",
+        "scope": "Standard gripper; Ultra gripper 587 g",
+        "shortScope": "Standard gripper"
+      }
+    },
+    "resource-bb0d12f59d": {
+      "id": "resource-bb0d12f59d",
+      "name": "LivUMI",
+      "verified": "2026-10-16",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Visual-inertial pose",
+      "vision": "Stereo + wide-angle RGB",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "optional",
+        "type": "Optional tactile fingertips"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF pose + gripper width",
+      "hardwareAvailability": "Design source not verified",
+      "display": {
+        "form": "Handheld",
+        "tracking": "Visual-inertial pose",
+        "vision": "Stereo + wide-angle RGB",
+        "actions": "6-DoF pose + gripper width"
+      },
+      "evidence": [
+        {
+          "url": "https://www.livsynrobotics.com/products/umi",
+          "section": "Current product specifications"
+        },
+        {
+          "url": "https://www.livsynrobotics.com/en/products/umi",
+          "section": "Specifications and optional tactile force resolution"
+        }
+      ]
+    },
+    "resource-c74de7b8fe": {
+      "id": "resource-c74de7b8fe",
+      "name": "UMI-Dex",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "ORB-SLAM3 stereo-inertial",
+      "vision": "D455 stereo IR + D405 RGB",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Fingertip tactile sensors"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Wrist pose + six hand joints",
+      "hardwareAvailability": "STEP mechanics + PCB fabrication exports",
+      "display": {
+        "form": "Wearable",
+        "tracking": "ORB-SLAM3 stereo-inertial",
+        "vision": "D455 stereo IR + D405 RGB",
+        "actions": "Wrist pose + six hand joints"
+      },
+      "evidence": [
+        {
+          "url": "https://github.com/linker-bot/umi-dex",
+          "section": "Architecture: ROS2 recording and Python offline processing"
+        },
+        {
+          "url": "https://github.com/linker-bot/umi-dex/tree/main/hardware",
+          "section": "L6 6-DoF serial encoder glove and three PCBs"
+        },
+        {
+          "url": "https://www.linkedin.com/pulse/linkerbot-cvpr-2026-from-dexterous-hands-data-ecosystem-how-4qgsc",
+          "section": "UMI-Dex: Fix the Problem at the Source"
+        }
+      ]
+    },
+    "resource-72e4f601d7": {
+      "id": "resource-72e4f601d7",
+      "name": "Aero UMI",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Optical-inertial wrist pose",
+      "vision": "Head stereo RGB + ToF; wrist optional",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "3-axis finger + palm contact arrays"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Wrist pose + fifteen encoded joints",
+      "hardwareAvailability": "Design source not verified",
+      "display": {
+        "form": "Wearable",
+        "tracking": "Optical-inertial wrist pose",
+        "vision": "Head stereo RGB + ToF; wrist optional",
+        "actions": "Wrist pose + fifteen encoded joints"
+      },
+      "evidence": [
+        {
+          "url": "https://chestnut.bot/aero-umi.html",
+          "section": "Technical specifications: wearable, head unit and synchronization"
+        },
+        {
+          "url": "https://chestnut.bot/aero-system.html",
+          "section": "Availability FAQ: first production batch expected late October 2026"
+        },
+        {
+          "url": "https://www.linkedin.com/pulse/irosdoing-boring-things-new-sexy-robotics-chestnutbot-khecc",
+          "section": "Aero UMI and Aero Hand co-design and direct joint mapping"
+        }
+      ],
+      "mass": {
+        "value": 320,
+        "unit": "g",
+        "scope": "Aero UMI wearable only; head module 240 g separately",
+        "shortScope": "wearable module"
+      }
+    },
+    "resource-e545c4ab38": {
+      "id": "resource-e545c4ab38",
+      "name": "MEgo View",
+      "verified": "2026-10-16",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Visual-inertial trajectory + body pose",
+      "vision": "Five head cameras; two wrist optional",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "IMU",
+        "Audio",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Human pose; gripper state with Gripper",
+      "hardwareAvailability": "Design source not verified",
+      "display": {
+        "form": "Wearable",
+        "tracking": "Visual-inertial trajectory + body pose",
+        "vision": "Five head cameras; two wrist optional",
+        "actions": "Human pose; gripper state with Gripper"
+      },
+      "evidence": [
+        {
+          "url": "https://www.maniformer.net/mego",
+          "section": "MEgo View independent product, core specifications and output data"
+        },
+        {
+          "url": "https://www.maniformer.net/support/mego-view-cn-8eynke",
+          "section": "Product use configurations and synchronized MEgo Ego + MEgo Gripper recording"
+        }
+      ]
+    },
+    "resource-9bdb86524b": {
+      "id": "resource-9bdb86524b",
+      "name": "SenseXperience UMI",
+      "verified": "2026-10-16",
+      "form": "Handheld UMI + optional head/wrist modules",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "poseTracking": "Post-processed head VIO and gripper pose; magnetic aperture encoder",
+      "vision": "170° gripper RGB; modular stereo ego and wrist RGB",
+      "actionSpace": "Recovered head/gripper pose and measured aperture",
+      "observationSignals": [
+        "Vision",
+        "Audio",
+        "IMU",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Baseline captures image, raw IMU, encoder aperture and microphone audio. Pose is post-processed; optional depth visualization is not a verified depth sensor. This is a collection product, not a specified learned-policy observation schema.",
+      "tactile": {
+        "status": "optional",
+        "type": null,
+        "note": "Tactile is an optional customizable expansion. Baseline specifications do not establish an installed tactile sensor."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "Not specified for this named hardware configuration; absence is not inferred."
+      },
+      "hardwareAvailability": "Manufacturer solution; complete reproducible design release not verified.",
+      "cost": null,
+      "mass": {
+        "value": 160,
+        "tolerance": 5,
+        "unit": "g",
+        "scope": "One UMI gripper acquisition module, manufacturer specification; excludes Ego, Wrist, Compute and cabling.",
+        "shortScope": "one UMI module"
+      },
+      "display": {
+        "form": "Handheld UMI + optional head/wrist modules",
+        "tracking": "Post-processed head VIO and gripper pose; magnetic aperture encoder",
+        "vision": "170° gripper RGB; modular stereo ego and wrist RGB",
+        "actions": "Recovered head/gripper pose and measured aperture"
+      },
+      "evidence": [
+        {
+          "url": "https://io-ai.tech/en/sensexperience/specs/",
+          "section": "UMI/Wrist/Ego/Compute module specifications",
+          "note": "UMI module is 160 ± 5 g per hand. Its RGB camera is 170° at 30 Hz; magnetic encoder and IMU transmit at 240 Hz; microphone has two channels."
+        },
+        {
+          "url": "https://io-ai.tech/sensexperience/docs/reference-data-format/",
+          "section": "Capture MCAP topics and post-processing topics",
+          "note": "Raw images/IMU/joint state/PCM audio are distinguished from post-processed gripper/head pose. Optional depth visualization does not establish physical depth hardware."
+        },
+        {
+          "url": "https://io-ai.tech/en/sensexperience/",
+          "section": "Overview and modular configurations",
+          "note": "Tactile sensing is a customizable expansion, not established as baseline hardware."
+        },
+        {
+          "url": "https://io-ai.tech/zh/news/sensexperience-real-world-data-collection-solution/",
+          "section": "Manufacturer launch article dated 2026-02-05"
+        }
+      ]
+    },
+    "resource-068a8ea0a3": {
+      "id": "resource-068a8ea0a3",
+      "name": "HIT UMI tactile collection solution",
+      "verified": "2026-10-16",
+      "form": "Handheld UMI demonstration rig",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "VR hand tracking; tracker model unspecified",
+      "vision": "Wrist RGB cameras visible in official rig; model/rate unspecified",
+      "actionSpace": "Hand-motion mapping and tactile data capture; numeric export unspecified",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "The UMI solution explicitly acquires tactile data and tracked hand motion. Camera hardware is visible in its official physical demonstration photograph. Exact output schema and policy input use are not documented.",
+      "tactile": {
+        "status": "present",
+        "type": "Tactile sensing; installed sensor model/type unspecified",
+        "note": "Official UMI section explicitly describes high-precision tactile data acquisition; broader electronic-skin specifications must not be applied to this rig."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "Not specified for this named hardware configuration; absence is not inferred."
+      },
+      "hardwareAvailability": "Manufacturer solution; complete reproducible design release not verified.",
+      "cost": null,
+      "mass": null,
+      "display": {
+        "form": "Handheld UMI demonstration rig",
+        "tracking": "VR hand tracking; tracker model unspecified",
+        "vision": "Wrist RGB cameras visible in official rig; model/rate unspecified",
+        "actions": "Hand-motion mapping and tactile data capture; numeric export unspecified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.hbwhhit.com/news/waic-2026-direct-hit-unveils-next-gen-tactile-85599619.html",
+          "section": "Section 4: UMI High-Precision Data Collection",
+          "note": "Official manufacturer describes a named UMI tactile collection solution using VR hand tracking and dexterous-hand mapping. The associated official image shows its physical two-gripper acquisition demo. Specific camera/tracker/tactile models and force-transducer configuration are not published."
+        }
+      ]
+    },
+    "resource-225e063303": {
+      "id": "resource-225e063303",
+      "name": "QUANXTA Zero-G1",
+      "verified": "2026-10-16",
+      "form": "VIO headband + dual handheld grippers",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable",
+        "Mobile"
+      ],
+      "poseTracking": "UMI-VIO; specific VIO sensor model unpublished",
+      "vision": "Head/ego and wrist multi-view RGB",
+      "actionSpace": "Bimanual manipulation trajectories; numeric command encoding unpublished",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Audio",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Manufacturer confirms G1 visual, tactile and audio capture with head/wrist coverage and mobile bimanual behavior recording. VIO uses inertial information internally; no independently exported raw-IMU channel is established. Whole-body behavior marketing does not establish a dense lower-body-joint stream.",
+      "tactile": {
+        "status": "present",
+        "type": "Tactile sensor configuration unspecified",
+        "note": "Manufacturer explicitly states G1 captures tactile data. Sensor principle and force calibration are not published."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "Not specified for this named hardware configuration; absence is not inferred."
+      },
+      "hardwareAvailability": "Manufacturer solution; complete reproducible design release not verified.",
+      "cost": null,
+      "mass": null,
+      "display": {
+        "form": "VIO headband + dual handheld grippers",
+        "tracking": "UMI-VIO; specific VIO sensor model unpublished",
+        "vision": "Head/ego and wrist multi-view RGB",
+        "actions": "Bimanual manipulation trajectories; numeric command encoding unpublished"
+      },
+      "evidence": [
+        {
+          "url": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+          "section": "Official launch 2026-07-02: G1 hardware and modalities",
+          "note": "G1 is the UMI-VIO headband/dual-gripper product, with visual, tactile and audio capture. Synchronization within 1 ms is attributed to G1. No tactile model, dedicated F/T sensor, mass or price is given."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/x-square-robot-launches-quanxta-zero-series-reframing-embodied-data-production-through-universal-manipulation-interfaces-302818902.html",
+          "section": "Company-provided press release and downloadable original product-family rendering",
+          "note": "SOURCE X Square Robot. Official family hardware illustration depicts a headband and two handheld grippers; caption labels the series rather than an individually serialized G1 unit."
+        }
+      ]
+    },
+    "resource-19bc81793e": {
+      "id": "resource-19bc81793e",
+      "name": "UMI ver.2",
+      "verified": "2026-10-16",
+      "form": "Single or dual handheld grippers with external optical base stations",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "HTC Vive Tracker 3.0 + two 1.0 base stations via libsurvive",
+      "vision": "180° fisheye RGB, 1440×1080 at 30 Hz",
+      "actionSpace": "Tracked 6-DoF pose and potentiometer-measured gripper aperture",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Collector synchronizes RGB, optical tracker pose and sliding-potentiometer aperture at 30 Hz. Internal Vive IMU does not establish a separate raw-IMU recording channel. Exact policy observation structure is downstream-model dependent.",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "Not specified for this named hardware configuration; absence is not inferred."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "Not specified for this named hardware configuration; absence is not inferred."
+      },
+      "hardwareAvailability": "Public capture/training source; full CAD and electronics design release unverified.",
+      "cost": null,
+      "mass": null,
+      "display": {
+        "form": "Single or dual handheld grippers with external optical base stations",
+        "tracking": "HTC Vive Tracker 3.0 + two 1.0 base stations via libsurvive",
+        "vision": "180° fisheye RGB, 1440×1080 at 30 Hz",
+        "actions": "Tracked 6-DoF pose and potentiometer-measured gripper aperture"
+      },
+      "evidence": [
+        {
+          "url": "https://github.com/qiongming-intelligence/UMI",
+          "section": "Public source repository and root AGPL-3.0 LICENSE",
+          "note": "Acquisition and training Python source is present, including scripts/record/record_umi.py. This does not establish a complete open-hardware CAD/BOM release."
+        },
+        {
+          "url": "https://www.cnblogs.com/ydzn/p/21220815",
+          "section": "Author account 穹明智能; release 2026-07-07",
+          "note": "Named UMI ver.2 handheld system specifies Vive Tracker 3.0, two 1.0 base stations, 180° fisheye at 1440×1080/30 Hz, ESP32-S3 and a sliding potentiometer for aperture. Synchronized collection is 30 Hz."
+        },
+        {
+          "url": "https://damodev.csdn.net/6a4cccd4662f9a54cb8aa502.html",
+          "section": "Same company-authored release and embedded deployment video",
+          "note": "Embedded 7.84-second video shows robot deployment only; rejected as a human collector gallery cover."
+        }
+      ]
+    }
+  },
+  "observationSignalsDefinition": "Collector-recorded sensor channels and recovered state outputs verified from primary sources, not necessarily deployed-policy observations. Proprioception includes explicitly recorded/recovered pose, aperture, encoder or joint state. Raw IMU requires evidence of an exposed/recorded channel; tracker internals are insufficient. Audio used only for synchronization is explicitly noted.",
+  "interfaceFormsDefinition": "Source-backed collection-interface forms/modes; multiple values may describe different physical components or variants. These are not robot-deployment embodiment labels. Variant release conditions remain in hardwareAvailability/interfaceFormsNote."
+}

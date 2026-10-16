@@ -1,0 +1,1445 @@
+{
+  "schemaVersion": 1,
+  "reviewed": "2026-10-16",
+  "criteria": {
+    "open": "Verified hardware source with reuse rights plus licensed executable software.",
+    "partial": "Some reusable artifacts exist, but hardware/software is incomplete, externally licensed or noncommercial / unspecified.",
+    "closed": "Only when primary evidence explicitly establishes proprietary/restricted source; commercial sales alone never imply closed.",
+    "unknown": "No complete release status can be established from inspected primary sources."
+  },
+  "works": {
+    "2402.10329": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public build guide / CAD",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Official hardware is reproducible from linked build guides; rights for externally hosted CAD are not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/real-stanford/universal_manipulation_interface",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://umi-gripper.github.io/",
+          "section": "Hardware and assembly resources"
+        }
+      ]
+    },
+    "2409.19499": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Paper / build documentation",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Repository contains data-processing tools and an MIT license; a complete CAD release is not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/YdingTeam/FastUMI_Data",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2505.21864": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public CAD / PCB files",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Official tutorial offers both CAD variants, 3MF print projects, schematics, and Gerbers; the tutorial does not specify a separate hardware license."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/real-stanford/DexUMI",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://dex-umi.github.io/tutorial/hardware.html",
+          "section": "CAD / PCB / 3MF downloads"
+        }
+      ]
+    },
+    "2606.10244": {
+      "verified": "2026-10-16",
+      "status": "open",
+      "hardwareStatus": "Open hardware",
+      "softwareStatus": "Open source",
+      "hardwareLicense": "CERN-OHL-W-2.0",
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Hardware repository contains assembly STEP models and flanges under CERN-OHL-W-2.0; software is Apache-2.0."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/toyota/yubi-hw",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/airoa-org/yubi-sw",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2609.29760": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public build guide",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Root PolyUMI platform license is MIT; bundled third-party components retain their own licenses.",
+        "External build-guide CAD rights and completeness are not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/polyumi/PolyUMI-platform",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2504.06156": {
+      "verified": "2026-10-16",
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Public paper/project are not evidence of a complete reusable hardware or software release."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2504.06156",
+          "section": "III-A System Overview; III-B Data Processing",
+          "note": "Two AllTact fingers and sync camera connect to a battery-powered Raspberry Pi 5. GoPro IMU improves SLAM; ArUco markers recover aperture."
+        }
+      ]
+    },
+    "2511.05858": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public hardware documentation",
+      "softwareStatus": "Public code; license unclear",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Collection and training sources are public; no repository LICENSE file was found in the current tree.",
+        "Do not call an unlicensed public repository open source."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/chuanyune/ViTaMIn-B_code",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2601.14550": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public 3D-print files",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Official repository provides printable-model ZIP downloads but no LICENSE.",
+        "The canonical repository is the project website; its presence does not itself establish executable collection/training code."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/Tac-UMI/TacUMI",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2601.09988": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public hardware build guide",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Code and build instructions are released; standalone rights for externally linked hardware source files are not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/real-stanford/UMI-FT",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2609.11753": {
+      "verified": "2026-10-16",
+      "status": "unknown",
+      "hardwareStatus": "Not released / not verified",
+      "softwareStatus": "Documentation only",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Current repository tree contains project-page assets and paper; no CAD or executable collection/training implementation was found."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/Tengbo-Yu/SEED-UMI",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2609.22809": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Open chopsticks hardware",
+      "softwareStatus": "Documentation only",
+      "hardwareLicense": "Apache-2.0",
+      "softwareLicense": null,
+      "notes": [
+        "Apache-2.0 source includes chopsticks STEP / 3MF, ego-camera housing, and robot mounts.",
+        "Parallel-jaw / bare-wrist variants and executable software remain marked Coming Soon in the inspected sources."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/TToTMooN/KIWI_hardware",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/TToTMooN/KIWI_software",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2607.25895": {
+      "verified": "2026-10-16",
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Dataset publication does not establish hardware-source or collection-software availability."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2607.25895",
+          "section": "3.1.1–3.1.4; 5",
+          "note": "Head trajectory and marker-relative hand poses compose globally consistent wrist trajectories. Gripper encoders and head/hand IMUs share GPIO timing. Full-palm morphology preserves natural sensation but no measured tactile channel is established."
+        }
+      ]
+    },
+    "2606.06033": {
+      "verified": "2026-10-16",
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Commercial U1 relationship and research project do not establish an open design/source release.",
+        "Manufacturer identifies U1 as Real DexUMI; keep commercial U1 specifications scoped to this product variant."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.06033",
+          "section": "3.1–3.4; 4.1",
+          "note": "Wearable module includes real robot hand; human fingers operate an isomorphic glove with magnetic encoders. Objects contact the robot fingertips, not human fingers."
+        },
+        {
+          "url": "https://beingbeyond.com/solutions/U1",
+          "section": "Official U1 product solution page"
+        },
+        {
+          "url": "https://beingbeyond.com/newsInfo/1195.html",
+          "section": "Manufacturer launch, 2026-03-18",
+          "note": "U1 is explicitly called Real DexUMI. Its end-effector mass is 680 g with 11 joints: six active and five passive. Finger pads on all five fingers include tactile sensors."
+        }
+      ],
+      "commercial": true,
+      "productName": "BeingBeyond U1",
+      "productURL": "https://beingbeyond.com/solutions/U1",
+      "availability": "Commercial product",
+      "commercialVariants": [
+        {
+          "name": "BeingBeyond U1",
+          "company": "BeingBeyond / 智在无界",
+          "url": "https://beingbeyond.com/solutions/U1",
+          "date": "2026-03-18",
+          "dateSource": "https://beingbeyond.com/newsInfo/1195.html",
+          "mass": {
+            "value": 680,
+            "unit": "g",
+            "scope": "U1 end effector, manufacturer specification; not the complete collector plus tracking equipment."
+          },
+          "joints": {
+            "total": 11,
+            "active": 6,
+            "passive": 5
+          },
+          "tactile": {
+            "status": "present",
+            "type": "Five finger-pad tactile sensors; transduction type unspecified by product page"
+          },
+          "forceTorque": {
+            "status": "unknown",
+            "type": null,
+            "note": "Not specified for this named hardware configuration; absence is not inferred."
+          },
+          "tracking": "Dynamic tracking; product tracker model unspecified",
+          "accuracyClaim": {
+            "maximumDynamicError": "<1 mm",
+            "meanDynamicError": "<0.1 mm",
+            "scope": "Manufacturer system-test claim; test protocol/conditions not provided on product page."
+          },
+          "price": null,
+          "hardwareRelease": "unknown",
+          "softwareRelease": "unknown",
+          "evidence": [
+            {
+              "url": "https://beingbeyond.com/solutions/U1",
+              "section": "Official U1 product solution page"
+            },
+            {
+              "url": "https://beingbeyond.com/newsInfo/1195.html",
+              "section": "Manufacturer launch, 2026-03-18",
+              "note": "U1 is explicitly called Real DexUMI. Its end-effector mass is 680 g with 11 joints: six active and five passive. Finger pads on all five fingers include tactile sensors."
+            }
+          ],
+          "media": {
+            "image": "images/catalog/2606.06033-product.webp",
+            "source": "https://qiniu.mfdemo.cn/zhizaiwujie/2026/03/23/69c0e05821aa3.webp",
+            "page": "https://beingbeyond.com/en/newsInfo/1196.html",
+            "alt": "BeingBeyond U1 physical hand module operated through its palm interface",
+            "type": "Official hardware photograph"
+          }
+        }
+      ]
+    },
+    "2604.14089": {
+      "verified": "2026-10-16",
+      "status": "open",
+      "hardwareStatus": "Open hardware",
+      "softwareStatus": "Open source",
+      "hardwareLicense": "Apache-2.0",
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Hardware repository publishes build guide, BOM and CAD/print files under Apache-2.0; policy software is Apache-2.0 and dataset repository MIT."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Policy",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Hardware",
+          "section": "Hardware design / CAD / LICENSE"
+        }
+      ]
+    },
+    "2509.14688": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public CAD / build guide",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "MIT code is verified; official project links print CAD and assembly guide, but externally hosted CAD license is not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/silicx/exUMI",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://silicx.github.io/exUMI/",
+          "section": "Hardware CAD / assembly links"
+        }
+      ]
+    },
+    "2507.15062": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Research-only tactile hardware",
+      "softwareStatus": "Open source",
+      "hardwareLicense": "CC-BY-NC-4.0",
+      "softwareLicense": "MIT",
+      "notes": [
+        "Software code is MIT; FlexiTac hardware license is CC BY-NC 4.0, restricting commercial reuse.",
+        "The hardware-specific README license takes priority over a broad MIT repository badge."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/YolandaXinyueZhu/touch_in_the_wild",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/YolandaXinyueZhu/touch_in_the_wild-data-collection",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/YolandaXinyueZhu/touch_in_the_wild-data-collection#license",
+          "section": "FlexiTac hardware CC BY-NC 4.0"
+        }
+      ]
+    },
+    "2406.19464": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public hardware build guide",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "MIT code and official contact-microphone assembly instructions are public; independent hardware source license is not verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/real-stanford/maniwav",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2608.29601": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Research license",
+      "hardwareLicense": null,
+      "softwareLicense": "CC-BY-NC-SA-4.0",
+      "notes": [
+        "Root repository license is CC BY-NC-SA 4.0, not an unrestricted open-source license.",
+        "Subdirectories may carry different licenses; the root label does not establish full TacUMI hardware availability."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/neoteai/N0-Foundation",
+          "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/neoteai/N0-Foundation/blob/main/LICENSE",
+          "section": "Root CC BY-NC-SA 4.0 license"
+        }
+      ]
+    },
+    "2506.01941": {
+      "verified": "2026-10-16",
+      "status": "partial",
+      "hardwareStatus": "Public assembly guide",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Collection/training code is Apache-2.0; external hardware-guide CAD rights and completeness are not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/OpenDriveLab/FreeTacMan",
+          "section": "Current source tree / repository license"
+        }
+      ]
+    },
+    "2610.12558": {
+      "verified": "2026-10-16",
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Project-page publication does not establish downloadable design or executable source availability."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.12558",
+          "section": "3 Data Collection Interface; 4 Contact-predictive policy",
+          "note": "Vive localizes modular FSR patches, head and wrists. Contacts are binarized against adaptive channel baselines and stored as N×4 state/location arrays. Robot executes goals without body contact sensors."
+        }
+      ]
+    },
+    "resource-3515d52be0": {
+      "status": "partial",
+      "hardwareStatus": "Public shell CAD; full design unverified",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Public STEP files describe external shells, not a complete reproducible hardware design.",
+        "Gripper SDK source is Apache-2.0; firmware is distributed as binaries without source.",
+        "Tactile-derived 3D forces / 6D resultants are not a dedicated force-torque sensor.",
+        "Collection workflow uses xense-taccap-lerobot, Apache-2.0; tactile SDK is distributed separately."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper",
+          "section": "SDK source and license"
+        }
+      ],
+      "commercial": true
+    },
+    "resource-e07d628c06": {
+      "status": "partial",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "The manual explicitly identifies the design as UMI-based.",
+        "SDKs are open source; no complete hardware design release verified.",
+        "Weight differs between the manual (520 g), specification page (490 g), and marketing text (450 g); use the manual value and retain version caveat."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/genrobot-ai/gen_controller_sdk_release",
+          "section": "SDK source and license"
+        }
+      ],
+      "commercial": true
+    },
+    "resource-46b114e148": {
+      "status": "partial",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Current manual lists 285 g; product marketing lists 300 g.",
+        "SDKs are MIT; no complete hardware design release verified.",
+        "The manual identifies raw capture and postprocessed VIO topics separately.",
+        "Ego audio is a companion-device stream; do not label the standalone Fingers unit as an audio sensor."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/genrobot-ai/gen_finger_con_python_sdk_release",
+          "section": "SDK source and license"
+        }
+      ],
+      "commercial": true
+    },
+    "resource-aee30f067d": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Vendor reports 23 DoF and a 200 Hz output rate.",
+        "No complete hardware design or device-specific open software release verified."
+      ],
+      "evidence": [],
+      "commercial": true
+    },
+    "resource-8d47a36123": {
+      "status": "partial",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "LGPL-3.0",
+      "notes": [
+        "Pika Sense is the handheld collector; Pika Gripper is the robot-side end effector.",
+        "Current official product page is branded Pika Pro and includes Ego / compute modules.",
+        "Public SDK is LGPL-3.0; complete hardware design not verified.",
+        "Tactile sensing is not specified for this unit on the current official page."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/agilexrobotics/pika_sdk",
+          "section": "SDK source and license"
+        }
+      ],
+      "commercial": true
+    },
+    "resource-bdec4666c2": {
+      "status": "partial",
+      "hardwareStatus": "Public reference drawings; complete source not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Public customer drawings do not establish a complete open hardware release.",
+        "Pricing and supplied GoPro configurations vary; do not imply the base kit includes cameras."
+      ],
+      "evidence": [],
+      "commercial": true
+    },
+    "resource-0ad4540dbf": {
+      "status": "partial",
+      "hardwareStatus": "Public 3D models; hardware license not verified",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Official page links gripper and tracker-mount 3D models.",
+        "MIT Axol SDK includes Mantis collection support; external hardware model rights are not verified.",
+        "Base price is a pair without cameras, compute, or pose trackers."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/almond-bot/axol",
+          "section": "SDK source and license"
+        }
+      ],
+      "commercial": true
+    },
+    "resource-60263449a3": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Tactile sensing is optional, not standard equipment.",
+        "Rotational/translational and portable/full-featured variants have different mass.",
+        "ROS/ROS2 compatibility does not establish an open-source software license.",
+        "Official first-party company timeline gives launch month. Pro rotational/translational, portable/full-feature variants remain one family."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.lumosbot.tech/about/",
+          "section": "Company development milestones",
+          "note": "2025.11 — FastUMI Pro launched"
+        }
+      ],
+      "commercial": true
+    },
+    "resource-a5f0f380d8": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Official page describes both Finger and Gripper form factors as a single UMI module family.",
+        "Product illustrations may differ from final configuration, as stated by manufacturer.",
+        "Platform-level tactile synchronization is not proof of tactile sensors in the UMI module.",
+        "Complete hardware source and device-specific software license not verified."
+      ],
+      "evidence": [],
+      "commercial": true
+    },
+    "resource-fd5070524c": {
+      "status": "open",
+      "hardwareStatus": "Open build files",
+      "softwareStatus": "Open source",
+      "hardwareLicense": "Apache-2.0",
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Hardware STL files, BOM, build instructions, and original software are Apache-2.0.",
+        "Headset application, third-party robot firmware, and optional dataset licenses remain separate.",
+        "Parts cost is approximately $104 per hand; headset excluded."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/murobotics-ai/handumi-hw",
+          "section": "Build instructions, source files, and Apache-2.0 license"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-sw",
+          "section": "Executable collection software and license"
+        }
+      ],
+      "commercial": false
+    },
+    "resource-af05253706": {
+      "status": "open",
+      "hardwareStatus": "Open build files",
+      "softwareStatus": "Open source",
+      "hardwareLicense": "Apache-2.0",
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Current default Gemini 305 configuration has no IMU; OAK-D SR alternative provides 200 Hz IMU.",
+        "Hardware image shows the OAK-D configuration.",
+        "Repository includes Apache-2.0 source/URDF/meshes, assembly guidance, and links native CAD; third-party materials retain separate licenses."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/pollen-robotics/grabette",
+          "section": "Build instructions, source files, and Apache-2.0 license"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette",
+          "section": "Executable collection software and license"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette/tree/develop/packages/grabette",
+          "section": "Current Gemini305 default and optional OAK-D SR sensor configurations"
+        }
+      ],
+      "commercial": false
+    },
+    "2410.07554": {
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper/project describe public CAD and code; component licenses not independently re-audited in this pass.",
+        "Approximately$50 covers printed parts and encoder, not the force sensor or complete system."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2410.07554",
+          "section": "§III-A hardware design; §III-B collection; bibliography[5]",
+          "note": "Hardware design explicitly develops ForceCapture from existing handheld motion devices[5,6]; reference5 is originalUMI. Wrench is added to pose/width demonstrations for robot transfer."
+        }
+      ],
+      "commercial": false
+    },
+    "2509.04441": {
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "DEXOP-7,9,12 have different fingers/DoF; do not collapse into a single12-DoF specification.",
+        "Passive mechanical contact feedback is not a dedicated wrist force-torque sensor."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2509.04441",
+          "section": "§2.2 related hardware; §§3.3–3.4 sensing/collection",
+          "note": "§2.2 explicitly states that DEXOP advances the passive-gripper direction represented byUMI into whole-hand manipulation; §3.4 supports hand pose viaUMI-style SLAM/IMU."
+        }
+      ],
+      "commercial": false
+    },
+    "2603.17851": {
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Sensor acquisition rates differ from exported alignment rates; avoid treating1000Hz tactile hardware sampling as uniform datasetFPS."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.17851",
+          "section": "Introduction; §III-A hardware; §III-C retargeting",
+          "note": "Introduction identifiesUMI low-DoF/contact limitations; §III designs a robot-free replacement with mirrored tactile/vision modalities and explicit hand/arm retargeting to robot action space."
+        }
+      ],
+      "commercial": false
+    },
+    "2603.17323": {
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Six analog encoders measure target passive hand joints; do not infer22-DoF human hand capture.",
+        "Passive contact feedback does not itself establish measured tactile/force sensor channels."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.17323",
+          "section": "§II-C; §III hardware; §IV-A collection",
+          "note": "§II explicitly contrastsDexUMI geometry/visual preprocessing; proposed passive hand matchesROHand geometry and trains directly from raw wristRGB; user study directly evaluatesDexUMI replacement."
+        }
+      ],
+      "commercial": false
+    },
+    "2604.15013": {
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Force data are motor joint torque, not a dedicated6-axis wrist sensor.",
+        "Paper states open hardware/software; inspected project page is a template, so license/artifact release remains unverified."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.15013",
+          "section": "§IV-F integration; §V-D downstream policy learning",
+          "note": "§V-D explicitly followsDexUMI policy architecture, replacing relative hand positions with absolute target-embodiment joints and tactile inputs with motor torques. Attached configuration places target hand on operator forearm."
+        }
+      ],
+      "commercial": false
+    },
+    "resource-be8bb4251c": {
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Research platform; no standalone purchasable product or complete source release verified.",
+        "Three controllable plus two underactuatedDoF are not five independently commandedDoF."
+      ],
+      "evidence": [
+        {
+          "url": "https://rai-inst.com/resources/blog/handheld-robotic-data-collection/",
+          "section": "The Evolution of Co-Designing Grippers; The Koala Platform",
+          "note": "Official article explicitly traces firstcapturedevice toUMI, then describesKoala as nextco-design with identical handheld/actuated geometry and sensor suite."
+        }
+      ],
+      "commercial": false
+    },
+    "2407.10353": {
+      "status": "partial",
+      "hardwareStatus": "Public assembly / 3D-printing guide",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Original UMI is the human collector; Unitree Go2 + ARX5 + iPhone is the deployment system, not a new handheld collector.",
+        "Repository includes source for WBC training/deployment, iPhone odometry and hardware assembly documentation.",
+        "Downloads provide preprocessed manipulation trajectories and WBC checkpoints; this is not a separately verified full RGB UMI dataset release."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/real-stanford/umi-on-legs",
+          "section": "README; real-wbc/docs; mani-centric-wbc/docs/starter.md"
+        },
+        {
+          "url": "https://github.com/real-stanford/umi-on-legs/blob/main/LICENSE",
+          "section": "MIT repository license"
+        }
+      ],
+      "commercial": false
+    },
+    "2604.13001": {
+      "status": "unknown",
+      "hardwareStatus": "Not released / not verified",
+      "softwareStatus": "README / figures only",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper G0 uses PICO 4 with a backpack and H/G physical grippers; do not apply later G1 headband/UMI-VIO specifications to this paper.",
+        "Tactile integration is future work in §6.2; preserving physical human contact is not a recorded tactile signal.",
+        "GitHub main tree contains only README and teaser images despite an MIT badge. No executable code or CAD was found.",
+        "Public dataset snapshot has 3,697 episodes in 20 task folders; paper describes a broader 2,000-hour / 3,000-task source corpus.",
+        "Commercial UMI-VR configuration uses a PICO 4 headset, two grippers and backpack. G1-specific tactile/audio claims are not assigned to G0."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/X-Square-Robot/XRZero-G0",
+          "section": "Current main tree: README.md and imgs only"
+        },
+        {
+          "url": "https://arxiv.org/html/2604.13001",
+          "section": "§3.1; §6.2",
+          "note": "PICO 4 collection architecture; tactile integration remains future work."
+        },
+        {
+          "url": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+          "section": "Official launch, 2026-07-02: product matrix",
+          "note": "QUANXTA Zero-G0 is the UMI-VR variant with PICO 4, dual grippers and backpack. The following tactile/audio and synchronization paragraphs explicitly discuss G1 and are not inherited into G0."
+        }
+      ],
+      "commercial": true,
+      "productName": "QUANXTA Zero-G0",
+      "productURL": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+      "availability": "Commercial product",
+      "commercialVariants": [
+        {
+          "name": "QUANXTA Zero-G0",
+          "company": "X Square Robot",
+          "url": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+          "date": "2026-07-02",
+          "form": "PICO 4 VR headset + dual handheld grippers + backpack",
+          "tactile": {
+            "status": "unknown",
+            "type": null,
+            "note": "Not specified for this named hardware configuration; absence is not inferred."
+          },
+          "forceTorque": {
+            "status": "unknown",
+            "type": null,
+            "note": "Not specified for this named hardware configuration; absence is not inferred."
+          },
+          "mass": null,
+          "price": null,
+          "hardwareRelease": "unknown for commercial edition; retain independently verified research release",
+          "softwareRelease": "unknown for commercial edition; retain independently verified research release",
+          "evidence": [
+            {
+              "url": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+              "section": "Official launch, 2026-07-02: product matrix",
+              "note": "QUANXTA Zero-G0 is the UMI-VR variant with PICO 4, dual grippers and backpack. The following tactile/audio and synchronization paragraphs explicitly discuss G1 and are not inherited into G0."
+            }
+          ]
+        }
+      ]
+    },
+    "2512.09851": {
+      "status": "open",
+      "hardwareStatus": "Public STEP / sensor models",
+      "softwareStatus": "Open source",
+      "hardwareLicense": "MIT (repository source files)",
+      "softwareLicense": "MIT",
+      "notes": [
+        "Shared collector/end-effector geometry integrates transparent vision-based TacThru tactile fingers.",
+        "Paper §4.2 records synchronized wrist vision, tactile and proprioception at 30 FPS. Archive suffix 120 is not used as the published training sample rate.",
+        "Repository provides sensor model and gripper STEP file under its MIT license; hardware guide linked from the official project."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/YuyangLee/TacThru",
+          "section": "README: data/tacthru models, scripts and utils"
+        },
+        {
+          "url": "https://github.com/YuyangLee/TacThru/blob/main/LICENSE",
+          "section": "MIT repository license"
+        }
+      ],
+      "commercial": false
+    },
+    "2604.07335": {
+      "status": "partial",
+      "hardwareStatus": "CAD coming soon",
+      "softwareStatus": "BiTacAR teleoperation code released",
+      "hardwareLicense": null,
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Official repository now uses the name BiTacMan (formerly TAMEn); paper record remains TAMEn.",
+        "NOKOV markers support precision capture; quick-swap VR controllers support portable capture and AR recovery.",
+        "BiTacAR teleoperation code is released under Apache-2.0. CAD and policy training remain on the roadmap.",
+        "Official HF now contains 724 indexed trajectories with four synchronized MP4 files per CSV across four tasks; GitHub dataset TODO is stale."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/OpenDriveLab/BiTacMan",
+          "section": "README TODO and source files"
+        },
+        {
+          "url": "https://github.com/OpenDriveLab/BiTacMan/blob/main/LICENSE.txt",
+          "section": "Apache-2.0"
+        },
+        {
+          "url": "https://huggingface.co/datasets/OpenDriveLab-org/BiTacMan",
+          "section": "Public MP4/CSV files and CC BY-NC-SA license"
+        }
+      ],
+      "commercial": false
+    },
+    "2604.10647": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "One shared handheld/robot gripper embodiment synchronizes vision, depth, tactile, pose, grasp-force estimates and 6-axis external wrench.",
+        "Internal grasping force is estimated from motor current/transmission dynamics; it is not an additional fingertip load cell.",
+        "Hardware diagram labels Vive tracker and 6-axis force sensor. The official project links a paper but no downloadable code/CAD at audit time."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2604.10647",
+          "section": "§§3.3–3.5; Fig.2",
+          "note": "One shared handheld/robot gripper embodiment synchronizes vision, depth, tactile, pose, grasp-force estimates and 6-axis external wrench. Internal grasping force is estimated from motor current/transmission dynamics; it is not an additional fingertip load cell. Hardware diagram labels Vive tracker and 6-axis force sensor. The official project links a paper but no downloadable code/CAD at audit time."
+        }
+      ],
+      "commercial": false
+    },
+    "2511.09302": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Cloud-UMI is the paper's collector; UMIGen is its point-cloud augmentation/learning framework.",
+        "Intel RealSense L515 captures RGB-D / point clouds; T265 provides tracking. “No visual SLAM” refers to avoiding the original offline UMI pipeline, not removing T265 VIO.",
+        "Flexible passive fingers are not measured tactile or force channels.",
+        "For the card, use the Cloud-UMI device panel within official Figure1 (crop provided), rather than the complete generation pipeline."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2511.09302",
+          "section": "§III-A; Fig.1c",
+          "note": "Cloud-UMI is the paper's collector; UMIGen is its point-cloud augmentation/learning framework. Intel RealSense L515 captures RGB-D / point clouds; T265 provides tracking. “No visual SLAM” refers to avoiding the original offline UMI pipeline, not removing T265 VIO. Flexible passive fingers are not measured tactile or force channels. For the card, use the Cloud-UMI device panel within official Figure1 (crop provided), rather than the complete generation pipeline."
+        }
+      ],
+      "commercial": false
+    },
+    "2605.20894": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Two Orbbec Gemini 2L camera-IMU nodes capture chest and hand; only RGB and IMU are claimed from the RGB-D capable sensor.",
+        "OpenVINS estimates each pose, with a stationary ChArUco board aligning frames; chest-relative actions separate walking from manipulation.",
+        "Study reports 450 demonstrations across four tasks. No public downloadable dataset or executable code was found in the paper.",
+        "Hardware view is the left operator/gripper panel of Fig.1; whole figure is retained for context."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2605.20894",
+          "section": "§III-A–D; Fig.1",
+          "note": "Two Orbbec Gemini 2L camera-IMU nodes capture chest and hand; only RGB and IMU are claimed from the RGB-D capable sensor. OpenVINS estimates each pose, with a stationary ChArUco board aligning frames; chest-relative actions separate walking from manipulation. Study reports 450 demonstrations across four tasks. No public downloadable dataset or executable code was found in the paper. Hardware view is the left operator/gripper panel of Fig.1; whole figure is retained for context."
+        }
+      ],
+      "commercial": false
+    },
+    "2609.22829": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Deployment and motion-generation framework, not a newly designed collector. Native UMI task data are combined with independent retargeted mocap.",
+        "The official teaser shows actual UMI collection, generated motion references and humanoid execution; do not describe all three columns as physical devices.",
+        "Sensing/tracking not newly specified beyond native UMI wrist RGB and proprioception. No public executable code/CAD was located."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.22829",
+          "section": "§III-A; §III-C; teaser Fig.1",
+          "note": "Deployment and motion-generation framework, not a newly designed collector. Native UMI task data are combined with independent retargeted mocap. The official teaser shows actual UMI collection, generated motion references and humanoid execution; do not describe all three columns as physical devices. Sensing/tracking not newly specified beyond native UMI wrist RGB and proprioception. No public executable code/CAD was located."
+        }
+      ],
+      "commercial": false
+    },
+    "2610.08220": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "RGB-only body and hand views drive the proposed reconstruction and mobile policy.",
+        "Collection-time sensor-derived reference trajectories are privileged supervision; the paper does not establish their sensor models and they are not deployment policy inputs.",
+        "Do not add IMU or depth modality merely because compared portable systems use those sensors.",
+        "Paper Fig.2 shows the collector operator and UMI-style gripper; crop the left collector panel for the hardware card."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.08220",
+          "section": "§III-A; §V; Fig.2",
+          "note": "RGB-only body and hand views drive the proposed reconstruction and mobile policy. Collection-time sensor-derived reference trajectories are privileged supervision; the paper does not establish their sensor models and they are not deployment policy inputs. Do not add IMU or depth modality merely because compared portable systems use those sensors. Paper Fig.2 shows the collector operator and UMI-style gripper; crop the left collector panel for the hardware card."
+        }
+      ],
+      "commercial": false
+    },
+    "2506.09494": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "UMI adaptation adds frontal lighting, gripper markers and two external cameras for agricultural capture.",
+        "EKF fuses onboard GoPro inertial measurements with external ArUco localization; this setup is not external-tracker-free.",
+        "The paper reports an additional EUR600 for external cameras/parts/lights and a total budget below EUR900; not a standalone collector sale price.",
+        "Study validates continuous apple-harvesting segmentation and trajectory estimation, not a separately released robot-policy training dataset."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2506.09494",
+          "section": "§§2–4; Fig.1",
+          "note": "UMI adaptation adds frontal lighting, gripper markers and two external cameras for agricultural capture. EKF fuses onboard GoPro inertial measurements with external ArUco localization; this setup is not external-tracker-free. The paper reports an additional EUR600 for external cameras/parts/lights and a total budget below EUR900; not a standalone collector sale price. Study validates continuous apple-harvesting segmentation and trajectory estimation, not a separately released robot-policy training dataset."
+        }
+      ],
+      "commercial": false
+    },
+    "2603.17189": {
+      "status": "unknown",
+      "hardwareStatus": "Paper only / not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "A mechanical user study of UMI finger load paths, not a complete released demonstration collection system.",
+        "Authors explicitly removed cameras during the user study and state sensors/markers required for end-to-end data collection were absent.",
+        "Do not assign original UMI Vision/IMU/state channels to the tested apparatus.",
+        "Rigid PLA fingers and revised mounts enable thin-bandage grasping; the diagram contrasts original and modified finger mounting."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.17189",
+          "section": "§II-B; §III; §VI; Fig.2",
+          "note": "A mechanical user study of UMI finger load paths, not a complete released demonstration collection system. Authors explicitly removed cameras during the user study and state sensors/markers required for end-to-end data collection were absent. Do not assign original UMI Vision/IMU/state channels to the tested apparatus. Rigid PLA fingers and revised mounts enable thin-bandage grasping; the diagram contrasts original and modified finger mounting."
+        }
+      ],
+      "commercial": false
+    },
+    "2610.19839": {
+      "status": "unknown",
+      "hardwareStatus": "Coming soon",
+      "softwareStatus": "Coming soon",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Scissor-shaped links physically transmit interaction forces to the operator without measuring them. Mechanical feedback is not a force or tactile observation channel.",
+        "Hardware records fisheye RGB, Lighthouse 6-DoF poses and two AS5047P magnetic rotary encoders for aperture.",
+        "Project Code/CAD buttons are placeholders, and paper explicitly says hardware designs, code and datasets will be released.",
+        "Maximum opening84.9mm is collector travel, not a mass or force measurement."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.19839",
+          "section": "Introduction; §3.2",
+          "note": "Hardware, code and datasets will be released; sensing is RGB, pose tracker and encoders."
+        },
+        {
+          "url": "https://robbyant-research.github.io/FOMI/",
+          "section": "Code and CAD placeholder buttons"
+        }
+      ],
+      "commercial": false
+    },
+    "resource-2f993dd610": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "License not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "A backpack compute, power and storage workstation; sensing comes from attached FastUMI Pro or Ego cameras.",
+        "4.415 kg is the complete backpack workstation, not the gripper.",
+        "Official specification: i9 (14 cores / 20 threads), 32 GB RAM, 1 TB storage, 23000 mAh LiFePO4 battery, >2 h recording, modular battery swap.",
+        "USB audio port supplies voice prompts; an audio-recording modality is not established.",
+        "Lumos official company timeline dates the FastUMI Go launch to February 2026."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.lumosbot.tech/products/fastumi-go/",
+          "section": "Official product page; no source license established by this page"
+        }
+      ],
+      "commercial": true,
+      "availability": "Commercial product"
+    },
+    "resource-d213114dfe": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "License not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "One family with Standard (540 g) and Ultra (587 g) grippers; Ultra adds Pico tracking compatibility. The two versions are not duplicate cards.",
+        "Official specification: 2 MP at 60 fps global-shutter cameras, 200° fisheye, 9-axis IMU at 1000 Hz, microphone, 2.5 h runtime and swappable battery.",
+        "Quick-change 3D tactile fingertips: 1.6 mm spatial resolution and 0.05 N force resolution; optional 1D flexible tactile fingertips.",
+        "The official manual is version 3.8, updated 2026-09-17; this is a manual update, not a verified product release date.",
+        "Vendor millimeter-level localization and sub-millisecond synchronization claims are not independent benchmark results."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.maniformer.net/mego",
+          "section": "Official product page; no source license established by this page"
+        }
+      ],
+      "commercial": true,
+      "availability": "Commercial product"
+    },
+    "resource-bb0d12f59d": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "License not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "One current LivUMI family card. Current official pages do not verify separate portable / Pro product specifications.",
+        "Current specification: 8 mm spatial accuracy, 0–100 mm opening, 20 N gripping force, 3.2-inch screen and 128 GB storage.",
+        "Stereo camera: 92° FOV, 640 × 480 at 30 fps; wide-angle camera: 195° FOV, 1600 × 1300 at 30 fps; 6-axis IMU at 200 Hz.",
+        "Tactile fingertips are optional (0.1 N resolution); force feedback does not establish a dedicated wrist force/torque sensor.",
+        "Older /livumi pages give different camera, IMU, mass and localization values; current product specifications are used and no current mass is asserted.",
+        "Spatial accuracy and 1 ms hardware synchronization are vendor specifications."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.livsynrobotics.com/products/umi",
+          "section": "Official product page; no source license established by this page"
+        }
+      ],
+      "commercial": true,
+      "availability": "Commercial product"
+    },
+    "resource-c74de7b8fe": {
+      "status": "partial",
+      "hardwareStatus": "CAD + PCB files; license unclear",
+      "softwareStatus": "Apache-2.0 project code",
+      "hardwareLicense": null,
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Public STEP mechanics and PCB fabrication exports are supplied. README explicitly licenses project code under Apache-2.0; separate hardware reuse rights are not established. ORB-SLAM3 has GPL-3.0 terms.",
+        "The company describes direct joint-space capture, fingertip tactile data, <10 ms synchronization and NPZ / HDF5 / LeRobot-compatible export; these claims refer to the company system, while the current repository documents MCAP / CSV / MP4 and offline ORB-SLAM3.",
+        "Vendor-maintained company project; purchase availability is not established by the official repository.",
+        "L6-matched 6-DoF encoder glove with fingertip touch. The current repository records D455 stereo IR / IMU, D405 color and CAN / USART hand frames into synchronized MCAP bags.",
+        "Selected image is the official earlier pre-release CAD render at commit 830aafc, not the latest mechanical revision or the robot hand alone."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/linker-bot/umi-dex/blob/main/LICENSE",
+          "section": "Apache License 2.0"
+        },
+        {
+          "url": "https://github.com/linker-bot/umi-dex/blob/main/README.md",
+          "section": "License section: project code; third-party ORB-SLAM3 GPL-3.0"
+        },
+        {
+          "url": "https://github.com/linker-bot/umi-dex/tree/main/hardware",
+          "section": "STEP mechanics and Altium PCB fabrication exports"
+        }
+      ],
+      "commercial": true,
+      "availability": "Company project"
+    },
+    "resource-72e4f601d7": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "License not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Announced product: the official Aero System page expects the first production batch in late October 2026; shipping is not verified as of 2026-10-16.",
+        "Five-finger wearable paired with Aero Hand for direct joint-space mapping. Other robot hands require retargeting.",
+        "18-joint structure with 15 encoded joints; 320 g wearable. The head module is specified separately at 240 g.",
+        "Finger and palm 3-axis contact-force arrays, 0.1 N force resolution; this tactile sensing does not establish a dedicated wrist wrench sensor.",
+        "Optical-inertial wrist pose, head VIO / IMU, stereo RGB, ToF depth and shared hardware synchronization. Camera configuration is selectable.",
+        "Vendor specifications include ≤5 mm mean joint-position error, 0.1° joint repeatability, <1 ms alignment, and 8 h recording with a spare battery.",
+        "Aero Hand Open is a separate product; its open-source license is not applied to Aero UMI."
+      ],
+      "evidence": [
+        {
+          "url": "https://chestnut.bot/aero-umi.html",
+          "section": "Official product page; no source license established by this page"
+        }
+      ],
+      "commercial": true,
+      "availability": "Announced product"
+    },
+    "resource-e545c4ab38": {
+      "status": "unknown",
+      "hardwareStatus": "Design source not verified",
+      "softwareStatus": "License not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "A separately sold UMI-compatible capture product: MEgo Ego headset plus optional MEgo Wrist camera pair. Official manual documents synchronized collection with MEgo Gripper.",
+        "Records RGB, depth, IMU, microphone audio, spatial trajectories and human body pose; body-pose extraction is supplied through the MEgo Engine workflow.",
+        "Head unit has three fisheye cameras plus one stereo pair; optional wrist kit adds one wide-angle camera per wrist (seven RGB cameras in the complete kit).",
+        "Official specification: 2 MP at 60 fps global shutter, 9-axis IMU at 1000 Hz, Wi-Fi 6 / USB 3.0, 2 h runtime and swappable battery.",
+        "Headset basic kit includes a 256 GB TF card; the optional wrist pair includes two 128 GB cards. No current mass is verified.",
+        "Current official manual v3.6 was updated 2026-09-09. The update date is not used as a release date. The old indexed manual URL now returns an empty app shell; the live support index links the canonical manual used here.",
+        "The canonical row uses the product-specific manual to distinguish View from Gripper, which share one marketing page."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.maniformer.net/support/mego-view-cn-8eynke",
+          "section": "Official product page; no source license established by this page"
+        }
+      ],
+      "commercial": true,
+      "availability": "Commercial product"
+    },
+    "resource-9bdb86524b": {
+      "status": "unknown",
+      "commercial": true,
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Public documentation does not establish open-source hardware or acquisition software.",
+        "Tactile is optional/customized; do not list it as baseline present.",
+        "160 ± 5 g is one UMI module, not the complete wearable collection system.",
+        "Manufacturer-rated maximum gripping force is an actuation capability, not evidence of measured force/torque."
+      ],
+      "evidence": [
+        {
+          "url": "https://io-ai.tech/en/sensexperience/specs/",
+          "section": "UMI/Wrist/Ego/Compute module specifications",
+          "note": "UMI module is 160 ± 5 g per hand. Its RGB camera is 170° at 30 Hz; magnetic encoder and IMU transmit at 240 Hz; microphone has two channels."
+        },
+        {
+          "url": "https://io-ai.tech/sensexperience/docs/reference-data-format/",
+          "section": "Capture MCAP topics and post-processing topics",
+          "note": "Raw images/IMU/joint state/PCM audio are distinguished from post-processed gripper/head pose. Optional depth visualization does not establish physical depth hardware."
+        },
+        {
+          "url": "https://io-ai.tech/en/sensexperience/",
+          "section": "Overview and modular configurations",
+          "note": "Tactile sensing is a customizable expansion, not established as baseline hardware."
+        },
+        {
+          "url": "https://io-ai.tech/zh/news/sensexperience-real-world-data-collection-solution/",
+          "section": "Manufacturer launch article dated 2026-02-05"
+        },
+        {
+          "url": "https://io-ai.tech/zh/news/sensexperience-real-world-data-collection-solution/",
+          "section": "Official dated announcement"
+        }
+      ],
+      "availability": "Commercial product"
+    },
+    "resource-068a8ea0a3": {
+      "status": "unknown",
+      "commercial": true,
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "No verified public CAD, acquisition source code or license.",
+        "No 0.05 N accuracy value is assigned to the entire UMI system; broader tactile-product claims are separate.",
+        "The discovery list points to huaketech.com, which currently redirects to a domain-sale page. Correct manufacturer source is hbwhhit.com.",
+        "Source describes a solution rather than a fixed-model retail device; no dimensions, mass or price are established."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hbwhhit.com/news/waic-2026-direct-hit-unveils-next-gen-tactile-85599619.html",
+          "section": "Section 4: UMI High-Precision Data Collection",
+          "note": "Official manufacturer describes a named UMI tactile collection solution using VR hand tracking and dexterous-hand mapping. The associated official image shows its physical two-gripper acquisition demo. Specific camera/tracker/tactile models and force-transducer configuration are not published."
+        },
+        {
+          "url": "https://www.hbwhhit.com/news/waic-2026-direct-hit-unveils-next-gen-tactile-85599619.html",
+          "section": "Official dated announcement"
+        }
+      ],
+      "availability": "Commercial product"
+    },
+    "resource-225e063303": {
+      "status": "unknown",
+      "commercial": true,
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Commercial edition hardware/software source release and licenses are unverified.",
+        "Do not transfer G1 tactile/audio specifications to the PICO-based G0 edition.",
+        "Reference-list positioning accuracy of 1 mm is not reproduced: the audited manufacturer G1 source does not state that value.",
+        "Within-1-ms sensor synchronization is a manufacturer claim; it differs from later microsecond timestamp alignment in the data-processing pipeline."
+      ],
+      "evidence": [
+        {
+          "url": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+          "section": "Official launch 2026-07-02: G1 hardware and modalities",
+          "note": "G1 is the UMI-VIO headband/dual-gripper product, with visual, tactile and audio capture. Synchronization within 1 ms is attributed to G1. No tactile model, dedicated F/T sensor, mass or price is given."
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/x-square-robot-launches-quanxta-zero-series-reframing-embodied-data-production-through-universal-manipulation-interfaces-302818902.html",
+          "section": "Company-provided press release and downloadable original product-family rendering",
+          "note": "SOURCE X Square Robot. Official family hardware illustration depicts a headband and two handheld grippers; caption labels the series rather than an individually serialized G1 unit."
+        },
+        {
+          "url": "https://x2robot.com/en/news/6a46341cc7feadddbc603a33",
+          "section": "Official dated announcement"
+        }
+      ],
+      "availability": "Commercial product"
+    },
+    "resource-19bc81793e": {
+      "status": "partial",
+      "commercial": false,
+      "hardwareStatus": "Full CAD/BOM unverified",
+      "softwareStatus": "Open source",
+      "hardwareLicense": null,
+      "softwareLicense": "AGPL-3.0",
+      "notes": [
+        "Public own-repository LICENSE is AGPL-3.0; bundled third-party components need their own licenses.",
+        "No verified public CAD/BOM release or retail purchasing channel.",
+        "Author reports a below-CNY3000 component/system cost and tracking accuracy; these are not a retail quote or independently standardized benchmark.",
+        "Do not advertise as a purchasable commercial unit: a retail offering was not independently verified.",
+        "Primary release confirms specifications and public source, but no suitable physical human-collector photograph was found. Official embedded video shows robot deployment; tracker/base-station diagrams and result screenshots are unsuitable covers.",
+        "Author-reported position error is ±0.1–0.5 mm; test conditions are not published, so no comparative accuracy badge is suggested."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/qiongming-intelligence/UMI",
+          "section": "Public source repository and root AGPL-3.0 LICENSE",
+          "note": "Acquisition and training Python source is present, including scripts/record/record_umi.py. This does not establish a complete open-hardware CAD/BOM release."
+        },
+        {
+          "url": "https://www.cnblogs.com/ydzn/p/21220815",
+          "section": "Author account 穹明智能; release 2026-07-07",
+          "note": "Named UMI ver.2 handheld system specifies Vive Tracker 3.0, two 1.0 base stations, 180° fisheye at 1440×1080/30 Hz, ESP32-S3 and a sliding potentiometer for aperture. Synchronized collection is 30 Hz."
+        },
+        {
+          "url": "https://damodev.csdn.net/6a4cccd4662f9a54cb8aa502.html",
+          "section": "Same company-authored release and embedded deployment video",
+          "note": "Embedded 7.84-second video shows robot deployment only; rejected as a human collector gallery cover."
+        },
+        {
+          "url": "https://www.cnblogs.com/ydzn/p/21220815",
+          "section": "Official dated announcement"
+        }
+      ],
+      "availability": "Company project"
+    },
+    "2603.05504": {
+      "commercial": true,
+      "productName": "RoboPocket by Noematrix",
+      "productURL": "https://www.noematrix.ai/news/Noematrix-WAIC2026",
+      "notes": [
+        "Manufacturer confirms a self-developed RoboPocket acquisition product family. Preserve iPhone collector facts from the paper; later head/dual-wrist configurations are separate variants."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.noematrix.ai/news/Noematrix-WAIC2026",
+          "section": "Manufacturer WAIC 2026 demonstration",
+          "note": "RoboPocket is explicitly its self-developed robot-free acquisition system using wearable end effectors and a mobile capture app."
+        },
+        {
+          "url": "https://lab.noematrix.ai/blog/1-noe-0-research-preview/",
+          "section": "02.A Natural motion; hardware figure",
+          "note": "The current product family includes synchronized head and dual-wrist views. This does not establish that all variants use the paper iPhone-gripper hardware."
+        }
+      ],
+      "availability": "Commercial product",
+      "commercialVariants": [
+        {
+          "name": "RoboPocket commercial capture family",
+          "company": "Noematrix / 穹彻智能",
+          "url": "https://www.noematrix.ai/news/Noematrix-WAIC2026",
+          "date": null,
+          "form": "Wearable acquisition devices plus mobile capture app; head and dual-wrist views in current preview",
+          "tracking": "Motion trajectories recorded; current commercial tracking method unspecified",
+          "vision": "Synchronized head and dual-wrist views in current official preview",
+          "tactile": {
+            "status": "unknown",
+            "type": null,
+            "note": "Not specified for this named hardware configuration; absence is not inferred."
+          },
+          "forceTorque": {
+            "status": "unknown",
+            "type": null,
+            "note": "Not specified for this named hardware configuration; absence is not inferred."
+          },
+          "mass": null,
+          "price": null,
+          "hardwareRelease": "unknown",
+          "softwareRelease": "unknown",
+          "evidence": [
+            {
+              "url": "https://www.noematrix.ai/news/Noematrix-WAIC2026",
+              "section": "Manufacturer WAIC 2026 demonstration",
+              "note": "RoboPocket is explicitly its self-developed robot-free acquisition system using wearable end effectors and a mobile capture app."
+            },
+            {
+              "url": "https://lab.noematrix.ai/blog/1-noe-0-research-preview/",
+              "section": "02.A Natural motion; hardware figure",
+              "note": "The current product family includes synchronized head and dual-wrist views. This does not establish that all variants use the paper iPhone-gripper hardware."
+            }
+          ],
+          "mediaCandidate": {
+            "url": "https://lab.noematrix.ai/assets/hardware/robopocket-hardware-v01.png",
+            "page": "https://lab.noematrix.ai/blog/1-noe-0-research-preview/",
+            "status": "Official caption verified; download/visual inspection pending due origin TLS connection failure. Do not use as replacement cover yet."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,12 +1,11 @@
 ---
-import "@fontsource-variable/manrope";
-import "@fontsource/ibm-plex-mono/400.css";
-import "../styles/global.css";
 import "../styles/atlas.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import { SITE } from "../lib/site";
 import { sitePath } from "../lib/paths";
+import serifRoman from "../assets/fonts/source-serif-4-latin-normal.woff2?url";
+import serifItalic from "../assets/fonts/source-serif-4-latin-italic.woff2?url";
 interface Props {
   title: string;
   description: string;
@@ -22,7 +21,7 @@ const social = new URL(sitePath("images/social-card.png"), Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f3f6f8" />
+    <meta name="theme-color" content="#ffffff" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -32,6 +31,8 @@ const social = new URL(sitePath("images/social-card.png"), Astro.site);
     <meta name="twitter:image" content={social} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={sitePath("favicon.svg")} />
+    <link rel="preload" href={serifRoman} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serifItalic} as="font" type="font/woff2" crossorigin />
     <title>{title}</title>
   </head>
   <body data-site={SITE.kind}>

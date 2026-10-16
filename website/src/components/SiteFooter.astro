@@ -1,21 +1,13 @@
 ---
 import { SITE } from "../lib/site";
-const sibling =
-  SITE.kind === "umi" ? "Awesome-Robot-Data-Engine" : "Awesome-UMI";
 ---
 
-<footer class="atlas-footer shell">
-  <div>
-    <strong>{SITE.name}</strong>
-    <p>A living field guide, maintained by chang-xinhai and contributors.</p>
-  </div>
-  <nav aria-label="Related resources">
-    <a href={"https://chang-xinhai.github.io/" + sibling + "/"}>
-      {SITE.kind === "umi"
-        ? "Explore Robot Data Engine"
-        : "Explore Awesome UMI"}{" "}
-      ↗
-    </a>
-    <a href={SITE.github}>Contribute on GitHub ↗</a>
+<footer class="site-footer wrap">
+  <span>
+    Awesome UMI <span class="footer-dot">·</span> An open research collection.
+  </span>
+  <nav aria-label="Repository resources">
+    <a href={SITE.github + "#readme"}>README</a>
+    <a href={SITE.github + "/issues/new"}>Suggest a correction</a>
   </nav>
 </footer>
