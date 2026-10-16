@@ -1,0 +1,60 @@
+---
+import type { Work } from "../lib/catalog";
+import { sitePath } from "../lib/paths";
+interface Props {
+  work: Work;
+}
+const { work: w } = Astro.props;
+---
+
+<article class="atlas-card" data-id={w.id}>
+  <button
+    type="button"
+    class="atlas-card-image"
+    data-detail={w.id}
+    aria-label={"View " + w.name + " details"}
+  >
+    <img
+      src={sitePath(w.image!)}
+      alt={w.imageAlt}
+      width="640"
+      height="400"
+      loading="lazy"
+    />
+    <span class="image-credit">{w.credit}</span>
+    <span class="atlas-image-arrow" aria-hidden="true">
+      ↗
+    </span>
+  </button>
+  <div class="atlas-card-body">
+    <div class="atlas-card-top">
+      <span>{w.kind}</span>
+      <time>{w.year}</time>
+    </div>
+    <h3>
+      <a href={w.paperUrl}>{w.name}</a>
+    </h3>
+    <p class="atlas-card-description">{w.summary ?? w.keywords}</p>
+    <div class="atlas-tags">
+      {w.signals
+        .filter((s) => s !== "Not reported")
+        .slice(0, 3)
+        .map((s) => (
+          <span>{s}</span>
+        ))}
+    </div>
+    <div class="atlas-card-footer">
+      <button type="button" data-detail={w.id} class="atlas-detail-link">
+        View details ↗
+      </button>
+      <label class="atlas-compare-check">
+        <input
+          type="checkbox"
+          data-compare={w.id}
+          aria-label={"Compare " + w.name}
+        />
+        Compare
+      </label>
+    </div>
+  </div>
+</article>

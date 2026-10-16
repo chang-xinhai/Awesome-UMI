@@ -19,6 +19,8 @@
 
 </div>
 
+<p align="center"><a href="https://chang-xinhai.github.io/Awesome-UMI/"><strong>Explore the visual atlas →</strong></a> · Images, filters, details, and side-by-side comparison</p>
+
 ## About
 
 **Awesome-UMI**: A curated list for the ecosystem around **Universal Manipulation Interface (UMI)**.

@@ -13,7 +13,14 @@ The goal is not to be a generic robot-manipulation bibliography. The goal is to 
 
 ## Single-file content policy
 
-All curated content lives in `README.md`.
+All canonical curated content lives in `README.md`.
+
+`website/` is the presentation layer for the visual atlas. It may contain site
+source, dependencies, optimized images, and a media manifest keyed to existing
+README works. The manifest supplements display names, image attribution, and
+source-backed device attributes; it must not duplicate canonical paper metadata
+or introduce works absent from README. Unknown attributes remain unknown.
+Keep README sections intact and generate the complete research index from it.
 
 Do **not** create `contents/` pages for paper organization.
 Do **not** split the awesome list into multiple markdown content files unless the user explicitly requests it.
@@ -23,6 +30,8 @@ Allowed root-level files:
 - `AGENTS.md` — governance and maintenance rules
 - `LICENSE`
 - optional static assets under `assets/` or `imgs/` when they improve presentation
+- `website/` — static visual atlas and its presentation metadata
+- `.github/workflows/` — website build and deployment
 
 ## Canonical section layout
 
