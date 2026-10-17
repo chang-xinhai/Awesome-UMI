@@ -207,6 +207,15 @@ For dataset-family entries, preserve as much of the following as possible in key
 
 Use compact summaries in the table itself and keep verbose explanation out of the main row.
 
+## Detail resource links
+
+Order website detail links as **Paper → Project → Code → Data → other resources**.
+Normalize common aliases (GitHub/software/SDK and dataset/data) while retaining
+release, access and license qualifiers. The first available link receives the
+dark primary style; prefer Paper whenever one exists. A product or project
+page is not a paper. Sort before deduplicating, preserve distinct data links,
+and apply the same rule across every collection.
+
 ## Maintenance workflow
 
 ### News policy

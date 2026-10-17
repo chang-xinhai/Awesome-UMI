@@ -1,5 +1,6 @@
 import type { Work } from "../lib/catalog";
 import { compareDates } from "../lib/order";
+import { detailLinks } from "../lib/resource-links";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id)! as T;
 const settings = JSON.parse($("catalog-settings").textContent!) as {
@@ -619,17 +620,7 @@ function showDetail(id: string) {
   detail.dataset.work = id;
   const h = record(w.research?.hardware),
     d = record(w.research?.dataset);
-  const links = [
-    { label: w.publication === "Product" ? "Product" : w.publication === "Solution" ? "Solution" : /arxiv\.org|doi\.org|openreview\.net|proceedings/i.test(w.paperUrl) ? "Paper" : "Source", url: w.paperUrl },
-    ...w.links.filter(l => !(d.datasetUrl && /dataset|^data$/i.test(l.label))).map(l => ({...l, label: /^github$|^code$|^software$|^sdk$/i.test(l.label) ? "Code" : /^project$/i.test(l.label) ? "Project" : l.label})),
-    { label: "Dataset", url: String(d.datasetUrl ?? "") },
-  ].filter((l) => l.url && /^https?:\/\//.test(l.url));
-  const seen = new Set<string>();
-  const unique = links.filter((l) => {
-    if (seen.has(l.url)) return false;
-    seen.add(l.url);
-    return true;
-  });
+  const unique = detailLinks(w);
   const sourceList = sources(w);
   const selectedMedia = preview(w) ?? media(w);
   const isDataset = collection === "datasets";
