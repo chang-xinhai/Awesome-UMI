@@ -236,7 +236,7 @@
         "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
       },
       "actionSpace": "Relative end-effector commands plus gripper aperture; multimodal policy operates at 10 Hz",
-      "hardwareAvailability": "Hardware build guide https://docs.google.com/document/d/1HTwjLjrNoQFs5rB2DTdoAflJh1zYnw8AD4wD-CD382k/edit; firmware/software https://github.com/polyumi/PolyUMI-platform. Guide body/CAD files not independently audited.",
+      "hardwareAvailability": "Hardware build guide https://docs.google.com/document/d/1HTwjLjrNoQFs5rB2DTdoAflJh1zYnw8AD4wD-CD382k/edit; firmware/software https://github.com/PolyUMI-VisTA/PolyUMI-system. Guide body/CAD files not independently audited.",
       "cost": {
         "value": 235.96,
         "currency": "USD",
@@ -3746,6 +3746,43 @@
           "section": "Same company-authored release and embedded deployment video",
           "note": "Embedded 7.84-second video shows robot deployment only; rejected as a human collector gallery cover."
         }
+      ]
+    },
+    "2606.18772": {
+      "id": "2606.18772",
+      "name": "HALOMI",
+      "verified": "2026-10-19",
+      "form": "UMI-style bimanual handheld grippers plus head-mounted sensing",
+      "interfaceForms": [
+        "Whole-body",
+        "Handheld"
+      ],
+      "poseTracking": "HTC Lighthouse / Vive tracking for head and grippers",
+      "vision": "RealSense D435i egocentric camera and wrist views",
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "A tactile sensor contribution is not established by the inspected capture-system description."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null,
+        "note": "Dedicated force/torque sensing is not established by the inspected capture-system description."
+      },
+      "actionSpace": "World-frame head-hand trajectories with manifold-constrained whole-body execution",
+      "hardwareAvailability": "Public hardware release not verified",
+      "cost": null,
+      "mass": null,
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.18772v1",
+          "section": "III-A data collection; hardware figure",
+          "note": "Official figure identifies Pika Sense, Pika Gripper, an egocentric D435i camera and HTC Lighthouse stations. Human head-hand demonstrations train a high-level policy."
+        }
+      ],
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
       ]
     }
   },

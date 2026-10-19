@@ -1099,7 +1099,17 @@
       0.485
     ],
     "hardwareImageAudit": "replace",
-    "hardwareImageAuditNote": "Previous Figure 1 summarized human/robot learning and dataset examples; crop isolates the physical collector."
+    "hardwareImageAuditNote": "Previous Figure 1 summarized human/robot learning and dataset examples; crop isolates the physical collector.",
+    "datasetImage": "images/catalog/2506.01941-dataset.webp",
+    "datasetImageAlt": "FreeTacMan task coverage, wrist and tactile video examples, and reported skill distribution",
+    "datasetImageSource": "https://raw.githubusercontent.com/OpenDriveLab/opendrivelab.github.io/master/FreeTacMan/task/datasetweb.png",
+    "datasetImagePage": "https://huggingface.co/datasets/OpenDriveLab/FreeTacMan",
+    "datasetImageType": "Official dataset overview",
+    "datasetImageReviewed": "2026-10-19",
+    "datasetImageWidth": 1400,
+    "datasetImageHeight": 900,
+    "datasetName": "FreeTacMan",
+    "datasetSummary": "Public CSV/MP4 release with 6,428 indexed trajectories across 46 task folders; paper/card scale and paired-camera completeness are separate."
   },
   {
     "id": "2504.06156",
@@ -2029,5 +2039,52 @@
     "summary": "A headband and dual-gripper collector with synchronized vision, tactile and audio.",
     "credit": "X Square Robot",
     "reviewed": "2026-10-16"
+  },
+  {
+    "id": "2606.18772",
+    "name": "HALOMI",
+    "summary": "UMI-style bimanual grippers and head-mounted sensing teach a humanoid active head-hand coordination.",
+    "image": "images/catalog/2606.18772.webp",
+    "imageAlt": "HALOMI demonstrator with tracked Pika grippers and a head-mounted camera beside the G1 deployment system",
+    "imageSource": "https://arxiv.org/html/2606.18772v1/figures/data_collect_new.png",
+    "imagePage": "https://arxiv.org/html/2606.18772v1",
+    "credit": "Zehui Zhao et al. / HALOMI",
+    "reviewed": "2026-10-19",
+    "width": 1280,
+    "height": 1083,
+    "hardwareImage": "images/catalog/2606.18772.webp",
+    "hardwareImageAlt": "Human collector wearing an egocentric camera and holding tracked Pika grippers, beside the humanoid deployment rig",
+    "hardwareImageSource": "https://arxiv.org/html/2606.18772v1/figures/data_collect_new.png",
+    "hardwareImagePage": "https://arxiv.org/html/2606.18772v1",
+    "hardwareImageType": "Paper · Hardware photograph",
+    "hardwareImageReviewed": "2026-10-19",
+    "hardwareImageWidth": 1280,
+    "hardwareImageHeight": 1083,
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Official paper hardware figure shows actual human collection devices and robot deployment hardware.",
+    "form": "Whole-body",
+    "tracking": "VR tracking",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2606.18772v1"
+  },
+  {
+    "id": "2610.04255",
+    "name": "GiT",
+    "summary": "A history-dependent manipulation benchmark with separate UMI, real-robot and simulation pipelines.",
+    "datasetImage": "images/catalog/2610.04255-dataset.webp",
+    "datasetImageAlt": "GiT counterfactual task examples show matching current frames but different interaction histories, beside the annotation workflow",
+    "datasetImageSource": "https://arxiv.org/html/2610.04255v1/method.png",
+    "datasetImagePage": "https://arxiv.org/html/2610.04255v1",
+    "datasetImageType": "Paper · Figure 2, task examples and annotation",
+    "datasetImageReviewed": "2026-10-19",
+    "datasetImageWidth": 1400,
+    "datasetImageHeight": 890,
+    "datasetName": "GiT",
+    "datasetSummary": "1,800 UMI-style demonstrations across 18 bimanual tasks, within a multi-source temporal-grounding dataset. Public release access remains unverified.",
+    "credit": "Yi Wang et al. / GiT",
+    "reviewed": "2026-10-19"
   }
 ]

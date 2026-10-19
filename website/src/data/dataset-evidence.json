@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "verified": "2026-10-16",
+  "verified": "2026-10-19",
   "scope": "Source-backed dataset attributes. Unknown fields are null. Reported and released scale retain their separate sources.",
   "records": {
     "2606.10244": {
@@ -1521,7 +1521,7 @@
     "2610.20320": {
       "id": "2610.20320",
       "name": "TacClaw-Infinity",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity",
       "access": "Public subset",
       "accessNote": null,
@@ -1564,7 +1564,8 @@
         "TacClaw project download buttons say Coming soon. The broader Daimon-Infinity repository publishes files and announces its first1000-hour batch; the full10000+hours is not a verified complete public release.",
         "The card analyzes approximately1209collected hours; this is a separate scope from its first1000-hour release.",
         "The first batch mixes DataClaw and DataDex; do not describe every released hour as TacClaw-only.",
-        "A sampled DataClaw meta/info.json confirms30FPS,114Dstate/111Daction and247episodes. It is one recording folder, not a release-wide episode count."
+        "A sampled DataClaw meta/info.json confirms30FPS,114Dstate/111Daction and247episodes. It is one recording folder, not a release-wide episode count.",
+        "Author GitHub now publishes robot replay and kinematic analysis tools, while policy training/task-level evaluation remains forthcoming."
       ],
       "sources": [
         {
@@ -1578,6 +1579,11 @@
           "supports": "First 1,000-hour release, license, mixed devices and downloadable file layout.",
           "checked": "2026-10-16",
           "published": null
+        },
+        {
+          "url": "https://github.com/daimon-robotics/TacClaw-Infinity",
+          "supports": "Public subset portals and actual released-code scope",
+          "checked": "2026-10-19"
         }
       ],
       "unknownFields": [],
@@ -2708,6 +2714,188 @@
             "Herbal_Transfer": 146
           }
         }
+      ]
+    },
+    "2603.17851": {
+      "id": "2603.17851",
+      "name": "DexViTac",
+      "verified": "2026-10-19",
+      "datasetUrl": "https://huggingface.co/datasets/xitong-c/DexViTac_Dataset",
+      "access": "Coming soon",
+      "accessNote": "Official dataset card says the complete dataset will be released in the near future; a portal is not proof of released demonstrations.",
+      "license": null,
+      "formats": [],
+      "reportedScale": {
+        "demonstrations": 2400,
+        "demonstrationsQualifier": ">"
+      },
+      "publicScale": {},
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/xitong-c/DexViTac_Dataset",
+          "supports": "Forthcoming release",
+          "checked": "2026-10-19"
+        },
+        {
+          "url": "https://arxiv.org/abs/2603.17851",
+          "supports": "Reported corpus scale",
+          "checked": "2026-10-19"
+        }
+      ]
+    },
+    "2610.04255": {
+      "id": "2610.04255",
+      "name": "GiT",
+      "verified": "2026-10-19",
+      "datasetUrl": "https://kk-stephen.github.io/grounded-in-time/",
+      "access": "Release not verified",
+      "accessNote": "Paper and project describe availability; downloadable archive, license and source-specific released scale have not been independently established.",
+      "license": null,
+      "formats": [
+        "HDF5"
+      ],
+      "observations": [
+        "Two wrist RGB views and one global RGB view",
+        "SteamVR-reconstructed gripper poses and AprilTag-estimated aperture",
+        "Fine-grained subtasks and counterfactual task pairs"
+      ],
+      "reportedScale": {
+        "allSourceEpisodes": 4680,
+        "umiEpisodes": 1800,
+        "umiHours": 15.57,
+        "umiHoursQualifier": ">",
+        "umiTasks": 18,
+        "realRobotEpisodes": 1260,
+        "simulationEpisodes": 1620,
+        "simulationTasks": 9
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "UMI stream has RGB views and reconstructed gripper trajectories; measured depth belongs to the real-robot and simulation pipelines. No force/tactile streams are collected.",
+        "All-source totals and UMI-only statistics are separate. Downloadable release and license were not independently established."
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2610.04255v1",
+          "supports": "III-B hardware/source distinction, unified format and task scope",
+          "checked": "2026-10-19"
+        }
+      ],
+      "fps": 30
+    },
+    "2506.01941": {
+      "id": "2506.01941",
+      "name": "FreeTacMan",
+      "verified": "2026-10-19",
+      "datasetUrl": "https://huggingface.co/datasets/OpenDriveLab/FreeTacMan",
+      "access": "Public download",
+      "accessNote": "Anonymous API exposes CSV/MP4 files. Indexed trajectories and paired-camera completeness are stated separately from the larger paper/card corpus.",
+      "license": "MIT (dataset card declaration)",
+      "formats": [
+        "CSV",
+        "MP4"
+      ],
+      "fps": null,
+      "observations": [
+        "Wrist-view video",
+        "Visuo-tactile camera views",
+        "Timestamped TCP position/Euler/quaternion and gripper distance"
+      ],
+      "action": "Recorded end-effector pose and gripper aperture",
+      "reportedScale": {
+        "trajectories": 10000,
+        "trajectoriesQualifier": ">",
+        "tasks": 50,
+        "imagePairs": 3000000,
+        "imagePairsQualifier": ">"
+      },
+      "publicScale": {
+        "indexedTrajectories": 6428,
+        "taskFolders": 46,
+        "mp4Files": 18484,
+        "trajectoriesWithAllThreeCameraFiles": 5628
+      },
+      "scopeNotes": [
+        "The card reports >10K trajectories/50 tasks, whereas the current API lists 6,428 *_traj.csv files across 46 task folders. These are distinct scopes.",
+        "Not every indexed CSV has all three camera files. The file inventory does not establish a release-wide uniform FPS.",
+        "A public CSV sample confirms timestamp, TCP pose in Euler/quaternion form and gripper-distance columns. Units were not independently verified."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/OpenDriveLab/FreeTacMan",
+          "supports": "Official card, license declaration and reported scale",
+          "checked": "2026-10-19"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/OpenDriveLab/FreeTacMan",
+          "supports": "Actual public file inventory",
+          "checked": "2026-10-19"
+        },
+        {
+          "url": "https://opendrivelab.com/FreeTacMan",
+          "supports": "Official project links the data release",
+          "checked": "2026-10-19"
+        }
+      ],
+      "repositorySnapshots": [
+        {
+          "id": "OpenDriveLab/FreeTacMan",
+          "sha": "030316fb41d6fa1e58cccb4bbe0f6fddbb932671",
+          "gated": false,
+          "files": 24915,
+          "taskFolders": [
+            "ArrangeFruit",
+            "CakePiping",
+            "Cast",
+            "CutBanana",
+            "CutTofu",
+            "DecorateCake",
+            "DensePacking",
+            "FeelWeight",
+            "FragileCup",
+            "Hammer",
+            "HangMosquitoCoil",
+            "Hold",
+            "InsertIncenseStick",
+            "LayerWithBananaSlices",
+            "Mount",
+            "OrganizeBrush",
+            "Pipette",
+            "Pound",
+            "PourWater",
+            "PullDrawer",
+            "ScrewInTheBulb",
+            "Slot",
+            "SpreadCream",
+            "SprinkleSesame",
+            "SqueezeToothpaste",
+            "Stamp",
+            "SteakSaucing",
+            "Stir",
+            "StoreFruit",
+            "StoreToys",
+            "StringBeads",
+            "SwipeCard",
+            "TextureClassify",
+            "ThreadNeedle",
+            "Throw",
+            "TissueGrasp",
+            "TransferEgg",
+            "TransferHerbs",
+            "UnscrewLightBulb",
+            "Unzip",
+            "UsbPlug",
+            "UsbPlugManyEnv",
+            "UseTweezer",
+            "WateringPlants",
+            "WipeBoard",
+            "Write"
+          ]
+        }
+      ],
+      "unknownFields": [
+        "export FPS",
+        "coordinate units"
       ]
     }
   }

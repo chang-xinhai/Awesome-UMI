@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-19",
   "criteria": {
     "open": "Verified hardware source with reuse rights plus licensed executable software.",
     "partial": "Some reusable artifacts exist, but hardware/software is incomplete, externally licensed or noncommercial / unspecified.",
@@ -89,20 +89,23 @@
       ]
     },
     "2609.29760": {
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "status": "partial",
-      "hardwareStatus": "Public build guide",
-      "softwareStatus": "Open source",
+      "hardwareStatus": "Public external build guide",
+      "softwareStatus": "Open-source collection and policy platform",
       "hardwareLicense": null,
       "softwareLicense": "MIT",
       "notes": [
-        "Root PolyUMI platform license is MIT; bundled third-party components retain their own licenses.",
-        "External build-guide CAD rights and completeness are not independently verified."
+        "Official project now links PolyUMI-VisTA/PolyUMI-system, which contains the current ROS2 acquisition, data processing and policy stack. External hardware CAD rights were not independently established."
       ],
       "evidence": [
         {
-          "url": "https://github.com/polyumi/PolyUMI-platform",
-          "section": "Current source tree / repository license"
+          "url": "https://polyumi-vista.github.io/",
+          "section": "Official code link"
+        },
+        {
+          "url": "https://github.com/PolyUMI-VisTA/PolyUMI-system",
+          "section": "Current source tree, hardware guide and root MIT license"
         }
       ]
     },
@@ -678,23 +681,26 @@
       "commercial": false
     },
     "2410.07554": {
-      "status": "unknown",
-      "hardwareStatus": "Not verified",
-      "softwareStatus": "Not verified",
+      "status": "partial",
+      "hardwareStatus": "Public external CAD links; rights not independently verified",
+      "softwareStatus": "Open-source ForceCapture collection and HybridIL policy implementations",
       "hardwareLicense": null,
-      "softwareLicense": null,
+      "softwareLicense": "MIT",
       "notes": [
-        "Paper/project describe public CAD and code; component licenses not independently re-audited in this pass.",
-        "Approximately$50 covers printed parts and encoder, not the force sensor or complete system."
+        "Separate official repositories provide collection and policy code. Printed-parts cost does not include the force sensor or complete capture system."
       ],
       "evidence": [
         {
-          "url": "https://arxiv.org/html/2410.07554",
-          "section": "§III-A hardware design; §III-B collection; bibliography[5]",
-          "note": "Hardware design explicitly develops ForceCapture from existing handheld motion devices[5,6]; reference5 is originalUMI. Wrench is added to pose/width demonstrations for robot transfer."
+          "url": "https://github.com/ForceMimic/forcecapture",
+          "section": "Hardware, collection workflow, source tree and MIT license"
+        },
+        {
+          "url": "https://github.com/ForceMimic/hybridil",
+          "section": "Training/evaluation workflow, source tree and MIT license"
         }
       ],
-      "commercial": false
+      "commercial": false,
+      "verified": "2026-10-19"
     },
     "2509.04441": {
       "status": "unknown",
@@ -718,20 +724,24 @@
     "2603.17851": {
       "status": "unknown",
       "hardwareStatus": "Not verified",
-      "softwareStatus": "Not verified",
+      "softwareStatus": "Announced; README-only repository",
       "hardwareLicense": null,
       "softwareLicense": null,
       "notes": [
-        "Sensor acquisition rates differ from exported alignment rates; avoid treating1000Hz tactile hardware sampling as uniform datasetFPS."
+        "Official code README explicitly says complete codebase will be released in the near future. The linked dataset card also says forthcoming; neither portal establishes a usable release."
       ],
       "evidence": [
         {
-          "url": "https://arxiv.org/html/2603.17851",
-          "section": "Introduction; §III-A hardware; §III-C retargeting",
-          "note": "Introduction identifiesUMI low-DoF/contact limitations; §III designs a robot-free replacement with mirrored tactile/vision modalities and explicit hand/arm retargeting to robot action space."
+          "url": "https://github.com/xitong-c/DexViTac_Code",
+          "section": "README and current root tree"
+        },
+        {
+          "url": "https://huggingface.co/datasets/xitong-c/DexViTac_Dataset",
+          "section": "Official dataset card"
         }
       ],
-      "commercial": false
+      "commercial": false,
+      "verified": "2026-10-19"
     },
     "2603.17323": {
       "status": "unknown",
@@ -1438,6 +1448,180 @@
             "page": "https://lab.noematrix.ai/blog/1-noe-0-research-preview/",
             "status": "Official caption verified; download/visual inspection pending due origin TLS connection failure. Do not use as replacement cover yet."
           }
+        }
+      ]
+    },
+    "2606.13232": {
+      "verified": "2026-10-19",
+      "status": "partial",
+      "hardwareStatus": "Public CAD, BOM and assembly instructions",
+      "softwareStatus": "Policy software not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Hardware repository contains STL/CAD files and build instructions; no reuse license is declared. Public hardware files do not establish a complete policy-code release."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/wt-umi/WTUMI-Hardware",
+          "section": "Build guide, CAD files and current repository license metadata"
+        }
+      ]
+    },
+    "2607.15330": {
+      "verified": "2026-10-19",
+      "status": "partial",
+      "hardwareStatus": "Not applicable to this policy release",
+      "softwareStatus": "Open-source inference, fine-tuning and evaluation code",
+      "hardwareLicense": null,
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Official author repository publishes training/deployment code and links the 5B model. Model weights have their own terms; do not infer public access to the 100K-hour pretraining corpus."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1",
+          "section": "Code tree, model section and root Apache-2.0 license"
+        },
+        {
+          "url": "https://huggingface.co/XiaomiRobotics/Xiaomi-Robotics-1-5B",
+          "section": "Official model checkpoint"
+        }
+      ]
+    },
+    "2411.03682": {
+      "verified": "2026-10-19",
+      "status": "partial",
+      "hardwareStatus": "Not independently verified",
+      "softwareStatus": "Open-source simulation and policy implementation",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Official repository contains training, simulation and deployment code with a root MIT license. Complete hardware source rights were not independently established."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/UT-HCRL/LEGATO",
+          "section": "README, source tree and root MIT license"
+        }
+      ]
+    },
+    "2512.04884": {
+      "verified": "2026-10-19",
+      "status": "partial",
+      "hardwareStatus": "BOM / assembly guide remains on the roadmap",
+      "softwareStatus": "Public recording and processing research code",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Author repository contains the recording rig and dataset processing pipeline. A root software license was not found in inspected repository metadata; do not mark as licensed open source. Evaluation cleanup and portable configuration remain in progress."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/timengelbracht/hoi-dataset-tools",
+          "section": "README status, TODO and current root tree"
+        }
+      ]
+    },
+    "2610.20320": {
+      "verified": "2026-10-19",
+      "status": "partial",
+      "hardwareStatus": "Not independently verified",
+      "softwareStatus": "Robot replay and kinematic analysis tools released; policy code forthcoming",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Author repository releases robot-specific replay, inverse-kinematics reachability/manipulability and workspace visualization tools. Policy training and task-level evaluation remain forthcoming. Repository license is unspecified; public code is not equivalent to a complete licensed open-source stack."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/daimon-robotics/TacClaw-Infinity",
+          "section": "Robot replay / evaluation section and roadmap"
+        }
+      ]
+    },
+    "2606.26603": {
+      "verified": "2026-10-19",
+      "status": "unknown",
+      "hardwareStatus": "Announced",
+      "softwareStatus": "Announced",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Official project exposes inactive Code, Hardware (DM-UMI), and Datasets controls. A released project-page template is not the policy implementation."
+      ],
+      "evidence": [
+        {
+          "url": "https://nperi-rai.github.io/bridge-project/",
+          "section": "Resource buttons and DM-UMI description"
+        }
+      ]
+    },
+    "2510.13324": {
+      "verified": "2026-10-19",
+      "status": "unknown",
+      "hardwareStatus": "Design files forthcoming",
+      "softwareStatus": "Code forthcoming",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Official project states codebase and design files will be open-sourced; Code is explicitly marked coming soon."
+      ],
+      "evidence": [
+        {
+          "url": "https://tactile-farm.github.io/",
+          "section": "Abstract and resource buttons"
+        }
+      ]
+    },
+    "2606.18772": {
+      "verified": "2026-10-19",
+      "status": "unknown",
+      "hardwareStatus": "Not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper establishes the UMI-augmented head-hand data interface; public hardware, executable software and dataset release were not confirmed."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.18772v1",
+          "section": "Introduction and data-collection section"
+        }
+      ]
+    },
+    "2609.24868": {
+      "verified": "2026-10-19",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this policy",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper sections 4.1 and 4.5 explicitly train System 1 with approximately 1,200 hours of wrist-centric UMI demonstrations. Public code/model release was not established."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.24868v1",
+          "section": "Sections 4.1 Auxiliary data and 4.5"
+        }
+      ]
+    },
+    "2606.01027": {
+      "verified": "2026-10-19",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this policy",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper section III explicitly includes UMI-style demonstrations with masked action supervision. Do not infer downloadable model weights or data from paper publication."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.01027v1",
+          "section": "III Data Sources for Predictive Robot Learning"
         }
       ]
     }
