@@ -342,7 +342,7 @@
     "2511.05858": {
       "id": "2511.05858",
       "name": "ViTaMIn-B",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Bimanual handheld compliant grippers",
       "poseTracking": "Meta Quest 3 controllers, unified 6-DoF frame; ArUco aperture",
       "vision": "GoPro Hero 10 per hand; tactile/vision streams 30 Hz, pose stream 72 Hz",
@@ -357,7 +357,7 @@
         "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
       },
       "actionSpace": "Relative end-effector transforms plus aperture",
-      "hardwareAvailability": "Public code, sensor/hardware files and dataset: https://github.com/chuanyune/ViTaMIn-B_code",
+      "hardwareAvailability": "Official project links component list, assembly guide and an external hardware Drive folder; actual collection/training code is public without a root LICENSE. No CAD is present in the code repository itself.",
       "cost": null,
       "mass": null,
       "evidence": [
@@ -365,6 +365,11 @@
           "url": "https://arxiv.org/html/2511.05858",
           "section": "III; IV-A–D",
           "note": "DuoTact replaces AllTact; Quest replaces GoPro SLAM. Sensors stream to host computer; this version removes onboard Raspberry Pi. Foot pedal controls recording."
+        },
+        {
+          "url": "https://github.com/chuanyune/ViTaMIn-B_code",
+          "section": "Fresh release/source inventory",
+          "note": "Official project links component list, assembly guide and an external hardware Drive folder; actual collection/training code is public without a root LICENSE. No CAD is present in the code repository itself."
         }
       ],
       "corrections": [
@@ -746,7 +751,7 @@
     "2604.14089": {
       "id": "2604.14089",
       "name": "UMI-3D",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Handheld trigger parallel-jaw UMI gripper",
       "poseTracking": "Livox MID-360 LiDAR–inertial odometry with iterated error-state Kalman filter; ArUco aperture",
       "vision": "Hikrobot MV-CB013-A0UC-S industrial camera, ~185° M12 fisheye; LiDAR metric point clouds",
@@ -761,7 +766,7 @@
         "note": "No explicit dedicated sensor claim verified; absence must not be inferred."
       },
       "actionSpace": "6-DoF end-effector motion and continuous width; camera-centric visuomotor policy retained",
-      "hardwareAvailability": "Project states open hardware/software; public dataset and policy repositories linked from https://umi-3d.github.io/",
+      "hardwareAvailability": "Public Apache 2.0 hardware CAD/driver and policy sources, plus a separate GPL 2.0 SLAM/data-processing implementation at hku-mars/UMI-3D.",
       "cost": {
         "value": 700,
         "currency": "USD",
@@ -781,6 +786,11 @@
           "url": "https://arxiv.org/html/2604.14089",
           "section": "III-A HD1–HD4; III-B",
           "note": "Hardware-synchronized camera/LiDAR/IMU replaces GoPro visual odometry. Printed gripper mechanics largely match UMI. Image captures at 20 Hz, LiDAR point clouds at 10 Hz."
+        },
+        {
+          "url": "https://github.com/hku-mars/UMI-3D",
+          "section": "Fresh release/source inventory",
+          "note": "Public Apache 2.0 hardware CAD/driver and policy sources, plus a separate GPL 2.0 SLAM/data-processing implementation at hku-mars/UMI-3D."
         }
       ],
       "corrections": [
@@ -1878,7 +1888,7 @@
     "2603.03243": {
       "id": "2603.03243",
       "name": "HoMMI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Two handheld iPhone grippers plus a cap-mounted iPhone for portable head/hand capture",
       "poseTracking": "Shared ARKit multi-device world frame across three iPhones",
       "vision": "Three synchronized iPhone RGB views and depth maps",
@@ -1893,7 +1903,7 @@
         "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
       },
       "actionSpace": "Two end-effector poses, a 3D look-at point and two gripper widths; 23D policy representation",
-      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "hardwareAvailability": "Author links an iPhone-mount CAD folder and the released HoMMI/iPhUMI software. Hardware export and reuse rights remain unverified.",
       "cost": null,
       "mass": null,
       "evidence": [
@@ -1901,6 +1911,11 @@
           "url": "https://arxiv.org/html/2603.03243",
           "section": "IV; V; Appendix I; Figure 2",
           "note": "Collection uses two iPhones on grippers and one on a cap, sharing an ARKit coordinate frame; paper describes synchronized 60 Hz collection. Policy uses wrist RGB and head RGB/pointmap. Output is two 9D pose representations + 3D look-at + two widths."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/xxm19/hommi/main/hommi/train_network/train.py",
+          "section": "Fresh release/source inventory",
+          "note": "Author links an iPhone-mount CAD folder and the released HoMMI/iPhUMI software. Hardware export and reuse rights remain unverified."
         }
       ],
       "corrections": [
@@ -1933,7 +1948,7 @@
     "2606.30457": {
       "id": "2606.30457",
       "name": "iPhUMI / Behavior Prompting",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Handheld iPhone UMI gripper; optional bimanual and head-mounted phone setup; spring-mounted marker variant",
       "poseTracking": "ARKit real-time SLAM; shared session for up to three phones; ArUco tags recover gripper width",
       "vision": "Main and ultrawide iPhone cameras plus LiDAR depth capture",
@@ -1948,7 +1963,7 @@
         "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
       },
       "actionSpace": "6-DoF gripper trajectory and width; a compliant marker variant supports drawing demonstrations",
-      "hardwareAvailability": "Paper states the custom iPhUMI iOS application is open source; hardware instantiations are documented in Appendix J.",
+      "hardwareAvailability": "iPhUMI iOS app and exported-file behavior-prompting code are released under MIT; mount instructions are public. Direct wireless real-time prompting transfer is still on the roadmap.",
       "cost": null,
       "mass": null,
       "evidence": [
@@ -1956,6 +1971,11 @@
           "url": "https://arxiv.org/html/2606.30457",
           "section": "Appendix J; J.1–J.2; Figures 15–17",
           "note": "The custom iOS app captures main RGB at 1920×1440/60 Hz, ultrawide at 640×480/10 Hz and LiDAR depth at 256×192/60 Hz during collection. Width uses calibrated ArUco detections; shared ARKit supports a head phone. Drawing uses spring compliance without needing an F/T sensor."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/real-stanford/behavior_prompting/main/behavior_prompting/train_network/train.py",
+          "section": "Fresh release/source inventory",
+          "note": "iPhUMI iOS app and exported-file behavior-prompting code are released under MIT; mount instructions are public. Direct wireless real-time prompting transfer is still on the roadmap."
         }
       ],
       "corrections": [
@@ -2315,7 +2335,7 @@
     "2603.27012": {
       "id": "2603.27012",
       "name": "UMI-Underwater / UMI-Aquatic",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "On-land handheld iPhone gripper; separate autonomous underwater robot collection pipeline",
       "poseTracking": "AprilTags recover gripper openness/closure timing; handheld world-pose tracking is not specified",
       "vision": "On-land iPhone RGB; depth is inferred from monocular RGB using Depth Anything V2",
@@ -2330,7 +2350,7 @@
         "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
       },
       "actionSpace": "Land collector labels grasp/contact pixel trajectories; underwater policy predicts robot control actions conditioned on depth and affordance",
-      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "hardwareAvailability": "Collector design described in paper; executable preprocessing/training/runtime code is released under MIT. Separate collector CAD/BOM availability remains unverified.",
       "cost": null,
       "mass": null,
       "evidence": [
@@ -2338,6 +2358,11 @@
           "url": "https://arxiv.org/html/2603.27012",
           "section": "III-B–III-C; Figures 5–7",
           "note": "UMI-Aquatic mounts an iPhone and jaw AprilTags for land collection. Closure detection seeds CoTracker3 contact-pixel supervision. Monocular depth and camera crop/warp align land data with underwater observations; no on-land SLAM or six-axis pose export is established."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/umi-under-water/UMI_underwater/main/diffusion_policy/cli.py",
+          "section": "Fresh release/source inventory",
+          "note": "Collector design described in paper; executable preprocessing/training/runtime code is released under MIT. Separate collector CAD/BOM availability remains unverified."
         }
       ],
       "corrections": [
@@ -2370,7 +2395,7 @@
     "2510.02614": {
       "id": "2510.02614",
       "name": "UMI-on-Air",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Handheld lightweight compliant gripper for human capture; a separate aerial manipulator executes the policy",
       "poseTracking": "iPhone visual–inertial SLAM for EE pose; finger fiducials measure continuous width",
       "vision": "Lightweight OAK-1 W wrist RGB camera with a wide field of view",
@@ -2385,7 +2410,7 @@
         "note": "The audited hardware description does not establish a dedicated force/torque sensor. Absence is not inferred."
       },
       "actionSpace": "Relative EE pose trajectories and continuous gripper widths; controller-gradient guidance adapts actions to aerial dynamics",
-      "hardwareAvailability": "Hardware design described in paper; public CAD/BOM availability unverified in this audit.",
+      "hardwareAvailability": "Actual simulation robot meshes and training/evaluation code are public. They do not establish the portable collector CAD release; root software license is unspecified.",
       "cost": null,
       "mass": null,
       "evidence": [
@@ -2393,6 +2418,11 @@
           "url": "https://arxiv.org/html/2510.02614",
           "section": "III-A–III-C; Figure 4",
           "note": "The collector replaces the original GoPro with OAK-1 W, reduces finger size/inertia and adds iPhone-based visual-inertial SLAM. Policy predicts EE trajectories and widths; embodiment-aware diffusion uses gradients from a low-level controller at inference."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/LeCAR-Lab/UMI-on-Air/main/am_mujoco_ws/policy_learning/utils.py",
+          "section": "Fresh release/source inventory",
+          "note": "Actual simulation robot meshes and training/evaluation code are public. They do not establish the portable collector CAD release; root software license is unspecified."
         }
       ],
       "corrections": [
@@ -2593,7 +2623,7 @@
     "2603.17323": {
       "id": "2603.17323",
       "name": "DexEXO",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Wearable",
       "interfaceForms": [
         "Wearable"
@@ -2613,7 +2643,7 @@
         "type": null
       },
       "actionSpace": "6-DoF pose + six hand joint encoders",
-      "hardwareAvailability": "Design/source release not independently verified",
+      "hardwareAvailability": "Official project links an Onshape CAD document; anonymous export and hardware reuse license remain unverified. Project confirms IROS 2026 acceptance.",
       "display": {
         "form": "Wearable",
         "tracking": "iPhone AR tracking via TeleDex",
@@ -2625,6 +2655,11 @@
           "url": "https://arxiv.org/html/2603.17323",
           "section": "§II-C; §III hardware; §IV-A collection",
           "note": "§II explicitly contrastsDexUMI geometry/visual preprocessing; proposed passive hand matchesROHand geometry and trains directly from raw wristRGB; user study directly evaluatesDexUMI replacement."
+        },
+        {
+          "url": "https://dexexo-research.github.io/",
+          "section": "Fresh release/source inventory",
+          "note": "Official project links an Onshape CAD document; anonymous export and hardware reuse license remain unverified. Project confirms IROS 2026 acceptance."
         }
       ]
     },

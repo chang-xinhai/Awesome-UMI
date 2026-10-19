@@ -574,6 +574,15 @@ function scaleText(scale: Record<string, unknown>) {
     laundryEpisodes: "laundry episodes",
     drawingEpisodes: "drawing episodes",
     uniqueDrawings: "unique drawings",
+    instructionStrings: "instruction strings",
+    simulationTaskFamilies: "simulation task families",
+    allSourceEpisodes: "episodes across sources",
+    umiEpisodes: "UMI episodes",
+    umiHours: "UMI hours",
+    umiTasks: "UMI tasks",
+    realRobotEpisodes: "real-robot episodes",
+    simulationEpisodes: "simulation episodes",
+    simulationTasks: "simulation tasks",
   };
   return (
     Object.entries(labels)

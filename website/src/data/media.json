@@ -2083,7 +2083,7 @@
     "datasetImageWidth": 1400,
     "datasetImageHeight": 890,
     "datasetName": "GiT",
-    "datasetSummary": "1,800 UMI-style demonstrations across 18 bimanual tasks, within a multi-source temporal-grounding dataset. Public release access remains unverified.",
+    "datasetSummary": "Public GiTBench simulation subset: 1,440 episodes, 912,253 frames, and three RGB views at 30 Hz. The paper's 1,800 UMI demonstrations are not verified as released.",
     "credit": "Yi Wang et al. / GiT",
     "reviewed": "2026-10-19"
   }

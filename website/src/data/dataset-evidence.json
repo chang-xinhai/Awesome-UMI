@@ -61,7 +61,7 @@
     "2607.25895": {
       "id": "2607.25895",
       "name": "HiFi-UMI-2K",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K",
       "access": "Public download",
       "accessNote": "Anonymous dataset-card read and file listing available; publicly released subset is 2,000 hours.",
@@ -115,8 +115,14 @@
         },
         {
           "url": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K/resolve/main/chunk-0000/part-0000/meta/info.json",
-          "supports": "Sampled export schema:25FPS,six512×640RGBviews,20Dstateand20Daction. Per-part episode/task counts are not whole-release totals.",
+          "supports": "Sampled export schema:25FPS,six512×640 RGBviews,20Dstateand20Daction. Per-part episode/task counts are not whole-release totals.",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/simple-world-lab/HiFi-UMI-2K",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -146,12 +152,34 @@
         "environmentsQualifier": "+",
         "scope": "Official UMI community index, not independently summed from release shards"
       },
-      "fpsScope": "Sampled public export; capture sensor rates may differ"
+      "fpsScope": "Sampled public export; capture sensor rates may differ",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "simple-world-lab/HiFi-UMI-2K",
+            "apiUrl": "https://huggingface.co/api/datasets/simple-world-lab/HiFi-UMI-2K",
+            "gated": false,
+            "observedFiles": 5176,
+            "observedExtensions": {
+              "": 399,
+              ".md": 1,
+              ".parquet": 1194,
+              ".json": 1194,
+              ".mp4": 2388
+            },
+            "representativeDataFile": "chunk-0000/part-0000/data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415c088800115ac8980014c159082201500120000a08440f4ffff144d51bdbbecb33e2cd2be3e0f83b1be530058bf7dc7d1be1e0770bf355e993e"
+          }
+        ]
+      }
     },
     "2409.19499": {
       "id": "2409.19499",
       "name": "FastUMI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI-Data",
       "access": "Gated download",
       "accessNote": "Requires Hugging Face sign-in and accepting contact-sharing conditions; anonymous raw README returns HTTP 401.",
@@ -196,6 +224,12 @@
           "supports": "Paper and claimed scale",
           "checked": "2026-10-16",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/IPEC-COMMUNITY/FastUMI-Data",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "unknownFields": [
@@ -205,12 +239,38 @@
       "downloadLinks": [
         "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI-Data"
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "IPEC-COMMUNITY/FastUMI-Data",
+            "apiUrl": "https://huggingface.co/api/datasets/IPEC-COMMUNITY/FastUMI-Data",
+            "gated": "auto",
+            "observedFiles": 64,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".part-001": 18,
+              ".part-002": 18,
+              ".gz": 4,
+              ".part-003": 14,
+              ".part-004": 6,
+              ".part-005": 1,
+              ".part-006": 1
+            },
+            "representativeDataFile": "close_ricecooker.tar.gz",
+            "anonymousFileStatus": 401,
+            "fileMagic": "41636365737320746f206461746173657420495045432d434f4d4d554e4954592f46617374554d492d4461746120697320726573747269637465642e20596f75"
+          }
+        ]
+      }
     },
     "2510.08022": {
       "id": "2510.08022",
       "name": "FastUMI-100K",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot",
       "access": "Public download",
       "accessNote": null,
@@ -239,12 +299,12 @@
       "publicScale": {},
       "scopeNotes": [
         "Official community table currently indexes 32 rows totaling 92,823 demos; do not infer it enumerates the complete 54-task paper corpus.",
-        "Sampled Add Rice to Rice Cooker meta/info.json independently confirms LeRobot v2.1,20FPS,14Dstate/action. Its3748episodes are one task only."
+        "Sampled Add Rice to Rice Cooker meta/info.json confirms LeRobot v2.1, 20 FPS, and 14-dimensional state/action. Its 3,748 episodes cover one task only."
       ],
       "sources": [
         {
           "url": "https://huggingface.co/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot",
-          "supports": "100K+, 54 tasks, 20 FPS, LeRobot2.1, Apache2.0, schema",
+          "supports": "100K+, 54 tasks, 20 FPS, LeRobot2.1, Apache 2.0, schema",
           "checked": "2026-10-16",
           "published": null
         },
@@ -252,6 +312,12 @@
           "url": "https://umi-data.github.io/",
           "supports": "32 indexed task rows total 92,823",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot?expand[]=gated&expand[]=cardData&expand[]=lastModified",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -274,12 +340,24 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "IPEC-COMMUNITY/FastUMI_100k_lerobot",
+            "apiUrl": "https://huggingface.co/api/datasets/IPEC-COMMUNITY/FastUMI_100k_lerobot?expand[]=gated&expand[]=cardData&expand[]=lastModified",
+            "gated": false,
+            "inventoryNote": "Full siblings response was truncated in transit; root tree and selected subdirectory inspected instead. No complete file count inferred."
+          }
+        ]
+      }
     },
     "2608.29601": {
       "id": "2608.29601",
       "name": "OpenNeoData / N0-Foundation",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData",
       "access": "Gated download",
       "accessNote": "HF requires login and consent to share contact information; anonymous raw card returns HTTP 401.",
@@ -325,6 +403,12 @@
           "supports": "Gating, release scale, modality, exact folder inventory, schema, license",
           "checked": "2026-10-16",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/NeoteAIEmbodied/OpenNeoData",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "unknownFields": [],
@@ -332,12 +416,34 @@
       "downloadLinks": [
         "https://huggingface.co/datasets/NeoteAIEmbodied/OpenNeoData"
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "NeoteAIEmbodied/OpenNeoData",
+            "apiUrl": "https://huggingface.co/api/datasets/NeoteAIEmbodied/OpenNeoData",
+            "gated": "manual",
+            "observedFiles": 26096,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 1158,
+              ".json": 14,
+              ".mp4": 24922
+            },
+            "representativeDataFile": "aloha/data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 401,
+            "fileMagic": "41636365737320746f2064617461736574204e656f74654149456d626f646965642f4f70656e4e656f4461746120697320726573747269637465642e20596f75"
+          }
+        ]
+      }
     },
     "2606.10382": {
       "id": "2606.10382",
       "name": "UMI-Bench 1.0",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1",
       "access": "Public download",
       "accessNote": null,
@@ -372,6 +478,12 @@
           "supports": "Public download, exact task/session counts, license and storage",
           "checked": "2026-10-16",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/UMIbenchmark/UMI-Benchmark-v1",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "unknownFields": [
@@ -382,12 +494,35 @@
       "downloadLinks": [
         "https://huggingface.co/datasets/UMIbenchmark/UMI-Benchmark-v1"
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "UMIbenchmark/UMI-Benchmark-v1",
+            "apiUrl": "https://huggingface.co/api/datasets/UMIbenchmark/UMI-Benchmark-v1",
+            "gated": false,
+            "observedFiles": 579,
+            "observedExtensions": {
+              "": 17,
+              ".md": 1,
+              ".tar": 231,
+              ".txt": 283,
+              ".csv": 27,
+              ".sh": 20
+            },
+            "representativeDataFile": "data/dual_arm_task1/session_chunk_000.tar",
+            "anonymousFileStatus": 206,
+            "fileMagic": "54355f5265645f4265616e735f5363656e655f412f676f6f642f6261636b67726f756e642f6d756c74695f73657373696f6e5f32303236303531322f73657373"
+          }
+        ]
+      }
     },
     "2402.10329": {
       "id": "2402.10329",
       "name": "UMI original datasets",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://umi-data.github.io/",
       "access": "Public download",
       "accessNote": null,
@@ -427,7 +562,7 @@
         },
         {
           "url": "https://umi-data.github.io/#data-format",
-          "supports": "59.94Hz aligned Zarr schema: camera RGB, EEF xyz/axis-angle, gripper width and episode boundaries",
+          "supports": "59.94 Hz aligned Zarr schema: camera RGB, EEF xyz/axis-angle, gripper width and episode boundaries",
           "checked": "2026-10-16",
           "published": null
         }
@@ -499,16 +634,17 @@
         "https://real.stanford.edu/umi/data/cup_in_the_wild/cup_in_the_wild_mp4s.zip"
       ],
       "accessCheck": {
-        "checked": "2026-10-16",
-        "method": "Anonymous HEAD / official API / small JSON metadata",
-        "result": "Author-hosted dish-washingZIP HEAD200,22.84GB."
+        "checked": "2026-10-19",
+        "method": "Anonymous byte-range GET of actual author-hosted archive",
+        "result": "HTTP206; ZIP magic504b0304; bytes 0-63/22839303656",
+        "url": "https://real.stanford.edu/umi/data/dish_washing/bimanual_dish_washing.zarr.zip"
       },
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
     },
     "2505.21864": {
       "id": "2505.21864",
       "name": "DexUMI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://real.stanford.edu/dexumi/dataset/",
       "access": "Public download",
       "accessNote": "Direct author-hosted ZIP URLs are listed for all five task-hand configurations.",
@@ -611,16 +747,17 @@
         "https://real.stanford.edu/dexumi/dataset/xhand/kitchen.zip"
       ],
       "accessCheck": {
-        "checked": "2026-10-16",
-        "method": "Anonymous HEAD / official API / small JSON metadata",
-        "result": "Author-hosted Inspire cubeZIP HEAD200,2.02GB."
+        "checked": "2026-10-19",
+        "method": "Anonymous byte-range GET of actual author-hosted archive",
+        "result": "HTTP206; ZIP magic504b0304; bytes 0-63/2018347250",
+        "url": "https://real.stanford.edu/dexumi/dataset/inspire/cube_picking.zip"
       },
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
     },
     "2511.05858": {
       "id": "2511.05858",
       "name": "ViTaMIn-B",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
       "access": "Public download",
       "accessNote": "HF API gated=false; four task ZIPs, rawdata.zip and checkpoints are listed. Repository has no README card, so absence of a card is not absence of data.",
@@ -663,6 +800,12 @@
           "url": "https://chuanyune.github.io/ViTaMIn-B_page/",
           "supports": "DuoTact, Quest3 tracking, four bimanual tasks",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -725,12 +868,32 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "chuanyune/ViTaMIn-B_data_and_ckpt",
+            "apiUrl": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
+            "gated": false,
+            "observedFiles": 10,
+            "observedExtensions": {
+              "": 1,
+              ".ckpt": 4,
+              ".zip": 5
+            },
+            "representativeDataFile": "beaker_wiping.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000d7ac595b1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          }
+        ]
+      }
     },
     "2507.15062": {
       "id": "2507.15062",
       "name": "Touch in the Wild",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/binghaohuang-robot/touch_in_the_wild-dataset",
       "access": "Public download",
       "accessNote": null,
@@ -780,8 +943,14 @@
         },
         {
           "url": "https://arxiv.org/abs/2507.15062",
-          "supports": "43task/12environment corpus description",
+          "supports": "43 task/12environment corpus description",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/binghaohuang-robot/touch_in_the_wild-dataset",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1007,12 +1176,33 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "binghaohuang-robot/touch_in_the_wild-dataset",
+            "apiUrl": "https://huggingface.co/api/datasets/binghaohuang-robot/touch_in_the_wild-dataset",
+            "gated": false,
+            "observedFiles": 104,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 50,
+              ".pkl": 52
+            },
+            "representativeDataFile": "four_tasks/fluid_transfer/fluid_transfer.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000c7889b5a1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          }
+        ]
+      }
     },
     "2406.19464": {
       "id": "2406.19464",
       "name": "ManiWAV",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://real.stanford.edu/maniwav/data/",
       "access": "Public download",
       "accessNote": null,
@@ -1038,7 +1228,7 @@
         "semanticTasks": 4
       },
       "scopeNotes": [
-        "Four task semantics; bagel flipping has lab and separate in-the-wild recordings. The in-the-wild bagel portion contains274 demonstrations in7 environments.",
+        "Four task semantics; bagel flipping has lab and separate in-the-wild recordings. The in-the-wild bagel portion contains 274 demonstrations in7 environments.",
         "Do not treat7 in-the-wild environments plus4 lab rows as11 unique environments."
       ],
       "sources": [
@@ -1116,16 +1306,17 @@
         "https://real.stanford.edu/maniwav/data/bagel_in_wild/replay_buffer.zarr.zip"
       ],
       "accessCheck": {
-        "checked": "2026-10-16",
-        "method": "Anonymous HEAD / official API / small JSON metadata",
-        "result": "Author-hosted wipe ZarrZIP HEAD200,2.85GB."
+        "checked": "2026-10-19",
+        "method": "Anonymous byte-range GET of actual author-hosted archive",
+        "result": "HTTP206; ZIP magic504b0304; bytes 0-63/2851473337",
+        "url": "https://real.stanford.edu/maniwav/data/wipe/replay_buffer.zarr.zip"
       },
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
     },
     "2602.06643": {
       "id": "2602.06643",
       "name": "HuMI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/collections/Richard-Nai/humi",
       "access": "Public download",
       "accessNote": null,
@@ -1151,8 +1342,8 @@
         "tasks": 5
       },
       "scopeNotes": [
-        "827 is the sum of five task datasets. Squat & Pick Ground reports410 demonstrations across7 environments; others each list1 environment.",
-        "LeRobot Dynamic Toss meta/info.json independently confirms104episodes/60FPS and records wrists, pelvis/feet and29D joint_pos. Frame rows are not episodes."
+        "827 is the sum of five task datasets. Squat & Pick Ground reports 410 demonstrations across seven environments; the other tasks each list one environment.",
+        "LeRobot Dynamic Toss meta/info.json confirms 104 episodes at 60 FPS, with wrist, pelvis/foot, and 29-dimensional joint_pos records. Frame rows are not episodes."
       ],
       "sources": [
         {
@@ -1169,8 +1360,14 @@
         },
         {
           "url": "https://huggingface.co/datasets/Richard-Nai/HuMI-Toss/resolve/main/meta/info.json",
-          "supports": "60FPS,104episodes and feature schema",
+          "supports": "60FPS,104 episodes and feature schema",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Toss",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1271,12 +1468,127 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "Richard-Nai/HuMI-Toss",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Toss",
+            "gated": false,
+            "observedFiles": 9,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 3,
+              ".json": 2,
+              ".mp4": 2
+            },
+            "representativeDataFile": "data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "5041523115041590c705159cc7054c15e4b1011500120000c8e302f4c7b1f92769be6f7fed3cb86a4cbca0ef053ff1ce5abe25c060bc329b55be38702fbc7f43"
+          },
+          {
+            "repository": "Richard-Nai/HuMI-Zarrs",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Zarrs",
+            "gated": false,
+            "observedFiles": 7,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 5
+            },
+            "representativeDataFile": "proposal/dataset.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b03041400000000004d039e5b1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          },
+          {
+            "repository": "Richard-Nai/HuMI-Raw-Data",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Raw-Data",
+            "gated": false,
+            "observedFiles": 2483,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".json": 827,
+              ".mp4": 1654
+            },
+            "representativeDataFile": "proposal/raw_videos/000_0.mp4",
+            "anonymousFileStatus": 206,
+            "fileMagic": "00000014667479706d703431201310186d70343100000008667265650850a2596d6461744750524f200300004832312e30312e30312e36322e37304c4b4f3230"
+          },
+          {
+            "repository": "Richard-Nai/HuMI-Proposal",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Proposal",
+            "gated": false,
+            "observedFiles": 9,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 3,
+              ".json": 2,
+              ".mp4": 2
+            },
+            "representativeDataFile": "data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415e8e10b15fae10b4c15baf8021500120000f4f005f4ffff99b19abeaec9373b98feacbd5568243fb5088bbeb1120ebd373f87befd5e57bdea52"
+          },
+          {
+            "repository": "Richard-Nai/HuMI-Walk-Clean-Table",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Walk-Clean-Table",
+            "gated": false,
+            "observedFiles": 9,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 3,
+              ".json": 2,
+              ".mp4": 2
+            },
+            "representativeDataFile": "data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415c88c1115e08c114c1592a3041500120000a4c608f4ffff19087bbeeaa1f53d0a01123e214d0c3fef4b89be96a57ebcdfba5cbe4f39933d7c06"
+          },
+          {
+            "repository": "Richard-Nai/HuMI-Unsheathe",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Unsheathe",
+            "gated": false,
+            "observedFiles": 9,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 3,
+              ".json": 2,
+              ".mp4": 2
+            },
+            "representativeDataFile": "data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415a8a70a15baa70a4c15eac9021500120000d49305f4ffff5309873d0148903dd2afbb3dc818f53d64d274bd742c34bda280653df7db86bbf522"
+          },
+          {
+            "repository": "Richard-Nai/HuMI-Squat-Pick-Ground",
+            "apiUrl": "https://huggingface.co/api/datasets/Richard-Nai/HuMI-Squat-Pick-Ground",
+            "gated": false,
+            "observedFiles": 24,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 3,
+              ".json": 2,
+              ".mp4": 17
+            },
+            "representativeDataFile": "data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415f8cb09158acc094c15feb2021500120000fce504f4ffff2fcbcabeb24f923d8499cf3c7abf173f963256be04498dbb6f1dbabed7ff663dc4b5"
+          }
+        ]
+      }
     },
     "2604.14089": {
       "id": "2604.14089",
       "name": "UMI-3D",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset",
       "access": "Public download",
       "accessNote": null,
@@ -1315,6 +1627,12 @@
           "url": "https://github.com/Physical-Intelligence-Laboratory/UMI-3D-Dataset",
           "supports": "Official HFprocessed datasets, BaiduROSbags and models",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/ZIMBOT/umi-3d-dataset-cup",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1376,12 +1694,60 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "ZIMBOT/umi-3d-dataset-cup",
+            "apiUrl": "https://huggingface.co/api/datasets/ZIMBOT/umi-3d-dataset-cup",
+            "gated": false,
+            "observedFiles": 3,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 1
+            },
+            "representativeDataFile": "dataset_cup_umi_3d.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b03041400000000007716575c1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          },
+          {
+            "repository": "ZIMBOT/umi-3d-dataset-curtain",
+            "apiUrl": "https://huggingface.co/api/datasets/ZIMBOT/umi-3d-dataset-curtain",
+            "gated": false,
+            "observedFiles": 3,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 1
+            },
+            "representativeDataFile": "dataset_curtain_umi_3d.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000cc225c5c1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          },
+          {
+            "repository": "ZIMBOT/umi-3d-dataset-door-cup",
+            "apiUrl": "https://huggingface.co/api/datasets/ZIMBOT/umi-3d-dataset-door-cup",
+            "gated": false,
+            "observedFiles": 3,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 1
+            },
+            "representativeDataFile": "dataset_door_cup.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000fcb07f5c1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          }
+        ]
+      }
     },
     "2504.06156": {
       "id": "2504.06156",
       "name": "ViTaMIn",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset",
       "access": "Public download",
       "accessNote": null,
@@ -1404,7 +1770,7 @@
         "semanticTasks": 6
       },
       "scopeNotes": [
-        "Official community table contains8rows, including repeated Articulated Object83 and Dynamic Peg101 with/without tactile variants. Do not sum841 as unique physical demonstrations.",
+        "The official community table contains eight rows, including Articulated Object (83 demonstrations) and Dynamic Peg (101 demonstrations) repeated with and without tactile observations. The row sum of 841 is not a verified unique demonstration count.",
         "Six task-name groups total657 only after de-duplicating the two observation variants; uniqueness has not been proven from episode metadata, so a unique demo total is deliberately not set."
       ],
       "sources": [
@@ -1418,6 +1784,12 @@
           "url": "https://chuanyune.github.io/ViTaMIn_page/",
           "supports": "Visuo-tactile collection and six task categories",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn_dataset",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1516,7 +1888,27 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "chuanyune/ViTaMIn_dataset",
+            "apiUrl": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn_dataset",
+            "gated": false,
+            "observedFiles": 8,
+            "observedExtensions": {
+              "": 1,
+              ".zip": 6,
+              ".md": 1
+            },
+            "representativeDataFile": "Articulated_Object_Manipulation_dataset.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000b2b5745a1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          }
+        ]
+      }
     },
     "2610.20320": {
       "id": "2610.20320",
@@ -1541,7 +1933,7 @@
         "Language",
         "Device-specific audio"
       ],
-      "action": "Unified114Dstate and111Daction schema; device-inapplicable blocks use placeholders. DataClaw and DataDex require different valid feature subsets.",
+      "action": "Unified 114-dimensional state and 111-dimensional action schema. Device-inapplicable blocks use placeholders; DataClaw and DataDex have different valid feature subsets.",
       "embodiments": [
         "DM-DataClaw",
         "DM-DataDex"
@@ -1564,7 +1956,7 @@
         "TacClaw project download buttons say Coming soon. The broader Daimon-Infinity repository publishes files and announces its first1000-hour batch; the full10000+hours is not a verified complete public release.",
         "The card analyzes approximately1209collected hours; this is a separate scope from its first1000-hour release.",
         "The first batch mixes DataClaw and DataDex; do not describe every released hour as TacClaw-only.",
-        "A sampled DataClaw meta/info.json confirms30FPS,114Dstate/111Daction and247episodes. It is one recording folder, not a release-wide episode count.",
+        "A sampled DataClaw meta/info.json confirms 30 FPS, 114-dimensional state, 111-dimensional action, and 247 episodes. This is one recording folder, not the release-wide episode count.",
         "Author GitHub now publishes robot replay and kinematic analysis tools, while policy training/task-level evaluation remains forthcoming."
       ],
       "sources": [
@@ -1584,6 +1976,12 @@
           "url": "https://github.com/daimon-robotics/TacClaw-Infinity",
           "supports": "Public subset portals and actual released-code scope",
           "checked": "2026-10-19"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/daimonrobotics/Daimon-Infinity?expand[]=gated&expand[]=cardData&expand[]=lastModified",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "unknownFields": [],
@@ -1606,12 +2004,24 @@
         }
       ],
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
-      "fpsScope": "Sampled public export; capture sensor rates may differ"
+      "fpsScope": "Sampled public export; capture sensor rates may differ",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "daimonrobotics/Daimon-Infinity",
+            "apiUrl": "https://huggingface.co/api/datasets/daimonrobotics/Daimon-Infinity?expand[]=gated&expand[]=cardData&expand[]=lastModified",
+            "gated": false,
+            "inventoryNote": "Full siblings response was truncated in transit; root tree and selected subdirectory inspected instead. No complete file count inferred."
+          }
+        ]
+      }
     },
     "2602.03310": {
       "id": "2602.03310",
       "name": "RDT2",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/robotics-diffusion-transformer/BimanualUR5eExample",
       "access": "Example data only",
       "accessNote": null,
@@ -1624,7 +2034,7 @@
         "Left/right wrist RGB",
         "Task instruction"
       ],
-      "action": "Example data:relative0.8-second action chunk at30Hz plus discrete RVQ action tokens",
+      "action": "Example data: relative 0.8-second action chunks at 30 Hz, plus discrete RVQ action tokens.",
       "embodiments": [
         "Custom UMI collector",
         "BimanualUR5e example",
@@ -1639,7 +2049,7 @@
       "publicScale": {},
       "scopeNotes": [
         "The full10000+hour UMI training corpus is not confirmed publicly downloadable from current project/repository links.",
-        "BimanualUR5eExample is a released robot finetuning example, not the UMI pretraining corpus. Its Apache2.0license and WebDataset schema must not be applied to the unreleased corpus."
+        "BimanualUR5eExample is a released robot finetuning example, not the UMI pretraining corpus. Its Apache 2.0license and WebDataset schema must not be applied to the unreleased corpus."
       ],
       "sources": [
         {
@@ -1656,8 +2066,14 @@
         },
         {
           "url": "https://huggingface.co/datasets/robotics-diffusion-transformer/BimanualUR5eExample",
-          "supports": "Robot finetuning example, Apache2.0 license, WebDataset schema.",
+          "supports": "Robot finetuning example, Apache 2.0 license, WebDataset schema.",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/robotics-diffusion-transformer/BimanualUR5eExample",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1675,12 +2091,33 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "robotics-diffusion-transformer/BimanualUR5eExample",
+            "apiUrl": "https://huggingface.co/api/datasets/robotics-diffusion-transformer/BimanualUR5eExample",
+            "gated": false,
+            "observedFiles": 75,
+            "observedExtensions": {
+              "": 2,
+              ".md": 1,
+              ".json": 1,
+              ".tar": 71
+            },
+            "representativeDataFile": "shards/shard-1-000000.tar",
+            "anonymousFileStatus": 206,
+            "fileMagic": "302e616374696f6e2e6e707900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          }
+        ]
+      }
     },
     "2606.04708": {
       "id": "2606.04708",
       "name": "VISTA",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/collections/TeleEmbodied/vista",
       "access": "Public download",
       "accessNote": null,
@@ -1717,8 +2154,8 @@
       "scopeNotes": [
         "VQA samples are not demonstration episodes. Five million RefSpatial samples use FLUX-edited fisheye imagery.",
         "HF Dataset Viewer exposes two250-row previews, while full VQA images and JSONL annotations are stored separately as shards. Do not mistake preview size for release size.",
-        "The paper trains on100Krobot trajectories, while VISTA-UMI-5K releases5000validated trajectories across30tasks.",
-        "20FPS and16Dstate/action were checked in one released task metadata file."
+        "The paper trains on 100K robot trajectories; VISTA-UMI-5K releases 5,000 validated trajectories across 30 tasks.",
+        "20 FPS and 16-dimensional state/action were checked in one released task metadata file."
       ],
       "sources": [
         {
@@ -1737,6 +2174,12 @@
           "url": "https://tele-umi-vista.github.io/",
           "supports": "100K training trajectory mixture is separate from the public5K release.",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/TeleEmbodied/UMI-VQA-8M",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1766,12 +2209,53 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "TeleEmbodied/UMI-VQA-8M",
+            "apiUrl": "https://huggingface.co/api/datasets/TeleEmbodied/UMI-VQA-8M",
+            "gated": false,
+            "observedFiles": 86,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".png": 1,
+              ".json": 2,
+              ".gz": 69,
+              ".jsonl": 9,
+              ".sh": 1,
+              ".parquet": 2
+            },
+            "representativeDataFile": "fisheye_refspatial_3d/images/shard_0000.tar.gz",
+            "anonymousFileStatus": 206,
+            "fileMagic": "1f8b0808e99c0e6a02ff73686172645f303030302e74617200ecba654c5c5d18353ab86bd11687e2c5dd5d8b539c22c58bdbe0dea285e2ee568a1597c19dc2e0"
+          },
+          {
+            "repository": "TeleEmbodied/VISTA-UMI-5K",
+            "apiUrl": "https://huggingface.co/api/datasets/TeleEmbodied/VISTA-UMI-5K",
+            "gated": false,
+            "observedFiles": 248,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".parquet": 102,
+              ".json": 60,
+              ".mp4": 84
+            },
+            "representativeDataFile": "task_001_press_the_power_button_of_the_power_strip/data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415e8a4800115d4a580014c159a89201500120000b49240f4ffff9a8ee43aaa335b3b51de453be64a95bb84b04ebc0dbc033cfcf77f3f6374ad42"
+          }
+        ]
+      }
     },
     "2606.14409": {
       "id": "2606.14409",
       "name": "Hy-Embodied-0.5-VLA-Data",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data",
       "access": "Public subset",
       "accessNote": null,
@@ -1815,6 +2299,12 @@
           "supports": "Exact released hours, episodes and frames;20% corpus scope; Lance/LeRobot schema;2D gripper action and license.",
           "checked": "2026-10-16",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/tencent/Hy-Embodied-0.5-VLA-Data",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "unknownFields": [],
@@ -1822,12 +2312,36 @@
       "downloadLinks": [
         "https://huggingface.co/datasets/tencent/Hy-Embodied-0.5-VLA-Data"
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "tencent/Hy-Embodied-0.5-VLA-Data",
+            "apiUrl": "https://huggingface.co/api/datasets/tencent/Hy-Embodied-0.5-VLA-Data",
+            "gated": false,
+            "observedFiles": 4778,
+            "observedExtensions": {
+              "": 2,
+              ".md": 1,
+              ".txn": 26,
+              ".manifest": 26,
+              ".parquet": 45,
+              ".json": 67,
+              ".lance": 4611
+            },
+            "representativeDataFile": "table_000/meta/episodes/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415c0aa0b15ead5054c15a8b5011500120000a0d50500000d0100010d0800020d0800030d0800040d0800050d0800060d0800070d0800080d0800"
+          }
+        ]
+      }
     },
     "2606.30457": {
       "id": "2606.30457",
       "name": "iPhUMI behavior-prompting datasets",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://behavior-prompting.github.io/",
       "access": "Public download",
       "accessNote": null,
@@ -1856,7 +2370,7 @@
         "uniqueDrawings": 1000
       },
       "scopeNotes": [
-        "Laundry contains three folding subtasks; drawing contains1000unique drawings with around5–6demonstrations each.",
+        "Laundry contains three folding subtasks; drawing contains 1000unique drawings with around5–6demonstrations each.",
         "7360sums1572laundry+5788drawing demonstrations with different embodiments; do not label all7360as bimanual gripper demonstrations."
       ],
       "sources": [
@@ -1876,6 +2390,12 @@
           "url": "https://huggingface.co/datasets/austinpatel/iphumi_drawinganything_real",
           "supports": "Drawing Zarr and raw files under MIT.",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/austinpatel/iphumi_bimanual_laundry_folding",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -1932,12 +2452,46 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "austinpatel/iphumi_bimanual_laundry_folding",
+            "apiUrl": "https://huggingface.co/api/datasets/austinpatel/iphumi_bimanual_laundry_folding",
+            "gated": false,
+            "observedFiles": 6,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 4
+            },
+            "representativeDataFile": "sweater_folding_raw_data.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000c166dc5c0000000000000000000000001f00000061757374696e2d737765617465722d666f6c642d3035333032362d7261772f504b03"
+          },
+          {
+            "repository": "austinpatel/iphumi_drawinganything_real",
+            "apiUrl": "https://huggingface.co/api/datasets/austinpatel/iphumi_drawinganything_real",
+            "gated": false,
+            "observedFiles": 5,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 3
+            },
+            "representativeDataFile": "drawanything_real_raw_data.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b0304140000000000c09c1a5d0000000000000000000000001f00000064726177616e797468696e675f7265616c5f7261775f646174612d7261772f504b03"
+          }
+        ]
+      }
     },
     "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData": {
       "id": "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData",
       "name": "GenRobot10Kh-RealOmin-OpenData",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/genrobot2025/10Kh-RealOmin-OpenData",
       "access": "Gated download",
       "accessNote": "HFAPI reports gated=auto. Anonymous raw card fetch returns401; sign-in and contact-sharing consent are required.",
@@ -1972,7 +2526,7 @@
         "scope": "OfficialUMIcommunitylistedvalue"
       },
       "scopeNotes": [
-        "Current HF card says13000+hours and5M+clips after Stage3. The community index lists789772demonstrations; these are different versions/counting units.",
+        "The current HF card reports 13,000+ hours and 5M+ clips after Stage 3. The community index lists 789,772 demonstrations. These counts use different versions and units.",
         "Clips must not be labeled episodes. Card still preserves old Stage1/2 release figures950h+653h, alongside the newer Stage3 completion statement.",
         "Tactile is claimed in the statistics table, but the documented example MCAP topics show camera,IMU,encoder andEEFpose only. The tactile payload schema remains unverified.",
         "No canonical arXiv ID exists in the current README; official dataset URL is the association key."
@@ -1988,6 +2542,12 @@
           "url": "https://umi-data.github.io/",
           "supports": "Community index demonstration count and observation modalities.",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/genrobot2025/10Kh-RealOmin-OpenData",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -2005,12 +2565,34 @@
           "gated": "auto"
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "genrobot2025/10Kh-RealOmin-OpenData",
+            "apiUrl": "https://huggingface.co/api/datasets/genrobot2025/10Kh-RealOmin-OpenData",
+            "gated": "auto",
+            "observedFiles": 100000,
+            "observedExtensions": {
+              "": 1,
+              ".mcap": 99997,
+              ".zip": 1,
+              ".md": 1
+            },
+            "representativeDataFile": "Clutter Tidy-Up [Stage2]/00001/01706.mcap",
+            "anonymousFileStatus": 401,
+            "fileMagic": "41636365737320746f20646174617365742067656e726f626f74323032352f31304b682d5265616c4f6d696e2d4f70656e446174612069732072657374726963",
+            "inventoryNote": "Observed API response capped at100000 entries; this is not a complete corpus count."
+          }
+        ]
+      }
     },
     "2410.18647": {
       "id": "2410.18647",
       "name": "Data Scaling Laws datasets",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset",
       "access": "Public download",
       "accessNote": null,
@@ -2034,7 +2616,7 @@
         "processedSplits": 6
       },
       "scopeNotes": [
-        "PourWater and MouseArrangement each have overlapping32environment/object1and16environment×4object splits. Their processed counts must not be summed into a unique episode total.",
+        "PourWater and MouseArrangement each have overlapping 32-environment/one-object and 16-environment/four-object splits. Their processed counts must not be summed into a unique episode total.",
         "Nominal collected samples in the HF card differ from the filtered valid Zarr counts enumerated by the official community index.",
         "Environment-object pairs and physical environments are different counting units."
       ],
@@ -2049,6 +2631,12 @@
           "url": "https://huggingface.co/datasets/Fanqi-Lin/Processed-Task-Dataset",
           "supports": "Four tasks, six processed splits, environment-object layout and count files.",
           "checked": "2026-10-16",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/Fanqi-Lin/Processed-Task-Dataset",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
           "published": null
         }
       ],
@@ -2144,7 +2732,42 @@
           "gated": false
         }
       ],
-      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
+      "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ.",
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "Fanqi-Lin/Processed-Task-Dataset",
+            "apiUrl": "https://huggingface.co/api/datasets/Fanqi-Lin/Processed-Task-Dataset",
+            "gated": false,
+            "observedFiles": 15,
+            "observedExtensions": {
+              "": 3,
+              ".md": 1,
+              ".txt": 6,
+              ".zip": 5
+            },
+            "representativeDataFile": "arrange_mouse/dataset.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b030414000000000078b723591db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          },
+          {
+            "repository": "Fanqi-Lin/GoPro-Raw-Videos",
+            "apiUrl": "https://huggingface.co/api/datasets/Fanqi-Lin/GoPro-Raw-Videos",
+            "gated": false,
+            "observedFiles": 23482,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".mp4": 23480
+            },
+            "representativeDataFile": "fold_towel/env_1/object_1/1.mp4",
+            "anonymousFileStatus": 206,
+            "fileMagic": "00000014667479706d703431201310186d703431000000086672656501d01ddb6d6461744750524f200300004832312e30312e30312e36322e37304c53553430"
+          }
+        ]
+      }
     },
     "2509.18757": {
       "id": "2509.18757",
@@ -2209,7 +2832,7 @@
     "2509.14688": {
       "id": "2509.14688",
       "name": "exUMI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/silicx/exUMI",
       "access": "Public download",
       "accessNote": "Official author repository links an anonymous, ungated Hugging Face dataset with eight task archives and raw videos.",
@@ -2278,6 +2901,12 @@
           "supports": "Sec.4.2 /5.1 and Appendix: human-play corpus, 10 environments, 300+ objects, frame scopes, action representation.",
           "checked": "2026-10-16",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/silicx/exUMI",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "unknownFields": [
@@ -2313,7 +2942,28 @@
             "stack_cube": 201
           }
         }
-      ]
+      ],
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "silicx/exUMI",
+            "apiUrl": "https://huggingface.co/api/datasets/silicx/exUMI",
+            "gated": false,
+            "observedFiles": 1498,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1,
+              ".zip": 8,
+              ".mp4": 1488
+            },
+            "representativeDataFile": "insert_pen.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b030414000000000036af885a1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          }
+        ]
+      }
     },
     "2411.03682": {
       "id": "2411.03682",
@@ -2416,7 +3066,7 @@
     },
     "2604.13001": {
       "name": "XRZero-G0-3K",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/x-square-robot/XRZero-G0-3K",
       "access": "Public download",
       "accessNote": "Public, ungated files verified in the official HF API. The broader paper source corpus is not equated with this release.",
@@ -2459,6 +3109,12 @@
         {
           "url": "https://arxiv.org/html/2604.13001",
           "section": "§4.1 source-corpus statistics"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/x-square-robot/XRZero-G0-3K",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "repositorySnapshots": [
@@ -2602,11 +3258,32 @@
           "tasks": 1,
           "fps": 30
         }
-      ]
+      ],
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "x-square-robot/XRZero-G0-3K",
+            "apiUrl": "https://huggingface.co/api/datasets/x-square-robot/XRZero-G0-3K",
+            "gated": false,
+            "observedFiles": 10822,
+            "observedExtensions": {
+              "": 1,
+              ".parquet": 55,
+              ".json": 40,
+              ".mp4": 10726
+            },
+            "representativeDataFile": "Pick_up_vase_left_side_table_and_place_middle_table/data/chunk-000/file-000.parquet",
+            "anonymousFileStatus": 206,
+            "fileMagic": "50415231150415f86b15fc6b4c15fe1a1500120000fc3500000901f4f41a80399b8eb9ee93a3b8a8a70f397b690a386af72bb852499d38bd3706369c5349b793"
+          }
+        ]
+      }
     },
     "2512.09851": {
       "name": "TacThru-UMI Tasks",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/aidenli/tacthru_umi_tasks",
       "access": "Public download",
       "accessNote": "Five task archives are public and ungated; archive internals not downloaded or re-counted.",
@@ -2649,12 +3326,38 @@
         {
           "url": "https://github.com/YuyangLee/TacThru",
           "section": "Download Datasets"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/aidenli/tacthru_umi_tasks",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
-      ]
+      ],
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "aidenli/tacthru_umi_tasks",
+            "apiUrl": "https://huggingface.co/api/datasets/aidenli/tacthru_umi_tasks",
+            "gated": false,
+            "observedFiles": 8,
+            "observedExtensions": {
+              "": 2,
+              ".zip": 5,
+              ".md": 1
+            },
+            "representativeDataFile": "HangScissors/HangScissors-120.zarr.zip",
+            "anonymousFileStatus": 206,
+            "fileMagic": "504b03041400000000000e935d5b1db677ff1800000018000000070000002e7a67726f75707b0a20202020227a6172725f666f726d6174223a20320a7d504b03"
+          }
+        ]
+      }
     },
     "2604.07335": {
       "name": "BiTacMan / TAMEn",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/OpenDriveLab-org/BiTacMan",
       "access": "Public download",
       "accessNote": "724 CSV trajectories and all four paired MP4 views are public and ungated; this is newer evidence than the unchecked GitHub dataset roadmap.",
@@ -2699,6 +3402,12 @@
         {
           "url": "https://arxiv.org/html/2604.07335",
           "section": "§III; Fig.6 task overview"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/OpenDriveLab-org/BiTacMan",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "repositorySnapshots": [
@@ -2714,7 +3423,28 @@
             "Herbal_Transfer": 146
           }
         }
-      ]
+      ],
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "OpenDriveLab-org/BiTacMan",
+            "apiUrl": "https://huggingface.co/api/datasets/OpenDriveLab-org/BiTacMan",
+            "gated": false,
+            "observedFiles": 3627,
+            "observedExtensions": {
+              "": 6,
+              ".mp4": 2896,
+              ".csv": 724,
+              ".md": 1
+            },
+            "representativeDataFile": "Binder_Clip_Removal/Binder_Clip_Removal_100_camera1.mp4",
+            "anonymousFileStatus": 206,
+            "fileMagic": "000000206674797069736f6d0000020069736f6d69736f32617663316d70343100000dff6d6f6f760000006c6d766864000000000000000000000000000003e8"
+          }
+        ]
+      }
     },
     "2603.17851": {
       "id": "2603.17851",
@@ -2722,7 +3452,7 @@
       "verified": "2026-10-19",
       "datasetUrl": "https://huggingface.co/datasets/xitong-c/DexViTac_Dataset",
       "access": "Coming soon",
-      "accessNote": "Official dataset card says the complete dataset will be released in the near future; a portal is not proof of released demonstrations.",
+      "accessNote": "Official HF inventory contains only .gitattributes and README.md, with zero data files. Public API access is not a dataset release.",
       "license": null,
       "formats": [],
       "reportedScale": {
@@ -2740,24 +3470,50 @@
           "url": "https://arxiv.org/abs/2603.17851",
           "supports": "Reported corpus scale",
           "checked": "2026-10-19"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/xitong-c/DexViTac_Dataset",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
-      ]
+      ],
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "xitong-c/DexViTac_Dataset",
+            "apiUrl": "https://huggingface.co/api/datasets/xitong-c/DexViTac_Dataset",
+            "gated": false,
+            "observedFiles": 2,
+            "observedExtensions": {
+              "": 1,
+              ".md": 1
+            },
+            "representativeDataFile": null,
+            "anonymousFileStatus": null,
+            "fileMagic": null
+          }
+        ]
+      }
     },
     "2610.04255": {
       "id": "2610.04255",
       "name": "GiT",
       "verified": "2026-10-19",
-      "datasetUrl": "https://kk-stephen.github.io/grounded-in-time/",
-      "access": "Release not verified",
-      "accessNote": "Paper and project describe availability; downloadable archive, license and source-specific released scale have not been independently established.",
-      "license": null,
+      "datasetUrl": "https://huggingface.co/datasets/XGQ12345/GiTBench_sim_train_lerobotv3",
+      "access": "Public simulation subset",
+      "accessNote": "The public HF LeRobot simulation files are downloadable. Downloaded episode metadata contain 1,440 episodes totaling 912,253 frames. Release of the real UMI demonstrations remains unverified.",
+      "license": "Apache-2.0 (released simulation subset)",
       "formats": [
-        "HDF5"
+        "LeRobot v3",
+        "Parquet",
+        "MP4"
       ],
       "observations": [
-        "Two wrist RGB views and one global RGB view",
-        "SteamVR-reconstructed gripper poses and AprilTag-estimated aperture",
-        "Fine-grained subtasks and counterfactual task pairs"
+        "Released simulation: front, left, and right RGB views",
+        "Released simulation: 14-dimensional joint state"
       ],
       "reportedScale": {
         "allSourceEpisodes": 4680,
@@ -2769,19 +3525,61 @@
         "simulationEpisodes": 1620,
         "simulationTasks": 9
       },
-      "publicScale": {},
+      "publicScale": {
+        "episodes": 1440,
+        "frames": 912253,
+        "instructionStrings": 35,
+        "simulationTaskFamilies": 9
+      },
       "scopeNotes": [
-        "UMI stream has RGB views and reconstructed gripper trajectories; measured depth belongs to the real-robot and simulation pipelines. No force/tactile streams are collected.",
-        "All-source totals and UMI-only statistics are separate. Downloadable release and license were not independently established."
+        "The paper reports 1,800 UMI demonstrations across 18 real-world bimanual tasks. The verified public subset contains simulation data; it does not establish release of those real demonstrations.",
+        "HF meta/info.json and the downloaded episode Parquet agree on 1,440 episodes and 912,253 frames. The GitHub README reports an older total of 671,299 frames.",
+        "The 35 task strings in the LeRobot metadata are instruction variants. GitHub defines nine simulation task families and 540 fixed test episodes. The 1,440 training episodes form a separate split.",
+        "The public simulation release has three RGB views and joint actions. The paper describes HDF5 recording for other data pipelines; this does not establish an HDF5 UMI release."
       ],
       "sources": [
         {
-          "url": "https://arxiv.org/html/2610.04255v1",
-          "supports": "III-B hardware/source distinction, unified format and task scope",
-          "checked": "2026-10-19"
+          "url": "https://kk-stephen.github.io/grounded-in-time/",
+          "supports": "Official project links benchmark repository",
+          "checked": "2026-10-19",
+          "published": null
+        },
+        {
+          "url": "https://github.com/xgq2005/GiTBench",
+          "supports": "Simulation benchmark scope, training data, and 540 fixed test episodes",
+          "checked": "2026-10-19",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/XGQ12345/GiTBench_sim_train_lerobotv3/raw/main/meta/info.json",
+          "supports": "Actual metadata: 1,440 episodes, 912,253 frames, 35 instruction strings, 30 Hz, three RGB views, and 14 joint actions",
+          "checked": "2026-10-19",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/XGQ12345/GiTBench_sim_train_lerobotv3/resolve/main/meta/episodes/chunk-000/file-000.parquet",
+          "supports": "Downloaded episode Parquet: 128,060 bytes, 1,440 rows, and a summed episode length of 912,253 frames",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
-      "fps": 30
+      "fps": 30,
+      "action": "Released simulation: 14-dimensional bimanual joint action. Paper UMI pipeline: 6-DoF end-effector pose and gripper width.",
+      "embodiments": [
+        "Released simulation: bimanual 7-DoF arms",
+        "Paper collection: UMI grippers and real robots"
+      ],
+      "downloadLinks": [
+        "https://huggingface.co/datasets/XGQ12345/GiTBench_sim_train_lerobotv3"
+      ],
+      "unknownFields": [
+        "public real-UMI corpus release"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-19",
+        "method": "Anonymous API inventory, actual meta/info.json, and download/parse of episode Parquet",
+        "result": "1,440 rows; episode length sum = 912,253 frames; file size = 128,060 bytes"
+      }
     },
     "2506.01941": {
       "id": "2506.01941",
@@ -2835,6 +3633,12 @@
           "url": "https://opendrivelab.com/FreeTacMan",
           "supports": "Official project links the data release",
           "checked": "2026-10-19"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/OpenDriveLab/FreeTacMan",
+          "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
+          "checked": "2026-10-19",
+          "published": null
         }
       ],
       "repositorySnapshots": [
@@ -2896,7 +3700,28 @@
       "unknownFields": [
         "export FPS",
         "coordinate units"
-      ]
+      ],
+      "releaseInventory": {
+        "checked": "2026-10-19",
+        "method": "Anonymous official API file inventory plus first 64 bytes of a real data file when accessible",
+        "repositories": [
+          {
+            "repository": "OpenDriveLab/FreeTacMan",
+            "apiUrl": "https://huggingface.co/api/datasets/OpenDriveLab/FreeTacMan",
+            "gated": false,
+            "observedFiles": 24915,
+            "observedExtensions": {
+              "": 2,
+              ".mp4": 18484,
+              ".csv": 6428,
+              ".md": 1
+            },
+            "representativeDataFile": "ArrangeFruit/ArrangeFruit_100_camera1.mp4",
+            "anonymousFileStatus": 206,
+            "fileMagic": "0000001c6674797069736f6d0000020069736f6d69736f326d70343100000008667265650015f2546d646174000001b3001007000001b61060658259ead7d6c3"
+          }
+        ]
+      }
     }
   }
 }
