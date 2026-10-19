@@ -507,6 +507,10 @@ function hardwareFacts(w: Work): [string, string][] {
     ["Actions", text(c.actions, "Unknown")],
     ["Source release", opennessLabel(w)],
   ];
+  if (w.release?.hardwareStatus)
+    rows.push(["Hardware release", text(w.release.hardwareStatus)]);
+  if (w.release?.softwareStatus)
+    rows.push(["Software release", text(w.release.softwareStatus)]);
   if (w.commercial) rows.push(["Availability", text(w.release?.availability, "Commercial product")]);
   if (w.release?.productName && w.release.productName !== w.name) rows.push(["Product version", text(w.release.productName)]);
   for (const k of ["cost", "mass"]) if (h[k]) rows.push([k === "cost" ? "Reported cost" : "Reported mass", measurement(h[k])]);

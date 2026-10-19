@@ -285,6 +285,10 @@ export function getCatalog(): Work[] {
     const h = hardware[work.id],
       d = datasets[work.id] ?? datasets[work.paperUrl];
     work.release = releases[work.id];
+    // A repository link alone does not establish an implementation release.
+    // Prefer the artifact inspection recorded in the release evidence.
+    if (work.release?.softwareStatus)
+      work.codeAccess = String(work.release.softwareStatus);
     work.openness = String(work.release?.status ?? "unknown");
     work.commercial = work.publication === "Product" || work.release?.commercial === true || work.commercial === true;
     if (h || d) work.research = { hardware: h, dataset: d };

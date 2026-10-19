@@ -568,7 +568,7 @@
     "2609.22809": {
       "id": "2609.22809",
       "name": "KIWI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "form": "Modular handheld chopstick/parallel-jaw or wearable wrist cuff",
       "poseTracking": "Offline front/rear lens localization in shared metric map plus IMU factor-graph fusion",
       "vision": "Dual-lens Insta360 X5 per wrist; optional GO 3 head view; audio synchronizes cameras",
@@ -583,7 +583,7 @@
         "note": "Camera-native video/IMU/audio and visual jaw readout only."
       },
       "actionSpace": "World-frame 6-DoF left/right tool and optional head trajectories plus visually measured gripper opening; paper evaluates capture, not manipulation policy",
-      "hardwareAvailability": "Chopsticks gripper CAD/print parts, robot twin and build notes released at https://github.com/TToTMooN/KIWI_hardware; parallel-jaw and bare-wrist variants Coming Soon. https://github.com/TToTMooN/KIWI_software currently documentation only; executable code Coming Soon (stated estimate 2026-10-16, not proof of delivery).",
+      "hardwareAvailability": "Apache-2.0 chopsticks gripper CAD/print parts, robot twin, ego-camera mount and build notes are released. Parallel-jaw and bare-wrist modules remain pending. The executable offline processing pipeline is now released under Apache-2.0, with a separate GPL-3.0 ORB-SLAM3 engine/wrapper; the author provides one five-minute raw sample take.",
       "cost": null,
       "mass": null,
       "evidence": [
@@ -595,7 +595,12 @@
         {
           "url": "https://github.com/TToTMooN/KIWI_hardware",
           "section": "Release Status",
-          "note": "Hardware release is partial: chopsticks collector/robot gripper released, parallel and bare-hand modules pending. Software README explicitly states code coming soon."
+          "note": "Hardware release remains partial: chopsticks collector/robot gripper, ego-camera mount and assembly files are released; parallel and wrist-mount modules remain Coming soon."
+        },
+        {
+          "url": "https://github.com/TToTMooN/KIWI_software",
+          "section": "README, kiwi/ implementation, cpp/orbslam_session, tests/, LICENSE and cpp/orbslam_session/LICENSE",
+          "note": "Released calibration, audio synchronization, shared-scene mapping/localization, IMU fusion, visual jaw recovery, review/replay and LeRobot/GR00T/UMI export implementation. Public sample includes two wrist-camera clips and an optional ego clip. Offline research pipeline, not a learned manipulation policy."
         }
       ],
       "corrections": [
@@ -616,7 +621,7 @@
         "Wearable",
         "Mobile"
       ],
-      "interfaceFormsNote": "Handheld chopstick/parallel tools, bare-hand wrist cuff and room-scale loco-manipulation are described. Current release status remains partial: chopsticks hardware released; parallel and wrist-cuff modules and executable software pending.",
+      "interfaceFormsNote": "Handheld chopstick/parallel tools, bare-hand wrist cuff and room-scale loco-manipulation are described. Chopsticks hardware and the offline software pipeline are released; parallel-jaw and wrist-cuff hardware modules remain pending.",
       "signalsEvidence": {
         "url": "https://arxiv.org/html/2609.22809",
         "section": "1; 2.1; 4.1–4.3"

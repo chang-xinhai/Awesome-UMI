@@ -198,15 +198,16 @@
       ]
     },
     "2609.22809": {
-      "verified": "2026-10-16",
+      "verified": "2026-10-19",
       "status": "partial",
-      "hardwareStatus": "Open chopsticks hardware",
-      "softwareStatus": "Documentation only",
+      "hardwareStatus": "Chopsticks hardware released; parallel-jaw / wrist-mount modules pending",
+      "softwareStatus": "Released offline research pipeline",
       "hardwareLicense": "Apache-2.0",
-      "softwareLicense": null,
+      "softwareLicense": "Apache-2.0; separate ORB-SLAM3 engine/wrapper GPL-3.0",
       "notes": [
-        "Apache-2.0 source includes chopsticks STEP / 3MF, ego-camera housing, and robot mounts.",
-        "Parallel-jaw / bare-wrist variants and executable software remain marked Coming Soon in the inspected sources."
+        "Apache-2.0 hardware sources include chopsticks STEP / 3MF, ego-camera housing and robot mounts. Parallel-jaw and bare-wrist hardware modules remain pending, so the combined source-release status remains partial.",
+        "Executable Python processing, C++ ORB-SLAM3 wrapper, calibration configurations, tests, documentation and dataset exporters are now published. This is an offline research implementation; robot replay does not establish a learned closed-loop policy.",
+        "The Python code is Apache-2.0; the separately executed ORB-SLAM3 engine and wrapper are GPL-3.0. Vendored dependencies and robot assets retain their own terms. A five-minute raw take is linked for installation checks; do not infer a full dataset release."
       ],
       "evidence": [
         {
@@ -215,7 +216,7 @@
         },
         {
           "url": "https://github.com/TToTMooN/KIWI_software",
-          "section": "Current source tree / repository license"
+          "section": "kiwi/ source tree, cpp/orbslam_session, tests/, README walkthrough, root Apache-2.0 LICENSE and wrapper GPL-3.0 LICENSE"
         }
       ]
     },
