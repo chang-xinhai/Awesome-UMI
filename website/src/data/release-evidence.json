@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-10-19",
+  "reviewed": "2026-10-21",
   "criteria": {
     "open": "Verified hardware source with reuse rights plus licensed executable software.",
     "partial": "Some reusable artifacts exist, but hardware/software is incomplete, externally licensed or noncommercial / unspecified.",
@@ -513,22 +513,32 @@
     "resource-3515d52be0": {
       "status": "partial",
       "hardwareStatus": "Public shell CAD; full design unverified",
-      "softwareStatus": "Open source",
+      "softwareStatus": "Apache-2.0 gripper SDK and motor OTA tools; firmware binaries",
       "hardwareLicense": null,
       "softwareLicense": "Apache-2.0",
       "notes": [
         "Public STEP files describe external shells, not a complete reproducible hardware design.",
         "Gripper SDK source is Apache-2.0; firmware is distributed as binaries without source.",
         "Tactile-derived 3D forces / 6D resultants are not a dedicated force-torque sensor.",
-        "Collection workflow uses xense-taccap-lerobot, Apache-2.0; tactile SDK is distributed separately."
+        "Collection workflow uses xense-taccap-lerobot, Apache-2.0; tactile SDK is distributed separately.",
+        "The current firmware inventory includes EL05_1.0.5.0.4.bin plus master/slave gripper images, and the SDK ships model-aware motor OTA tools. Bundled motor firmware is a binary release, not firmware source; no RS00 motor image is shipped."
       ],
       "evidence": [
         {
           "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper",
           "section": "SDK source and license"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/blob/main/firmware/manifest.json",
+          "section": "Actual firmware filenames / CRC32 inventory, including EL05 motor binary"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/blob/main/python/examples/motor_ota_update.py",
+          "section": "Model-aware OTA software; firmware source rights are separate"
         }
       ],
-      "commercial": true
+      "commercial": true,
+      "verified": "2026-10-21"
     },
     "resource-e07d628c06": {
       "status": "partial",
@@ -624,15 +634,21 @@
       "notes": [
         "Official page links gripper and tracker-mount 3D models.",
         "MIT Axol SDK includes Mantis collection support; external hardware model rights are not verified.",
-        "Base price is a pair without cameras, compute, or pose trackers."
+        "Base price is a pair without cameras, compute, or pose trackers.",
+        "The current axol source includes absolute-pose teleoperation, shutdown handling and Mantis recording-pose tests, plus libsurvive synchronization/recording fixes. These are software updates, not a new collector sensing modality."
       ],
       "evidence": [
         {
           "url": "https://github.com/almond-bot/axol",
           "section": "SDK source and license"
+        },
+        {
+          "url": "https://github.com/almond-bot/axol/blob/main/almond_axol/teleop/absolute_pose.py",
+          "section": "Actual executable source; current recursive tree"
         }
       ],
-      "commercial": true
+      "commercial": true,
+      "verified": "2026-10-21"
     },
     "resource-60263449a3": {
       "status": "unknown",
@@ -672,14 +688,15 @@
     },
     "resource-fd5070524c": {
       "status": "open",
-      "hardwareStatus": "Open build files",
+      "hardwareStatus": "Public left/right STEP/STL, robot-specific fingertips and assembly guide",
       "softwareStatus": "Open source",
       "hardwareLicense": "Apache-2.0",
       "softwareLicense": "Apache-2.0",
       "notes": [
         "Hardware STL files, BOM, build instructions, and original software are Apache-2.0.",
         "Headset application, third-party robot firmware, and optional dataset licenses remain separate.",
-        "Parts cost is approximately $104 per hand; headset excluded."
+        "Parts cost is approximately $104 per hand; headset excluded.",
+        "Current hardware tree adds revised left/right supports, a HandUMI assembly PDF, and fingertip CAD for I2RT-YAM, OpenArm v1, Galaxea R1 Lite and MakerMods Metal. The root Apache-2.0 LICENSE was inspected."
       ],
       "evidence": [
         {
@@ -689,20 +706,26 @@
         {
           "url": "https://github.com/murobotics-ai/handumi-sw",
           "section": "Executable collection software and license"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-hw/tree/main/hardware",
+          "section": "Current CAD / assembly files and LICENSE"
         }
       ],
-      "commercial": false
+      "commercial": false,
+      "verified": "2026-10-21"
     },
     "resource-af05253706": {
       "status": "open",
       "hardwareStatus": "Open build files",
-      "softwareStatus": "Open source",
+      "softwareStatus": "Open-source collection, calibration and I2C diagnostics",
       "hardwareLicense": "Apache-2.0",
       "softwareLicense": "Apache-2.0",
       "notes": [
         "Current default Gemini 305 configuration has no IMU; OAK-D SR alternative provides 200 Hz IMU.",
         "Hardware image shows the OAK-D configuration.",
-        "Repository includes Apache-2.0 source/URDF/meshes, assembly guidance, and links native CAD; third-party materials retain separate licenses."
+        "Repository includes Apache-2.0 source/URDF/meshes, assembly guidance, and links native CAD; third-party materials retain separate licenses.",
+        "The current develop branch adds I2C diagnostic tooling, an angle API route and sensor/camera cable guides. The existing Apache-2.0 software license and hardware release remain artifact-specific."
       ],
       "evidence": [
         {
@@ -716,9 +739,14 @@
         {
           "url": "https://github.com/pollen-robotics/grabette/tree/develop/packages/grabette",
           "section": "Current Gemini305 default and optional OAK-D SR sensor configurations"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette/blob/develop/packages/grabette/grabette/hardware/i2c_diag.py",
+          "section": "Actual diagnostic implementation; current source tree"
         }
       ],
-      "commercial": false
+      "commercial": false,
+      "verified": "2026-10-21"
     },
     "2410.07554": {
       "status": "partial",
@@ -1916,14 +1944,15 @@
       ]
     },
     "2606.14409": {
-      "verified": "2026-10-19",
+      "verified": "2026-10-21",
       "status": "partial",
       "hardwareStatus": "Custom UMI rig described; design files not independently verified",
       "softwareStatus": "Open-source training, fine-tuning and robot inference",
       "hardwareLicense": null,
       "softwareLicense": "Apache-2.0",
       "notes": [
-        "hy_vla/train.py and inference sources are released. Both UMI and RoboTwin checkpoints have actual model.safetensors files; public dataset is the released subset, not the entire Hy-UMI-10K corpus."
+        "hy_vla/train.py and inference sources are released. Both UMI and RoboTwin checkpoints have actual model.safetensors files; public dataset is the released subset, not the entire Hy-UMI-10K corpus.",
+        "The official repository includes RoboDojo HDF5 normalization, UMI-initialized supervised fine-tuning and an evaluation adapter. This is a concrete transfer path for the UMI-pretrained policy; it does not establish a new public UMI dataset or a benchmark score."
       ],
       "evidence": [
         {
@@ -1940,6 +1969,10 @@
           "url": "https://raw.githubusercontent.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA/main/hy_vla/train.py",
           "section": "Actual hy_vla/train.py",
           "note": "License/source text retrieved and inspected."
+        },
+        {
+          "url": "https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA/blob/main/scripts/train_robodojo_umi.sh",
+          "section": "Actual UMI-initialized RoboDojo training launcher"
         }
       ]
     },
@@ -2112,6 +2145,150 @@
         {
           "url": "https://mv-umi.github.io/",
           "section": "Current resource links and empty Code(soon) href"
+        }
+      ]
+    },
+    "2610.09718": {
+      "verified": "2026-10-21",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this software / policy / evaluation work",
+      "softwareStatus": "Implementation / YUBI-VLM weights not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Official project and paper describe the annotation pipeline, YUBI-VLM and YUBI-pretrained policy post-training, but no downloadable implementation or model target is linked on the inspected project. Contact labels come from video; they are not a measured tactile sensor channel."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.09718",
+          "section": "Paper method / experimental setup"
+        },
+        {
+          "url": "https://yubi-stag.airoa.io/",
+          "section": "Current resource links and project description"
+        }
+      ]
+    },
+    "2610.17521": {
+      "verified": "2026-10-21",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this software / policy / evaluation work",
+      "softwareStatus": "Evaluation implementation not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper evaluates real-to-sim ranking under dual fisheye YUBI-style observations. It reports task-dependent reconstruction sensitivity, not a generally validated scene-acceptance rule.",
+        "The paper-linked AIRoA project endpoint was unavailable during this check. The verified first-author page links a supplementary-results repository; a runnable pipeline and evaluation code are still planned. Supplementary plots/tables are not a released implementation."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.17521",
+          "section": "Paper method / experimental setup"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2610.17521",
+          "section": "First page: AIRoA first institution; full technical report"
+        },
+        {
+          "url": "https://hirotin.github.io/YUBI-Real2Sim.github.io/",
+          "section": "Author identity matches paper; Resources explicitly says runnable pipeline / evaluation code are planned"
+        },
+        {
+          "url": "https://github.com/Hirotin/YUBI-Real2Sim",
+          "section": "Current tree / README: supplementary results and clarifications, no implementation sources or license"
+        }
+      ]
+    },
+    "2609.39870": {
+      "verified": "2026-10-21",
+      "status": "partial",
+      "hardwareStatus": "Not applicable to this software / policy / evaluation work",
+      "softwareStatus": "MIT inference runtime and RoboDojo adapter; training recipes forthcoming",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Actual inference sources and eval/robodojo modules are released under MIT. README explicitly defers training and fine-tuning recipes.",
+        "The official HF link resolves to XuhuaX/Magic-W0. Its current file inventory contains only README.md and .gitattributes, so model weights remain forthcoming despite an MIT model-card declaration.",
+        "UMI trajectories are mapped to the shared 34-dimensional interface with kinematic retargeting. Paper and project list different RoboDojo scores; this catalog does not combine them into one result."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.39870",
+          "section": "Paper method / experimental setup"
+        },
+        {
+          "url": "https://github.com/MagiclabRobotics/Magic-W0",
+          "section": "Actual recursive source tree / LICENSE / release scope"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/MagiclabRobotics/Magic-W0/main/eval/robodojo/deploy.py",
+          "section": "Actual evaluation adapter source"
+        },
+        {
+          "url": "https://huggingface.co/api/models/XuhuaX/Magic-W0",
+          "section": "Current model file inventory; no weight files"
+        }
+      ]
+    },
+    "2610.23913": {
+      "verified": "2026-10-21",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this software / policy / evaluation work",
+      "softwareStatus": "Code / checkpoints not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The author project provides paper, generated wrist-video comparisons and a physical robot execution demo. It does not link an executable implementation or checkpoint release.",
+        "The arXiv submission history gives v1 as 2026-09-30; the numeric arXiv identifier is not used to infer the paper date."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.23913",
+          "section": "Paper method / experimental setup"
+        },
+        {
+          "url": "https://www.lv-lab.org/umi-wm/",
+          "section": "Actual project resource links and demonstrated interfaces"
+        }
+      ]
+    },
+    "2509.25852": {
+      "verified": "2026-10-21",
+      "status": "partial",
+      "hardwareStatus": "Not applicable to this software / policy / evaluation work",
+      "softwareStatus": "Public LEAP data subset; planner code / model weights not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper explicitly trains planning/monitoring on UMI-collected atomic-skill demonstrations. The associated official LEAP repository publishes two task archives as planning VQA data.",
+        "Both archive downloads were checked with anonymous byte ranges and ZIP signatures. Code and trained RoboFarseer weights are not established by the dataset card or paper release wording."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2509.25852",
+          "section": "Paper method / experimental setup"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/XiaomiRoboticsLab/LEAP",
+          "section": "Official association with paper; actual files / gating / Apache-2.0 card license"
+        }
+      ]
+    },
+    "2605.24339": {
+      "verified": "2026-10-21",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this software / policy / evaluation work",
+      "softwareStatus": "Paper UMI simulation example; matching implementation release not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Included for its explicit UMI-gripper setup: a Franka-driven gripper, fisheye-rendered pick-and-place and simulated inner-surface contact-force fields. This is not a new physical UMI collector or recorded tactile dataset.",
+        "Generic physics-engine links in the paper do not establish a release of the described IsaacIPC integration or UMI example."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2605.24339",
+          "section": "Paper method / experimental setup"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "verified": "2026-10-19",
+  "verified": "2026-10-21",
   "scope": "Source-backed dataset attributes. Unknown fields are null. Reported and released scale retain their separate sources.",
   "records": {
     "2606.10244": {
@@ -636,7 +636,7 @@
       "accessCheck": {
         "checked": "2026-10-19",
         "method": "Anonymous byte-range GET of actual author-hosted archive",
-        "result": "HTTP206; ZIP magic504b0304; bytes 0-63/22839303656",
+        "result": "HTTP 206; ZIP magic504b0304; bytes 0-63/22839303656",
         "url": "https://real.stanford.edu/umi/data/dish_washing/bimanual_dish_washing.zarr.zip"
       },
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
@@ -749,7 +749,7 @@
       "accessCheck": {
         "checked": "2026-10-19",
         "method": "Anonymous byte-range GET of actual author-hosted archive",
-        "result": "HTTP206; ZIP magic504b0304; bytes 0-63/2018347250",
+        "result": "HTTP 206; ZIP magic504b0304; bytes 0-63/2018347250",
         "url": "https://real.stanford.edu/dexumi/dataset/inspire/cube_picking.zip"
       },
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
@@ -1308,7 +1308,7 @@
       "accessCheck": {
         "checked": "2026-10-19",
         "method": "Anonymous byte-range GET of actual author-hosted archive",
-        "result": "HTTP206; ZIP magic504b0304; bytes 0-63/2851473337",
+        "result": "HTTP 206; ZIP magic504b0304; bytes 0-63/2851473337",
         "url": "https://real.stanford.edu/maniwav/data/wipe/replay_buffer.zarr.zip"
       },
       "paperDateProvenance": "Existing canonical README v1 date; dataset release time may differ."
@@ -3722,6 +3722,66 @@
           }
         ]
       }
+    },
+    "2509.25852": {
+      "id": "2509.25852",
+      "name": "LEAP",
+      "verified": "2026-10-21",
+      "datasetUrl": "https://huggingface.co/datasets/XiaomiRoboticsLab/LEAP",
+      "access": "Public task archives",
+      "accessNote": "Official HF inventory lists L/tea_brew.zip and U/desktop_organize.zip. Both allow anonymous HTTP 206 byte-range reads with ZIP signatures. Full paper-corpus coverage is not verified.",
+      "license": "Apache-2.0 (dataset card)",
+      "formats": [
+        "ZIP",
+        "JSON",
+        "PNG"
+      ],
+      "fps": null,
+      "observations": [
+        "Scene RGB images",
+        "Natural-language instructions",
+        "Plan / atomic-action / completion annotations"
+      ],
+      "action": "High-level task plans and completion labels, not directly executable end-effector actions",
+      "embodiments": [
+        "Source videos: handheld UMI grippers"
+      ],
+      "reportedScale": {},
+      "publicScale": {},
+      "scopeNotes": [
+        "The official card identifies UMI-gripper human demonstrations as the video source and cites arXiv:2509.25852.",
+        "The released asset is planning VQA data. Do not equate archive count, image count or annotation rows with unique robot trajectories.",
+        "Two named task archives are present. Their total size does not establish complete LEAP-L/LEAP-U benchmark coverage."
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2509.25852",
+          "supports": "UMI collection and REVER planner/monitor training",
+          "checked": "2026-10-21",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/XiaomiRoboticsLab/LEAP",
+          "supports": "Actual archive inventory, no gating, Apache-2.0 card license and paper association",
+          "checked": "2026-10-21",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "unique demonstration count",
+        "full corpus coverage",
+        "fps"
+      ],
+      "downloadLinks": [
+        "https://huggingface.co/datasets/XiaomiRoboticsLab/LEAP/resolve/main/L/tea_brew.zip",
+        "https://huggingface.co/datasets/XiaomiRoboticsLab/LEAP/resolve/main/U/desktop_organize.zip"
+      ],
+      "accessCheck": {
+        "checked": "2026-10-21",
+        "method": "Actual anonymous archive byte-range requests",
+        "result": "Both return HTTP 206 and ZIP magic 504b0304; sizes 17,008,647,981 and 16,188,851,065 bytes."
+      },
+      "evidenceLevel": "Official paper / author dataset repository"
     }
   }
 }

@@ -1583,7 +1583,7 @@
     "resource-fd5070524c": {
       "id": "resource-fd5070524c",
       "name": "HandUMI",
-      "verified": "2026-10-16",
+      "verified": "2026-10-21",
       "form": "Wearable",
       "interfaceForms": [
         "Wearable"
@@ -1603,7 +1603,7 @@
         "type": null
       },
       "actionSpace": "6-DoF wrist pose + gripper width",
-      "hardwareAvailability": "Public build files / assembly guide",
+      "hardwareAvailability": "Public Apache-2.0 left/right STEP/STL, assembly guide and robot-specific gripper-tip CAD.",
       "evidence": [
         {
           "url": "https://github.com/murobotics-ai/handumi-hw",
@@ -1612,6 +1612,11 @@
         {
           "url": "https://github.com/murobotics-ai/handumi-sw",
           "section": "Executable collection software and license"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-hw/tree/main/hardware",
+          "section": "Fresh recursive CAD tree",
+          "note": "Revised supports and robot-specific tips are design artifacts; no new force/tactile sensor is inferred."
         }
       ],
       "cost": {

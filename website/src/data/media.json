@@ -2086,5 +2086,125 @@
     "datasetSummary": "Public GiTBench simulation subset: 1,440 episodes, 912,253 frames, and three RGB views at 30 Hz. The paper's 1,800 UMI demonstrations are not verified as released.",
     "credit": "Yi Wang et al. / GiT",
     "reviewed": "2026-10-19"
+  },
+  {
+    "id": "2610.09718",
+    "name": "YUBI-STAG",
+    "image": "images/catalog/2610.09718-research.webp",
+    "imageAlt": "YUBI-STAG pipeline: contact-object masks anchor four stages of semantic video annotation.",
+    "imageSource": "https://arxiv.org/html/2610.09718v1/YUBI_STAG_pipeline.png",
+    "imagePage": "https://arxiv.org/html/2610.09718#S3.F2",
+    "credit": "AIRoA",
+    "reviewed": "2026-10-21",
+    "width": 1600,
+    "height": 640,
+    "summary": "Contact-grounded video annotations and a distilled wrist-view annotator align YUBI-pretrained VLAs with fine-grained instructions.",
+    "signals": [
+      "Vision"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.09718",
+    "coverType": "Paper · Figure 2"
+  },
+  {
+    "id": "2610.17521",
+    "name": "YUBI-Real2Sim",
+    "image": "images/catalog/2610.17521-research.webp",
+    "imageAlt": "YUBI-Real2Sim compares capture coverage, reconstructed-scene artifacts and policy ranking.",
+    "imageSource": "https://arxiv.org/html/2610.17521v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2610.17521#S0.F1",
+    "credit": "AIRoA",
+    "reviewed": "2026-10-21",
+    "width": 862,
+    "height": 337,
+    "summary": "Tests whether 3DGS scenes preserve real policy rankings for YUBI-style dual-fisheye wrist observations.",
+    "signals": [
+      "Vision"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.17521",
+    "coverType": "Paper · Figure 1"
+  },
+  {
+    "id": "2609.39870",
+    "name": "Magic-W0",
+    "image": "images/catalog/2609.39870-research.webp",
+    "imageAlt": "Magic-W0 combines embodied data, structured world transitions and continuous control.",
+    "imageSource": "https://arxiv.org/html/2609.39870v2/figures/new-figure/new_overview.png",
+    "imagePage": "https://arxiv.org/html/2609.39870#S1.F1",
+    "credit": "Magiclab Robotics",
+    "reviewed": "2026-10-21",
+    "width": 1600,
+    "height": 873,
+    "summary": "A structured world-action model pretrained on UMI and other embodied data, with public inference and RoboDojo integration.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2609.39870",
+    "coverType": "Paper · Figure 1"
+  },
+  {
+    "id": "2610.23913",
+    "name": "UMI-WM",
+    "image": "images/catalog/2610.23913-research.webp",
+    "imageAlt": "UMI-WM generates paired wrist-camera videos and recovers robot actions through an inverse dynamics model.",
+    "imageSource": "https://arxiv.org/html/2610.23913v1/figures/umi_wm_teaser.jpg",
+    "imagePage": "https://arxiv.org/html/2610.23913#S0.F1",
+    "credit": "National University of Singapore",
+    "reviewed": "2026-10-21",
+    "width": 1600,
+    "height": 900,
+    "summary": "An action-conditioned world model learns paired wrist-camera dynamics from UMI recordings and recovers actions through an inverse dynamics model.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.23913",
+    "coverType": "Paper · Figure 1"
+  },
+  {
+    "id": "2509.25852",
+    "name": "REVER / RoboFarseer",
+    "image": "images/catalog/2509.25852-research.webp",
+    "imageAlt": "REVER pipeline: UMI demonstrations, planning annotations, reinforcement learning and the planner/monitor.",
+    "imageSource": "https://arxiv.org/html/2509.25852v1/pipeline.png",
+    "imagePage": "https://arxiv.org/html/2509.25852#S3.F2",
+    "credit": "Xiaomi Robotics Lab",
+    "reviewed": "2026-10-21",
+    "width": 1404,
+    "height": 674,
+    "summary": "UMI skill demonstrations supply scene-image planning data for a VLM that plans, monitors completion, and replans.",
+    "signals": [
+      "Vision"
+    ],
+    "attributeSource": "https://arxiv.org/html/2509.25852",
+    "datasetImage": "images/catalog/2509.25852-research.webp",
+    "datasetImageAlt": "Paper Figure 2: UMI skill-video collection, vision-instruction-plan/completion annotations, and the REVER planner/monitor.",
+    "datasetImageSource": "https://arxiv.org/html/2509.25852v1/pipeline.png",
+    "datasetImagePage": "https://arxiv.org/html/2509.25852#S3.F2",
+    "datasetImageType": "Paper · Figure 2",
+    "datasetName": "LEAP",
+    "datasetSummary": "UMI-derived scene-image planning and completion annotations; two task archives are publicly downloadable. Full corpus coverage is not verified.",
+    "datasetImageWidth": 1404,
+    "datasetImageHeight": 674,
+    "datasetImageReviewed": "2026-10-21",
+    "coverType": "Paper · Figure 2"
+  },
+  {
+    "id": "2605.24339",
+    "name": "IsaacIPC · UMI Simulation",
+    "image": "images/catalog/2605.24339-research.webp",
+    "imageAlt": "Simulated fisheye wrist-camera view of a UMI gripper picking and placing a cube.",
+    "imageSource": "https://arxiv.org/html/2605.24339v1/Figures/UMI_finger/uipc_block_pick_place_00057.png",
+    "imagePage": "https://arxiv.org/html/2605.24339#S5.F12",
+    "credit": "Anker Humanoid Lab",
+    "reviewed": "2026-10-21",
+    "width": 1600,
+    "height": 900,
+    "summary": "The UMI-specific simulation example couples deformable gripper contact with fisheye rendering; simulated forces are not hardware sensor measurements.",
+    "signals": [
+      "Vision"
+    ],
+    "attributeSource": "https://arxiv.org/html/2605.24339",
+    "coverType": "Paper · Figure 12"
   }
 ]
