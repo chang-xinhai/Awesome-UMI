@@ -1641,14 +1641,15 @@
       ]
     },
     "2610.20320": {
-      "verified": "2026-10-19",
+      "verified": "2026-10-26",
       "status": "partial",
       "hardwareStatus": "Not independently verified",
       "softwareStatus": "Robot replay and kinematic analysis tools released; policy code forthcoming",
       "hardwareLicense": null,
       "softwareLicense": null,
       "notes": [
-        "Author repository releases robot-specific replay, inverse-kinematics reachability/manipulability and workspace visualization tools. Policy training and task-level evaluation remain forthcoming. Repository license is unspecified; public code is not equivalent to a complete licensed open-source stack."
+        "Author repository releases robot-specific replay, inverse-kinematics reachability/manipulability and workspace visualization tools. Policy training and task-level evaluation remain forthcoming. Repository license is unspecified; public code is not equivalent to a complete licensed open-source stack.",
+        "The former official project endpoint returns HTTP 404 on 2026-10-26. No replacement URL is confirmed by the author repository; the canonical links retain the released tools and public data subset."
       ],
       "evidence": [
         {

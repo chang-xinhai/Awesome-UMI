@@ -700,7 +700,8 @@
       0.445
     ],
     "hardwareImageAudit": "replace",
-    "hardwareImageAuditNote": "Previous image was dataset statistics. Crop isolates TacClaw and excludes UMI baselines, participant and result graph."
+    "hardwareImageAuditNote": "Previous image was dataset statistics. Crop isolates TacClaw and excludes UMI baselines, participant and result graph.",
+    "imageAuditNote": "Cached official dataset figure retains its original author source URL for provenance. That project endpoint returns HTTP 404 on 2026-10-26; it is no longer offered as an available project resource."
   },
   {
     "id": "2606.10382",

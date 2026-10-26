@@ -1925,11 +1925,11 @@
     "2610.20320": {
       "id": "2610.20320",
       "name": "TacClaw-Infinity",
-      "verified": "2026-10-19",
+      "verified": "2026-10-26",
       "datasetUrl": "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity",
       "access": "Public subset",
       "accessNote": null,
-      "license": "CC BY-NC-SA4.0",
+      "license": "CC BY-NC-SA 4.0",
       "formats": [
         "LeRobot v3.0",
         "Parquet",
@@ -1962,20 +1962,20 @@
       },
       "publicScale": {
         "hours": 1000,
-        "scope": "Daimon-Infinity first release stated ondataset card"
+        "scope": "Daimon-Infinity first release stated on dataset card"
       },
       "scopeNotes": [
-        "TacClaw project download buttons say Coming soon. The broader Daimon-Infinity repository publishes files and announces its first1000-hour batch; the full10000+hours is not a verified complete public release.",
-        "The card analyzes approximately1209collected hours; this is a separate scope from its first1000-hour release.",
+        "The former TacClaw project page currently returns HTTP 404. The broader Daimon-Infinity repository publishes files and announces its first 1,000-hour batch; the full 10,000+ hours are not a verified complete public release.",
+        "The card analyzes approximately 1,209 collected hours; this is a separate scope from its first 1,000-hour release.",
         "The first batch mixes DataClaw and DataDex; do not describe every released hour as TacClaw-only.",
         "A sampled DataClaw meta/info.json confirms 30 FPS, 114-dimensional state, 111-dimensional action, and 247 episodes. This is one recording folder, not the release-wide episode count.",
         "Author GitHub now publishes robot replay and kinematic analysis tools, while policy training/task-level evaluation remains forthcoming."
       ],
       "sources": [
         {
-          "url": "https://daimon-robotics.github.io/tacclaw-infinity-page/",
-          "supports": "Paper corpus scale and download buttons still marked Coming soon.",
-          "checked": "2026-10-16",
+          "url": "https://arxiv.org/html/2610.20320v1",
+          "supports": "Primary paper corpus scale; prior project endpoint unavailable as of 2026-10-26.",
+          "checked": "2026-10-26",
           "published": null
         },
         {
@@ -2004,7 +2004,7 @@
       "accessCheck": {
         "checked": "2026-10-16",
         "method": "Anonymous HEAD / official API / small JSON metadata",
-        "result": "HF oneDataClawfolder Parquet HEAD200; metadata parsed."
+        "result": "HF DataClaw folder Parquet HEAD 200; metadata parsed."
       },
       "repositorySnapshots": [
         {
