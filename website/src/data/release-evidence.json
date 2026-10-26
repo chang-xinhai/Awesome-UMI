@@ -2468,6 +2468,33 @@
           "section": "Actual executable CAD generator"
         }
       ]
+    },
+    "2610.32969": {
+      "verified": "2026-10-26",
+      "status": "unknown",
+      "hardwareStatus": "Paper-described transferable hand / camera module; design download not independently verified",
+      "softwareStatus": "Code coming soon (official project)",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper explicitly extends the UMI / DexUMI / RealDexUMI paradigm. A portable 20-DoF Wuji hand and fisheye camera are used both during robot-free collection and robot deployment, preserving embodiment and recorded joint-command semantics.",
+        "Quest 2 provides the wrist trajectory; the hand controller records commanded joint targets and measured states. More than 2,500 demonstrations are reported, but no public corpus or matching implementation download was verified.",
+        "Official project labels Code coming soon. The v1 PDF lists first author Amber Xie with Amazon FAR as affiliation 1 and Stanford as affiliation 2; the project page uses older affiliation ordering, so the paper determines the first institution."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/pdf/2610.32969v1",
+          "section": "PDF first page: Amazon FAR first; hardware and collection protocol"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.32969v1",
+          "section": "Introduction, Table I and III-A: UMI lineage, same physical hand, native command / state records"
+        },
+        {
+          "url": "https://amberxie88.github.io/dexport/",
+          "section": "Current Code coming-soon control and project demonstration videos"
+        }
+      ]
     }
   }
 }

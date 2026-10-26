@@ -143,6 +143,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-23 | Handheld DexHand, UMI-Style, 20-DoF Skills, Native Command/State Recording | Amazon FAR | [DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection](https://arxiv.org/abs/2610.32969) | arXiv | [project](https://amberxie88.github.io/dexport/) |
 | 2026-09-10 | Shared Human/Robot Exoskeleton, 20-DoF Encoders, Paired Contact Calibration | Peking University | [SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration](https://arxiv.org/abs/2609.11753) | CoRL 2026 | [project](https://tengbo-yu.github.io/SEED-UMI/) / [github](https://github.com/Tengbo-Yu/SEED-UMI) |
 | 2026-06-04 | Wearable DexHand, Tactile, In-Hand Vision | Peking University | [RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033) | arXiv | [project](https://research.beingbeyond.com/realdexumi) / [product](https://beingbeyond.com/solutions/U1) |
 | 2026-04-16 | DexUMI-Based Policy, Forearm-Mounted Hand, Motor Torque, Force Feedback | Sogang University | [DEX-Mouse: A Low-cost Portable and Universal Interface with Force Feedback for Data Collection of Dexterous Robotic Hands](https://arxiv.org/abs/2604.15013) | arXiv | [project](https://dex-mouse.github.io/) |

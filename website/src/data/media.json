@@ -2298,5 +2298,24 @@
       "Tactile"
     ],
     "attributeSource": "https://arxiv.org/html/2610.31661"
+  },
+  {
+    "id": "2610.32969",
+    "name": "DexPort",
+    "image": "images/catalog/2610.32969-research.webp",
+    "imageAlt": "DexPort transferable hand-camera module, ergonomic handle redesign and skill-control mapping.",
+    "imageSource": "https://arxiv.org/html/2610.32969v1/hardware.png",
+    "imagePage": "https://arxiv.org/html/2610.32969v1#S2.F1",
+    "coverType": "Paper · Figure 1",
+    "credit": "Amazon FAR",
+    "reviewed": "2026-10-26",
+    "width": 1600,
+    "height": 376,
+    "summary": "A UMI-style handheld dexterous interface records wrist motion and commanded hand actions without a robot arm, using the same hand-camera module for deployment.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.32969v1"
   }
 ]

@@ -3988,6 +3988,58 @@
         "actions": "Local normal/shear contact fields; no standalone collector pose/action export"
       },
       "observationSignalsNote": "This record describes a UMI/YUBI tactile-skin extension rather than a standalone robot-free pose collection device."
+    },
+    "2610.32969": {
+      "id": "2610.32969",
+      "name": "DexPort",
+      "verified": "2026-10-26",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Meta Quest 2 controller, 6-DoF wrist trajectory",
+      "vision": "Wrist fisheye camera; same hand-camera module during collection and deployment",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null,
+        "note": "Tactile observation channels are not established by the inspected protocol."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "6-DoF wrist target + 20-DoF commanded hand joints; measured joint states also recorded",
+      "hardwareAvailability": "Paper-described Wuji hand / camera / Quest interface; reusable design files not independently verified",
+      "mass": {
+        "value": 955,
+        "unit": "g",
+        "scope": "Complete handheld assembly reported in paper; includes robot hand",
+        "shortScope": "Complete handheld assembly"
+      },
+      "evidence": [
+        {
+          "url": "https://arxiv.org/pdf/2610.32969v1",
+          "section": "PDF first page: Amazon FAR first; hardware and collection protocol"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.32969v1",
+          "section": "Introduction, Table I and III-A: UMI lineage, same physical hand, native command / state records"
+        },
+        {
+          "url": "https://amberxie88.github.io/dexport/",
+          "section": "Current Code coming-soon control and project demonstration videos"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Quest 2, 6-DoF wrist",
+        "vision": "Wrist fisheye; transferable hand-camera module",
+        "actions": "Wrist target + 20-DoF hand commands / measured states"
+      }
     }
   },
   "observationSignalsDefinition": "Collector-recorded sensor channels and recovered state outputs verified from primary sources, not necessarily deployed-policy observations. Proprioception includes explicitly recorded/recovered pose, aperture, encoder or joint state. Raw IMU requires evidence of an exposed/recorded channel; tracker internals are insufficient. Audio used only for synchronization is explicitly noted.",
