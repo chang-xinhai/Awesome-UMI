@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewed": "2026-10-21",
+  "reviewed": "2026-10-26",
   "criteria": {
     "open": "Verified hardware source with reuse rights plus licensed executable software.",
     "partial": "Some reusable artifacts exist, but hardware/software is incomplete, externally licensed or noncommercial / unspecified.",
@@ -628,14 +628,15 @@
     "resource-0ad4540dbf": {
       "status": "partial",
       "hardwareStatus": "Public 3D models; hardware license not verified",
-      "softwareStatus": "Open source",
+      "softwareStatus": "MIT collection / teleoperation with optional strict Lighthouse tracking validation",
       "hardwareLicense": null,
       "softwareLicense": "MIT",
       "notes": [
         "Official page links gripper and tracker-mount 3D models.",
         "MIT Axol SDK includes Mantis collection support; external hardware model rights are not verified.",
         "Base price is a pair without cameras, compute, or pose trackers.",
-        "The current axol source includes absolute-pose teleoperation, shutdown handling and Mantis recording-pose tests, plus libsurvive synchronization/recording fixes. These are software updates, not a new collector sensing modality."
+        "The current axol source includes absolute-pose teleoperation, shutdown handling and Mantis recording-pose tests, plus libsurvive synchronization/recording fixes. These are software updates, not a new collector sensing modality.",
+        "The current Axol release adds Mantis calibration validation, recording fault diagnostics and a Lighthouse quality policy. Standard tracking remains the default; strict collection rejection gates are opt-in. Upstream notes that this integration has not yet been retested on physical hardware; no improved tracking accuracy is inferred."
       ],
       "evidence": [
         {
@@ -645,10 +646,14 @@
         {
           "url": "https://github.com/almond-bot/axol/blob/main/almond_axol/teleop/absolute_pose.py",
           "section": "Actual executable source; current recursive tree"
+        },
+        {
+          "url": "https://github.com/almond-bot/axol/commit/7c90d1990d6be6047c8a8cf2df70fc5fcb0a62da",
+          "section": "Actual Mantis tracking / collection source changes and upstream validation limits"
         }
       ],
       "commercial": true,
-      "verified": "2026-10-21"
+      "verified": "2026-10-26"
     },
     "resource-60263449a3": {
       "status": "unknown",
@@ -696,7 +701,8 @@
         "Hardware STL files, BOM, build instructions, and original software are Apache-2.0.",
         "Headset application, third-party robot firmware, and optional dataset licenses remain separate.",
         "Parts cost is approximately $104 per hand; headset excluded.",
-        "Current hardware tree adds revised left/right supports, a HandUMI assembly PDF, and fingertip CAD for I2RT-YAM, OpenArm v1, Galaxea R1 Lite and MakerMods Metal. The root Apache-2.0 LICENSE was inspected."
+        "Current hardware tree adds revised left/right supports, a HandUMI assembly PDF, and fingertip CAD for I2RT-YAM, OpenArm v1, Galaxea R1 Lite and MakerMods Metal. The root Apache-2.0 LICENSE was inspected.",
+        "The hardware repository now supplies a printable 5 × 7 ChArUco calibration board with 30 mm squares on A4. This is a calibration artifact, not an additional sensor or a new dataset."
       ],
       "evidence": [
         {
@@ -710,22 +716,26 @@
         {
           "url": "https://github.com/murobotics-ai/handumi-hw/tree/main/hardware",
           "section": "Current CAD / assembly files and LICENSE"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/calibration/charuco_5x7_30mm_A4.pdf",
+          "section": "Actual printable calibration-board artifact"
         }
       ],
       "commercial": false,
-      "verified": "2026-10-21"
+      "verified": "2026-10-26"
     },
     "resource-af05253706": {
       "status": "open",
       "hardwareStatus": "Open build files",
-      "softwareStatus": "Open-source collection, calibration and I2C diagnostics",
+      "softwareStatus": "Apache-2.0 device collection, separate SLAM / LeRobot pipeline and policy stack",
       "hardwareLicense": "Apache-2.0",
       "softwareLicense": "Apache-2.0",
       "notes": [
         "Current default Gemini 305 configuration has no IMU; OAK-D SR alternative provides 200 Hz IMU.",
         "Hardware image shows the OAK-D configuration.",
         "Repository includes Apache-2.0 source/URDF/meshes, assembly guidance, and links native CAD; third-party materials retain separate licenses.",
-        "The current develop branch adds I2C diagnostic tooling, an angle API route and sensor/camera cable guides. The existing Apache-2.0 software license and hardware release remain artifact-specific."
+        "The official project split its repository: grabette now holds device packages, grabette-slam contains the executable RGB-D SLAM / LeRobot conversion pipeline, and grabette-policy contains Diffusion Policy / pi0.5 training and OpenArm deployment sources. All three root licenses are Apache-2.0; external engine/model/dependency terms remain separate."
       ],
       "evidence": [
         {
@@ -743,10 +753,18 @@
         {
           "url": "https://github.com/pollen-robotics/grabette/blob/develop/packages/grabette/grabette/hardware/i2c_diag.py",
           "section": "Actual diagnostic implementation; current source tree"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette-slam",
+          "section": "Actual postprocessing source and Apache-2.0 LICENSE"
+        },
+        {
+          "url": "https://github.com/pollen-robotics/grabette-policy",
+          "section": "Actual policy / deployment source and Apache-2.0 LICENSE"
         }
       ],
       "commercial": false,
-      "verified": "2026-10-21"
+      "verified": "2026-10-26"
     },
     "2410.07554": {
       "status": "partial",
@@ -1832,14 +1850,15 @@
       ]
     },
     "2606.30457": {
-      "verified": "2026-10-19",
+      "verified": "2026-10-26",
       "status": "partial",
       "hardwareStatus": "iPhUMI mount instructions and app source public; full CAD rights not verified",
       "softwareStatus": "Open-source iOS recording, processing, training and prompting",
       "hardwareLicense": null,
       "softwareLicense": "MIT",
       "notes": [
-        "behavior_prompting/train_network/train.py and the companion real-stanford/iPhUMI iOS app are released. Wireless real-time demonstration transfer remains on the roadmap; exported-file prompting is available."
+        "behavior_prompting/train_network/train.py and the companion real-stanford/iPhUMI iOS app are released. Wireless real-time demonstration transfer remains on the roadmap; exported-file prompting is available.",
+        "Official checkpoint documentation now uses bp_-prefixed model repositories. Both bp_iphumi_bimanual_laundry_folding and bp_iphumi_drawanything_real have actual behavior-prompting / baseline .ckpt files and MIT model-card declarations. These model targets are separate from the similarly named datasets."
       ],
       "evidence": [
         {
@@ -1856,6 +1875,18 @@
           "url": "https://raw.githubusercontent.com/real-stanford/behavior_prompting/main/behavior_prompting/train_network/train.py",
           "section": "Actual behavior_prompting/train_network/train.py",
           "note": "License/source text retrieved and inspected."
+        },
+        {
+          "url": "https://huggingface.co/api/models/austinpatel/bp_iphumi_bimanual_laundry_folding",
+          "section": "Current model inventory and MIT card; separate dataset namespace"
+        },
+        {
+          "url": "https://huggingface.co/api/models/austinpatel/bp_iphumi_drawanything_real",
+          "section": "Current model inventory and MIT card"
+        },
+        {
+          "url": "https://github.com/real-stanford/behavior_prompting/blob/main/docs/laundry_folding.md",
+          "section": "Official current checkpoint instructions"
         }
       ]
     },
@@ -2200,15 +2231,15 @@
       ]
     },
     "2609.39870": {
-      "verified": "2026-10-21",
+      "verified": "2026-10-26",
       "status": "partial",
       "hardwareStatus": "Not applicable to this software / policy / evaluation work",
-      "softwareStatus": "MIT inference runtime and RoboDojo adapter; training recipes forthcoming",
+      "softwareStatus": "MIT inference and RoboDojo adapter; RoboDojo fine-tuned weights released, training recipes forthcoming",
       "hardwareLicense": null,
       "softwareLicense": "MIT",
       "notes": [
         "Actual inference sources and eval/robodojo modules are released under MIT. README explicitly defers training and fine-tuning recipes.",
-        "The official HF link resolves to XuhuaX/Magic-W0. Its current file inventory contains only README.md and .gitattributes, so model weights remain forthcoming despite an MIT model-card declaration.",
+        "The official HF target XuhuaX/Magic-W0 now contains robodojo_sft_models/magic_w0_robodojo.pt. An anonymous byte-range request returned HTTP 206, a PyTorch ZIP header and a total size of 7,228,809,258 bytes. The pretrain_models directory contains only .gitkeep, so this is a RoboDojo fine-tuned checkpoint release rather than the complete pretraining-weight release. The HF card declares MIT, while its generic coming-soon badge is stale.",
         "UMI trajectories are mapped to the shared 34-dimensional interface with kinematic retargeting. Paper and project list different RoboDojo scores; this catalog does not combine them into one result."
       ],
       "evidence": [
@@ -2226,7 +2257,11 @@
         },
         {
           "url": "https://huggingface.co/api/models/XuhuaX/Magic-W0",
-          "section": "Current model file inventory; no weight files"
+          "section": "Fresh model inventory: actual RoboDojo checkpoint; no pretraining weights"
+        },
+        {
+          "url": "https://huggingface.co/XuhuaX/Magic-W0/resolve/main/robodojo_sft_models/magic_w0_robodojo.pt",
+          "section": "Actual anonymous binary range read and archive header"
         }
       ]
     },
@@ -2289,6 +2324,148 @@
         {
           "url": "https://arxiv.org/html/2605.24339",
           "section": "Paper method / experimental setup"
+        }
+      ]
+    },
+    "2610.27622": {
+      "status": "open",
+      "hardwareStatus": "MIT STEP/STL and YAM-UMI glove design; printable fiducials",
+      "softwareStatus": "MIT recording, calibration, label reconstruction, dataset conversion and policy evaluation sources",
+      "hardwareLicense": "MIT (author design files explicitly covered)",
+      "softwareLicense": "MIT",
+      "notes": [
+        "Current repository contains actual STEP/STL designs and executable camera, label, calibration, dataset and evaluation scripts. Its MIT text explicitly covers associated hardware design files; the companion YAM-UMI design uses the same terms.",
+        "The paper reports a USD 22 glove, USD 122 camera and USD 120 camera positioner as separate components, excluding the robot. No full public demonstration corpus or trained checkpoint release was independently verified.",
+        "The wrist fisheye visible in the figure serves a comparison experiment; the proposed collector uses the head camera for both labels and policy observations. The paper is submitted to the UMI Arena workshop; acceptance is not inferred."
+      ],
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.27622",
+          "section": "Primary method / UMI relationship and experiments"
+        },
+        {
+          "url": "https://github.com/YosubShin/head-cam-umi",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/YosubShin/yam-umi",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/YosubShin/head-cam-umi/blob/main/LICENSE",
+          "section": "Actual MIT text explicitly covers associated hardware design files"
+        },
+        {
+          "url": "https://github.com/YosubShin/head-cam-umi/blob/main/scripts/build_dataset.py",
+          "section": "Actual executable conversion source"
+        }
+      ]
+    },
+    "2610.32676": {
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to this policy / deployment method",
+      "softwareStatus": "Implementation and trained speed-prior / policy weights not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper explicitly trains on FastUMI-100K and DROID, then adapts to self-collected YUBI demonstrations. This is a direct UMI-backed policy connection rather than a generic retiming baseline.",
+        "The project provides real-time videos and method descriptions but no code, checkpoint or new dataset download target. Its ICLR 2027 under-review banner is not an accepted venue."
+      ],
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.32676",
+          "section": "Primary method / UMI relationship and experiments"
+        },
+        {
+          "url": "https://mllab.snu.ac.kr/projects/learned_speed_prior",
+          "section": "Official resource link and current release scope"
+        }
+      ]
+    },
+    "2609.07498": {
+      "status": "unknown",
+      "hardwareStatus": "Uses UMI-style grippers; no separate collector design release verified",
+      "softwareStatus": "Forthcoming; repository contains README and illustrative assets only",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper describes a rigorous UMI-based hand/gripper pairing protocol and reports 6,189 episodes across 1,254 objects. These are reported collection statistics, not verified public download counts.",
+        "Official Dataset and Code controls are marked coming soon. The linked repository has README and images but no implementation or license. No dataset gallery record is created for the unverified release."
+      ],
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.07498",
+          "section": "Primary method / UMI relationship and experiments"
+        },
+        {
+          "url": "https://cosmoh2g.github.io/",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/GAP-LAB-CUHK-SZ/CosmoH2G",
+          "section": "Official resource link and current release scope"
+        }
+      ]
+    },
+    "2609.15910": {
+      "status": "unknown",
+      "hardwareStatus": "TacV5 UMI gripper sensing setup described; reusable design release not verified",
+      "softwareStatus": "Implementation / checkpoint release not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper explicitly trains only on UMI tactile data and evaluates zero-shot transfer to Tesollo DG-5F. Its controlled-slip corpus is reported as 1.4 million frames over 37 objects; a downloadable corpus is not established.",
+        "TacV5 combines a 32 × 32 piezoresistive array at 240 Hz with a three-axis accelerometer at 8 kHz for friction-induced vibration. This vibration channel is not a six-axis force/torque transducer or a pose tracker.",
+        "The paper marks the project page coming soon. CoRL 2026 acceptance is stated on the canonical arXiv record."
+      ],
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.15910",
+          "section": "Primary method / UMI relationship and experiments"
+        }
+      ]
+    },
+    "2610.31661": {
+      "status": "open",
+      "hardwareStatus": "CERN-OHL-P-2.0 flex-PCB/readout designs and fabrication workflow",
+      "softwareStatus": "MIT CAD generation, sensor readout, firmware and simulation / transfer sources",
+      "hardwareLicense": "CERN-OHL-P-2.0",
+      "softwareLicense": "MIT",
+      "notes": [
+        "Included for physical UMI 29 × 6 finger-skin measurements and UMI/YUBI-specific sensor geometry, beyond a generic CAD example. Cross-sensor evaluation includes a 174-taxel UMI skin at 4 mm pitch.",
+        "Actual repository contains executable Python CAD/readout tools, firmware and hardware sources. LICENSE is MIT, LICENSE-hardware is CERN-OHL-P-2.0, and documentation has its own CC-BY-4.0 terms. Third-party robot meshes retain their source terms.",
+        "The skin estimates local normal and shear contact from a piezoresistive array and deformable bumps; it does not establish a standalone UMI capture rig, pose tracker, six-axis wrist wrench sensor or a released UMI demonstration corpus.",
+        "The official site advertises a CoRL 2026 live demo; this does not establish a main-conference paper acceptance."
+      ],
+      "verified": "2026-10-26",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.31661",
+          "section": "Primary method / UMI relationship and experiments"
+        },
+        {
+          "url": "https://opentac.github.io/",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/opentac/opentac",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/opentac/opentac/blob/main/LICENSE-hardware",
+          "section": "Actual CERN Open Hardware Licence v2 Permissive"
+        },
+        {
+          "url": "https://github.com/opentac/opentac/blob/main/LICENSE",
+          "section": "Actual MIT software license"
+        },
+        {
+          "url": "https://github.com/opentac/opentac/blob/main/opentac/cad/main.py",
+          "section": "Actual executable CAD generator"
         }
       ]
     }

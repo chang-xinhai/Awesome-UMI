@@ -2131,10 +2131,10 @@
     "imageSource": "https://arxiv.org/html/2609.39870v2/figures/new-figure/new_overview.png",
     "imagePage": "https://arxiv.org/html/2609.39870#S1.F1",
     "credit": "Magiclab Robotics",
-    "reviewed": "2026-10-21",
+    "reviewed": "2026-10-26",
     "width": 1600,
     "height": 873,
-    "summary": "A structured world-action model pretrained on UMI and other embodied data, with public inference and RoboDojo integration.",
+    "summary": "A UMI-pretrained structured world-action model with public inference, a RoboDojo adapter and a released RoboDojo fine-tuned checkpoint; pretraining weights remain unverified.",
     "signals": [
       "Vision",
       "Proprioception"
@@ -2206,5 +2206,97 @@
     ],
     "attributeSource": "https://arxiv.org/html/2605.24339",
     "coverType": "Paper · Figure 12"
+  },
+  {
+    "id": "2610.27622",
+    "name": "Head-Cam UMI",
+    "image": "images/catalog/2610.27622-research.webp",
+    "imageAlt": "Head-camera collection, fiducial-based glove labels and the robot-side camera positioner.",
+    "imageSource": "https://arxiv.org/html/2610.27622v1/fig/teaser.jpg",
+    "imagePage": "https://arxiv.org/html/2610.27622#S0.F1",
+    "coverType": "Paper · Figure 1",
+    "credit": "University of Hawaii at Manoa",
+    "reviewed": "2026-10-26",
+    "width": 1600,
+    "height": 614,
+    "summary": "One head-worn camera observes an electronics-free UMI glove and derives its pose and jaw width; a robot-side camera positioner reproduces the viewpoint.",
+    "signals": [
+      "Vision"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.27622"
+  },
+  {
+    "id": "2610.32676",
+    "name": "Learned Speed Prior",
+    "image": "images/catalog/2610.32676-research.webp",
+    "imageAlt": "Initial and target scenes for real-world tasks evaluated with the learned demonstration speed prior.",
+    "imageSource": "https://arxiv.org/html/2610.32676v1/real_world_tasks_photos.png",
+    "imagePage": "https://arxiv.org/html/2610.32676#S5.F3",
+    "coverType": "Paper · Figure 3",
+    "credit": "Seoul National University",
+    "reviewed": "2026-10-26",
+    "width": 1014,
+    "height": 249,
+    "summary": "A speed prior trained on FastUMI-100K and DROID retimes demonstrations before policy fine-tuning, with YUBI demonstrations used for real-robot adaptation.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.32676"
+  },
+  {
+    "id": "2609.07498",
+    "name": "CosmoH2G",
+    "image": "images/catalog/2609.07498-research.webp",
+    "imageAlt": "CosmoH2G transfers complex human hand-object motion from RGB video to gripper trajectories.",
+    "imageSource": "https://arxiv.org/html/2609.07498v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2609.07498#S0.F1",
+    "coverType": "Paper · Figure 1",
+    "credit": "CUHK-Shenzhen",
+    "reviewed": "2026-10-26",
+    "width": 1561,
+    "height": 497,
+    "summary": "Paired human-hand and UMI-gripper demonstrations support a two-stage mapping from human video to complex gripper motion.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2609.07498"
+  },
+  {
+    "id": "2609.15910",
+    "name": "SlipSense",
+    "image": "images/catalog/2609.15910-research.webp",
+    "imageAlt": "TacV5 sensors on UMI grippers and a Tesollo hand, with the controlled-slip data collection rig.",
+    "imageSource": "https://arxiv.org/html/2609.15910v1/setup.png",
+    "imagePage": "https://arxiv.org/html/2609.15910#S2.F2",
+    "coverType": "Paper · Figure 2",
+    "credit": "Analog Devices",
+    "reviewed": "2026-10-26",
+    "width": 979,
+    "height": 359,
+    "summary": "A pressure-and-vibration slip detector trained on TacV5-equipped UMI grippers transfers to a Tesollo dexterous hand without retraining.",
+    "signals": [
+      "Tactile"
+    ],
+    "attributeSource": "https://arxiv.org/html/2609.15910"
+  },
+  {
+    "id": "2610.31661",
+    "name": "OpenTac · UMI Skin",
+    "image": "images/catalog/2610.31661-research.webp",
+    "imageAlt": "OpenTac contact heatmaps and shear estimates, including physical UMI gripper finger skins holding a can and a ball.",
+    "imageSource": "https://arxiv.org/html/2610.31661v1/tactile_examples_1x4.png",
+    "imagePage": "https://arxiv.org/html/2610.31661#S1.F1",
+    "coverType": "Paper · Figure 1",
+    "credit": "Johns Hopkins University",
+    "reviewed": "2026-10-26",
+    "width": 860,
+    "height": 221,
+    "summary": "Customizable normal/shear tactile skins are physically demonstrated on UMI grippers, with licensed CAD, firmware, readout and simulation tools.",
+    "signals": [
+      "Tactile"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.31661"
   }
 ]

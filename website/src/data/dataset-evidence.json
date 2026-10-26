@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "verified": "2026-10-21",
+  "verified": "2026-10-26",
   "scope": "Source-backed dataset attributes. Unknown fields are null. Reported and released scale retain their separate sources.",
   "records": {
     "2606.10244": {
@@ -757,11 +757,11 @@
     "2511.05858": {
       "id": "2511.05858",
       "name": "ViTaMIn-B",
-      "verified": "2026-10-19",
+      "verified": "2026-10-26",
       "datasetUrl": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
       "access": "Public download",
-      "accessNote": "HF API gated=false; four task ZIPs, rawdata.zip and checkpoints are listed. Repository has no README card, so absence of a card is not absence of data.",
-      "license": "MIT",
+      "accessNote": "Current HF repository has a minimal MIT card and an actual MIT LICENSE, plus the previously published task archives and checkpoints. Dataset reuse terms do not establish the license or release status of collection/training software.",
+      "license": "MIT (actual dataset LICENSE)",
       "formats": [
         "Zarr ZIP",
         "Raw data ZIP"
@@ -781,7 +781,7 @@
         "tasks": 4
       },
       "scopeNotes": [
-        "DuoTact sensor camera runs at30FPS; this is not assumed to be the aligned dataset frame rate."
+        "DuoTact sensor camera runs at 30 FPS; this is not assumed to be the aligned dataset frame rate."
       ],
       "sources": [
         {
@@ -806,6 +806,12 @@
           "url": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn-B_data_and_ckpt",
           "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
           "checked": "2026-10-19",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/chuanyune/ViTaMIn-B_data_and_ckpt/raw/main/LICENSE",
+          "supports": "Actual dataset-license text; separate from code release",
+          "checked": "2026-10-26",
           "published": null
         }
       ],
@@ -1747,11 +1753,11 @@
     "2504.06156": {
       "id": "2504.06156",
       "name": "ViTaMIn",
-      "verified": "2026-10-19",
+      "verified": "2026-10-26",
       "datasetUrl": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset",
       "access": "Public download",
-      "accessNote": null,
-      "license": "MIT",
+      "accessNote": "Current HF repository has a minimal MIT card and an actual MIT LICENSE, plus the previously published task archives. Dataset reuse terms do not establish the license or release status of collection/training software.",
+      "license": "MIT (actual dataset LICENSE)",
       "formats": [
         "Zarr ZIP"
       ],
@@ -1771,7 +1777,7 @@
       },
       "scopeNotes": [
         "The official community table contains eight rows, including Articulated Object (83 demonstrations) and Dynamic Peg (101 demonstrations) repeated with and without tactile observations. The row sum of 841 is not a verified unique demonstration count.",
-        "Six task-name groups total657 only after de-duplicating the two observation variants; uniqueness has not been proven from episode metadata, so a unique demo total is deliberately not set."
+        "Six task-name groups total 657 only after de-duplicating the two observation variants; uniqueness has not been proven from episode metadata, so a unique demo total is deliberately not set."
       ],
       "sources": [
         {
@@ -1790,6 +1796,12 @@
           "url": "https://huggingface.co/api/datasets/chuanyune/ViTaMIn_dataset",
           "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
           "checked": "2026-10-19",
+          "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/chuanyune/ViTaMIn_dataset/raw/main/LICENSE",
+          "supports": "Actual dataset-license text; separate from code release",
+          "checked": "2026-10-26",
           "published": null
         }
       ],
@@ -2370,8 +2382,8 @@
         "uniqueDrawings": 1000
       },
       "scopeNotes": [
-        "Laundry contains three folding subtasks; drawing contains 1000unique drawings with around5–6demonstrations each.",
-        "7360sums1572laundry+5788drawing demonstrations with different embodiments; do not label all7360as bimanual gripper demonstrations."
+        "Laundry contains three folding subtasks; drawing contains 1,000 unique drawings with around 5–6 demonstrations each.",
+        "7,360 sums 1,572 laundry + 5,788 drawing demonstrations with different embodiments; do not label all 7,360 as bimanual gripper demonstrations."
       ],
       "sources": [
         {

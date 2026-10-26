@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Primary-source audit of existing Awesome-UMI works. Unknown is distinct from none. Prices and mass require scope; paper-level statistics are not cross-paper rankings.",
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-26",
   "works": {
     "2402.10329": {
       "id": "2402.10329",
@@ -1583,7 +1583,7 @@
     "resource-fd5070524c": {
       "id": "resource-fd5070524c",
       "name": "HandUMI",
-      "verified": "2026-10-21",
+      "verified": "2026-10-26",
       "form": "Wearable",
       "interfaceForms": [
         "Wearable"
@@ -1603,7 +1603,7 @@
         "type": null
       },
       "actionSpace": "6-DoF wrist pose + gripper width",
-      "hardwareAvailability": "Public Apache-2.0 left/right STEP/STL, assembly guide and robot-specific gripper-tip CAD.",
+      "hardwareAvailability": "Public Apache-2.0 left/right STEP/STL, assembly guide, robot-specific tips and printable ChArUco calibration board.",
       "evidence": [
         {
           "url": "https://github.com/murobotics-ai/handumi-hw",
@@ -1617,6 +1617,10 @@
           "url": "https://github.com/murobotics-ai/handumi-hw/tree/main/hardware",
           "section": "Fresh recursive CAD tree",
           "note": "Revised supports and robot-specific tips are design artifacts; no new force/tactile sensor is inferred."
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/calibration/charuco_5x7_30mm_A4.pdf",
+          "section": "New printable calibration board"
         }
       ],
       "cost": {
@@ -3829,6 +3833,161 @@
         "Vision",
         "Proprioception"
       ]
+    },
+    "2610.27622": {
+      "id": "2610.27622",
+      "name": "Head-Cam UMI",
+      "verified": "2026-10-26",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Head RGB camera + glove fiducials against workspace tiles",
+      "vision": "Single head RGB; robot-side viewpoint positioner",
+      "observationSignals": [
+        "Vision"
+      ],
+      "tactile": {
+        "status": "none",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "No separate six-axis force/torque transducer in this described setup; tactile pressure/shear sensing remains distinct."
+      },
+      "actionSpace": "6-DoF gripper pose + jaw width",
+      "hardwareAvailability": "MIT author CAD / printable markers and executable collection / calibration / conversion sources",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.27622",
+          "section": "Primary method / UMI relationship and experiments"
+        },
+        {
+          "url": "https://github.com/YosubShin/head-cam-umi",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/YosubShin/yam-umi",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/YosubShin/head-cam-umi/blob/main/LICENSE",
+          "section": "Actual MIT text explicitly covers associated hardware design files"
+        },
+        {
+          "url": "https://github.com/YosubShin/head-cam-umi/blob/main/scripts/build_dataset.py",
+          "section": "Actual executable conversion source"
+        }
+      ],
+      "display": {
+        "form": "Wearable",
+        "tracking": "Head RGB camera + glove fiducials against workspace tiles",
+        "vision": "Single head RGB; robot-side viewpoint positioner",
+        "actions": "6-DoF gripper pose + jaw width"
+      },
+      "cost": {
+        "value": 22,
+        "currency": "USD",
+        "scope": "Paper-reported electronics-free glove only; excludes camera, viewpoint arm and robot",
+        "shortScope": "Glove only; camera / robot excluded"
+      }
+    },
+    "2609.15910": {
+      "id": "2609.15910",
+      "name": "SlipSense · UMI Sensing",
+      "verified": "2026-10-26",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Not a pose-tracking contribution",
+      "vision": "No external camera required for the controlled-slip dataset",
+      "observationSignals": [
+        "Tactile"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "TacV5 32 × 32 pressure at 240 Hz + three-axis vibration at 8 kHz"
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "No separate six-axis force/torque transducer in this described setup; tactile pressure/shear sensing remains distinct."
+      },
+      "actionSpace": "Slip / no-slip / no-contact estimates; no standalone robot action space",
+      "hardwareAvailability": "Paper-described TacV5 UMI setup; reusable design release unverified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2609.15910",
+          "section": "Primary method / UMI relationship and experiments"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Not a pose-tracking contribution",
+        "vision": "No external camera required for the controlled-slip dataset",
+        "actions": "Slip / no-slip / no-contact estimates; no standalone robot action space"
+      },
+      "observationSignalsNote": "The accelerometer measures friction-induced vibration; do not infer inertial pose tracking or camera observations."
+    },
+    "2610.31661": {
+      "id": "2610.31661",
+      "name": "OpenTac · UMI Skin",
+      "verified": "2026-10-26",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Not a pose-tracking contribution",
+      "vision": "Not specified for this tactile skin",
+      "observationSignals": [
+        "Tactile"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Flex-PCB piezoresistive array with bump-based local shear decoding"
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "No separate six-axis force/torque transducer in this described setup; tactile pressure/shear sensing remains distinct."
+      },
+      "actionSpace": "Local normal/shear contact fields; no standalone collector pose/action export",
+      "hardwareAvailability": "CERN-OHL-P-2.0 hardware designs; MIT CAD / readout / firmware / simulation sources",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.31661",
+          "section": "Primary method / UMI relationship and experiments"
+        },
+        {
+          "url": "https://opentac.github.io/",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/opentac/opentac",
+          "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://github.com/opentac/opentac/blob/main/LICENSE-hardware",
+          "section": "Actual CERN Open Hardware Licence v2 Permissive"
+        },
+        {
+          "url": "https://github.com/opentac/opentac/blob/main/LICENSE",
+          "section": "Actual MIT software license"
+        },
+        {
+          "url": "https://github.com/opentac/opentac/blob/main/opentac/cad/main.py",
+          "section": "Actual executable CAD generator"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Not a pose-tracking contribution",
+        "vision": "Not specified for this tactile skin",
+        "actions": "Local normal/shear contact fields; no standalone collector pose/action export"
+      },
+      "observationSignalsNote": "This record describes a UMI/YUBI tactile-skin extension rather than a standalone robot-free pose collection device."
     }
   },
   "observationSignalsDefinition": "Collector-recorded sensor channels and recovered state outputs verified from primary sources, not necessarily deployed-policy observations. Proprioception includes explicitly recorded/recovered pose, aperture, encoder or joint state. Raw IMU requires evidence of an exposed/recorded channel; tracker internals are insufficient. Audio used only for synchronization is explicitly noted.",
