@@ -1646,20 +1646,24 @@
       ]
     },
     "2610.20320": {
-      "verified": "2026-10-26",
-      "status": "partial",
+      "verified": "2026-10-30",
+      "status": "unknown",
       "hardwareStatus": "Not independently verified",
-      "softwareStatus": "Robot replay and kinematic analysis tools released; policy code forthcoming",
+      "softwareStatus": "Previously public repository unavailable; code release unverified",
       "hardwareLicense": null,
       "softwareLicense": null,
       "notes": [
-        "Author repository releases robot-specific replay, inverse-kinematics reachability/manipulability and workspace visualization tools. Policy training and task-level evaluation remain forthcoming. Repository license is unspecified; public code is not equivalent to a complete licensed open-source stack.",
-        "The former official project endpoint returns HTTP 404 on 2026-10-26. No replacement URL is confirmed by the author repository; the canonical links retain the released tools and public data subset."
+        "The previously inspected author repository now returns HTTP 404 both directly and via the GitHub API. Previously released replay and analysis tools are not currently verified accessible; no replacement repository has been confirmed.",
+        "The former project page also returns HTTP 404. The linked Daimon-Infinity data repository remains public; its dataset release is separate from code and hardware."
       ],
       "evidence": [
         {
-          "url": "https://github.com/daimon-robotics/TacClaw-Infinity",
-          "section": "Robot replay / evaluation section and roadmap"
+          "url": "https://arxiv.org/abs/2610.20320",
+          "section": "Original paper"
+        },
+        {
+          "url": "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity",
+          "section": "Public data repository; access independent of software"
         }
       ]
     },
@@ -2565,6 +2569,222 @@
         {
           "url": "https://arxiv.org/html/2610.35862v1",
           "section": "Data collection and experimental scope"
+        }
+      ]
+    },
+    "2606.09777": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Research prototype; reusable hardware not verified",
+      "softwareStatus": "Not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The Hugging Face dataset metadata advertises CC BY 4.0, but files are gated: an anonymous task archive request returned HTTP 401.",
+        "Force measurements are gripper/contact forces; do not equate them with a six-axis wrist wrench."
+      ],
+      "evidence": [
+        {
+          "url": "https://huggingface.co/datasets/lihong-cs/aetherock",
+          "section": "Dataset access and license"
+        },
+        {
+          "url": "https://arxiv.org/html/2606.09777v1",
+          "section": "System and ForceVT"
+        }
+      ]
+    },
+    "2509.19047": {
+      "verified": "2026-10-30",
+      "status": "partial",
+      "hardwareStatus": "Research prototype; CAD release not verified",
+      "softwareStatus": "Public implementation; license not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The author repository contains data capture, calibration, processing, training and evaluation sources; no root LICENSE was found.",
+        "The community page links individual task archives; a Google Drive landing page returned HTTP 200, without establishing bulk-download or complete release availability."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/gist-ailab/ManipForce",
+          "section": "Implementation and README"
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "section": "Six UMI-compatible task archives"
+        }
+      ]
+    },
+    "2606.27239": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Prototype described",
+      "softwareStatus": "Not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Project demonstrates five real-world scenarios; no method code or dataset release was verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://baai-aether.github.io/HumanoidUMI/",
+          "section": "Hardware and demonstrations"
+        }
+      ]
+    },
+    "2601.20239": {
+      "verified": "2026-10-30",
+      "status": "partial",
+      "hardwareStatus": "TacUMI 3D model linked; guide pending",
+      "softwareStatus": "Data collection code available; TouchGuide method code pending",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT with Apache-2.0 derived-code notices",
+      "notes": [
+        "Author README marks collection code and TacUMI hardware model as available, but explicitly leaves TouchGuide method code and hardware/data collection guides pending.",
+        "The repository LICENSE includes MIT terms and separate Apache 2.0 attribution for derived LeRobot-Xense code."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/martelzhang/TouchGuide",
+          "section": "TODO list, collection source and LICENSE"
+        },
+        {
+          "url": "https://arxiv.org/html/2601.20239v1",
+          "section": "Contact Physical Model and TacUMI data"
+        }
+      ]
+    },
+    "2609.25187": {
+      "verified": "2026-10-30",
+      "status": "partial",
+      "hardwareStatus": "Not applicable to policy",
+      "softwareStatus": "Implementation available",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT (repository); model Apache-2.0",
+      "notes": [
+        "Planning front-end uses ego, UMI and teleoperation; a downstream world-action model executes actions.",
+        "Four public 9B model shards; a representative shard and benchmark parquet both returned HTTP 206. Model, code, and benchmark terms are separate."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/X-Square-Robot/Xplanner",
+          "section": "Source and LICENSE"
+        },
+        {
+          "url": "https://huggingface.co/x-square-robot/X-Planner-9B-0916",
+          "section": "Model and LICENSE"
+        },
+        {
+          "url": "https://huggingface.co/datasets/x-square-robot/xplanner-benchmark",
+          "section": "Benchmark"
+        }
+      ]
+    },
+    "2608.10718": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to policy",
+      "softwareStatus": "Not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Competition system uses both UMI-style and real-robot demonstrations; paper reports evaluation on the WBCD Track 4 garment task."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2608.10718v1",
+          "section": "Collection, system and competition"
+        }
+      ]
+    },
+    "2608.01102": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to policy",
+      "softwareStatus": "Placeholder; method code forthcoming",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Current GitHub repository has only README and explicitly defers training and evaluation code.",
+        "Real evaluation uses visuo-tactile UMI; results are averaged across ACT, Diffusion Policy and π0."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/mrJiangjm/caat-code",
+          "section": "Placeholder and release status"
+        },
+        {
+          "url": "https://arxiv.org/html/2608.01102v1",
+          "section": "Evaluation"
+        }
+      ]
+    },
+    "2606.22174": {
+      "verified": "2026-10-30",
+      "status": "partial",
+      "hardwareStatus": "Not applicable to policy",
+      "softwareStatus": "Source and checkpoints available",
+      "hardwareLicense": null,
+      "softwareLicense": "Apache-2.0 repository; separate model and dataset cards state MIT; external dependencies have separate terms",
+      "notes": [
+        "A HuMI-co-trained model file returned anonymous HTTP 206; the dataset provides example demonstrations, whose availability does not establish all training data availability.",
+        "The real humanoid policy combines whole-body teleoperation with stationary HuMI data."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/OpenHLM-project/OpenHLM",
+          "section": "Source and NOTICE"
+        },
+        {
+          "url": "https://huggingface.co/OpenHLM/OpenHLM-ckpts",
+          "section": "Checkpoint inventory"
+        },
+        {
+          "url": "https://huggingface.co/datasets/OpenHLM/OpenHLM-data",
+          "section": "Example data"
+        }
+      ]
+    },
+    "2507.03930": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Not applicable to policy",
+      "softwareStatus": "Not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paired human-hand and UMI gripper images train a hand-to-gripper generator for downstream policies; project videos do not establish code or dataset release."
+      ],
+      "evidence": [
+        {
+          "url": "https://rwor.github.io/",
+          "section": "Project demonstrations"
+        },
+        {
+          "url": "https://arxiv.org/html/2507.03930v1",
+          "section": "Collection and generation"
+        }
+      ]
+    },
+    "2603.07580": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Paper describes prototype; public hardware files not verified",
+      "softwareStatus": "Empty repository; implementation not available",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper says hardware and software are available, but the linked repository has no Git tree (GitHub HTTP 409); release cannot be confirmed."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/aod321/FeasibleCap",
+          "section": "Empty repository"
+        },
+        {
+          "url": "https://arxiv.org/html/2603.07580v1",
+          "section": "System and evaluation"
         }
       ]
     }

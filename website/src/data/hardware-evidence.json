@@ -4159,6 +4159,160 @@
         "vision": "Wrist RGB cameras",
         "actions": "Whole-body motion, gripper widths and force"
       }
+    },
+    "2606.09777": {
+      "id": "2606.09777",
+      "name": "AetheRock",
+      "verified": "2026-10-30",
+      "form": "Arm-worn parallel gripper",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Vive tracking",
+      "vision": "Wrist RGB",
+      "tactile": {
+        "status": "present",
+        "type": "GelSlim-MiniFab optical tactile"
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Scalar gripper force from resistive pressure sensing",
+        "note": "Grip-force sensing, not a six-axis wrench sensor."
+      },
+      "actionSpace": "End-effector pose and gripper state",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Force",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Research prototype; hardware files not independently verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.09777v1",
+          "section": "Hardware and experiments"
+        }
+      ],
+      "display": {
+        "form": "Arm-worn parallel gripper",
+        "tracking": "Vive tracking",
+        "vision": "Wrist RGB",
+        "actions": "End-effector pose and gripper state"
+      }
+    },
+    "2509.19047": {
+      "id": "2509.19047",
+      "name": "ManipForce",
+      "verified": "2026-10-30",
+      "form": "Handheld parallel gripper",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "ArUco visual markers",
+      "vision": "Dual RGB cameras",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Wrist six-axis F/T"
+      },
+      "actionSpace": "6-DoF end-effector pose and gripper action",
+      "observationSignals": [
+        "Vision",
+        "Force",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Hardware documentation in paper; reusable CAD not verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2509.19047v1",
+          "section": "Hardware and experiments"
+        }
+      ],
+      "display": {
+        "form": "Handheld parallel gripper",
+        "tracking": "ArUco visual markers",
+        "vision": "Dual RGB cameras",
+        "actions": "6-DoF end-effector pose and gripper action"
+      }
+    },
+    "2606.27239": {
+      "id": "2606.27239",
+      "name": "HumanoidUMI",
+      "verified": "2026-10-30",
+      "form": "VR body tracking and handheld grippers",
+      "interfaceForms": [
+        "Whole-body",
+        "Handheld"
+      ],
+      "poseTracking": "PICO headset and body trackers",
+      "vision": "Wrist RGB cameras",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Five body/end-effector keypoints and gripper width",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Prototype described; hardware release not verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2606.27239v1",
+          "section": "Hardware and experiments"
+        }
+      ],
+      "display": {
+        "form": "VR body tracking and handheld grippers",
+        "tracking": "PICO headset and body trackers",
+        "vision": "Wrist RGB cameras",
+        "actions": "Five body/end-effector keypoints and gripper width"
+      }
+    },
+    "2603.07580": {
+      "id": "2603.07580",
+      "name": "FeasibleCap",
+      "verified": "2026-10-30",
+      "form": "Handheld gripper with smartphone feedback",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "iPhone ARKit",
+      "vision": "iPhone RGB",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "Vibration gives the human a warning; it does not measure force."
+      },
+      "actionSpace": "End-effector trajectory and gripper state",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Paper describes prototype; hardware and software repository is empty",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2603.07580v1",
+          "section": "System and real-time feasibility feedback"
+        }
+      ],
+      "display": {
+        "form": "Handheld gripper",
+        "tracking": "iPhone ARKit",
+        "vision": "iPhone RGB",
+        "actions": "End-effector trajectory and gripper state"
+      }
     }
   },
   "observationSignalsDefinition": "Collector-recorded sensor channels and recovered state outputs verified from primary sources, not necessarily deployed-policy observations. Proprioception includes explicitly recorded/recovered pose, aperture, encoder or joint state. Raw IMU requires evidence of an exposed/recorded channel; tracker internals are insufficient. Audio used only for synchronization is explicitly noted.",

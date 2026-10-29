@@ -1925,7 +1925,7 @@
     "2610.20320": {
       "id": "2610.20320",
       "name": "TacClaw-Infinity",
-      "verified": "2026-10-26",
+      "verified": "2026-10-30",
       "datasetUrl": "https://huggingface.co/datasets/daimonrobotics/Daimon-Infinity",
       "access": "Public subset",
       "accessNote": null,
@@ -1969,7 +1969,7 @@
         "The card analyzes approximately 1,209 collected hours; this is a separate scope from its first 1,000-hour release.",
         "The first batch mixes DataClaw and DataDex; do not describe every released hour as TacClaw-only.",
         "A sampled DataClaw meta/info.json confirms 30 FPS, 114-dimensional state, 111-dimensional action, and 247 episodes. This is one recording folder, not the release-wide episode count.",
-        "Author GitHub now publishes robot replay and kinematic analysis tools, while policy training/task-level evaluation remains forthcoming."
+        "Previously public author software repository now returns 404; data access is independent of code availability."
       ],
       "sources": [
         {
@@ -1983,11 +1983,6 @@
           "supports": "First 1,000-hour release, license, mixed devices and downloadable file layout.",
           "checked": "2026-10-16",
           "published": null
-        },
-        {
-          "url": "https://github.com/daimon-robotics/TacClaw-Infinity",
-          "supports": "Public subset portals and actual released-code scope",
-          "checked": "2026-10-19"
         },
         {
           "url": "https://huggingface.co/api/datasets/daimonrobotics/Daimon-Infinity?expand[]=gated&expand[]=cardData&expand[]=lastModified",
@@ -3799,6 +3794,52 @@
         "result": "Both return HTTP 206 and ZIP magic 504b0304; sizes 17,008,647,981 and 16,188,851,065 bytes."
       },
       "evidenceLevel": "Official paper / author dataset repository"
+    },
+    "2606.09777": {
+      "id": "2606.09777",
+      "name": "AetheRock",
+      "verified": "2026-10-30",
+      "datasetUrl": "https://huggingface.co/datasets/lihong-cs/aetherock",
+      "access": "Access conditions",
+      "accessNote": "Hugging Face reports gated access; anonymous task ZIP request returned 401.",
+      "license": "CC BY 4.0 (dataset card)",
+      "formats": [
+        "Zarr"
+      ],
+      "observations": [
+        "Wrist RGB",
+        "Bilateral tactile",
+        "Gripper force",
+        "Pose",
+        "Gripper state"
+      ],
+      "action": "End-effector pose and gripper state",
+      "embodiments": [
+        "Arm-worn gripper"
+      ],
+      "reportedScale": {},
+      "publicScale": {},
+      "scopeNotes": [
+        "Community index lists task-specific demonstration counts; data access requires authorization."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/api/datasets/lihong-cs/aetherock",
+          "supports": "Gated status, card license, task archive inventory",
+          "checked": "2026-10-30",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "Task descriptions and episode counts",
+          "checked": "2026-10-30",
+          "published": null
+        }
+      ],
+      "unknownFields": [
+        "complete download availability"
+      ],
+      "evidenceLevel": "Author dataset card and UMI community"
     }
   }
 }
