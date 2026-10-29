@@ -2318,5 +2318,64 @@
       "Proprioception"
     ],
     "attributeSource": "https://arxiv.org/html/2610.32969v1"
+  },
+  {
+    "id": "2610.36598",
+    "name": "OpenJaws",
+    "image": "images/catalog/2610.36598-hardware.webp",
+    "imageAlt": "OpenJaws official hardware overview",
+    "imageSource": "https://open-jaws.github.io/static/images/system_overview.png",
+    "imagePage": "https://open-jaws.github.io/",
+    "coverType": "Official project figure",
+    "credit": "OpenJaws authors",
+    "reviewed": "2026-10-30",
+    "width": 1600,
+    "height": 721,
+    "summary": "A stereo-localized handheld gripper uses the same hardware for demonstration and deployment.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.36598v1"
+  },
+  {
+    "id": "2610.35462",
+    "name": "DEX-PHD",
+    "image": "images/catalog/2610.35462-hardware.webp",
+    "imageAlt": "DEX-PHD official hardware overview",
+    "imageSource": "https://arxiv.org/html/2610.35462v1/figure/hardware_system_v4.jpg",
+    "imagePage": "https://arxiv.org/html/2610.35462v1",
+    "coverType": "Paper · Figure 2",
+    "credit": "DEX-PHD authors",
+    "reviewed": "2026-10-30",
+    "width": 1012,
+    "height": 1200,
+    "summary": "A handheld robot hand records finger commands, contact signals and wrist video for open-loop replay.",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.35462v1"
+  },
+  {
+    "id": "2610.35862",
+    "name": "FLoRe",
+    "image": "images/catalog/2610.35862-hardware.webp",
+    "imageAlt": "FLoRe human collection interface and handheld gripper with force torque sensor",
+    "imageSource": "https://arxiv.org/html/2610.35862v1/device.png",
+    "imagePage": "https://arxiv.org/html/2610.35862v1#S3.F3",
+    "coverType": "Paper · Figure 3",
+    "credit": "FLoRe authors",
+    "reviewed": "2026-10-30",
+    "width": 844,
+    "height": 600,
+    "summary": "Two UMI-style grippers and wearable trackers record motion and wrist force for humanoid policy learning.",
+    "signals": [
+      "Vision",
+      "Force",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/html/2610.35862v1"
   }
 ]

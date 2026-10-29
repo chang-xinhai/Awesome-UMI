@@ -123,6 +123,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-27 | UMI, Stereo Localization, Shared Gripper, Robot-Free | NVIDIA | [OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation](https://arxiv.org/abs/2610.36598) | arXiv | [project](https://open-jaws.github.io/) / [code (forthcoming)](https://github.com/adithyamurali/OpenJaws) |
 | 2026-10-20 | Head-Cam UMI, Electronics-Free Glove, Fiducial Tracking, Shared Observation/Labels | University of Hawaii at Manoa | [A Head Camera Is (Almost) All You Need: An Electronics-Free UMI Glove Labelled and Observed by One Moving Camera](https://arxiv.org/abs/2610.27622) | arXiv | [github](https://github.com/YosubShin/head-cam-umi) / [hardware base](https://github.com/YosubShin/yam-umi) |
 | 2026-09-19 | KIWI, Dual-Lens 360 Cameras, Shared Metric Map, Modular Bimanual Capture | Autel US | [Kinematic Interface for the Wild: Modular Bimanual Loco-Manipulation Capture from 360° Cameras Alone](https://arxiv.org/abs/2609.22809) | arXiv | [project](https://lingfeng.moe/KIWI/) / [code](https://github.com/TToTMooN/KIWI_software) / [data (sample)](https://github.com/TToTMooN/KIWI_software#5-try-it-without-hardware) / [hardware](https://github.com/TToTMooN/KIWI_hardware) |
 | 2026-07-28 | High-Fidelity UMI, Stereo-Inertial SLAM, 2,000 Hours | Simple AI | [HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone](https://arxiv.org/abs/2607.25895) | arXiv | [project](https://cloud.simpleai.tech/simple-world-lab/hifi-umi/) / [dataset](https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K) |
@@ -143,6 +144,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-26 | UMI-Style SLAM, Handheld DexHand, Fingertip Force, Open-Loop Replay | University of Illinois Urbana-Champaign | [DEX-PHD: A Dexterous Portable Handheld Device for Multimodal Data Collection](https://arxiv.org/abs/2610.35462) | Humanoids 2026 | — |
 | 2026-10-23 | Handheld DexHand, UMI-Style, 20-DoF Skills, Native Command/State Recording | Amazon FAR | [DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection](https://arxiv.org/abs/2610.32969) | arXiv | [project](https://amberxie88.github.io/dexport/) |
 | 2026-09-10 | Shared Human/Robot Exoskeleton, 20-DoF Encoders, Paired Contact Calibration | Peking University | [SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration](https://arxiv.org/abs/2609.11753) | CoRL 2026 | [project](https://tengbo-yu.github.io/SEED-UMI/) / [github](https://github.com/Tengbo-Yu/SEED-UMI) |
 | 2026-06-04 | Wearable DexHand, Tactile, In-Hand Vision | Peking University | [RealDexUMI: A Wearable Universal Manipulation Interface for Dexterous Robot Learning](https://arxiv.org/abs/2606.06033) | arXiv | [project](https://research.beingbeyond.com/realdexumi) / [product](https://beingbeyond.com/solutions/U1) |
@@ -179,6 +181,7 @@ Methods for UMI-style robot-free teaching, teleoperation, cross-embodiment trans
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
+| 2026-10-26 | UMI-Style Bimanual, Wrist F/T, Humanoid Force Control | Amazon FAR | [Learning Force-Reactive Humanoid Loco-Manipulation](https://arxiv.org/abs/2610.35862) | arXiv | [project](https://louis-leee.github.io/FLoRe/) |
 | 2026-10-08 | UMI Grippers, Wearable Contact Patches, Humanoid Whole-Body Dexterity | Stanford | [PanTact: Teaching Whole-Body Dexterity with a Wearable Contact Interface](https://arxiv.org/abs/2610.12558) | arXiv | [project](https://pantact.github.io/) |
 | 2026-10-06 | VOMMI, UMI-Style Gripper, RGB Body/Hand VO, Mobile VLA | Zhejiang University | [VOMMI: Collecting and Leveraging Portable Demonstrations for Mobile Manipulation](https://arxiv.org/abs/2610.08220) | arXiv | — |
 | 2026-09-19 | Native UMI Transfer, Humanoid, Whole-Body Motion Generation | Zhejiang University | [Whole-Body UMI: Transferring UMI Manipulation Skills to Humanoid Whole-Body Manipulation via Real-Time Motion Generation](https://arxiv.org/abs/2609.22829) | arXiv | — |
@@ -209,7 +212,7 @@ Interfaces that use feasibility checks, coverage feedback, policy predictions, o
 
 | Date | Keywords | Institute (first) | Paper | Publication | Others |
 | :--: | :------: | :---------------: | :--- | :---------: | :----: |
-| — | Robot-Free, Hand-Worn, Open Hardware, LeRobot | murobotics-ai | [HandUMI](https://github.com/murobotics-ai/handumi-hw) | GitHub | [software](https://github.com/murobotics-ai/handumi-sw) / [assembly guide](https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/HandUMI_Assembly_Guide.pdf) / [robot-specific tips](https://github.com/murobotics-ai/handumi-hw/tree/main/hardware/STEP/gripper_tips) / [calibration board](https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/calibration/charuco_5x7_30mm_A4.pdf) |
+| — | Robot-Free, Hand-Worn, Open Hardware, LeRobot | murobotics-ai | [HandUMI](https://github.com/murobotics-ai/handumi-hw) | GitHub | [software](https://github.com/murobotics-ai/handumi-sw) / [sensor viewer](https://github.com/murobotics-ai/handumi-sw/blob/main/src/handumi/scripts/visualize.py) / [assembly guide](https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/HandUMI_Assembly_Guide.pdf) / [robot-specific tips](https://github.com/murobotics-ai/handumi-hw/tree/main/hardware/STEP/gripper_tips) / [calibration board](https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/calibration/charuco_5x7_30mm_A4.pdf) |
 | — | Robot-Free, Handheld RGB-D, Open Hardware, LeRobot | Pollen Robotics | [Grabette](https://github.com/pollen-robotics/grabette) | GitHub | [device software](https://github.com/pollen-robotics/grabette) / [SLAM / LeRobot](https://github.com/pollen-robotics/grabette-slam) / [policy](https://github.com/pollen-robotics/grabette-policy) |
 
 ### Commercial UMI Systems

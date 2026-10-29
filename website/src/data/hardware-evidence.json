@@ -4040,6 +4040,125 @@
         "vision": "Wrist fisheye; transferable hand-camera module",
         "actions": "Wrist target + 20-DoF hand commands / measured states"
       }
+    },
+    "2610.36598": {
+      "id": "2610.36598",
+      "name": "OpenJaws",
+      "verified": "2026-10-30",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Stereo visual localization",
+      "vision": "Wrist stereo camera",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Metric end-effector pose and gripper position",
+      "hardwareAvailability": "Design release coming soon on project page",
+      "evidence": [
+        {
+          "url": "https://open-jaws.github.io/",
+          "section": "Gripper and localization, release buttons"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.36598v1",
+          "section": "Hardware and evaluation"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Stereo visual localization",
+        "vision": "Wrist stereo camera",
+        "actions": "Metric end-effector pose and gripper position"
+      }
+    },
+    "2610.35462": {
+      "id": "2610.35462",
+      "name": "DEX-PHD",
+      "verified": "2026-10-30",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "UMI-like visual SLAM",
+      "vision": "GoPro Hero 11 wrist camera",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "30 fingertip FSRs",
+        "note": "Contact patterns are not calibrated absolute force."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Wrist trajectory and six hand actuation commands",
+      "hardwareAvailability": "Paper-described hand and handle; source not verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.35462v1",
+          "section": "Sections III–IV, hardware and open-loop replay"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "UMI-like visual SLAM",
+        "vision": "GoPro Hero 11 wrist camera",
+        "actions": "Wrist trajectory and six hand actuation commands"
+      }
+    },
+    "2610.35862": {
+      "id": "2610.35862",
+      "name": "FLoRe",
+      "verified": "2026-10-30",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld",
+        "Wearable"
+      ],
+      "poseTracking": "Vive trackers on each gripper, chest and ankles",
+      "vision": "Wrist RealSense D405 RGB images",
+      "observationSignals": [
+        "Vision",
+        "Force",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "present",
+        "type": "Six-axis wrist F/T per gripper"
+      },
+      "actionSpace": "Whole-body keypoint motion, gripper width and per-hand desired force",
+      "hardwareAvailability": "Research prototype described in paper; design release not verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.35862v1",
+          "section": "III-B data collection and Fig. 3"
+        }
+      ],
+      "display": {
+        "form": "Handheld and wearable",
+        "tracking": "Vive trackers",
+        "vision": "Wrist RGB cameras",
+        "actions": "Whole-body motion, gripper widths and force"
+      }
     }
   },
   "observationSignalsDefinition": "Collector-recorded sensor channels and recovered state outputs verified from primary sources, not necessarily deployed-policy observations. Proprioception includes explicitly recorded/recovered pose, aperture, encoder or joint state. Raw IMU requires evidence of an exposed/recorded channel; tracker internals are insufficient. Audio used only for synchronization is explicitly noted.",

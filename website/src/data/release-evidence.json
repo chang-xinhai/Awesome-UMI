@@ -702,7 +702,8 @@
         "Headset application, third-party robot firmware, and optional dataset licenses remain separate.",
         "Parts cost is approximately $104 per hand; headset excluded.",
         "Current hardware tree adds revised left/right supports, a HandUMI assembly PDF, and fingertip CAD for I2RT-YAM, OpenArm v1, Galaxea R1 Lite and MakerMods Metal. The root Apache-2.0 LICENSE was inspected.",
-        "The hardware repository now supplies a printable 5 × 7 ChArUco calibration board with 30 mm squares on A4. This is a calibration artifact, not an additional sensor or a new dataset."
+        "The hardware repository now supplies a printable 5 × 7 ChArUco calibration board with 30 mm squares on A4. This is a calibration artifact, not an additional sensor or a new dataset.",
+        "The collection software now includes a standalone Rerun viewer for configured camera streams and calibrated gripper openings, without VR tracking or simulation."
       ],
       "evidence": [
         {
@@ -720,10 +721,14 @@
         {
           "url": "https://github.com/murobotics-ai/handumi-hw/blob/main/hardware/calibration/charuco_5x7_30mm_A4.pdf",
           "section": "Actual printable calibration-board artifact"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-sw/commit/55e1e6e",
+          "section": "Standalone sensor viewer implementation"
         }
       ],
       "commercial": false,
-      "verified": "2026-10-26"
+      "verified": "2026-10-30"
     },
     "resource-af05253706": {
       "status": "open",
@@ -2494,6 +2499,68 @@
         {
           "url": "https://amberxie88.github.io/dexport/",
           "section": "Current Code coming-soon control and project demonstration videos"
+        }
+      ]
+    },
+    "2610.36598": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Hardware release marked coming soon",
+      "softwareStatus": "Placeholder repository; code coming soon",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Paper and project describe intended Apache-2.0 releases, but project buttons mark code, hardware and dataset coming soon; repository is a placeholder.",
+        "UMI-Loc-Bench-v1 evaluates 90 demonstrations across nine tasks; its data download is not yet verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://open-jaws.github.io/",
+          "section": "Current release buttons and benchmark scope"
+        },
+        {
+          "url": "https://github.com/adithyamurali/OpenJaws",
+          "section": "Placeholder repository"
+        }
+      ]
+    },
+    "2610.35462": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Paper-described device; design files not verified",
+      "softwareStatus": "Not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The paper adopts a SLAM pipeline similar to UMI and uses the same robot hand for demonstration and replay.",
+        "Physical evaluation is open-loop replay, selecting one feasible episode per task; tactile signals are analyzed as contact patterns, not calibrated absolute force."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.35462v1",
+          "section": "III-C, IV-D and limitations"
+        }
+      ]
+    },
+    "2610.35862": {
+      "verified": "2026-10-30",
+      "status": "unknown",
+      "hardwareStatus": "Paper-described prototype; design release not verified",
+      "softwareStatus": "Code coming soon",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The project labels code coming soon; hardware, training code and datasets are not verified as released.",
+        "Force is measured by six-axis wrist F/T sensors; it is not evidence of fingertip tactile sensing. Robot evaluation covers three tasks."
+      ],
+      "evidence": [
+        {
+          "url": "https://louis-leee.github.io/FLoRe/",
+          "section": "Code coming-soon control and experiments"
+        },
+        {
+          "url": "https://arxiv.org/html/2610.35862v1",
+          "section": "Data collection and experimental scope"
         }
       ]
     }
