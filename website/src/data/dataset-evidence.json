@@ -2844,11 +2844,11 @@
     "2509.14688": {
       "id": "2509.14688",
       "name": "exUMI",
-      "verified": "2026-10-19",
+      "verified": "2026-10-30",
       "datasetUrl": "https://huggingface.co/datasets/silicx/exUMI",
       "access": "Public download",
       "accessNote": "Official author repository links an anonymous, ungated Hugging Face dataset with eight task archives and raw videos.",
-      "license": null,
+      "license": "MIT",
       "formats": [
         "Zarr ZIP",
         "MP4"
@@ -2880,8 +2880,8 @@
         "The paper human-play pretraining corpus and the released task-specific ZIP files are different scopes. Do not label one million frames as released episodes.",
         "The current author Hugging Face listing contains 1,488 raw MP4 files across eight task directories. These are raw capture files, not an independently verified processed-episode total.",
         "Paper Sec. 4.2 gives about one million aligned image/tactile/action frames and 480K tactile frames from five hours; Appendix Table 5 gives 480.9K raw frames. Keep these definitions separate rather than treating all frame totals as equivalent.",
-        "The dataset card has no license metadata and its root file listing has no LICENSE file. A paper license or software-repository license does not establish dataset licensing.",
-        "The dataset-card example has episode_ends length 139 for insert_pen only; it is not the full release size."
+        "The dataset-card example has episode_ends length 139 for insert_pen only; it is not the full release size.",
+        "The author dataset repository now includes an actual MIT LICENSE file; the dataset card has no license metadata."
       ],
       "sources": [
         {
@@ -2892,7 +2892,7 @@
         },
         {
           "url": "https://huggingface.co/api/datasets/silicx/exUMI",
-          "supports": "Anonymous snapshot: gated=false, eight task ZIP archives, 1,488 MP4 files, no declared dataset license.",
+          "supports": "Anonymous snapshot: gated=false, eight task ZIP archives, 1,488 MP4 files, no dataset license file at the time of this historical snapshot.",
           "checked": "2026-10-16",
           "published": null
         },
@@ -2919,10 +2919,15 @@
           "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
           "checked": "2026-10-19",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/silicx/exUMI/blob/main/LICENSE",
+          "supports": "Actual dataset repository root MIT LICENSE",
+          "checked": "2026-10-30",
+          "published": null
         }
       ],
       "unknownFields": [
-        "dataset license",
         "export fps",
         "processed release episode total"
       ],

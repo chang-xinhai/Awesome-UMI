@@ -2237,15 +2237,15 @@
       ]
     },
     "2609.39870": {
-      "verified": "2026-10-26",
+      "verified": "2026-10-30",
       "status": "partial",
       "hardwareStatus": "Not applicable to this software / policy / evaluation work",
-      "softwareStatus": "MIT inference and RoboDojo adapter; RoboDojo fine-tuned weights released, training recipes forthcoming",
+      "softwareStatus": "MIT inference and RoboDojo adapter; pretraining and RoboDojo fine-tuned weights released, training recipes forthcoming",
       "hardwareLicense": null,
       "softwareLicense": "MIT",
       "notes": [
         "Actual inference sources and eval/robodojo modules are released under MIT. README explicitly defers training and fine-tuning recipes.",
-        "The official HF target XuhuaX/Magic-W0 now contains robodojo_sft_models/magic_w0_robodojo.pt. An anonymous byte-range request returned HTTP 206, a PyTorch ZIP header and a total size of 7,228,809,258 bytes. The pretrain_models directory contains only .gitkeep, so this is a RoboDojo fine-tuned checkpoint release rather than the complete pretraining-weight release. The HF card declares MIT, while its generic coming-soon badge is stale.",
+        "The official HF target XuhuaX/Magic-W0 contains pretrain_models/magic_w0_pretrain.pt (7,228,770,544 bytes) and robodojo_sft_models/magic_w0_robodojo.pt; anonymous byte-range requests returned HTTP 206. The HF model card still says coming soon despite the actual files. The card declares MIT; third-party models have separate license files.",
         "UMI trajectories are mapped to the shared 34-dimensional interface with kinematic retargeting. Paper and project list different RoboDojo scores; this catalog does not combine them into one result."
       ],
       "evidence": [
@@ -2263,11 +2263,15 @@
         },
         {
           "url": "https://huggingface.co/api/models/XuhuaX/Magic-W0",
-          "section": "Fresh model inventory: actual RoboDojo checkpoint; no pretraining weights"
+          "section": "Fresh model inventory: pretraining and RoboDojo checkpoints present"
         },
         {
           "url": "https://huggingface.co/XuhuaX/Magic-W0/resolve/main/robodojo_sft_models/magic_w0_robodojo.pt",
           "section": "Actual anonymous binary range read and archive header"
+        },
+        {
+          "url": "https://huggingface.co/XuhuaX/Magic-W0/resolve/main/pretrain_models/magic_w0_pretrain.pt",
+          "section": "Pretraining checkpoint: anonymous byte-range 206, repository tree size 7,228,770,544 bytes"
         }
       ]
     },
