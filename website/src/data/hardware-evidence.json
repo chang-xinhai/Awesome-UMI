@@ -573,7 +573,7 @@
     "2609.22809": {
       "id": "2609.22809",
       "name": "KIWI",
-      "verified": "2026-10-19",
+      "verified": "2026-11-05",
       "form": "Modular handheld chopstick/parallel-jaw or wearable wrist cuff",
       "poseTracking": "Offline front/rear lens localization in shared metric map plus IMU factor-graph fusion",
       "vision": "Dual-lens Insta360 X5 per wrist; optional GO 3 head view; audio synchronizes cameras",
@@ -4044,7 +4044,7 @@
     "2610.36598": {
       "id": "2610.36598",
       "name": "OpenJaws",
-      "verified": "2026-10-30",
+      "verified": "2026-11-05",
       "form": "Handheld",
       "interfaceForms": [
         "Handheld"
@@ -4312,6 +4312,121 @@
         "tracking": "iPhone ARKit",
         "vision": "iPhone RGB",
         "actions": "End-effector trajectory and gripper state"
+      }
+    },
+    "2611.03779": {
+      "id": "2611.03779",
+      "name": "Soft YUBI",
+      "verified": "2026-11-05",
+      "form": "Handheld grippers",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Meta Quest hand tracking",
+      "vision": "Wrist RGB and optional top RGB",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "Visible finger deformation is a visual force proxy; no force sensor claimed."
+      },
+      "actionSpace": "Bimanual end-effector pose and gripper opening",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Finger designs and data processing code published under PolyForm Noncommercial",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.03779v1",
+          "section": "System and hardware"
+        }
+      ],
+      "display": {
+        "form": "Handheld grippers",
+        "tracking": "Meta Quest hand tracking",
+        "vision": "Wrist RGB and optional top RGB",
+        "actions": "Bimanual end-effector pose and gripper opening"
+      }
+    },
+    "2610.39385": {
+      "id": "2610.39385",
+      "name": "UMI-Live",
+      "verified": "2026-11-05",
+      "form": "Handheld bimanual grippers",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "LiDAR-inertial SLAM",
+      "vision": "Wrist RGB cameras",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Bimanual end-effector pose and gripper state",
+      "observationSignals": [
+        "Vision",
+        "IMU",
+        "LiDAR",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Hardware guide links build files; access and license not independently verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.39385v1",
+          "section": "System and hardware"
+        }
+      ],
+      "display": {
+        "form": "Handheld bimanual grippers",
+        "tracking": "LiDAR-inertial SLAM",
+        "vision": "Wrist RGB cameras",
+        "actions": "Bimanual end-effector pose and gripper state"
+      }
+    },
+    "2611.03647": {
+      "id": "2611.03647",
+      "name": "Pixel-UMI",
+      "verified": "2026-11-05",
+      "form": "Sensorized head and handheld grippers",
+      "interfaceForms": [
+        "Whole-body",
+        "Handheld"
+      ],
+      "poseTracking": "Head and gripper trajectories with reconstructed scene geometry",
+      "vision": "Head and wrist cameras",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Retargeted base and joint actions for whole-body manipulation",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Prototype described; release not verified",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.03647v1",
+          "section": "System and hardware"
+        }
+      ],
+      "display": {
+        "form": "Sensorized head and handheld grippers",
+        "tracking": "Head and gripper trajectories with reconstructed scene geometry",
+        "vision": "Head and wrist cameras",
+        "actions": "Retargeted base and joint actions for whole-body manipulation"
       }
     }
   },

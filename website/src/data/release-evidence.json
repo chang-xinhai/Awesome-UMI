@@ -208,7 +208,7 @@
       ]
     },
     "2609.22809": {
-      "verified": "2026-10-19",
+      "verified": "2026-11-05",
       "status": "partial",
       "hardwareStatus": "Chopsticks hardware released; parallel-jaw / wrist-mount modules pending",
       "softwareStatus": "Released offline research pipeline",
@@ -2511,14 +2511,14 @@
       ]
     },
     "2610.36598": {
-      "verified": "2026-10-30",
+      "verified": "2026-11-05",
       "status": "unknown",
       "hardwareStatus": "Hardware release marked coming soon",
       "softwareStatus": "Placeholder repository; code coming soon",
       "hardwareLicense": null,
       "softwareLicense": null,
       "notes": [
-        "Paper and project describe intended Apache-2.0 releases, but project buttons mark code, hardware and dataset coming soon; repository is a placeholder.",
+        "Project buttons still mark code, hardware and dataset coming soon; the GitHub tree contains only README and an image as of 2026-11-05.",
         "UMI-Loc-Bench-v1 evaluates 90 demonstrations across nine tasks; its data download is not yet verified."
       ],
       "evidence": [
@@ -2785,6 +2785,61 @@
         {
           "url": "https://arxiv.org/html/2603.07580v1",
           "section": "System and evaluation"
+        }
+      ]
+    },
+    "2611.03779": {
+      "verified": "2026-11-05",
+      "status": "partial",
+      "hardwareStatus": "Finger designs public; noncommercial license",
+      "softwareStatus": "Data processing code public; noncommercial license",
+      "hardwareLicense": "PolyForm Noncommercial 1.0.0",
+      "softwareLicense": "PolyForm Noncommercial 1.0.0",
+      "notes": [
+        "The software and designs are publicly accessible under noncommercial terms; do not describe the license as unrestricted open source."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/lute-corp/soft-yubi",
+          "section": "Hardware, processing code and LICENSE"
+        }
+      ]
+    },
+    "2610.39385": {
+      "verified": "2026-11-05",
+      "status": "partial",
+      "hardwareStatus": "Guide and linked build files; access not independently verified",
+      "softwareStatus": "Public code; license not independently verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The official hardware guide links STEP/STL files in Google Drive; file access and license have not been independently verified. The software repository contains processing code, with no LICENSE file found."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/AfterQuery-Research/umi-live",
+          "section": "Hardware and software tree"
+        },
+        {
+          "url": "https://umi-live.github.io/hardware.html",
+          "section": "Hardware guide and linked build files"
+        }
+      ]
+    },
+    "2611.03647": {
+      "verified": "2026-11-05",
+      "status": "unknown",
+      "hardwareStatus": "Prototype described; release not verified",
+      "softwareStatus": "Release not verified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The project page shows research results; public code and data are not independently verified."
+      ],
+      "evidence": [
+        {
+          "url": "https://pixel-robot.com/pixel-umi/",
+          "section": "Project page"
         }
       ]
     }

@@ -3840,6 +3840,113 @@
         "complete download availability"
       ],
       "evidenceLevel": "Author dataset card and UMI community"
+    },
+    "2611.03779": {
+      "id": "2611.03779",
+      "name": "Soft YUBI 100h",
+      "verified": "2026-11-05",
+      "datasetUrl": "https://huggingface.co/datasets/LuteCorp/soft-yubi-100h",
+      "access": "Public files; noncommercial license",
+      "accessNote": "Dataset card and file inventory are publicly accessible. Card lists 92.03 mid-train + 7.22 fine-tuning hours; paper reports 99.7 hours.",
+      "license": "PolyForm Noncommercial 1.0.0",
+      "formats": [
+        "LeRobot v3",
+        "Parquet",
+        "MP4"
+      ],
+      "fps": 30,
+      "observations": [
+        "Left and right wrist RGB",
+        "Top RGB when available",
+        "Bimanual gripper state"
+      ],
+      "action": "20D bimanual end-effector pose and gripper opening",
+      "embodiments": [
+        "Handheld YUBI grippers"
+      ],
+      "reportedScale": {
+        "hours": 99.7,
+        "objects": 53
+      },
+      "publicScale": {
+        "hours": 99.25,
+        "episodes": 51118
+      },
+      "scopeNotes": [
+        "The card lists 47,555 mid-train and 3,563 fine-tuning episodes. Top-camera availability varies.",
+        "Paper and dataset card report slightly different duration; do not conflate the two."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/LuteCorp/soft-yubi-100h",
+          "supports": "Split counts, hours, schema, 30 Hz and noncommercial license",
+          "checked": "2026-11-05"
+        },
+        {
+          "url": "https://arxiv.org/abs/2611.03779",
+          "supports": "Paper reports 99.7 hours over 53 objects",
+          "checked": "2026-11-05"
+        }
+      ],
+      "unknownFields": [
+        "full download independently verified"
+      ],
+      "evidenceLevel": "Author paper and dataset card"
+    },
+    "2610.39385": {
+      "id": "2610.39385",
+      "name": "UMI-Live",
+      "verified": "2026-11-05",
+      "datasetUrl": "https://huggingface.co/datasets/brandonyang/umi-live-dataset",
+      "access": "Public files",
+      "accessNote": "Dataset card, file inventory and metadata are publicly accessible without authentication.",
+      "license": "Apache-2.0 (dataset card)",
+      "formats": [
+        "LeRobot v3",
+        "Parquet",
+        "MP4"
+      ],
+      "fps": 30,
+      "observations": [
+        "Bimanual wrist RGB",
+        "Bimanual gripper state"
+      ],
+      "action": "14D episode-relative bimanual pose and gripper state",
+      "embodiments": [
+        "Handheld bimanual grippers"
+      ],
+      "reportedScale": {
+        "hours": 40,
+        "tasks": 3
+      },
+      "publicScale": {
+        "hours": 39.705,
+        "episodes": 3255
+      },
+      "scopeNotes": [
+        "Dataset card counts paired time once and preserves all episodes from four pinned sources. Per-arm poses are episode-relative, not a shared world frame."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/brandonyang/umi-live-dataset",
+          "supports": "Public merged dataset card, counts, format and license",
+          "checked": "2026-11-05"
+        },
+        {
+          "url": "https://huggingface.co/datasets/brandonyang/umi-live-dataset/resolve/main/meta/info.json",
+          "supports": "Anonymous accessible LeRobot v3 metadata",
+          "checked": "2026-11-05"
+        },
+        {
+          "url": "https://arxiv.org/abs/2610.39385",
+          "supports": "Paper scope and three tasks",
+          "checked": "2026-11-05"
+        }
+      ],
+      "unknownFields": [
+        "full download independently verified"
+      ],
+      "evidenceLevel": "Author paper and dataset card"
     }
   }
 }
