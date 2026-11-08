@@ -1577,7 +1577,14 @@
     "hardwareImageSource": "https://raw.githubusercontent.com/murobotics-ai/handumi-hw/main/media/cover-handumi.png",
     "hardwareImagePage": "https://github.com/murobotics-ai/handumi-hw",
     "hardwareImageType": "Official hardware image",
-    "reviewed": "2026-10-16"
+    "reviewed": "2026-10-16",
+    "datasetImage": "images/catalog/handumi-towel-nov08.webp",
+    "datasetImageAlt": "HandUMI left and right wrist and top camera examples of towel folding, plus PiPER execution frames",
+    "datasetImageSource": "https://murobotics.ai/research/handumi/towel-setup.png",
+    "datasetImagePage": "https://murobotics.ai/research/handumi",
+    "datasetImageType": "Author research report, task setup",
+    "datasetImageReviewed": "2026-11-08",
+    "datasetSummary": "562 robot-free towel-folding episodes in raw and PiPER-retargeted forms."
   },
   {
     "id": "resource-af05253706",
@@ -2686,5 +2693,38 @@
     "hardwareImageWidth": 840,
     "hardwareImageHeight": 292,
     "hardwareImageReviewed": "2026-11-05"
+  },
+  {
+    "id": "2611.03815",
+    "name": "AIRoA-0",
+    "image": "images/catalog/airoa-towel-nov08.webp",
+    "imageAlt": "AIRoA-0 bimanual YUBI robot towel-folding task",
+    "imageSource": "https://arxiv.org/html/2611.03815v1/figures/tasks/towel_folding.jpg",
+    "imagePage": "https://arxiv.org/html/2611.03815v1/",
+    "credit": "AIRoA",
+    "reviewed": "2026-11-08",
+    "summary": "A YUBI-trained bimanual manipulation policy learns from handheld demonstrations with no robot data in training.",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/abs/2611.03815"
+  },
+  {
+    "id": "2611.07229",
+    "name": "Spatial-UMI-Dream",
+    "image": "images/catalog/spatial-umi-dream-nov08.webp",
+    "imageAlt": "Spatial-UMI-Dream two-stage world and action model architecture",
+    "imageSource": "https://arxiv.org/html/2611.07229v1/fig2_method.png",
+    "imagePage": "https://arxiv.org/html/2611.07229v1/",
+    "credit": "Spatial-UMI-Dream authors",
+    "reviewed": "2026-11-08",
+    "summary": "A world-action model uses stereo-derived metric depth with UMI demonstrations and is evaluated on RoboTwin-UMI.",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Proprioception"
+    ],
+    "attributeSource": "https://arxiv.org/abs/2611.07229"
   }
 ]

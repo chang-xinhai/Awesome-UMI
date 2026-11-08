@@ -3947,6 +3947,59 @@
         "full download independently verified"
       ],
       "evidenceLevel": "Author paper and dataset card"
+    },
+    "resource-fd5070524c": {
+      "id": "resource-fd5070524c",
+      "name": "HandUMI towel folding",
+      "verified": "2026-11-08",
+      "datasetUrl": "https://huggingface.co/datasets/murobotics/handumi-towel-raw-562",
+      "access": "Public files",
+      "accessNote": "Raw robot-agnostic and PiPER-retargeted datasets are listed separately; metadata retrieved anonymously.",
+      "license": null,
+      "formats": [
+        "LeRobot v3",
+        "Parquet",
+        "MP4"
+      ],
+      "fps": 30,
+      "observations": [
+        "Left and right wrist RGB",
+        "Top RGB",
+        "VR controller poses",
+        "Gripper aperture"
+      ],
+      "action": "Robot-agnostic controller poses and jaw widths; separate retargeted PiPER joint trajectories",
+      "embodiments": [
+        "HandUMI bimanual handheld",
+        "AgileX PiPER retargeted"
+      ],
+      "reportedScale": {
+        "episodes": 562,
+        "minutes": 111.9
+      },
+      "publicScale": {
+        "episodes": 562
+      },
+      "scopeNotes": [
+        "The 562-episode cohort describes towel folding, not 562 distinct tasks.",
+        "Raw human demonstrations and PiPER-retargeted versions represent the same cohort; do not add their sizes."
+      ],
+      "sources": [
+        {
+          "url": "https://murobotics.ai/research/handumi",
+          "supports": "capture details and paper-reported cohort",
+          "checked": "2026-11-08"
+        },
+        {
+          "url": "https://huggingface.co/datasets/murobotics/handumi-towel-raw-562",
+          "supports": "public dataset card and 562 episode listing",
+          "checked": "2026-11-08"
+        }
+      ],
+      "unknownFields": [
+        "dataset license"
+      ],
+      "evidenceLevel": "Author report and dataset card"
     }
   }
 }
