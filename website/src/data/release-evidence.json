@@ -208,7 +208,7 @@
       ]
     },
     "2609.22809": {
-      "verified": "2026-11-05",
+      "verified": "2026-11-11",
       "status": "partial",
       "hardwareStatus": "Chopsticks hardware released; parallel-jaw / wrist-mount modules pending",
       "softwareStatus": "Released offline research pipeline",
@@ -2399,16 +2399,16 @@
       ]
     },
     "2609.07498": {
-      "status": "unknown",
+      "status": "partial",
       "hardwareStatus": "Uses UMI-style grippers; no separate collector design release verified",
-      "softwareStatus": "Forthcoming; repository contains README and illustrative assets only",
+      "softwareStatus": "Data processing code released; no repository-level software license identified",
       "hardwareLicense": null,
       "softwareLicense": null,
       "notes": [
-        "The paper describes a rigorous UMI-based hand/gripper pairing protocol and reports 6,189 episodes across 1,254 objects. These are reported collection statistics, not verified public download counts.",
-        "Official Dataset and Code controls are marked coming soon. The linked repository has README and images but no implementation or license. No dataset gallery record is created for the unverified release."
+        "The repository now includes hand reconstruction alignment and object/gripper tracking scripts; training and full model implementation are not established by this release.",
+        "Project links an initial raw processing dataset release and warns that some object tracks contain errors; the corrected final version remains forthcoming. Paper reports 6,189 episodes across 1,254 objects; downloaded release size is unverified."
       ],
-      "verified": "2026-10-26",
+      "verified": "2026-11-11",
       "evidence": [
         {
           "url": "https://arxiv.org/html/2609.07498",
@@ -2421,6 +2421,10 @@
         {
           "url": "https://github.com/GAP-LAB-CUHK-SZ/CosmoH2G",
           "section": "Official resource link and current release scope"
+        },
+        {
+          "url": "https://www.modelscope.cn/datasets/einsam0/CosmoH2G-Release",
+          "section": "Initial data link; full download not independently verified"
         }
       ]
     },
@@ -2840,6 +2844,104 @@
         {
           "url": "https://pixel-robot.com/pixel-umi/",
           "section": "Project page"
+        }
+      ]
+    },
+    "resource-6da0028b32": {
+      "verified": "2026-11-11",
+      "status": "partial",
+      "hardwareStatus": "Public design, bill of materials and build guide",
+      "softwareStatus": "Data collection code and gripper firmware published",
+      "hardwareLicense": "CC BY 4.0",
+      "softwareLicense": "Apache-2.0 by default; Record3D-derived iPhone adapter LGPL-2.1-only",
+      "notes": [
+        "Sensor/camera apps, third-party components and vendor media have separate terms. Sample dataset announced but not released."
+      ],
+      "evidence": [
+        {
+          "url": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/index.html",
+          "section": "Official project and release status"
+        },
+        {
+          "url": "https://github.com/NVlabs/GR00T-DataHardwarePrototypes",
+          "section": "README release status and component licenses"
+        }
+      ]
+    },
+    "resource-3e993ad3b0": {
+      "verified": "2026-11-11",
+      "status": "partial",
+      "hardwareStatus": "Public design, bill of materials and electronics",
+      "softwareStatus": "Collection software and hand monitor published; glove firmware forthcoming",
+      "hardwareLicense": "CC BY 4.0",
+      "softwareLicense": "Apache-2.0 by default; Record3D-derived iPhone adapter LGPL-2.1-only",
+      "notes": [
+        "Glove firmware is listed as coming soon; hardware and software licenses are distinct."
+      ],
+      "evidence": [
+        {
+          "url": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/index.html",
+          "section": "Official project and release status"
+        },
+        {
+          "url": "https://github.com/NVlabs/GR00T-DataHardwarePrototypes",
+          "section": "README release status and component licenses"
+        }
+      ]
+    },
+    "2611.03648": {
+      "verified": "2026-11-11",
+      "status": "unknown",
+      "hardwareStatus": "Project says open source soon; design files unverified",
+      "softwareStatus": "Project says open source soon; code release unverified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "Companion Pixel-UMI paper is a distinct trajectory learning study."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.03648v1",
+          "section": "Official project and release status"
+        }
+      ]
+    },
+    "resource-950ad8d7f7": {
+      "verified": "2026-11-11",
+      "status": "unknown",
+      "hardwareStatus": "Separate GEAR UMI and DexUMI designs available",
+      "softwareStatus": "GR00T 2 model code scheduled for December; weights unverified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The published data-collection hardware repository is not the GR00T 2 model implementation. 10,184 hours of handheld UMI is reported training mixture, not a verified public UMI dataset."
+      ],
+      "evidence": [
+        {
+          "url": "https://research.nvidia.com/labs/gear/gr00t-2/",
+          "section": "Official project and release status"
+        }
+      ]
+    },
+    "2610.41028": {
+      "verified": "2026-11-11",
+      "status": "partial",
+      "hardwareStatus": "Project links a build guide; complete CAD access and license not independently verified",
+      "softwareStatus": "Data processing, training and deployment source available",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT for authored code; bundled components retain their own terms",
+      "notes": [
+        "Official repository description still says coming soon, but its current tree contains substantial source and detailed data-processing, training and deployment guides. Model checkpoints and raw demonstration downloads were not verified.",
+        "Contact is represented by camera observations and derived contact geometry, not a physical force sensor."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ariszxxu/CIMI",
+          "section": "README, src/ source tree, LICENSE and third-party notices"
+        },
+        {
+          "url": "https://nus-lins-lab.github.io/CIMIWeb/",
+          "section": "Project and hardware guide"
         }
       ]
     }

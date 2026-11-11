@@ -573,7 +573,7 @@
     "2609.22809": {
       "id": "2609.22809",
       "name": "KIWI",
-      "verified": "2026-11-05",
+      "verified": "2026-11-11",
       "form": "Modular handheld chopstick/parallel-jaw or wearable wrist cuff",
       "poseTracking": "Offline front/rear lens localization in shared metric map plus IMU factor-graph fusion",
       "vision": "Dual-lens Insta360 X5 per wrist; optional GO 3 head view; audio synchronizes cameras",
@@ -4427,6 +4427,176 @@
         "tracking": "Head and gripper trajectories with reconstructed scene geometry",
         "vision": "Head and wrist cameras",
         "actions": "Retargeted base and joint actions for whole-body manipulation"
+      }
+    },
+    "resource-6da0028b32": {
+      "id": "resource-6da0028b32",
+      "name": "GEAR UMI",
+      "verified": "2026-11-11",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "iPhone tracking or VIVE tracker, magnetic gripper encoder",
+      "vision": "OAK-4P top camera and 8MP trigger camera",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Tracked gripper pose and aperture",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "CAD, hardware, firmware and collection code published; Record3D-derived iPhone adapter and third-party components have separate licenses.",
+      "evidence": [
+        {
+          "url": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/index.html",
+          "section": "Overview, sensing, specifications and licensing"
+        },
+        {
+          "url": "https://github.com/NVlabs/GR00T-DataHardwarePrototypes",
+          "section": "README release status, source tree, licensing and firmware scope"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "iPhone tracking or VIVE tracker, magnetic gripper encoder",
+        "vision": "OAK-4P top camera and 8MP trigger camera",
+        "actions": "Tracked gripper pose and aperture"
+      }
+    },
+    "resource-3e993ad3b0": {
+      "id": "resource-3e993ad3b0",
+      "name": "GEAR DexUMI",
+      "verified": "2026-11-11",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "iPhone tracking; 15 magnetic finger joint encoders per hand",
+      "vision": "OAK wrist camera; optional head camera",
+      "tactile": {
+        "status": "present",
+        "type": "Five fingertip normal/shear tactile sensors per hand"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Tracked wrist pose and finger joint states",
+      "observationSignals": [
+        "Vision",
+        "Tactile",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "CAD, electronics and collection code published; glove firmware is listed as coming soon.",
+      "evidence": [
+        {
+          "url": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/index.html",
+          "section": "Overview, sensing, specifications and licensing"
+        },
+        {
+          "url": "https://github.com/NVlabs/GR00T-DataHardwarePrototypes",
+          "section": "README release status, source tree, licensing and firmware scope"
+        }
+      ],
+      "display": {
+        "form": "Wearable",
+        "tracking": "iPhone tracking; 15 magnetic finger joint encoders per hand",
+        "vision": "OAK wrist camera; optional head camera",
+        "actions": "Tracked wrist pose and finger joint states"
+      }
+    },
+    "2611.03648": {
+      "id": "2611.03648",
+      "name": "Pixel",
+      "verified": "2026-11-11",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Head and gripper pose tracking; encoder measures aperture",
+      "vision": "Head RGB-D and wrist RGB, matched to robot views",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "Paper notes the sensorized human interface lacks tactile sensing."
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Relative-base head and bimanual gripper targets",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Proprioception"
+      ],
+      "hardwareAvailability": "Project announces open sourcing soon; no released hardware or software verified.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.03648v1",
+          "section": "Overview, sensing, specifications and licensing"
+        },
+        {
+          "url": "https://github.com/NVlabs/GR00T-DataHardwarePrototypes",
+          "section": "README release status, source tree, licensing and firmware scope"
+        }
+      ],
+      "display": {
+        "form": "Wearable",
+        "tracking": "Head and gripper pose tracking; encoder measures aperture",
+        "vision": "Head RGB-D and wrist RGB, matched to robot views",
+        "actions": "Relative-base head and bimanual gripper targets"
+      }
+    },
+    "2610.41028": {
+      "id": "2610.41028",
+      "name": "CIMI",
+      "verified": "2026-11-11",
+      "form": "Wearable fingertip contact modules",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Fiducial tracking of contact-surface poses",
+      "vision": "Shared fingertip RGB contact cameras and context/pose tracking cameras",
+      "tactile": {
+        "status": "none",
+        "type": null,
+        "note": "Contact cameras supply images; contact force or tactile sensor readings are not measured."
+      },
+      "forceTorque": {
+        "status": "none",
+        "type": null,
+        "note": "No direct force measurements; compliant tape and geometry do not constitute force sensing."
+      },
+      "actionSpace": "Retargeted relative contact-surface trajectories and robot wrist/finger commands",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "observationSignalsNote": "Nine synchronized RGB streams capture contact, context and tracking views; derived surface poses are geometric estimates, not measured tactile forces.",
+      "hardwareAvailability": "Author project links build guide; independently verified access to complete CAD or hardware license unavailable.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2610.41028v1",
+          "section": "Abstract; demonstration interface; supplementary contact-surface tracking"
+        },
+        {
+          "url": "https://nus-lins-lab.github.io/CIMIWeb/",
+          "section": "Collection system and nine synchronized streams"
+        }
+      ],
+      "display": {
+        "form": "Fingertip modules",
+        "tracking": "Fiducial contact poses",
+        "vision": "Contact + context cameras",
+        "actions": "Contact trajectories; wrist and finger commands"
       }
     }
   },

@@ -2332,7 +2332,15 @@
       "Vision",
       "Proprioception"
     ],
-    "attributeSource": "https://arxiv.org/html/2609.07498"
+    "attributeSource": "https://arxiv.org/html/2609.07498",
+    "datasetImage": "images/catalog/nov11-cosmoh2g-dataset.webp",
+    "datasetImageAlt": "CosmoH2G paired hand and gripper data acquisition and 3D processing overview",
+    "datasetImageSource": "https://cosmoh2g.github.io/static/images/dataset.jpg",
+    "datasetImagePage": "https://cosmoh2g.github.io/",
+    "datasetImageType": "Author dataset figure",
+    "datasetSummary": "Paired hand and gripper RGB-D sequences; initial processing release has known object tracking errors.",
+    "datasetName": "CosmoH2G",
+    "datasetImageReviewed": "2026-11-11"
   },
   {
     "id": "2609.15910",
@@ -2726,5 +2734,123 @@
       "Proprioception"
     ],
     "attributeSource": "https://arxiv.org/abs/2611.07229"
+  },
+  {
+    "id": "resource-6da0028b32",
+    "name": "GEAR UMI",
+    "summary": "A robot-free flexure gripper with paired cameras and tracked hand motion.",
+    "form": "Handheld",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "reviewed": "2026-11-11",
+    "credit": "NVIDIA GEAR",
+    "image": "images/catalog/nov11-gear-umi.webp",
+    "imageAlt": "GEAR UMI handheld gripper with cameras held by a person",
+    "imageSource": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/assets/media/umi-three-quarter.jpg",
+    "imagePage": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/index.html",
+    "attributeSource": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/index.html",
+    "hardwareImage": "images/catalog/nov11-gear-umi.webp",
+    "hardwareImageAlt": "GEAR UMI handheld gripper with cameras held by a person",
+    "hardwareImageSource": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/assets/media/umi-three-quarter.jpg",
+    "hardwareImagePage": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_UMI/index.html",
+    "hardwareImageType": "Official hardware photograph",
+    "hardwareImageReviewed": "2026-11-11",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Official photograph or explicitly labelled capture hardware figure."
+  },
+  {
+    "id": "resource-3e993ad3b0",
+    "name": "GEAR DexUMI",
+    "summary": "A wearable exoskeleton captures bimanual hand motion and fingertip contact for robot learning.",
+    "form": "Wearable",
+    "signals": [
+      "Vision",
+      "Tactile",
+      "Proprioception"
+    ],
+    "reviewed": "2026-11-11",
+    "credit": "NVIDIA GEAR",
+    "image": "images/catalog/nov11-gear-dexumi.webp",
+    "imageAlt": "GEAR DexUMI hand exoskeleton worn on a hand",
+    "imageSource": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/assets/media/dexumi-worn-open.jpg",
+    "imagePage": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/index.html",
+    "attributeSource": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/index.html",
+    "hardwareImage": "images/catalog/nov11-gear-dexumi.webp",
+    "hardwareImageAlt": "GEAR DexUMI hand exoskeleton worn on a hand",
+    "hardwareImageSource": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/assets/media/dexumi-worn-open.jpg",
+    "hardwareImagePage": "https://research.nvidia.com/labs/gear/hardware-prototypes/GEAR_DexUMI/index.html",
+    "hardwareImageType": "Official hardware photograph",
+    "hardwareImageReviewed": "2026-11-11",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Official photograph or explicitly labelled capture hardware figure."
+  },
+  {
+    "id": "2611.03648",
+    "name": "Pixel",
+    "summary": "A matched human–robot collection and control stack for mobile manipulation.",
+    "form": "Wearable",
+    "signals": [
+      "Vision",
+      "Depth",
+      "Proprioception"
+    ],
+    "reviewed": "2026-11-11",
+    "credit": "Pixel authors",
+    "image": "images/catalog/nov11-pixel.webp",
+    "imageAlt": "Pixel sensorized human gripper and headset, cropped from the data-collection interface figure",
+    "imageSource": "https://arxiv.org/html/2611.03648v1/fig_data_collection_interfaces.png",
+    "imagePage": "https://arxiv.org/html/2611.03648v1",
+    "attributeSource": "https://arxiv.org/html/2611.03648v1",
+    "hardwareImage": "images/catalog/nov11-pixel.webp",
+    "hardwareImageAlt": "Pixel sensorized human gripper and headset, cropped from the data-collection interface figure",
+    "hardwareImageSource": "https://arxiv.org/html/2611.03648v1/fig_data_collection_interfaces.png",
+    "hardwareImagePage": "https://arxiv.org/html/2611.03648v1",
+    "hardwareImageType": "Paper figure crop",
+    "hardwareImageReviewed": "2026-11-11",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Official photograph or explicitly labelled capture hardware figure."
+  },
+  {
+    "id": "resource-950ad8d7f7",
+    "name": "GR00T 2",
+    "summary": "A world-action model trained with human video, robot data and UMI demonstrations.",
+    "form": "Not reported",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "reviewed": "2026-11-11",
+    "credit": "NVIDIA GEAR",
+    "image": "images/catalog/nov11-gr00t2.webp",
+    "imageAlt": "Person collecting a conveyor task demonstration with a handheld UMI",
+    "imageSource": "https://research.nvidia.com/labs/gear/gr00t-2/assets/img/xa_umi_demo.jpg?v=3",
+    "imagePage": "https://research.nvidia.com/labs/gear/gr00t-2/",
+    "attributeSource": "https://research.nvidia.com/labs/gear/gr00t-2/"
+  },
+  {
+    "id": "2610.41028",
+    "name": "CIMI",
+    "summary": "Shared fingertip geometry and camera views support dexterous human-to-robot contact transfer.",
+    "form": "Wearable",
+    "signals": [
+      "Vision",
+      "Proprioception"
+    ],
+    "reviewed": "2026-11-11",
+    "credit": "CIMI authors",
+    "image": "images/catalog/nov11-cimi.webp",
+    "imageAlt": "CIMI fingertip contact modules worn by a human demonstrator",
+    "imageSource": "https://arxiv.org/html/2610.41028v1/teaser.png",
+    "imagePage": "https://arxiv.org/html/2610.41028v1",
+    "hardwareImage": "images/catalog/nov11-cimi.webp",
+    "hardwareImageAlt": "CIMI shared fingertip modules worn by a person, cropped from Figure 1",
+    "hardwareImageSource": "https://arxiv.org/html/2610.41028v1/teaser.png",
+    "hardwareImagePage": "https://arxiv.org/html/2610.41028v1",
+    "hardwareImageType": "Paper hardware photograph crop",
+    "hardwareImageReviewed": "2026-11-11",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Crop isolates the human-worn interface from Figure 1."
   }
 ]

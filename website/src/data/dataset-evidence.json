@@ -4000,6 +4000,51 @@
         "dataset license"
       ],
       "evidenceLevel": "Author report and dataset card"
+    },
+    "2609.07498": {
+      "id": "2609.07498",
+      "name": "CosmoH2G",
+      "verified": "2026-11-11",
+      "datasetUrl": "https://www.modelscope.cn/datasets/einsam0/CosmoH2G-Release",
+      "access": "Initial author-linked release",
+      "accessNote": "Project links initial processed data; actual file-level download and size not independently verified.",
+      "license": null,
+      "formats": [],
+      "observations": [
+        "Paired human-hand and gripper RGB-D videos",
+        "Multi-view object captures"
+      ],
+      "action": "Reconstructed 3D hand mesh, object tracks and gripper trajectories",
+      "embodiments": [
+        "Human hand",
+        "UMI-style handheld gripper"
+      ],
+      "reportedScale": {
+        "episodes": 6189,
+        "objects": 1254
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "Paper reports 6,189 paired episodes across 1,254 objects; no independent downloaded count established.",
+        "Project warns that some object tracks contain errors in the initial release; final corrected processing remains forthcoming."
+      ],
+      "sources": [
+        {
+          "url": "https://cosmoh2g.github.io/",
+          "supports": "Author-linked initial dataset and known object-tracking errors",
+          "checked": "2026-11-11"
+        },
+        {
+          "url": "https://arxiv.org/abs/2609.07498",
+          "supports": "Reported collection scale and paired capture",
+          "checked": "2026-11-11"
+        }
+      ],
+      "unknownFields": [
+        "downloadable episode count",
+        "dataset license",
+        "full archive verification"
+      ]
     }
   }
 }
