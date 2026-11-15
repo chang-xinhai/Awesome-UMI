@@ -2395,7 +2395,15 @@
       "Vision",
       "Proprioception"
     ],
-    "attributeSource": "https://arxiv.org/html/2610.32969v1"
+    "attributeSource": "https://arxiv.org/html/2610.32969v1",
+    "hardwareImage": "images/catalog/2610.32969-research.webp",
+    "hardwareImageAlt": "DexPort transferable hand-camera module, ergonomic handle redesign and skill-control mapping.",
+    "hardwareImageSource": "https://arxiv.org/html/2610.32969v1/hardware.png",
+    "hardwareImagePage": "https://arxiv.org/html/2610.32969v1#S2.F1",
+    "hardwareImageType": "Paper hardware diagram",
+    "hardwareImageReviewed": "2026-11-15",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Shows the transferable hand-camera module, handheld handle and control layout."
   },
   {
     "id": "2610.36598",
@@ -2852,5 +2860,57 @@
     "hardwareImageReviewed": "2026-11-11",
     "hardwareImageAudit": "pass",
     "hardwareImageAuditNote": "Crop isolates the human-worn interface from Figure 1."
+  },
+  {
+    "id": "2611.15802",
+    "name": "RUMI",
+    "summary": "A Robotiq-matched handheld interface adds AR guidance and optional tactile or force feedback.",
+    "form": "Handheld",
+    "signals": [
+      "Vision",
+      "Proprioception",
+      "Force",
+      "Tactile"
+    ],
+    "reviewed": "2026-11-15",
+    "credit": "RUMI authors",
+    "image": "images/catalog/rumi-nov15.webp",
+    "imageAlt": "RUMI gripper mechanical design and sensing, including headset and optional fingertips",
+    "imageSource": "https://arxiv.org/html/2611.15802v1/RUMI_Fig1_Preview_Real_Hand_compressed.png",
+    "imagePage": "https://arxiv.org/html/2611.15802v1/",
+    "attributeSource": "https://arxiv.org/html/2611.15802v1/",
+    "hardwareImage": "images/catalog/rumi-nov15.webp",
+    "hardwareImageAlt": "RUMI gripper mechanical design and sensing, including headset and optional fingertips",
+    "hardwareImageSource": "https://arxiv.org/html/2611.15802v1/RUMI_Fig1_Preview_Real_Hand_compressed.png",
+    "hardwareImagePage": "https://arxiv.org/html/2611.15802v1/",
+    "hardwareImageType": "Paper hardware diagram",
+    "hardwareImageReviewed": "2026-11-15",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Official device drawing with camera and gripper."
+  },
+  {
+    "id": "resource-6d58f8babf",
+    "name": "Specialist",
+    "summary": "A matched handheld and robot gripper use dual-fisheye video, inertial sensing and tags for offline metric trajectories.",
+    "form": "Handheld",
+    "signals": [
+      "Vision",
+      "IMU"
+    ],
+    "reviewed": "2026-11-15",
+    "credit": "Specialist authors",
+    "image": "images/catalog/specialist-nov15.webp",
+    "imageAlt": "Specialist handheld gripper and dual-fisheye camera",
+    "imageSource": "https://specialist-ai.github.io/img/handheld-line.png",
+    "imagePage": "https://specialist-ai.github.io/",
+    "attributeSource": "https://specialist-ai.github.io/",
+    "hardwareImage": "images/catalog/specialist-nov15.webp",
+    "hardwareImageAlt": "Specialist handheld gripper and dual-fisheye camera",
+    "hardwareImageSource": "https://specialist-ai.github.io/img/handheld-line.png",
+    "hardwareImagePage": "https://specialist-ai.github.io/",
+    "hardwareImageType": "Author hardware drawing",
+    "hardwareImageReviewed": "2026-11-15",
+    "hardwareImageAudit": "pass",
+    "hardwareImageAuditNote": "Official device drawing with camera and gripper."
   }
 ]

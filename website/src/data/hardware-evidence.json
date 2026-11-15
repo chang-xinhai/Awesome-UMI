@@ -3992,7 +3992,7 @@
     "2610.32969": {
       "id": "2610.32969",
       "name": "DexPort",
-      "verified": "2026-10-26",
+      "verified": "2026-11-15",
       "form": "Handheld",
       "interfaceForms": [
         "Handheld"
@@ -4032,6 +4032,10 @@
         {
           "url": "https://amberxie88.github.io/dexport/",
           "section": "Current Code coming-soon control and project demonstration videos"
+        },
+        {
+          "url": "https://github.com/amazon-far/dexport",
+          "section": "Collection, training and deployment source"
         }
       ],
       "display": {
@@ -4597,6 +4601,91 @@
         "tracking": "Fiducial contact poses",
         "vision": "Contact + context cameras",
         "actions": "Contact trajectories; wrist and finger commands"
+      }
+    },
+    "2611.15802": {
+      "id": "2611.15802",
+      "name": "RUMI",
+      "verified": "2026-11-15",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Meta Quest 3 controller six-DoF pose; rotary encoder for aperture",
+      "vision": "Wrist-mounted RealSense D405 RGB-D camera",
+      "tactile": {
+        "status": "optional",
+        "type": "Interchangeable DIGIT optical tactile fingertips"
+      },
+      "forceTorque": {
+        "status": "optional",
+        "type": "Interchangeable fingertip force/torque sensors"
+      },
+      "actionSpace": "Tracked gripper pose, aperture and optional contact force command",
+      "observationSignals": [
+        "Vision",
+        "Depth",
+        "Proprioception",
+        "Tactile",
+        "Force"
+      ],
+      "hardwareAvailability": "Described in paper; project URL returned 404 during verification and hardware source not independently verified.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.15802v1",
+          "section": "Hardware, sensing, collection modes and AR guidance"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Quest 3 controller + rotary encoder",
+        "vision": "RealSense D405",
+        "actions": "Gripper pose, aperture; force command in teleoperation"
+      }
+    },
+    "resource-6d58f8babf": {
+      "id": "resource-6d58f8babf",
+      "name": "Specialist",
+      "verified": "2026-11-15",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Offline factor graph combines dual-fisheye visual odometry, IMU and AprilTags anchored in a metric frame",
+      "vision": "Insta360 X3 dual-fisheye camera",
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Metric 6-DoF gripper trajectory and finger joint angle",
+      "observationSignals": [
+        "Vision",
+        "IMU"
+      ],
+      "hardwareAvailability": "Handheld and actuated gripper CAD-derived descriptions and build instructions linked by authors.",
+      "evidence": [
+        {
+          "url": "https://github.com/specialist-ai/specialist",
+          "section": "Offline reconstruction and anchored tracking"
+        },
+        {
+          "url": "https://github.com/specialist-ai/specialist_description",
+          "section": "URDF/MJCF gripper descriptions and CAD-derived meshes"
+        },
+        {
+          "url": "https://specialist-ai.github.io/",
+          "section": "System and gripper overview"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Offline dual-fisheye + IMU + AprilTag factor graph",
+        "vision": "Insta360 X3 dual fisheye",
+        "actions": "Metric gripper pose + finger angle"
       }
     }
   },

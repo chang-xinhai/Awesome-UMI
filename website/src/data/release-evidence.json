@@ -2488,16 +2488,15 @@
       ]
     },
     "2610.32969": {
-      "verified": "2026-10-26",
-      "status": "unknown",
+      "verified": "2026-11-15",
+      "status": "partial",
       "hardwareStatus": "Paper-described transferable hand / camera module; design download not independently verified",
-      "softwareStatus": "Code coming soon (official project)",
+      "softwareStatus": "Collection, policy training and deployment source released; trained rotation actor placeholder",
       "hardwareLicense": null,
-      "softwareLicense": null,
+      "softwareLicense": "Apache-2.0",
       "notes": [
         "The paper explicitly extends the UMI / DexUMI / RealDexUMI paradigm. A portable 20-DoF Wuji hand and fisheye camera are used both during robot-free collection and robot deployment, preserving embodiment and recorded joint-command semantics.",
-        "Quest 2 provides the wrist trajectory; the hand controller records commanded joint targets and measured states. More than 2,500 demonstrations are reported, but no public corpus or matching implementation download was verified.",
-        "Official project labels Code coming soon. The v1 PDF lists first author Amber Xie with Amazon FAR as affiliation 1 and Stanford as affiliation 2; the project page uses older affiliation ordering, so the paper determines the first institution."
+        "Official code provides collection, simulation and deployment; example rotation checkpoint is explicitly a random placeholder. Public complete demonstration corpus not verified."
       ],
       "evidence": [
         {
@@ -2511,6 +2510,10 @@
         {
           "url": "https://amberxie88.github.io/dexport/",
           "section": "Current Code coming-soon control and project demonstration videos"
+        },
+        {
+          "url": "https://github.com/amazon-far/dexport",
+          "section": "Collection, training, deployment source and placeholder checkpoint"
         }
       ]
     },
@@ -2942,6 +2945,73 @@
         {
           "url": "https://nus-lins-lab.github.io/CIMIWeb/",
           "section": "Project and hardware guide"
+        }
+      ]
+    },
+    "2611.15802": {
+      "verified": "2026-11-15",
+      "status": "unknown",
+      "hardwareStatus": "Paper-described prototype; public design files not verified",
+      "softwareStatus": "Project URL listed by paper returned 404; code not verified",
+      "notes": [
+        "Fingertip force/torque and DIGIT tactile are interchangeable options, not simultaneous mandatory signals. AR provides guidance; physical and simulated teleoperation are distinct modes."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.15802v1",
+          "section": "Device and experimental setup"
+        }
+      ]
+    },
+    "resource-6d58f8babf": {
+      "verified": "2026-11-15",
+      "status": "partial",
+      "hardwareStatus": "Public CAD-derived URDF/MJCF descriptions and author build guide",
+      "softwareStatus": "MIT reconstruction, simulator and device utilities public; policy training repository listed as coming soon",
+      "softwareLicense": "MIT for inspected repositories; vendor components have separate terms",
+      "notes": [
+        "Paper and specialist_bc and specialist_lerobot listed as coming soon; policy weights/training code availability is not inferred from capture source release."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/specialist-ai/specialist",
+          "section": "Reconstruction source and license"
+        },
+        {
+          "url": "https://github.com/specialist-ai/specialist_description",
+          "section": "Gripper descriptions and meshes"
+        },
+        {
+          "url": "https://github.com/specialist-ai",
+          "section": "Organization project and release overview"
+        }
+      ]
+    },
+    "2611.07229": {
+      "verified": "2026-11-15",
+      "status": "partial",
+      "softwareStatus": "Apache-2.0 training and inference source; separate RoboTwin-UMI benchmark implementation",
+      "modelStatus": "Pretrain checkpoint shard accessible by HTTP range (206); separate RoboTwin-UMI checkpoint files are listed.",
+      "softwareLicense": "Apache-2.0; external pretrained components have separate terms",
+      "notes": [
+        "605 h is the paper-reported UMI pretraining corpus; public release of the complete corpus is not established. Declared model license concerns published model files; separately retrieved backbones retain their terms."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/Yewandou7/spatial_umi_dream",
+          "section": "Training and inference implementation"
+        },
+        {
+          "url": "https://huggingface.co/Yewandou/spatial-umi-dream",
+          "section": "Model card and checkpoint file listings"
+        },
+        {
+          "url": "https://github.com/ZeYuan06/RoboTwin-UMI",
+          "section": "RoboTwin-UMI simulation benchmark implementation"
+        },
+        {
+          "url": "https://arxiv.org/html/2611.07229v1",
+          "section": "Training data and evaluation scope"
         }
       ]
     }
