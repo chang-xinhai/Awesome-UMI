@@ -2912,5 +2912,29 @@
     "hardwareImageReviewed": "2026-11-15",
     "hardwareImageAudit": "pass",
     "hardwareImageAuditNote": "Official device drawing with camera and gripper."
+  },
+  {
+    "id": "2602.09017",
+    "name": "CAP",
+    "summary": "Contact-point conditioning learns pick, open and close policies from UMI-community handheld demonstrations.",
+    "credit": "CAP authors",
+    "reviewed": "2026-11-15",
+    "datasetName": "CAPs",
+    "datasetSummary": "Handheld iPhone-gripper demonstrations for pick, open and close, with contact-point annotations.",
+    "datasetImage": "images/catalog/cap-dataset-20261115.webp",
+    "datasetImageAlt": "Four wrist-camera views from CAPs demonstrations: opening and closing cabinets and picking objects.",
+    "datasetImageSource": "https://cap-policy.github.io/",
+    "datasetImagePage": "https://cap-policy.github.io/",
+    "datasetImageType": "Author dataset videos: four frames at 1 second",
+    "datasetImageReviewed": "2026-11-15",
+    "datasetImageWidth": 512,
+    "datasetImageHeight": 512,
+    "datasetImageCaption": "Four frames from the authors’ demonstration dataset videos, arranged in a grid.",
+    "datasetImageOriginals": [
+      "https://cap-policy.github.io/media/nutshell/dataset_2x2/opening.mp4",
+      "https://cap-policy.github.io/media/nutshell/dataset_2x2/closing.mp4",
+      "https://cap-policy.github.io/media/nutshell/dataset_2x2/pickup.mp4",
+      "https://cap-policy.github.io/media/nutshell/dataset_2x2/pickup-2.mp4"
+    ]
   }
 ]

@@ -68,14 +68,15 @@
       ]
     },
     "2606.10244": {
-      "verified": "2026-10-16",
+      "verified": "2026-11-15",
       "status": "open",
       "hardwareStatus": "Open hardware",
       "softwareStatus": "Open source",
       "hardwareLicense": "CERN-OHL-W-2.0",
       "softwareLicense": "Apache-2.0",
       "notes": [
-        "Hardware repository contains assembly STEP models and flanges under CERN-OHL-W-2.0; software is Apache-2.0."
+        "Hardware repository contains assembly STEP models and flanges under CERN-OHL-W-2.0; software is Apache-2.0.",
+        "YUBI Go is a separately released Apache-2.0 Quest 3/3S data collection app; release of the complete YUBI dataset remains pending."
       ],
       "evidence": [
         {
@@ -85,6 +86,10 @@
         {
           "url": "https://github.com/airoa-org/yubi-sw",
           "section": "Current source tree / repository license"
+        },
+        {
+          "url": "https://github.com/airoa-org/yubi-go",
+          "section": "Apache-2.0 YUBI Go headset app source, hardware connections and collection formats"
         }
       ]
     },

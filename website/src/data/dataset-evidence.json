@@ -4045,6 +4045,70 @@
         "dataset license",
         "full archive verification"
       ]
+    },
+    "2602.09017": {
+      "id": "2602.09017",
+      "name": "CAPs",
+      "verified": "2026-11-15",
+      "datasetUrl": "https://huggingface.co/datasets/zavierand/CAPs",
+      "access": "Public download",
+      "accessNote": "Raw MP4 and per-frame labels available; LeRobot format marked forthcoming.",
+      "license": "MIT",
+      "formats": [
+        "MP4",
+        "JSON"
+      ],
+      "fps": 30,
+      "observations": [
+        "Wrist RGB",
+        "Camera pose",
+        "Gripper aperture",
+        "Contact anchors"
+      ],
+      "action": "6-DoF relative end-effector pose and parallel-gripper aperture",
+      "embodiments": [
+        "iPhone handheld gripper",
+        "Robot-mounted matched gripper"
+      ],
+      "reportedScale": {
+        "hours": 23.1,
+        "episodes": 20365,
+        "environments": 424,
+        "tasks": 3
+      },
+      "publicScale": {
+        "episodes": 26138
+      },
+      "scopeNotes": [
+        "The reported 20,365 demonstrations are the original collection. The dataset card reports 26,138 trajectories; the Open and Close folders include horizontally flipped copies.",
+        "The paper describes RGB-D capture; the released raw dataset card describes MP4 video plus per-frame JSON labels. The LeRobot version is marked forthcoming."
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.09017v1",
+          "supports": "Original collection scale, setup, task counts, and contact annotations.",
+          "checked": "2026-11-15",
+          "published": "2026-02-09"
+        },
+        {
+          "url": "https://huggingface.co/datasets/zavierand/CAPs",
+          "supports": "Public MIT raw release, 26,138 listed trajectories, raw MP4/JSON and planned LeRobot format.",
+          "checked": "2026-11-15",
+          "published": null
+        },
+        {
+          "url": "https://umi-data.github.io/",
+          "supports": "UMI community listing, original task counts and mirrored Open/Close trajectories.",
+          "checked": "2026-11-15",
+          "published": null
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Paper and official dataset repository",
+      "downloadLinks": [
+        "https://huggingface.co/datasets/zavierand/CAPs"
+      ],
+      "paperDateProvenance": "arXiv v1 submission date; dataset release may differ."
     }
   }
 }
