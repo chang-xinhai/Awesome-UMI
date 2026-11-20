@@ -3948,14 +3948,14 @@
       ],
       "evidenceLevel": "Author paper and dataset card"
     },
-    "resource-fd5070524c": {
-      "id": "resource-fd5070524c",
+    "2611.22146": {
+      "id": "2611.22146",
       "name": "HandUMI towel folding",
-      "verified": "2026-11-08",
+      "verified": "2026-11-20",
       "datasetUrl": "https://huggingface.co/datasets/murobotics/handumi-towel-raw-562",
       "access": "Public files",
-      "accessNote": "Raw robot-agnostic and PiPER-retargeted datasets are listed separately; metadata retrieved anonymously.",
-      "license": null,
+      "accessNote": "Both LeRobot datasets publish 562 episodes at 30 Hz. Raw and PiPER-retargeted files cover the same demonstrations.",
+      "license": "CC BY 4.0",
       "formats": [
         "LeRobot v3",
         "Parquet",
@@ -3970,7 +3970,7 @@
       ],
       "action": "Robot-agnostic controller poses and jaw widths; separate retargeted PiPER joint trajectories",
       "embodiments": [
-        "HandUMI bimanual handheld",
+        "HandUMI bimanual wearable",
         "AgileX PiPER retargeted"
       ],
       "reportedScale": {
@@ -3986,20 +3986,23 @@
       ],
       "sources": [
         {
-          "url": "https://murobotics.ai/research/handumi",
-          "supports": "capture details and paper-reported cohort",
-          "checked": "2026-11-08"
+          "url": "https://arxiv.org/html/2611.22146v1",
+          "supports": "Sections 2 and 3 describe the hardware and the 562 demonstrations",
+          "checked": "2026-11-20"
         },
         {
           "url": "https://huggingface.co/datasets/murobotics/handumi-towel-raw-562",
-          "supports": "public dataset card and 562 episode listing",
-          "checked": "2026-11-08"
+          "supports": "Public data, 562-episode metadata and CC BY 4.0",
+          "checked": "2026-11-20"
+        },
+        {
+          "url": "https://huggingface.co/datasets/murobotics/handumi-towel-piper-562-640",
+          "supports": "Public retargeted data, 562-episode metadata and CC BY 4.0",
+          "checked": "2026-11-20"
         }
       ],
-      "unknownFields": [
-        "dataset license"
-      ],
-      "evidenceLevel": "Author report and dataset card"
+      "unknownFields": [],
+      "evidenceLevel": "ArXiv paper and public dataset metadata"
     },
     "2609.07498": {
       "id": "2609.07498",
@@ -4109,6 +4112,52 @@
         "https://huggingface.co/datasets/zavierand/CAPs"
       ],
       "paperDateProvenance": "arXiv v1 submission date; dataset release may differ."
+    },
+    "resource-4c5fbdc603": {
+      "id": "resource-4c5fbdc603",
+      "name": "UMI Arena competition and evaluation",
+      "verified": "2026-11-20",
+      "datasetUrl": "https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena",
+      "access": "Approval required",
+      "accessNote": "The training set is for registered teams with a signed data-sharing agreement. Viewing evaluation rankings and trial recordings requires separate Hugging Face approval.",
+      "license": null,
+      "formats": [],
+      "observations": [],
+      "reportedScale": {
+        "hours": 580,
+        "hoursQualifier": "approximate"
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "The organizers report about 580 hours available initially to eligible teams. The 20,000-hour figure is the planned expansion."
+      ],
+      "sources": [
+        {
+          "url": "https://umi-arena.airoa.io/",
+          "supports": "Official training-data scale and release conditions",
+          "checked": "2026-11-20"
+        },
+        {
+          "url": "https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena",
+          "supports": "Gated competition training set",
+          "checked": "2026-11-20"
+        },
+        {
+          "url": "https://umi-arena.airoa.io/results",
+          "supports": "Ranking rules and evaluation access instructions",
+          "checked": "2026-11-20"
+        },
+        {
+          "url": "https://huggingface.co/datasets/airoa-org/umi-evaluation-franka_yubi_real",
+          "supports": "Gated evaluation recordings",
+          "checked": "2026-11-20"
+        }
+      ],
+      "unknownFields": [
+        "Final released training volume",
+        "Dataset license standard identifier"
+      ],
+      "evidenceLevel": "Official workshop and Hugging Face access metadata"
     }
   }
 }

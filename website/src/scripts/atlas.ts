@@ -89,6 +89,8 @@ let works: Work[] = [],
   observer: IntersectionObserver | undefined,
   activeBatch: HTMLElement | undefined;
 const params = new URLSearchParams(location.search);
+// Preserve shared HandUMI URLs created before its arXiv record existed.
+const legacyIds = new Map([["resource-fd5070524c", "2611.22146"]]);
 collection = ["hardware", "datasets", "research"].includes(
   params.get("collection") ?? "",
 )
@@ -111,10 +113,8 @@ for (const el of document.querySelectorAll<HTMLInputElement>(
 ))
   el.checked = (params.get("signals") ?? "").split(",").includes(el.value);
 const selected = new Set<string>(
-  [...new Set((params.get("compare") ?? "").split(",").filter(Boolean))].slice(
-    0,
-    4,
-  ),
+  [...new Set((params.get("compare") ?? "").split(",").filter(Boolean)
+    .map((id) => legacyIds.get(id) ?? id))].slice(0, 4),
 );
 const PAGE_SIZE = 12;
 const signals = () =>
@@ -849,7 +849,7 @@ async function boot() {
     render();
     updateTray();
     const item = params.get("item");
-    if (item && byId.has(item)) showDetail(item);
+    if (item) showDetail(legacyIds.get(item) ?? item);
   } catch (error) {
     if (token !== generation) return;
     busy = false;

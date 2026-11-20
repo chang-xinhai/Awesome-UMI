@@ -1567,7 +1567,7 @@
     "reviewed": "2026-10-16"
   },
   {
-    "id": "resource-fd5070524c",
+    "id": "2611.22146",
     "name": "HandUMI",
     "summary": "A modular hand-worn UMI with directly encoded aperture and VR pose.",
     "credit": "murobotics-ai",
@@ -2936,5 +2936,93 @@
       "https://cap-policy.github.io/media/nutshell/dataset_2x2/pickup.mp4",
       "https://cap-policy.github.io/media/nutshell/dataset_2x2/pickup-2.mp4"
     ]
+  },
+  {
+    "id": "resource-a569a1229f",
+    "name": "TriMI",
+    "summary": "A 13-DoF hand switches between wearable teaching, joint-level haptic teleoperation and robot execution.",
+    "credit": "UCLA RoMeLa",
+    "reviewed": "2026-11-20",
+    "hardwareImage": "images/catalog/trimi-nov20.webp",
+    "hardwareImageAlt": "A demonstrator wearing the TriMI hand and lifting a yellow cube over a bowl",
+    "hardwareImageSource": "https://trimi-hand.github.io/videos/demonstration-pick-place.mp4",
+    "hardwareImagePage": "https://trimi-hand.github.io/",
+    "hardwareImageType": "Official direct demonstration video frame",
+    "hardwareImageReviewed": "2026-11-20",
+    "hardwareImageWidth": 670,
+    "hardwareImageHeight": 590,
+    "hardwareImageTimeSeconds": 5
+  },
+  {
+    "id": "resource-4223f4845a",
+    "name": "Pro-0",
+    "summary": "Matched wrist cameras and tactile refinement turn glove demonstrations into vision-only ProHand policies.",
+    "credit": "Proception AI",
+    "reviewed": "2026-11-20",
+    "hardwareImage": "images/catalog/pro0-nov20.webp",
+    "hardwareImageAlt": "The tactile ProGlove on a person and on the ProHand",
+    "hardwareImageSource": "https://www.proception.ai/api/website-assets/research/32efee0d-438f-414b-9006-21a7cdbe81ce/a22ed54cea-s3_hardware_pair.webp",
+    "hardwareImagePage": "https://www.proception.ai/research/pro-0",
+    "hardwareImageType": "Official hardware photograph",
+    "hardwareImageReviewed": "2026-11-20",
+    "hardwareImageWidth": 960,
+    "hardwareImageHeight": 640
+  },
+  {
+    "id": "resource-bd8b2c4db6",
+    "name": "SO-101 UMI",
+    "summary": "A printable copy of the SO-101 gripper uses ArUco tracking and converts demonstrations to robot joint plans.",
+    "credit": "CodCodingCode",
+    "reviewed": "2026-11-20",
+    "hardwareImage": "images/catalog/so101-umi-nov20.webp",
+    "hardwareImageAlt": "CAD rendering of the handheld SO-101-style gripper, wrist camera mount and pinch loops",
+    "hardwareImageSource": "https://raw.githubusercontent.com/CodCodingCode/so101-umi/main/cad/soumi_render_clean.png",
+    "hardwareImagePage": "https://github.com/CodCodingCode/so101-umi",
+    "hardwareImageType": "Official CAD rendering",
+    "hardwareImageReviewed": "2026-11-20",
+    "hardwareImageWidth": 527,
+    "hardwareImageHeight": 650
+  },
+  {
+    "id": "resource-c2865374eb",
+    "name": "Pinkrab / Hermit",
+    "summary": "A handheld matched gripper teaches a pair of wall-mounted SO-101-derived arms.",
+    "credit": "Woolimi",
+    "reviewed": "2026-11-20",
+    "hardwareImage": "images/catalog/pinkrab-hermit-nov20.webp",
+    "hardwareImageAlt": "A handheld pink Hermit demonstrator with its fiducial marker and wrist camera",
+    "hardwareImageSource": "https://raw.githubusercontent.com/woolimi/pinkrab/main/docs/src/assets/photos/hermit-held.jpg",
+    "hardwareImagePage": "https://woolimi.github.io/pinkrab/en/",
+    "hardwareImageType": "Official hardware photograph",
+    "hardwareImageReviewed": "2026-11-20",
+    "hardwareImageWidth": 960,
+    "hardwareImageHeight": 617
+  },
+  {
+    "id": "resource-5ed558ab6d",
+    "name": "EgoUMI",
+    "summary": "A passive pinch gripper uses head-camera fiducials and a gripper view to export LeRobot episodes.",
+    "credit": "Ravi Kola",
+    "reviewed": "2026-11-20",
+    "hardwareImage": "images/catalog/egoumi-nov20.webp",
+    "hardwareImageAlt": "The black EgoUMI pinch gripper and ArUco cube during a head-camera pick-and-place recording",
+    "hardwareImageSource": "https://raw.githubusercontent.com/ravikola02/egoumi/main/assets/preview_real.mp4",
+    "hardwareImagePage": "https://github.com/ravikola02/egoumi",
+    "hardwareImageType": "Official capture video frame",
+    "hardwareImageReviewed": "2026-11-20",
+    "hardwareImageWidth": 385,
+    "hardwareImageHeight": 310,
+    "hardwareImageTimeSeconds": 5
+  },
+  {
+    "id": "2606.12965",
+    "name": "EmbodiSteer",
+    "summary": "Joint-space guidance steers a frozen UMI-trained diffusion policy around known obstacles on different arms.",
+    "credit": "Tsinghua University",
+    "reviewed": "2026-11-20",
+    "image": "images/catalog/embodisteer-nov20.webp",
+    "imageAlt": "EmbodiSteer overview showing UMI data collection, joint-space steering, and cross-embodiment deployment",
+    "imageSource": "https://frankwang67.github.io/EmbodiSteer-Page/assets/images/teaser.png",
+    "imagePage": "https://frankwang67.github.io/EmbodiSteer-Page/"
   }
 ]

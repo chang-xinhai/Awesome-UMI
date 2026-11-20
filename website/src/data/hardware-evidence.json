@@ -1162,7 +1162,7 @@
     "resource-3515d52be0": {
       "id": "resource-3515d52be0",
       "name": "XTac-UMI G1",
-      "verified": "2026-10-16",
+      "verified": "2026-11-20",
       "form": "Handheld",
       "interfaceForms": [
         "Handheld"
@@ -1207,6 +1207,10 @@
         {
           "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper#firmware",
           "section": "Firmware binaries; source not shipped"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/blob/main/docs/CALIBRATION.md",
+          "section": "Calibration protocol V2.10 reports calibration image dimensions; check firmware compatibility"
         }
       ],
       "display": {
@@ -1580,16 +1584,16 @@
         "actions": "Pose + gripper opening"
       }
     },
-    "resource-fd5070524c": {
-      "id": "resource-fd5070524c",
+    "2611.22146": {
+      "id": "2611.22146",
       "name": "HandUMI",
-      "verified": "2026-10-26",
+      "verified": "2026-11-20",
       "form": "Wearable",
       "interfaceForms": [
         "Wearable"
       ],
-      "poseTracking": "Pico4 Ultra / Quest 3 controllers",
-      "vision": "IMX335 USB wrist camera",
+      "poseTracking": "PICO 4 Ultra / Meta Quest controllers",
+      "vision": "Fisheye wrist cameras and optional top RGB",
       "observationSignals": [
         "Vision",
         "Proprioception"
@@ -1605,6 +1609,10 @@
       "actionSpace": "6-DoF wrist pose + gripper width",
       "hardwareAvailability": "Public Apache-2.0 left/right STEP/STL, assembly guide, robot-specific tips and printable ChArUco calibration board.",
       "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.22146v1",
+          "section": "Sections 2 and 3, gripper and tracking design"
+        },
         {
           "url": "https://github.com/murobotics-ai/handumi-hw",
           "section": "Build instructions, source files, and Apache-2.0 license"
@@ -1624,15 +1632,15 @@
         }
       ],
       "cost": {
-        "value": 104,
+        "value": 557,
         "currency": "USD",
-        "scope": "Parts per hand, headset excluded",
-        "shortScope": "Parts per hand, headset excluded"
+        "scope": "One bimanual pair with Quest 3S. ZED Mini, host, tax and shipping excluded.",
+        "shortScope": "Bimanual pair with Quest 3S"
       },
       "display": {
         "form": "Wearable",
-        "tracking": "Pico4 Ultra / Quest 3 controllers",
-        "vision": "IMX335 USB wrist camera",
+        "tracking": "PICO 4 Ultra / Meta Quest controllers",
+        "vision": "Fisheye wrist cameras / optional top view",
         "actions": "6-DoF wrist pose + gripper width"
       }
     },
@@ -4686,6 +4694,206 @@
         "tracking": "Offline dual-fisheye + IMU + AprilTag factor graph",
         "vision": "Insta360 X3 dual fisheye",
         "actions": "Metric gripper pose + finger angle"
+      }
+    },
+    "resource-a569a1229f": {
+      "id": "resource-a569a1229f",
+      "name": "TriMI",
+      "verified": "2026-11-20",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "External tracking setup",
+      "vision": "Wrist camera",
+      "observationSignals": [
+        "Vision",
+        "Proprioception"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "13-DoF four-finger hand",
+      "hardwareAvailability": "Hardware documented; source release forthcoming",
+      "evidence": [
+        {
+          "url": "https://trimi-hand.github.io/",
+          "section": "Hardware, direct demonstration, robot execution and haptic teleoperation"
+        }
+      ],
+      "display": {
+        "form": "Wearable",
+        "tracking": "External tracking setup",
+        "vision": "Wrist camera",
+        "actions": "13-DoF four-finger hand"
+      },
+      "cost": {
+        "value": 800,
+        "currency": "USD",
+        "scope": "Approximate bill of materials. Tracking device and wrist camera excluded.",
+        "shortScope": "BOM excluding tracker and camera"
+      }
+    },
+    "resource-4223f4845a": {
+      "id": "resource-4223f4845a",
+      "name": "Pro-0",
+      "verified": "2026-11-20",
+      "form": "Wearable",
+      "interfaceForms": [
+        "Wearable"
+      ],
+      "poseTracking": "Fixed Meta Quest 3 hand and arm tracking",
+      "vision": "Matched wrist RGB views",
+      "observationSignals": [
+        "Vision",
+        "Tactile"
+      ],
+      "tactile": {
+        "status": "present",
+        "type": "Glove tactile sensors for pose refinement"
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Relative end-effector pose and ProHand joint targets",
+      "hardwareAvailability": "Research system and hardware documented",
+      "evidence": [
+        {
+          "url": "https://www.proception.ai/research/pro-0",
+          "section": "Data capture, tactile pose refinement, retargeting and RGB-only policy"
+        }
+      ],
+      "display": {
+        "form": "Wearable",
+        "tracking": "Fixed Meta Quest 3 hand and arm tracking",
+        "vision": "Matched wrist RGB views",
+        "actions": "Relative end-effector pose and ProHand joint targets"
+      }
+    },
+    "resource-bd8b2c4db6": {
+      "id": "resource-bd8b2c4db6",
+      "name": "SO-101 UMI",
+      "verified": "2026-11-20",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Overhead ArUco pose against a table tag",
+      "vision": "Wrist and overhead cameras",
+      "observationSignals": [
+        "Vision"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Gripper pose and jaw angle to SO-101 joints",
+      "hardwareAvailability": "Released CAD/STL and calibration guides",
+      "evidence": [
+        {
+          "url": "https://github.com/CodCodingCode/so101-umi/tree/main/cad",
+          "section": "Printable STL and CAD source"
+        },
+        {
+          "url": "https://github.com/CodCodingCode/so101-umi/blob/main/docs/umi-setup.md",
+          "section": "Camera setup, tracking and calibration"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Overhead ArUco pose against a table tag",
+        "vision": "Wrist and overhead cameras",
+        "actions": "Gripper pose and jaw angle to SO-101 joints"
+      }
+    },
+    "resource-c2865374eb": {
+      "id": "resource-c2865374eb",
+      "name": "Pinkrab / Hermit",
+      "verified": "2026-11-20",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Head-camera fiducials in table frame",
+      "vision": "Matching global-shutter fisheye wrist RGB",
+      "observationSignals": [
+        "Vision"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Bimanual 6-DoF pose and gripper control",
+      "hardwareAvailability": "Released print files, BOM and assembly guide",
+      "evidence": [
+        {
+          "url": "https://github.com/woolimi/pinkrab",
+          "section": "Hardware design, cameras and LeRobot workflow"
+        },
+        {
+          "url": "https://woolimi.github.io/pinkrab/en/hardware/assemble-hermit/",
+          "section": "Official Hermit assembly guide"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Head-camera fiducials in table frame",
+        "vision": "Matching global-shutter fisheye wrist RGB",
+        "actions": "Bimanual 6-DoF pose and gripper control"
+      }
+    },
+    "resource-5ed558ab6d": {
+      "id": "resource-5ed558ab6d",
+      "name": "EgoUMI",
+      "verified": "2026-11-20",
+      "form": "Handheld",
+      "interfaceForms": [
+        "Handheld"
+      ],
+      "poseTracking": "Egocentric ArUco and masked DROID-SLAM",
+      "vision": "Head RGB and gripper RGB",
+      "observationSignals": [
+        "Vision"
+      ],
+      "tactile": {
+        "status": "unknown",
+        "type": null
+      },
+      "forceTorque": {
+        "status": "unknown",
+        "type": null
+      },
+      "actionSpace": "Gripper TCP pose and jaw signal",
+      "hardwareAvailability": "Released STEP/STL and print instructions",
+      "evidence": [
+        {
+          "url": "https://github.com/ravikola02/egoumi",
+          "section": "Physical capture, head SLAM and calibration limitations"
+        },
+        {
+          "url": "https://github.com/ravikola02/egoumi/tree/main/cad/out_v3",
+          "section": "Released printable gripper parts"
+        }
+      ],
+      "display": {
+        "form": "Handheld",
+        "tracking": "Egocentric ArUco and masked DROID-SLAM",
+        "vision": "Head RGB and gripper RGB",
+        "actions": "Gripper TCP pose and jaw signal"
       }
     }
   },

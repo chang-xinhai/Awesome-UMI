@@ -518,7 +518,7 @@
     "resource-3515d52be0": {
       "status": "partial",
       "hardwareStatus": "Public shell CAD; full design unverified",
-      "softwareStatus": "Apache-2.0 gripper SDK and motor OTA tools; firmware binaries",
+      "softwareStatus": "Apache-2.0 gripper SDK and LeRobot v5.1 recorder; binary firmware",
       "hardwareLicense": null,
       "softwareLicense": "Apache-2.0",
       "notes": [
@@ -526,7 +526,8 @@
         "Gripper SDK source is Apache-2.0; firmware is distributed as binaries without source.",
         "Tactile-derived 3D forces / 6D resultants are not a dedicated force-torque sensor.",
         "Collection workflow uses xense-taccap-lerobot, Apache-2.0; tactile SDK is distributed separately.",
-        "The current firmware inventory includes EL05_1.0.5.0.4.bin plus master/slave gripper images, and the SDK ships model-aware motor OTA tools. Bundled motor firmware is a binary release, not firmware source; no RS00 motor image is shipped."
+        "The current firmware inventory includes EL05_1.0.5.0.4.bin plus master/slave gripper images, and the SDK ships model-aware motor OTA tools. Bundled motor firmware is a binary release, not firmware source; no RS00 motor image is shipped.",
+        "The merged SDK source implements V2.10 calibration with image resolution for fisheye intrinsics. The official documentation lists 1.3.0 release candidate firmware support and 1.3.1 compatibility. The repository firmware inventory is separate."
       ],
       "evidence": [
         {
@@ -540,10 +541,22 @@
         {
           "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/blob/main/python/examples/motor_ota_update.py",
           "section": "Model-aware OTA software; firmware source rights are separate"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/xense-taccap-lerobot/tree/main/src/lerobot/robots/taccap_gripper",
+          "section": "Actual LeRobot data collection code"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/blob/main/docs/CALIBRATION.md",
+          "section": "Current fisheye calibration and firmware compatibility"
+        },
+        {
+          "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/pull/34",
+          "section": "Merged V2.10 fisheye calibration code"
         }
       ],
       "commercial": true,
-      "verified": "2026-10-21"
+      "verified": "2026-11-20"
     },
     "resource-e07d628c06": {
       "status": "partial",
@@ -696,16 +709,16 @@
       "evidence": [],
       "commercial": true
     },
-    "resource-fd5070524c": {
+    "2611.22146": {
       "status": "open",
       "hardwareStatus": "Public left/right STEP/STL, robot-specific fingertips and assembly guide",
-      "softwareStatus": "Open source",
+      "softwareStatus": "Apache-2.0 collection software and Quest app; APK prerelease",
       "hardwareLicense": "Apache-2.0",
       "softwareLicense": "Apache-2.0",
       "notes": [
         "Hardware STL files, BOM, build instructions, and original software are Apache-2.0.",
-        "Headset application, third-party robot firmware, and optional dataset licenses remain separate.",
-        "Parts cost is approximately $104 per hand; headset excluded.",
+        "The Quest app source is Apache-2.0. The v0.2.1 prerelease includes an APK and its checksum.",
+        "The paper estimates $557 for a bimanual pair with a Quest 3S, excluding the optional ZED Mini, host, tax and shipping.",
         "Current hardware tree adds revised left/right supports, a HandUMI assembly PDF, and fingertip CAD for I2RT-YAM, OpenArm v1, Galaxea R1 Lite and MakerMods Metal. The root Apache-2.0 LICENSE was inspected.",
         "The hardware repository now supplies a printable 5 × 7 ChArUco calibration board with 30 mm squares on A4. This is a calibration artifact, not an additional sensor or a new dataset.",
         "The collection software now includes a standalone Rerun viewer for configured camera streams and calibrated gripper openings, without VR tracking or simulation."
@@ -730,10 +743,22 @@
         {
           "url": "https://github.com/murobotics-ai/handumi-sw/commit/55e1e6e",
           "section": "Standalone sensor viewer implementation"
+        },
+        {
+          "url": "https://arxiv.org/html/2611.22146v1",
+          "section": "Publication and collection details"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-quest-app",
+          "section": "Quest app source and Apache-2.0 license"
+        },
+        {
+          "url": "https://github.com/murobotics-ai/handumi-quest-app/releases/tag/v0.2.1",
+          "section": "v0.2.1 APK and SHA-256 checksum"
         }
       ],
       "commercial": false,
-      "verified": "2026-10-30"
+      "verified": "2026-11-20"
     },
     "resource-af05253706": {
       "status": "open",
@@ -1673,25 +1698,23 @@
       ]
     },
     "2606.26603": {
-      "verified": "2026-10-19",
+      "verified": "2026-11-20",
       "status": "unknown",
       "hardwareStatus": "Announced",
       "softwareStatus": "Announced; resource buttons have empty href",
       "hardwareLicense": null,
       "softwareLicense": null,
       "notes": [
-        "Official project exposes inactive Code, Hardware (DM-UMI), and Datasets controls. A released project-page template is not the policy implementation.",
-        "Current BRIDGE Code/Hardware/Datasets buttons have empty hrefs. The footer MIT link points to rai-inst/umi-dual-mode, which returns404; no release is inferred from this template license link."
+        "Official Code, Hardware (DM-UMI), and Datasets buttons remain inactive. The project-footer license link does not establish a release."
       ],
       "evidence": [
         {
           "url": "https://nperi-rai.github.io/bridge-project/",
-          "section": "Resource buttons and DM-UMI description"
+          "section": "Inactive resource buttons and DM-UMI description"
         },
         {
-          "url": "https://nperi-rai.github.io/bridge-project/",
-          "section": "Current resource controls / actual hrefs",
-          "note": "Current BRIDGE Code/Hardware/Datasets buttons have empty hrefs. The footer MIT link points to rai-inst/umi-dual-mode, which returns404; no release is inferred from this template license link."
+          "url": "https://umi-arena.airoa.io/accepted#p14",
+          "section": "CoRL workshop paper spotlight"
         }
       ]
     },
@@ -3017,6 +3040,138 @@
         {
           "url": "https://arxiv.org/html/2611.07229v1",
           "section": "Training data and evaluation scope"
+        }
+      ]
+    },
+    "resource-a569a1229f": {
+      "verified": "2026-11-20",
+      "status": "unknown",
+      "hardwareStatus": "Paper and hardware release forthcoming",
+      "softwareStatus": "Code forthcoming",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The project documents three working modes and provides an interactive CAD view. The public buttons for arXiv and GitHub are disabled."
+      ],
+      "evidence": [
+        {
+          "url": "https://trimi-hand.github.io/",
+          "section": "Current release buttons and interactive hardware"
+        },
+        {
+          "url": "https://umi-arena.airoa.io/accepted#d13",
+          "section": "Official UMI Arena device track"
+        }
+      ]
+    },
+    "resource-4223f4845a": {
+      "verified": "2026-11-20",
+      "status": "unknown",
+      "hardwareStatus": "Matched hardware described",
+      "softwareStatus": "Policy release unverified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The report describes tactile pose refinement and an RGB-only diffusion policy. The author page provides demonstration and rollout examples."
+      ],
+      "evidence": [
+        {
+          "url": "https://www.proception.ai/research/pro-0",
+          "section": "Research report and examples"
+        },
+        {
+          "url": "https://umi-arena.airoa.io/accepted#p08",
+          "section": "Official UMI Arena paper track"
+        }
+      ]
+    },
+    "resource-bd8b2c4db6": {
+      "verified": "2026-11-20",
+      "status": "open",
+      "hardwareStatus": "Released printable hardware and CAD scripts",
+      "softwareStatus": "Released calibration, estimation and optimization (Apache-2.0)",
+      "hardwareLicense": "Apache-2.0",
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Build instructions cover an SO-101 arm, a matching handheld gripper and the camera calibration setup. Recording and motor drivers are left to the user."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/CodCodingCode/so101-umi",
+          "section": "Public source and license"
+        },
+        {
+          "url": "https://github.com/CodCodingCode/so101-umi/tree/main/umi",
+          "section": "Demo conversion and optimization implementation"
+        }
+      ]
+    },
+    "resource-c2865374eb": {
+      "verified": "2026-11-20",
+      "status": "open",
+      "hardwareStatus": "Released printable parts and assembly docs",
+      "softwareStatus": "Released ROS 2 and LeRobot collection/deployment (Apache-2.0)",
+      "hardwareLicense": "Apache-2.0",
+      "softwareLicense": "Apache-2.0",
+      "notes": [
+        "Hermit uses the same claw geometry and wrist-camera arrangement as the Pinkrab arm. The published workflow includes LeRobot ACT and human corrections."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/woolimi/pinkrab",
+          "section": "Executable sources, print parts and license"
+        },
+        {
+          "url": "https://woolimi.github.io/pinkrab/en/hardware/assemble-hermit/",
+          "section": "Official Hermit assembly guide"
+        }
+      ]
+    },
+    "resource-5ed558ab6d": {
+      "verified": "2026-11-20",
+      "status": "partial",
+      "hardwareStatus": "Released printable STEP and STL files",
+      "softwareStatus": "Released capture and export code (MIT; upstream terms)",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Original pipeline source is MIT. The gripper adapts Stanford UMI hardware and the pipeline references separately licensed dependencies and SLAM models.",
+        "The real example uses nominal head intrinsics and a normalized jaw signal. Real metric tracking error and jaw aperture in millimeters are unverified."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ravikola02/egoumi/blob/main/LICENSE",
+          "section": "Code license"
+        },
+        {
+          "url": "https://github.com/ravikola02/egoumi",
+          "section": "Hardware origin, known limitations and third-party licenses"
+        },
+        {
+          "url": "https://github.com/ravikola02/egoumi/tree/main/collection",
+          "section": "Capture and export implementation"
+        }
+      ]
+    },
+    "2606.12965": {
+      "verified": "2026-11-20",
+      "status": "partial",
+      "hardwareStatus": "No dedicated collection hardware release",
+      "softwareStatus": "MIT simulation and real-deployment code",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "The base diffusion policy learns from UMI handheld demonstrations. The released code includes steering, training and real evaluation entry points.",
+        "The physical evaluation assumes known obstacle geometry."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/frankWang67/EmbodiSteer",
+          "section": "Repository license and executable training/deployment files"
+        },
+        {
+          "url": "https://arxiv.org/html/2606.12965v1#S5.SS2",
+          "section": "Real-robot training and evaluation"
         }
       ]
     }
