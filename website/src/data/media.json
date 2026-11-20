@@ -3024,5 +3024,20 @@
     "imageAlt": "EmbodiSteer overview showing UMI data collection, joint-space steering, and cross-embodiment deployment",
     "imageSource": "https://frankwang67.github.io/EmbodiSteer-Page/assets/images/teaser.png",
     "imagePage": "https://frankwang67.github.io/EmbodiSteer-Page/"
+  },
+  {
+    "id": "resource-4c5fbdc603",
+    "name": "The UMI Arena",
+    "credit": "AIRoA",
+    "reviewed": "2026-11-20",
+    "datasetImage": "images/catalog/umi-arena-data-nov20.webp",
+    "datasetImageAlt": "Fisheye thumbnails of YUBI demonstrations across homes, retail and manufacturing scenes in the competition dataset",
+    "datasetImageSource": "https://umi-arena.airoa.io/figs/yubi_cover.jpeg",
+    "datasetImagePage": "https://umi-arena.airoa.io/#release",
+    "datasetImageType": "Official competition training data mosaic",
+    "datasetImageReviewed": "2026-11-20",
+    "datasetImageWidth": 1200,
+    "datasetImageHeight": 675,
+    "datasetSummary": "Gated YUBI competition training data and separately gated real-robot evaluation recordings."
   }
 ]
