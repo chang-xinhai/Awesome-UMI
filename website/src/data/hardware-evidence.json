@@ -1162,7 +1162,7 @@
     "resource-3515d52be0": {
       "id": "resource-3515d52be0",
       "name": "XTac-UMI G1",
-      "verified": "2026-11-20",
+      "verified": "2026-11-21",
       "form": "Handheld",
       "interfaceForms": [
         "Handheld"
@@ -1211,6 +1211,10 @@
         {
           "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/blob/main/docs/CALIBRATION.md",
           "section": "Calibration protocol V2.10 reports calibration image dimensions; check firmware compatibility"
+        },
+        {
+          "url": "https://xenserobotics-ai.github.io/XTac-UMI-G1-Docs/v0.4.7/en/",
+          "section": "Official current Backpack and Developer Kit recording modes"
         }
       ],
       "display": {
@@ -3495,7 +3499,7 @@
     "resource-72e4f601d7": {
       "id": "resource-72e4f601d7",
       "name": "Aero UMI",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "form": "Wearable",
       "interfaceForms": [
         "Wearable"
@@ -3537,6 +3541,10 @@
         {
           "url": "https://www.linkedin.com/pulse/irosdoing-boring-things-new-sexy-robotics-chestnutbot-khecc",
           "section": "Aero UMI and Aero Hand co-design and direct joint mapping"
+        },
+        {
+          "url": "https://umi-arena.airoa.io/accepted#d12",
+          "section": "2026 UMI Arena device exhibition"
         }
       ],
       "mass": {
@@ -3593,7 +3601,7 @@
     "resource-9bdb86524b": {
       "id": "resource-9bdb86524b",
       "name": "SenseXperience UMI",
-      "verified": "2026-10-16",
+      "verified": "2026-11-21",
       "form": "Handheld UMI + optional head/wrist modules",
       "interfaceForms": [
         "Handheld",
@@ -3653,6 +3661,10 @@
         {
           "url": "https://io-ai.tech/zh/news/sensexperience-real-world-data-collection-solution/",
           "section": "Manufacturer launch article dated 2026-02-05"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ICRA-WBCD/IO-AI-SenseXperience-UMI/tree/main/videos",
+          "section": "Released head left/right MP4 paths and separate depth channel"
         }
       ]
     },

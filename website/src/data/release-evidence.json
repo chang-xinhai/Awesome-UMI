@@ -527,7 +527,8 @@
         "Tactile-derived 3D forces / 6D resultants are not a dedicated force-torque sensor.",
         "Collection workflow uses xense-taccap-lerobot, Apache-2.0; tactile SDK is distributed separately.",
         "The current firmware inventory includes EL05_1.0.5.0.4.bin plus master/slave gripper images, and the SDK ships model-aware motor OTA tools. Bundled motor firmware is a binary release, not firmware source; no RS00 motor image is shipped.",
-        "The merged SDK source implements V2.10 calibration with image resolution for fisheye intrinsics. The official documentation lists 1.3.0 release candidate firmware support and 1.3.1 compatibility. The repository firmware inventory is separate."
+        "The merged SDK source implements V2.10 calibration with image resolution for fisheye intrinsics. The official documentation lists 1.3.0 release candidate firmware support and 1.3.1 compatibility. The repository firmware inventory is separate.",
+        "The Developer Kit has public collection code. The Backpack Kit uses a separate closed collector. Named public TacVerse LeRobot samples include both head-eye streams."
       ],
       "evidence": [
         {
@@ -553,10 +554,18 @@
         {
           "url": "https://github.com/XenseRobotics-AI/TacCap-Gripper/pull/34",
           "section": "Merged V2.10 fisheye calibration code"
+        },
+        {
+          "url": "https://xenserobotics-ai.github.io/XTac-UMI-G1-Docs/v0.4.7/en/",
+          "section": "Edition-specific software scope and dataset fields"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TacVerse/xtac-umi-g1-insert-an-optical-transceiver/tree/main/videos",
+          "section": "Public head stereo sample: left/right + wrist + tactile"
         }
       ],
       "commercial": true,
-      "verified": "2026-11-20"
+      "verified": "2026-11-21"
     },
     "resource-e07d628c06": {
       "status": "partial",
@@ -2900,14 +2909,15 @@
       ]
     },
     "resource-3e993ad3b0": {
-      "verified": "2026-11-11",
+      "verified": "2026-11-21",
       "status": "partial",
       "hardwareStatus": "Public design, bill of materials and electronics",
       "softwareStatus": "Collection software and hand monitor published; glove firmware forthcoming",
       "hardwareLicense": "CC BY 4.0",
       "softwareLicense": "Apache-2.0 by default; Record3D-derived iPhone adapter LGPL-2.1-only",
       "notes": [
-        "Glove firmware is listed as coming soon; hardware and software licenses are distinct."
+        "Glove firmware is listed as coming soon; hardware and software licenses are distinct.",
+        "ROBOTERA separately announced limited orders for the matched 16-DoF XHAND 1 Pro-U robot hand. This does not change the collector firmware release."
       ],
       "evidence": [
         {
@@ -2917,6 +2927,10 @@
         {
           "url": "https://github.com/NVlabs/GR00T-DataHardwarePrototypes",
           "section": "README release status and component licenses"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/robotera-launches-xhand-1-pro-u-featured-in-nvidias-gr00t-2-dexumi-demonstration-302940288.html",
+          "section": "ROBOTERA’s launch of the 16-DoF matched XHAND 1 Pro-U deployment hand"
         }
       ]
     },
@@ -3172,6 +3186,69 @@
         {
           "url": "https://arxiv.org/html/2606.12965v1#S5.SS2",
           "section": "Real-robot training and evaluation"
+        }
+      ]
+    },
+    "resource-811e3a7e3c": {
+      "verified": "2026-11-21",
+      "status": "partial",
+      "hardwareStatus": "Uses Meta Quest 3 and FFW-SG2",
+      "softwareStatus": "Public reconstruction, rendering, policy code and model (MIT)",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "The released checkpoint and two datasets cover one cube-into-bowl task."
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/teamROBI/Head2Wrist",
+          "section": "Executable source, baselines and MIT license"
+        },
+        {
+          "url": "https://huggingface.co/jkim50104/Head2Wrist-policy-cube-bowl/tree/main",
+          "section": "Actual model.safetensors and deployment reference"
+        }
+      ]
+    },
+    "2607.11884": {
+      "verified": "2026-11-21",
+      "status": "partial",
+      "hardwareStatus": "Runs with the HoMMI setup",
+      "softwareStatus": "Public simulation and HoMMI code (MIT)",
+      "hardwareLicense": null,
+      "softwareLicense": "MIT",
+      "notes": [
+        "Physical evaluation uses HoMMI. The base action expert is omitted because the collection interface does not capture the base frame."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2607.11884v1#A6.SS2",
+          "section": "Real-world HoMMI integration in the paper appendix"
+        },
+        {
+          "url": "https://github.com/pointW/mofpo",
+          "section": "Simulation source, training and MIT license"
+        },
+        {
+          "url": "https://github.com/gsanpark/mof_hommi",
+          "section": "Official author fork with HoMMI deployment and dataset processing"
+        }
+      ]
+    },
+    "2611.14048": {
+      "verified": "2026-11-21",
+      "status": "unknown",
+      "hardwareStatus": "Experimental robot setups documented",
+      "softwareStatus": "Code and weights unverified",
+      "hardwareLicense": null,
+      "softwareLicense": null,
+      "notes": [
+        "The preprint reports 9,088 of 14,892 pretraining hours from portable UMI demonstrations. The world and latent experts use these sources. Embodied teleoperation grounds action learning."
+      ],
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2611.14048v1#A2.SS1",
+          "section": "Pretraining source mix and learning roles"
         }
       ]
     }

@@ -61,7 +61,7 @@
     "2607.25895": {
       "id": "2607.25895",
       "name": "HiFi-UMI-2K",
-      "verified": "2026-10-19",
+      "verified": "2026-11-21",
       "datasetUrl": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K",
       "access": "Public download",
       "accessNote": "Anonymous dataset-card read and file listing available; publicly released subset is 2,000 hours.",
@@ -73,7 +73,8 @@
       ],
       "fps": 25,
       "observations": [
-        "6 synchronized RGB views",
+        "Hardware-synchronized stereo head RGB",
+        "Four wrist fisheye RGB streams",
         "Bimanual end-effector pose",
         "Gripper state",
         "Language",
@@ -98,7 +99,8 @@
       "scopeNotes": [
         "4.32M+ episodes and 480+ scenes describe source corpus, not independently verified released-subset totals.",
         "Official UMI community index separately lists 482,000 released demonstrations across 110+ environments; preserve this separate provenance if shown.",
-        "A sampled public part meta/info.json stores all six views at25FPS,512×640. This is export frequency, distinct from capture sensor rates."
+        "A public part stores all six streams at 25 FPS and 512 × 640. This is export frequency, distinct from sensor capture rate.",
+        "Actual left and right head MP4 streams are indexed together. The file schema does not list ground-truth depth or disparity."
       ],
       "sources": [
         {
@@ -124,6 +126,11 @@
           "supports": "Fresh actual repository file inventory and gating; binary/data sample checked separately from page HTTP status",
           "checked": "2026-10-19",
           "published": null
+        },
+        {
+          "url": "https://huggingface.co/datasets/simple-world-lab/HiFi-UMI-2K/tree/main/chunk-0000/part-0000/videos",
+          "supports": "All six public MP4 stream names, including head_main and head_main_stereo_right",
+          "checked": "2026-11-21"
         }
       ],
       "unknownFields": [],
@@ -4158,6 +4165,374 @@
         "Dataset license standard identifier"
       ],
       "evidenceLevel": "Official workshop and Hugging Face access metadata"
+    },
+    "resource-811e3a7e3c": {
+      "id": "resource-811e3a7e3c",
+      "name": "Head2Wrist",
+      "verified": "2026-11-21",
+      "datasetUrl": "https://huggingface.co/datasets/jkim50104/Head2Wrist-cube-bowl-252ep",
+      "access": "Public download",
+      "accessNote": "MIT LeRobot training set and raw demo pack are separate, public repositories.",
+      "license": "MIT",
+      "formats": [
+        "LeRobot v2.1",
+        "Parquet",
+        "MP4",
+        "HDF5"
+      ],
+      "fps": null,
+      "observations": [
+        "Generated wrist RGB",
+        "End-effector state and actions",
+        "Raw Quest head RGB and hand tracking"
+      ],
+      "action": "Absolute TCP and jaw state, with relative TCP actions and absolute aperture",
+      "embodiments": [
+        "Meta Quest 3",
+        "FFW-SG2"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 252,
+        "tasks": 1
+      },
+      "scopeNotes": [
+        "The 252 generated episodes derive from three accepted demonstrations. One of four Quest source demonstrations failed the physics check and is excluded from training.",
+        "The physical evaluation covers one task near demonstrated starts."
+      ],
+      "sources": [
+        {
+          "url": "https://teamrobi.github.io/projects/head2wrist/",
+          "supports": "Capture, simulated wrist RGB, physics check and physical evaluation",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/jkim50104/Head2Wrist-cube-bowl-252ep/tree/main",
+          "supports": "Actual MP4/Parquet training files, 252 episodes",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/jkim50104/Head2Wrist-quest-demos/tree/main",
+          "supports": "Four raw Meta Quest captures and prepared inputs for the three accepted demonstrations",
+          "checked": "2026-11-21"
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official paper, data card, or public release manifest"
+    },
+    "resource-53400ed7f1": {
+      "id": "resource-53400ed7f1",
+      "name": "Starpilot Mobile UMI Samples",
+      "verified": "2026-11-21",
+      "datasetUrl": "https://huggingface.co/datasets/starpilot-ai/starpilot-mobile-umi-samples",
+      "access": "Public files",
+      "accessNote": "No login required to view release. The data card uses the license label “other”.",
+      "license": null,
+      "formats": [
+        "LeRobot v3.0",
+        "H.264 MP4",
+        "Parquet",
+        "JSON"
+      ],
+      "fps": 30,
+      "observations": [
+        "Hardware stereo head pair",
+        "Two independent wrist RGB cameras",
+        "Head/hand IMUs",
+        "Head and gripper trajectories",
+        "Gripper aperture",
+        "Calibration and time sync"
+      ],
+      "action": "Bimanual 20D end-effector pose with 6D rotations and metric jaw opening",
+      "embodiments": [
+        "Head-mounted stereo rig with two handheld UMI grippers"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 14,
+        "scope": "Long field samples"
+      },
+      "scopeNotes": [
+        "As of the 2026-11-20 snapshot, the 14 long field clips total about 85 minutes. Five older short test-rig episodes are listed separately.",
+        "Full-rate exported clips are 30 fps. The test-rig captures include lower-resolution recordings, and some field source clips were collected below the export rate.",
+        "Head stereo views share a device. Both wrist streams are separate views. The release documents calibration and clock fits. Ground-truth depth/disparity labels are not listed."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/starpilot-ai/starpilot-mobile-umi-samples",
+          "supports": "Current sample list, field observations, license tag and 14-clip/85-minute scope",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/starpilot-ai/starpilot-mobile-umi-samples/blob/main/mumi_dishwasher/manifest.json",
+          "supports": "MUMI dishwasher SHA-256 manifest, both head stream names, calibration and sync records",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/starpilot-ai/starpilot-mobile-umi-samples/commits/main",
+          "supports": "Dated first full-resolution release and same-day calibration files",
+          "checked": "2026-11-21"
+        }
+      ],
+      "unknownFields": [
+        "License terms behind the “other” tag",
+        "Depth and disparity ground truth"
+      ],
+      "evidenceLevel": "Official paper, data card, or public release manifest"
+    },
+    "resource-f0de849338": {
+      "id": "resource-f0de849338",
+      "name": "Crobotia iUMI",
+      "verified": "2026-11-21",
+      "datasetUrl": "https://huggingface.co/datasets/Crobotia/iUMI",
+      "access": "Public download",
+      "accessNote": "CC BY-SA 4.0 episode index, shard index and TAR payloads.",
+      "license": "CC BY-SA 4.0",
+      "formats": [
+        "LeRobot v3.0",
+        "H.264",
+        "Parquet",
+        "TAR"
+      ],
+      "fps": 30,
+      "observations": [
+        "Left and right wrist fisheye RGB",
+        "IMU and audio",
+        "Estimated camera pose and gripper opening",
+        "Visual grounding and action-step intervals"
+      ],
+      "action": "Bimanual 16D pose and gripper state",
+      "embodiments": [
+        "Two handheld Crobotia capture grippers"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 104634,
+        "hours": 1306.8
+      },
+      "scopeNotes": [
+        "Left and right are gripper-mounted wrist cameras, without a fixed binocular baseline. They are grouped as synchronized wrist views.",
+        "The release includes per-body intrinsics and camera–IMU calibration. The two wrist poses are independently initialized.",
+        "The IROS challenge also hosts jointly sponsored Crobotia releases; the two published volumes should not be summed without deduplication."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/Crobotia/iUMI",
+          "supports": "Dataset overview, sensor schema, scope and CC BY-SA 4.0",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/Crobotia/iUMI/blob/main/episodes.csv",
+          "supports": "Published episode-to-shard index",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/Crobotia/iUMI/blob/main/shards.csv",
+          "supports": "Public TAR index",
+          "checked": "2026-11-21"
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official paper, data card, or public release manifest"
+    },
+    "2609.03591": {
+      "id": "2609.03591",
+      "name": "PrimeBot Bimanual Challenge Data",
+      "verified": "2026-11-21",
+      "datasetUrl": "https://huggingface.co/datasets/challenge-2026/challenge_data",
+      "access": "Public download",
+      "accessNote": "Official CC BY-SA 4.0 data bundles and format descriptions. Robot teleoperation and UMI batches are separate.",
+      "license": "CC BY-SA 4.0",
+      "formats": [
+        "LeRobot v2.1",
+        "LeRobot v3.0",
+        "MP4",
+        "Parquet"
+      ],
+      "fps": 30,
+      "observations": [
+        "Left and right wrist RGB with UMI",
+        "Camera–IMU calibration for UMI sample",
+        "Pose/gripper actions",
+        "Language",
+        "Separate robot teleoperation data"
+      ],
+      "action": "Bimanual end-effector pose and gripper opening",
+      "embodiments": [
+        "UMI handheld grippers",
+        "PrimeBot mobile bimanual robot"
+      ],
+      "reportedScale": {
+        "hours": 1500,
+        "scope": "Paper total across robot teleoperation and UMI"
+      },
+      "publicScale": {},
+      "scopeNotes": [
+        "The authors report 1,500 hours for the combined sources. The releases list robot teleoperation and UMI batches separately, including a 100-hour PrimeUMI tranche.",
+        "UMI sample uses two wrist-mounted cameras and independently initialized poses, without a fixed binocular baseline.",
+        "The authors identify Crobotia as a UMI sponsor. Published release totals should not be summed with Crobotia iUMI without checking shared examples."
+      ],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2609.03591v1",
+          "supports": "Paper scope and UMI collection section",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/challenge-2026/challenge_data#umi-data",
+          "supports": "Release changelog and UMI wrapper, left/right wrist cameras and calibration",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/challenge-2026/challenge_data/tree/main/official_data/umi_data",
+          "supports": "UMI release tree",
+          "checked": "2026-11-21"
+        }
+      ],
+      "unknownFields": [],
+      "evidenceLevel": "Official paper, data card, or public release manifest"
+    },
+    "resource-695b3d5765": {
+      "id": "resource-695b3d5765",
+      "name": "TacVerse / TacVerse-OXT",
+      "verified": "2026-11-21",
+      "datasetUrl": "https://huggingface.co/datasets/TacVerse/TacVerse",
+      "access": "Public samples + gated original",
+      "accessNote": "Original LeRobot full release requires accepting the access terms. Public sample repos retain both head eyes; the separate public OXT Zarr conversion retains only the right head eye.",
+      "license": "CC BY-SA 4.0",
+      "formats": [
+        "LeRobot v3",
+        "MP4",
+        "Parquet",
+        "Zarr (OXT conversion)"
+      ],
+      "fps": 30,
+      "observations": [
+        "Two wrist RGB cameras",
+        "Four visuotactile streams",
+        "Bimanual gripper pose and aperture",
+        "Head left and right RGB in verified original samples",
+        "Head pose in head subset"
+      ],
+      "action": "Bimanual 6-DoF end-effector pose and aperture",
+      "embodiments": [
+        "Xense TacCap G1 and XTac-UMI G1"
+      ],
+      "reportedScale": {
+        "episodes": 17690,
+        "tasks": 122,
+        "hours": 370,
+        "scope": "Original LeRobot release reported by Xense"
+      },
+      "publicScale": {
+        "episodes": 72886,
+        "tasks": 177,
+        "hours": 1451.1,
+        "scope": "Public OXT derivative with wrist-only data and one head view for its head-camera subset"
+      },
+      "scopeNotes": [
+        "The Xense documentation lists 17,690 original demonstrations across 122 tasks, approximately 370 hours.",
+        "The public OXT repo declares 72,886 trajectories, 1,451.1 hours and 177 tasks in its own input universe. These totals include the wrist-only collection and the derived data should not be added to the original volume.",
+        "OXT drops the left head image. Its 22 head-view task folders have one head RGB stream each. The named original LeRobot sample trees were checked for both MP4 directories. Stereo calibration or depth labels are not independently verified for these samples."
+      ],
+      "sources": [
+        {
+          "url": "https://xenserobotics-ai.github.io/XTac-UMI-G1-Docs/v0.4.7/en/#tacverse",
+          "supports": "Official raw LeRobot dataset volume, collection and licensing",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TacVerse/TacVerse/tree/main",
+          "supports": "Gated LeRobot release tree",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TacVerse/xtac-umi-g1-insert-an-optical-transceiver/tree/main/videos",
+          "supports": "Public sample with both head-eye video directories and tactile streams",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TacVerse/xtac-umi-g1-clean-blackboard/blob/main/meta/info.json",
+          "supports": "Public head stereo sample schema",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TacVerse/xtac-umi-g1-stack-three-blocks/blob/main/meta/info.json",
+          "supports": "Second demonstrated head stereo sample schema",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/Vertax/TacVerse-OXT#source",
+          "supports": "OXT public right-eye-only export and aggregate scope",
+          "checked": "2026-11-21"
+        }
+      ],
+      "unknownFields": [
+        "Calibrated stereo and depth-label availability in public TacVerse samples"
+      ],
+      "evidenceLevel": "Official paper, data card, or public release manifest"
+    },
+    "resource-f3e090da9e": {
+      "id": "resource-f3e090da9e",
+      "name": "SenseXperience UMI Dataset",
+      "verified": "2026-11-21",
+      "datasetUrl": "https://huggingface.co/datasets/ICRA-WBCD/IO-AI-SenseXperience-UMI",
+      "access": "Public download",
+      "accessNote": "Public Hugging Face LeRobot files provide both head RGB streams and separate RGB-encoded head depth.",
+      "license": "Apache-2.0",
+      "formats": [
+        "LeRobot v3.0",
+        "MP4",
+        "Parquet"
+      ],
+      "fps": 30,
+      "observations": [
+        "Synchronized head-left and head-right RGB",
+        "Left and right wrist RGB",
+        "RGB-encoded head depth",
+        "Gripper RGB",
+        "Head and gripper poses"
+      ],
+      "action": "Tracked head and gripper pose, with human motion features",
+      "embodiments": [
+        "IO-AI SenseXperience UMI wearable"
+      ],
+      "reportedScale": {},
+      "publicScale": {
+        "episodes": 1051,
+        "tasks": 92,
+        "frames": 220963
+      },
+      "scopeNotes": [
+        "The head depth camera output is encoded as RGB video. Metric decoding and stereo extrinsics have not been independently verified from the released files.",
+        "Camera stream names and the episode/frame totals were verified in the published tree and meta/info.json."
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/ICRA-WBCD/IO-AI-SenseXperience-UMI",
+          "supports": "Dataset card and 92-task data specification",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ICRA-WBCD/IO-AI-SenseXperience-UMI/blob/main/meta/info.json",
+          "supports": "Actual six video keys, 1,051 episodes and 220,963 frames",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ICRA-WBCD/IO-AI-SenseXperience-UMI/tree/main/videos",
+          "supports": "Published head left/right MP4 streams and separate depth MP4",
+          "checked": "2026-11-21"
+        },
+        {
+          "url": "https://wbcdcompetition.github.io/index.html",
+          "supports": "Official ICRA WBCD competition sample dataset",
+          "checked": "2026-11-21"
+        }
+      ],
+      "unknownFields": [
+        "Stereo extrinsics and metric depth calibration"
+      ],
+      "evidenceLevel": "Official paper, data card, or public release manifest"
     }
   }
 }
